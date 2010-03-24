@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="1196,592" id="modelado" metadata="uml2-1.0" initialized="true" tag="1000" key="32303037303533312D313030302074617869467265652F4C75697320416C626572746F">
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="863,455" id="modelado" metadata="uml2-1.0" initialized="true" tag="1000" key="32303037303533312D313030302074617869467265652F4C75697320416C626572746F">
   <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.0 //@children.1/@sourceConnections.0" name="Usuario" location="206,26" size="120,165" id="modelado/Usuario" runTimeClassModel="Apellidos,Correo,Estrella,Dni,Nombre,Pass,Nick">
     <children xsi:type="editmodel:CompartmentEditModel" size="97,126">
       <children xsi:type="editmodel:AttributeEditModel" name="Apellidos" id="modelado/Usuario#Apellidos"/>
@@ -87,8 +87,8 @@
   </children>
   <children xsi:type="editmodel:NotepadEditModel" location="600,363" size="243,52" fontInfo="Arial-8-0" note="Interface de Acceso Google Map:&#xD;&#xA;Para el calculo de las trayectorias a partir de &#xD;&#xA;google Map">
     <sourceConnections xsi:type="editmodel:IndicationEditModel" autoLocated="true" source="//@children.5" target="//@children.4" targetEnd="//@children.5/@sourceConnections.0/@children.1" sourceEnd="//@children.5/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
-      <children xsi:type="editmodel:AssociationEndEditModel" location="0,26" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="111,47"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,25" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="111,46"/>
     </sourceConnections>
   </children>
   <diagramOptions xsi:type="options:ClassDiagramOptions" level="-1" showScope="InPackage" properties="wireOptions=2;Product=eUML2"/>
