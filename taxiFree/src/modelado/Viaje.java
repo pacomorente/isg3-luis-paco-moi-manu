@@ -1,8 +1,13 @@
 package modelado;
 
 import java.util.Date;
+import java.util.Collection;
 
 
+/**
+ * @uml.dependency   supplier="modelado.ICalculaViaje" stereotypes="Standard::Call"
+ * @uml.dependency   supplier="modelado.IViajeStrategy" stereotypes="Standard::Call"
+ */
 public class Viaje {
 
 	/**
@@ -72,6 +77,54 @@ public class Viaje {
 	 */
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
+	}
+
+	/**
+	 * @uml.property  name="iViajeStrategy"
+	 * @uml.associationEnd  inverse="viaje:modelado.IViajeStrategy"
+	 */
+	private IViajeStrategy iViajeStrategy;
+
+	/**
+	 * Getter of the property <tt>iViajeStrategy</tt>
+	 * @return  Returns the iViajeStrategy.
+	 * @uml.property  name="iViajeStrategy"
+	 */
+	public IViajeStrategy getIViajeStrategy() {
+		return iViajeStrategy;
+	}
+
+	/**
+	 * Setter of the property <tt>iViajeStrategy</tt>
+	 * @param iViajeStrategy  The iViajeStrategy to set.
+	 * @uml.property  name="iViajeStrategy"
+	 */
+	public void setIViajeStrategy(IViajeStrategy iViajeStrategy) {
+		this.iViajeStrategy = iViajeStrategy;
+	}
+
+	/** 
+	 * @uml.property name="iViajeStrategy1"
+	 * @uml.associationEnd multiplicity="(1 -1)" inverse="viaje1:modelado.IViajeStrategy"
+	 */
+	private Collection<IViajeStrategy> iViajeStrategy1;
+
+	/** 
+	 * Getter of the property <tt>iViajeStrategy1</tt>
+	 * @return  Returns the iViajeStrategy1.
+	 * @uml.property  name="iViajeStrategy1"
+	 */
+	public Collection<IViajeStrategy> getIViajeStrategy1() {
+		return iViajeStrategy1;
+	}
+
+	/** 
+	 * Setter of the property <tt>iViajeStrategy1</tt>
+	 * @param iViajeStrategy1  The iViajeStrategy1 to set.
+	 * @uml.property  name="iViajeStrategy1"
+	 */
+	public void setIViajeStrategy1(Collection<IViajeStrategy> iViajeStrategy1) {
+		this.iViajeStrategy1 = iViajeStrategy1;
 	}
 
 }
