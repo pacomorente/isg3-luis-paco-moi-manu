@@ -1,6 +1,5 @@
 package modelado;
 
-import java.util.Collection;
 
 
 public class Vehiculo {

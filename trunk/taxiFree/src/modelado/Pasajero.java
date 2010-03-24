@@ -55,14 +55,14 @@ public class Pasajero extends Usuario  {
 	 * @uml.property name="viaje"
 	 * @uml.associationEnd multiplicity="(1 -1)" inverse="pasajero:modelado.Viaje"
 	 */
-	private Collection viaje;
+	private Collection<Viaje> viaje;
 
 	/** 
 	 * Getter of the property <tt>viaje</tt>
 	 * @return  Returns the viaje.
 	 * @uml.property  name="viaje"
 	 */
-	public Collection getViaje() {
+	public Collection<Viaje> getViaje() {
 		return viaje;
 	}
 
@@ -71,7 +71,7 @@ public class Pasajero extends Usuario  {
 	 * @param viaje  The viaje to set.
 	 * @uml.property  name="viaje"
 	 */
-	public void setViaje(Collection viaje) {
+	public void setViaje(Collection<Viaje> viaje) {
 		this.viaje = viaje;
 	}
 	
