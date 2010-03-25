@@ -5,7 +5,7 @@ import java.util.Collection;
 
 
 /**
- * @uml.dependency   supplier="modelado.ICalculaViaje" stereotypes="Standard::Call"
+ * @uml.dependency   supplier="modelado.ICalculaViaje"
  * @uml.dependency   supplier="modelado.IViajeStrategy" stereotypes="Standard::Call"
  */
 public class Viaje {
@@ -81,50 +81,32 @@ public class Viaje {
 
 	/**
 	 * @uml.property  name="iViajeStrategy"
-	 * @uml.associationEnd  inverse="viaje:modelado.IViajeStrategy"
+	 * @uml.associationEnd  multiplicity="(1 -1)" inverse="viaje1:modelado.IViajeStrategy"
 	 */
-	private IViajeStrategy iViajeStrategy;
+	private Collection<IViajeStrategy> viajeStrategy;
 
 	/**
 	 * Getter of the property <tt>iViajeStrategy</tt>
-	 * @return  Returns the iViajeStrategy.
+	 * @return  Returns the viajeStrategy.
 	 * @uml.property  name="iViajeStrategy"
 	 */
-	public IViajeStrategy getIViajeStrategy() {
-		return iViajeStrategy;
+	public Collection<IViajeStrategy> getIViajeStrategy() {
+		return viajeStrategy;
 	}
 
 	/**
 	 * Setter of the property <tt>iViajeStrategy</tt>
-	 * @param iViajeStrategy  The iViajeStrategy to set.
+	 * @param iViajeStrategy  The viajeStrategy to set.
 	 * @uml.property  name="iViajeStrategy"
 	 */
-	public void setIViajeStrategy(IViajeStrategy iViajeStrategy) {
-		this.iViajeStrategy = iViajeStrategy;
+	public void setIViajeStrategy(Collection<IViajeStrategy> viajeStrategy) {
+		this.viajeStrategy = viajeStrategy;
 	}
 
-	/** 
-	 * @uml.property name="iViajeStrategy1"
-	 * @uml.associationEnd multiplicity="(1 -1)" inverse="viaje1:modelado.IViajeStrategy"
+	/**
+	 * @uml.property  name="iViajeStrategy"
+	 * @uml.associationEnd  multiplicity="(1 1)" inverse="viaje:modelado.IViajeStrategy"
 	 */
-	private Collection<IViajeStrategy> iViajeStrategy1;
-
-	/** 
-	 * Getter of the property <tt>iViajeStrategy1</tt>
-	 * @return  Returns the iViajeStrategy1.
-	 * @uml.property  name="iViajeStrategy1"
-	 */
-	public Collection<IViajeStrategy> getIViajeStrategy1() {
-		return iViajeStrategy1;
-	}
-
-	/** 
-	 * Setter of the property <tt>iViajeStrategy1</tt>
-	 * @param iViajeStrategy1  The iViajeStrategy1 to set.
-	 * @uml.property  name="iViajeStrategy1"
-	 */
-	public void setIViajeStrategy1(Collection<IViajeStrategy> iViajeStrategy1) {
-		this.iViajeStrategy1 = iViajeStrategy1;
-	}
-
+	
+	
 }

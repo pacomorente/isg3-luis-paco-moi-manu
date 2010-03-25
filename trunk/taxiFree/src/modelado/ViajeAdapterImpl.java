@@ -2,7 +2,7 @@ package modelado;
 
 
 /**
- * @uml.dependency   supplier="googleMaps.IGoogleMaps" stereotypes="Standard::Call"
+ * @uml.dependency   supplier="googleMaps.IGoogleMaps"
  */
 public class ViajeAdapterImpl implements ICalculaViaje {
 
