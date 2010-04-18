@@ -79,37 +79,34 @@ public class Viaje {
 		this.fecha = fecha;
 	}
 
-	/**
-	 * @uml.property  name="iViajeStrategy"
-	 * @uml.associationEnd  multiplicity="(1 -1)" inverse="viaje1:modelado.IViajeStrategy"
-	 */
-	private Collection<IViajeStrategy> viajeStrategy;
-
-	/**
-	 * Getter of the property <tt>iViajeStrategy</tt>
-	 * @return  Returns the viajeStrategy.
-	 * @uml.property  name="iViajeStrategy"
-	 */
-	public Collection<IViajeStrategy> getIViajeStrategy() {
-		return viajeStrategy;
-	}
-
-	/**
-	 * Setter of the property <tt>iViajeStrategy</tt>
-	 * @param iViajeStrategy  The viajeStrategy to set.
-	 * @uml.property  name="iViajeStrategy"
-	 */
-	public void setIViajeStrategy(Collection<IViajeStrategy> viajeStrategy) {
-		this.viajeStrategy = viajeStrategy;
-	}
-
-	/**
-	 * @uml.property  name="iViajeStrategy"
-	 * @uml.associationEnd  multiplicity="(1 1)" inverse="viaje:modelado.IViajeStrategy"
-	 */
-	
-	public Conductor conductor;
-	
 	public Collection<Pasajero> pasajeros;
+	public Conductor conductor;
+
+	public Collection<Pasajero> getPasajeros() {
+		return pasajeros;
+	}
+
+	public void setPasajeros(Collection<Pasajero> pasajeros) {
+		this.pasajeros = pasajeros;
+	}
+
+	public Conductor getConductor() {
+		return conductor;
+	}
+
+	public void setConductor(Conductor conductor) {
+		this.conductor = conductor;
+	}
+	
+	public Collection<String> puntosIntermedios;
+
+	public Collection<String> getPuntosIntermedios() {
+		return puntosIntermedios;
+	}
+
+	public void setPuntosIntermedios(Collection<String> puntosIntermedios) {
+		this.puntosIntermedios = puntosIntermedios;
+	}
+	
 	
 }
