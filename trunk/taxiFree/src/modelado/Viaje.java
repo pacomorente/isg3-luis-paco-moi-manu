@@ -108,5 +108,8 @@ public class Viaje {
 	 * @uml.associationEnd  multiplicity="(1 1)" inverse="viaje:modelado.IViajeStrategy"
 	 */
 	
+	public Conductor conductor;
+	
+	public Collection<Pasajero> pasajeros;
 	
 }

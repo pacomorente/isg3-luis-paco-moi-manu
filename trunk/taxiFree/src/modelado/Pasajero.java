@@ -75,4 +75,16 @@ public class Pasajero extends Usuario  {
 		this.viaje = viaje;
 	}
 	
+	public String puntoLlegada;
+
+	public String getPuntoLlegada() {
+		return puntoLlegada;
+	}
+
+	public void setPuntoLlegada(String puntoLlegada) {
+		this.puntoLlegada = puntoLlegada;
+	}
+	
+	
+	
 }
