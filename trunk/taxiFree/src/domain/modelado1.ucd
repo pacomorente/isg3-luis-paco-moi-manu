@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="modelado1" size="1099,733" id="modelado" metadata="uml2-1.0" initialized="true" zoom="0.5" scrolledX="-8" scrolledY="-33" tag="1000" key="32303037303533312D313030302074617869467265652F6D616E75656C206172636F73">
+  <children xsi:type="editmodel:NotepadEditModel" location="716,314" size="205,24" fontInfo="Arial-8-0" note="Adaptador para la clase google maps">
+    <sourceConnections xsi:type="editmodel:IndicationEditModel" autoLocated="true" source="//@children.0" target="//@children.4" targetEnd="//@children.0/@sourceConnections.0/@children.1" sourceEnd="//@children.0/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="78,24" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="63,0"/>
+    </sourceConnections>
+  </children>
+  <children xsi:type="editmodel:PackageEditModel" name="googleMaps" location="930,405" size="179,106" id="googleMaps">
+    <children xsi:type="editmodel:InterfaceEditModel" name="IGoogleMaps" location="38,42" size="125,43" id="googleMaps/IGoogleMaps" runTimeClassModel="">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+    </children>
+    <packagePreferences xsi:type="editmodel:UMLClassDiagramPackagePreference"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.6/@sourceConnections.5 //@children.6/@sourceConnections.1 //@children.7/@sourceConnections.0" name="Viaje" location="435,358" size="247,265" id="modelado/Viaje" runTimeClassModel="destino,puntosIntermedios,pasajeros,getConductor(),fecha,getPasajeros(),conductor,setPuntosIntermedios(Ljava.util.Collection;),setConductor(Lmodelado.Conductor;),setPasajeros(Ljava.util.Collection;),getPuntosIntermedios(),origen">
+    <children xsi:type="editmodel:CompartmentEditModel" size="224,108">
+      <children xsi:type="editmodel:AttributeEditModel" name="destino" id="modelado/Viaje#destino"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="fecha" id="modelado/Viaje#fecha"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="origen" id="modelado/Viaje#origen"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pasajeros" id="modelado/Viaje#pasajeros"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="conductor" id="modelado/Viaje#conductor"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="puntosIntermedios" id="modelado/Viaje#puntosIntermedios"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="133,108">
+      <children xsi:type="editmodel:MethodEditModel" name="setConductor" id="modelado/Viaje#setConductor(Lmodelado.Conductor;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setPasajeros" id="modelado/Viaje#setPasajeros(Ljava.util.Collection;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPasajeros" id="modelado/Viaje#getPasajeros()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getConductor" id="modelado/Viaje#getConductor()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPuntosIntermedios" id="modelado/Viaje#getPuntosIntermedios()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setPuntosIntermedios" id="modelado/Viaje#setPuntosIntermedios(Ljava.util.Collection;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="modelado/Viaje-Soyatec::Import->modelado/Pasajero" source="//@children.2" target="//@children.7" targetEnd="//@children.2/@sourceConnections.0/@children.2" label="//@children.2/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,8" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="178,124"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" id="modelado/Viaje@viaje+modelado/Pasajero@pasajero" source="//@children.2" target="//@children.7" targetEnd="//@children.2/@sourceConnections.1/@children.2" label="//@children.2/@sourceConnections.1/@children.0" sourceEnd="//@children.2/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="viaje" location="-2,82" id="modelado/Viaje@viaje+modelado/Pasajero@pasajero|modelado/Viaje#viaje" attachSource="true" multiplicityLabel="//@children.2/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.2/@sourceConnections.1/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - viaje" location="395,447" size="32,14" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1..*" location="411,419" size="16,14" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="pasajero" location="178,129" id="modelado/Viaje@viaje+modelado/Pasajero@pasajero|modelado/Pasajero#pasajero"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Name" methodSorter="Name" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.6/@sourceConnections.0 //@children.6/@sourceConnections.3" name="Vehiculo" location="165,630" size="110,111" id="modelado/Vehiculo" runTimeClassModel="color,plazas,marca,modelo">
+    <children xsi:type="editmodel:CompartmentEditModel" size="87,72">
+      <children xsi:type="editmodel:AttributeEditModel" name="color" id="modelado/Vehiculo#color"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="marca" id="modelado/Vehiculo#marca"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="modelo" id="modelado/Vehiculo#modelo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="plazas" id="modelado/Vehiculo#plazas"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Name" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.0/@sourceConnections.0 //@children.5/@sourceConnections.0 //@children.5/@sourceConnections.1" name="ICalculaViaje" location="731,386" size="127,43" id="modelado/ICalculaViaje" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ViajeAdapterImpl" location="717,509" size="153,29" id="modelado/ViajeAdapterImpl" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="modelado/ICalculaViaje&lt;-modelado/ViajeAdapterImpl" source="//@children.5" target="//@children.4" targetEnd="//@children.5/@sourceConnections.0/@children.1" sourceEnd="//@children.5/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="77,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="63,43"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="modelado/ViajeAdapterImpl-Soyatec::Implement->modelado/ICalculaViaje" source="//@children.5" target="//@children.4" targetEnd="//@children.5/@sourceConnections.1/@children.2" label="//@children.5/@sourceConnections.1/@children.0" sourceEnd="//@children.5/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Implement»" size="59,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="57,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="43,43"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Conductor" location="50,569" size="107,29" id="modelado/Conductor" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="modelado/Conductor@conductor+modelado/Vehiculo@vehiculo" source="//@children.6" target="//@children.3" targetEnd="//@children.6/@sourceConnections.0/@children.2" label="//@children.6/@sourceConnections.0/@children.0" sourceEnd="//@children.6/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="conductor" location="97,29" id="modelado/Conductor@conductor+modelado/Vehiculo@vehiculo|modelado/Conductor#conductor" attachSource="true" multiplicityLabel="//@children.6/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.6/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - conductor" location="80,605" size="59,14" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="153,605" size="6,14" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="vehiculo" location="0,10" id="modelado/Conductor@conductor+modelado/Vehiculo@vehiculo|modelado/Vehiculo#vehiculo" multiplicityLabel="//@children.6/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.6/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + vehiculo" location="105,647" size="52,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1..*" location="141,619" size="16,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="modelado/Conductor-Soyatec::Import->modelado/Viaje" source="//@children.6" target="//@children.2" targetEnd="//@children.6/@sourceConnections.1/@children.2" label="//@children.6/@sourceConnections.1/@children.0" sourceEnd="//@children.6/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="107,14" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,225"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="modelado/Conductor-Standard::Derive->modelado/Usuario" source="//@children.6" target="//@children.8" targetEnd="//@children.6/@sourceConnections.2/@children.2" label="//@children.6/@sourceConnections.2/@children.0" sourceEnd="//@children.6/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Derive»" size="43,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="53,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="59,165"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="modelado/Conductor-Soyatec::Import->modelado/Vehiculo" source="//@children.6" target="//@children.3" targetEnd="//@children.6/@sourceConnections.3/@children.2" label="//@children.6/@sourceConnections.3/@children.0" sourceEnd="//@children.6/@sourceConnections.3/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="107,14" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="110,5"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" id="modelado/Usuario&lt;-modelado/Conductor" source="//@children.6" target="//@children.8" targetEnd="//@children.6/@sourceConnections.4/@children.1" sourceEnd="//@children.6/@sourceConnections.4/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="44,-1" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="48,165" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" id="modelado/Viaje@viaje+modelado/Conductor@conductor" source="//@children.6" target="//@children.2" targetEnd="//@children.6/@sourceConnections.5/@children.2" label="//@children.6/@sourceConnections.5/@children.0" sourceEnd="//@children.6/@sourceConnections.5/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="conductor" location="106,9" id="modelado/Viaje@viaje+modelado/Conductor@conductor|modelado/Conductor#conductor" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="viaje" location="0,238" id="modelado/Viaje@viaje+modelado/Conductor@conductor|modelado/Viaje#viaje" multiplicityLabel="//@children.6/@sourceConnections.5/@children.2/@children.1" roleLabel="//@children.6/@sourceConnections.5/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - viaje" location="395,603" size="32,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1..*" location="411,575" size="16,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Name" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.1 //@children.2/@sourceConnections.0 //@children.12/@sourceConnections.2" name="Pasajero" location="43,60" size="178,139" id="modelado/Pasajero" runTimeClassModel="setRutas(Ljava.util.Collection;),rutas,getRutas()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="155,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="rutas" id="modelado/Pasajero#rutas"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="110,36">
+      <children xsi:type="editmodel:MethodEditModel" name="getRutas" id="modelado/Pasajero#getRutas()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setRutas" id="modelado/Pasajero#setRutas(Ljava.util.Collection;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="modelado/Pasajero-Soyatec::Import->modelado/Viaje" source="//@children.7" target="//@children.2" targetEnd="//@children.7/@sourceConnections.0/@children.2" label="//@children.7/@sourceConnections.0/@children.0" sourceEnd="//@children.7/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="172,139" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,28"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="modelado/Pasajero-Standard::Derive->modelado/Usuario" source="//@children.7" target="//@children.8" targetEnd="//@children.7/@sourceConnections.1/@children.2" label="//@children.7/@sourceConnections.1/@children.0" sourceEnd="//@children.7/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Derive»" size="43,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="60,139" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="59,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" id="modelado/Usuario&lt;-modelado/Pasajero" source="//@children.7" target="//@children.8" targetEnd="//@children.7/@sourceConnections.2/@children.1" sourceEnd="//@children.7/@sourceConnections.2/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="131,138" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="59,0" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.7/@sourceConnections.2 //@children.6/@sourceConnections.2 //@children.7/@sourceConnections.1 //@children.6/@sourceConnections.4" name="Usuario" location="44,359" size="120,165" id="modelado/Usuario" runTimeClassModel="Apellidos,Correo,Estrella,Dni,Nombre,Pass,Nick">
+    <children xsi:type="editmodel:CompartmentEditModel" size="97,126">
+      <children xsi:type="editmodel:AttributeEditModel" name="Apellidos" location="24,3" id="modelado/Usuario#Apellidos"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="Correo" id="modelado/Usuario#Correo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="Dni" id="modelado/Usuario#Dni"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="Estrella" id="modelado/Usuario#Estrella"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="Nick" id="modelado/Usuario#Nick"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="Nombre" id="modelado/Usuario#Nombre"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="Pass" id="modelado/Usuario#Pass"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Name" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.11/@sourceConnections.0 //@children.12/@sourceConnections.1" name="Ruta" location="702,164" size="156,229" id="modelado/Ruta" runTimeClassModel="getDesplazamiento(),destino,setDesplazamiento(Ljava.lang.Integer;),desplazamiento,getOrigen(),fecha,getDestino(),setOrigen(Ljava.lang.String;),setDestino(Ljava.lang.String;),origen">
+    <children xsi:type="editmodel:CompartmentEditModel" size="133,72">
+      <children xsi:type="editmodel:AttributeEditModel" name="destino" id="modelado/Ruta#destino"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="desplazamiento" id="modelado/Ruta#desplazamiento"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="origen" id="modelado/Ruta#origen"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="fecha" id="modelado/Ruta#fecha"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="121,108">
+      <children xsi:type="editmodel:MethodEditModel" name="getDesplazamiento" id="modelado/Ruta#getDesplazamiento()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setDestino" id="modelado/Ruta#setDestino(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setOrigen" id="modelado/Ruta#setOrigen(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getDestino" id="modelado/Ruta#getDestino()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getOrigen" id="modelado/Ruta#getOrigen()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setDesplazamiento" id="modelado/Ruta#setDesplazamiento(Ljava.lang.Integer;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Name" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Trayecto" location="479,660" size="97,29" id="modelado/Trayecto" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Name" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.12/@sourceConnections.0 //@children.12/@sourceConnections.3" name="IAccionPasajero" location="447,-60" size="145,153" id="modelado/IAccionPasajero" runTimeClassModel="apuntarseAViaje(Lmodelado.Ruta;),eliminaRuta(Lmodelado.Ruta;),consultaRuta(),buscarViaje(Lmodelado.Ruta;),modificaRuta(Lmodelado.Ruta;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="111,90">
+      <children xsi:type="editmodel:MethodEditModel" name="consultaRuta" id="modelado/IAccionPasajero#consultaRuta()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminaRuta" id="modelado/IAccionPasajero#eliminaRuta(Lmodelado.Ruta;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="modificaRuta" id="modelado/IAccionPasajero#modificaRuta(Lmodelado.Ruta;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="apuntarseAViaje" id="modelado/IAccionPasajero#apuntarseAViaje(Lmodelado.Ruta;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="buscarViaje" id="modelado/IAccionPasajero#buscarViaje(Lmodelado.Ruta;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="modelado/IAccionPasajero-Soyatec::Import->modelado/Ruta" source="//@children.11" target="//@children.9" targetEnd="//@children.11/@sourceConnections.0/@children.2" label="//@children.11/@sourceConnections.0/@children.0" sourceEnd="//@children.11/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="145,149" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,36"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="AccionPasajeroImpl" location="435,150" size="169,175" id="modelado/AccionPasajeroImpl" runTimeClassModel="apuntarseAViaje(Lmodelado.Ruta;),eliminaRuta(Lmodelado.Ruta;),consultaRuta(),buscarViaje(Lmodelado.Ruta;),AccionPasajeroImpl(Lmodelado.Pasajero;Ljava.util.Collection;),modificaRuta(Lmodelado.Ruta;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="73,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="p" id="modelado/AccionPasajeroImpl#p"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="124,108">
+      <children xsi:type="editmodel:MethodEditModel" name="consultaRuta" id="modelado/AccionPasajeroImpl#consultaRuta()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminaRuta" id="modelado/AccionPasajeroImpl#eliminaRuta(Lmodelado.Ruta;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="modificaRuta" id="modelado/AccionPasajeroImpl#modificaRuta(Lmodelado.Ruta;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="AccionPasajeroImpl" id="modelado/AccionPasajeroImpl#AccionPasajeroImpl(Lmodelado.Pasajero;Ljava.util.Collection;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="buscarViaje" id="modelado/AccionPasajeroImpl#buscarViaje(Lmodelado.Ruta;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="apuntarseAViaje" id="modelado/AccionPasajeroImpl#apuntarseAViaje(Lmodelado.Ruta;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="modelado/IAccionPasajero&lt;-modelado/AccionPasajeroImpl" source="//@children.12" target="//@children.11" targetEnd="//@children.12/@sourceConnections.0/@children.1" sourceEnd="//@children.12/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="84,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="72,153"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="modelado/AccionPasajeroImpl-Soyatec::Import->modelado/Ruta" source="//@children.12" target="//@children.9" targetEnd="//@children.12/@sourceConnections.1/@children.2" label="//@children.12/@sourceConnections.1/@children.0" sourceEnd="//@children.12/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="169,94" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,80"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="modelado/AccionPasajeroImpl-Soyatec::Import->modelado/Pasajero" source="//@children.12" target="//@children.7" targetEnd="//@children.12/@sourceConnections.2/@children.2" label="//@children.12/@sourceConnections.2/@children.0" sourceEnd="//@children.12/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,24" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="178,114"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="modelado/AccionPasajeroImpl-Soyatec::Implement->modelado/IAccionPasajero" source="//@children.12" target="//@children.11" targetEnd="//@children.12/@sourceConnections.3/@children.2" label="//@children.12/@sourceConnections.3/@children.0" sourceEnd="//@children.12/@sourceConnections.3/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Implement»" size="59,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="64,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="52,153"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" level="-1" showScope="InPackage" properties="wireOptions=1;Product=eUML2"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>
