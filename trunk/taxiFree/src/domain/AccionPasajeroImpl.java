@@ -10,7 +10,7 @@ public class AccionPasajeroImpl implements IAccionPasajero{
 	private Collection<Viaje> v;
 	
 	public AccionPasajeroImpl(Pasajero p, Collection<Viaje> v){
-		this.p = p;
+		this.setP(p);
 		this.v = v;
 	}
 	
@@ -51,6 +51,14 @@ public class AccionPasajeroImpl implements IAccionPasajero{
 	public Ruta modificaRuta(Ruta r) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public void setP(Pasajero p) {
+		this.p = p;
+	}
+
+	public Pasajero getP() {
+		return p;
 	}
 	
 	
