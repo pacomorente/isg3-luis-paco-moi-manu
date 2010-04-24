@@ -19,7 +19,7 @@ public class ViajeStore {
     /**
 	 * @uml.property  name="products"
 	 */
-    private List viajes;
+    private List<Viaje> viajes;
 
     public static synchronized ViajeStore getInstance() {
         if (vs == null)
@@ -35,13 +35,13 @@ public class ViajeStore {
 	 * @return
 	 * @uml.property  name="viajes"
 	 */
-    public List getViajes() {
+    public List<Viaje> getViajes() {
         return viajes;
     }
 
     public Viaje getViajes(String viajeID) {
         Viaje result = null;
-        for (Iterator iter = viajes.iterator(); iter.hasNext();) {
+        for (Iterator<Viaje> iter = viajes.iterator(); iter.hasNext();) {
             Viaje v = (Viaje) iter.next();
             if (v.getViajeID().compareTo(viajeID) == 0) {
                 result = v;
