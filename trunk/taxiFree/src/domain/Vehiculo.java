@@ -8,7 +8,7 @@ public class Vehiculo {
 	 * @uml.property name="conductor"
 	 * @uml.associationEnd multiplicity="(1 1)" inverse="vehiculo:modelado.Conductor"
 	 */
-	private Conductor conductor = new domain.Conductor();
+	private Conductor conductor = new Conductor();
 
 	/** 
 	 * Getter of the property <tt>conductor</tt>
