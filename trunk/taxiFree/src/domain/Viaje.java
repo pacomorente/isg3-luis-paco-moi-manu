@@ -10,10 +10,20 @@ import java.util.Collection;
  */
 public class Viaje {
 
+	
+	private String viajeID;
 	/**
 	 * @uml.property  name="origen"
 	 */
 	private String origen;
+
+	public String getViajeID() {
+		return viajeID;
+	}
+
+	public void setViajeID(String viajeID) {
+		this.viajeID = viajeID;
+	}
 
 	/**
 	 * Getter of the property <tt>origen</tt>
