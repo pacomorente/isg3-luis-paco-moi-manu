@@ -5,6 +5,9 @@ import java.sql.Connection;
 
 import domain.Trayecto;
 
+/**
+ * @uml.dependency   supplier="data.ConnectionManager"
+ */
 public class JDBCTrayectoDAO implements ITrayectoDAO{
 
 	IViajeDAO vdao;
