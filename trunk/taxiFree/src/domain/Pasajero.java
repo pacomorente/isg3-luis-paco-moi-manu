@@ -3,11 +3,14 @@ package domain;
 import java.util.Collection;
 
 
+/**
+ * @uml.dependency   supplier="domain.Ruta"
+ */
 public class Pasajero extends Usuario  {
 
-	/** 
-	 * @uml.property name="viaje"
-	 * @uml.associationEnd multiplicity="(1 -1)" inverse="pasajero:modelado.Viaje"
+	/**
+	 * @uml.property   name="viaje"
+	 * @uml.associationEnd   multiplicity="(1 -1)" inverse="pasajero:modelado.Viaje"
 	 */
 	private Collection<Viaje> viaje;
 
