@@ -6,6 +6,9 @@ import java.sql.Connection;
 
 import domain.Viaje;
 
+/**
+ * @uml.dependency   supplier="data.ConnectionManager"
+ */
 public interface IViajeDAO {
 	public void insertViaje(Viaje v, String userOID);
 	public List<Viaje> selectAllViajes();
