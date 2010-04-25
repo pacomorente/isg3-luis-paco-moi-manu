@@ -1,5 +1,6 @@
 package data;
 
+import java.sql.Connection;
 import java.util.List;
 
 import domain.Pasajero;
@@ -9,5 +10,5 @@ import domain.Pasajero;
  */
 public interface IPasajeroDAO {
 	public List<Pasajero> selectAllPasajeros();
-	public Pasajero selectPasajero(String nick);
+	public Pasajero selectPasajero(Connection conn, String pasajeroOID);
 }
