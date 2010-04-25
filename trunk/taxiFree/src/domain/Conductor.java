@@ -5,13 +5,25 @@ import java.util.List;
 
 public class Conductor extends Usuario  {
 	
+	private String idConductor;
+	
+	public String getIdConductor() {
+		return idConductor;
+	}
+
+	public void setIdConductor(String idConductor) {
+		this.idConductor = idConductor;
+	}
+
 	private List<Trayecto> trayectos;
 
 	/** 
 	 * @uml.property name="vehiculo"
 	 * @uml.associationEnd multiplicity="(1 -1)" inverse="conductor:modelado.Vehiculo"
 	 */
-	private List <Vehiculo> vehiculo;
+	private Vehiculo vehiculo;
+	
+
 	
 	public List<Trayecto> getTrayectos() {
 		return trayectos;
@@ -27,12 +39,14 @@ public class Conductor extends Usuario  {
 	 */
 	private List<Viaje> viaje;
 
+
+
 	/** 
 	 * Getter of the property <tt>vehiculo</tt>
 	 * @return  Returns the vehiculo.
 	 * @uml.property  name="vehiculo"
 	 */
-	public List<Vehiculo> getVehiculo() {
+	public Vehiculo getVehiculo() {
 		return vehiculo;
 	}
 
@@ -41,7 +55,7 @@ public class Conductor extends Usuario  {
 	 * @param vehiculo  The vehiculo to set.
 	 * @uml.property  name="vehiculo"
 	 */
-	public void setVehiculo(List<Vehiculo> vehiculo) {
+	public void setVehiculo(Vehiculo vehiculo) {
 		this.vehiculo = vehiculo;
 	}
 
@@ -64,5 +78,7 @@ public class Conductor extends Usuario  {
 	public void setViaje(List<Viaje> viaje) {
 		this.viaje = viaje;
 	}
+
+
 
 }
