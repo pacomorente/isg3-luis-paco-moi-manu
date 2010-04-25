@@ -4,11 +4,19 @@ import java.util.Date;
 
 
 public class Trayecto {
-	
+	private String idTrayecto;
 	private String origenTrayecto;
 	private String destinoTrayecto;
 	private Date fechaSalida;
 	
+	public String getIdTrayecto() {
+		return idTrayecto;
+	}
+
+	public void setIdTrayecto(String idTrayecto) {
+		this.idTrayecto = idTrayecto;
+	}
+
 	public String getOrigenTrayecto() {
 		return origenTrayecto;
 	}
