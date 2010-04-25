@@ -5,6 +5,9 @@ import java.util.List;
 
 import domain.Vehiculo;
 
+/**
+ * @uml.dependency   supplier="data.ConnectionManager"
+ */
 public interface IVehiculoDAO {
     public void delete(Connection conn, String VehiculoOID);
     public void insert(Connection conn, String VehiculoOID, Vehiculo veh);

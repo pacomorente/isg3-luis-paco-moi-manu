@@ -7,6 +7,9 @@ import domain.Trayecto;
 
 
 
+/**
+ * @uml.dependency   supplier="data.ConnectionManager"
+ */
 public interface ITrayectoDAO {
 	public List<Trayecto> selectAllTrayectos();
 	public Trayecto selectTrayectoOID(Trayecto trayecto);
