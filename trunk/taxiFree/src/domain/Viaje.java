@@ -1,7 +1,7 @@
 package domain;
 
 import java.util.Date;
-import java.util.Collection;
+import java.util.List;
 
 
 /**
@@ -89,14 +89,14 @@ public class Viaje {
 		this.fecha = fecha;
 	}
 
-	public Collection<Pasajero> pasajeros;
+	public List<Pasajero> pasajeros;
 	public Conductor conductor;
 
-	public Collection<Pasajero> getPasajeros() {
+	public List<Pasajero> getPasajeros() {
 		return pasajeros;
 	}
 
-	public void setPasajeros(Collection<Pasajero> pasajeros) {
+	public void setPasajeros(List<Pasajero> pasajeros) {
 		this.pasajeros = pasajeros;
 	}
 
@@ -108,13 +108,13 @@ public class Viaje {
 		this.conductor = conductor;
 	}
 	
-	public Collection<String> puntosIntermedios;
+	public List<String> puntosIntermedios;
 
-	public Collection<String> getPuntosIntermedios() {
+	public List<String> getPuntosIntermedios() {
 		return puntosIntermedios;
 	}
 
-	public void setPuntosIntermedios(Collection<String> puntosIntermedios) {
+	public void setPuntosIntermedios(List<String> puntosIntermedios) {
 		this.puntosIntermedios = puntosIntermedios;
 	}
 	
