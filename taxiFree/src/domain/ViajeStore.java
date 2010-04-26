@@ -19,25 +19,25 @@ public class ViajeStore {
     /**
 	 * @uml.property  name="products"
 	 */
-    private List<Viaje> viajes;
+
 
     public static synchronized ViajeStore getInstance() {
-        if (vs == null)
-            vs = new ViajeStore();
-        return vs;
-    }
+		if (vs == null)
+			vs = new ViajeStore();
+		return vs;
+	}
+
+
+
+
+	private List<Viaje> viajes;
 
     private ViajeStore() {
         viajes = (new JDBCViajeDAO()).selectAllViajes();
     }
 
-    /**
-	 * @return
-	 * @uml.property  name="viajes"
-	 */
-    public List<Viaje> getViajes() {
-        return viajes;
-    }
+ 
+
 
     public Viaje getViajes(String viajeID) {
         Viaje result = null;
@@ -49,4 +49,35 @@ public class ViajeStore {
         }
         return result;
     }
+
+
+
+
+	/**
+	 * @uml.property  name="viaje"
+	 * @uml.associationEnd  multiplicity="(1 -1)" inverse="viajeStore:domain.Viaje"
+	 * @uml.association  name="contiene"
+	 */
+	private List<Viaje> viaje;
+
+	/**
+	 * Getter of the property <tt>viaje</tt>
+	 * @return  Returns the viaje.
+	 * @uml.property  name="viaje"
+	 */
+	public List<Viaje> getViaje() {
+		return viaje;
+	}
+
+	/**
+	 * Setter of the property <tt>viaje</tt>
+	 * @param viaje  The viaje to set.
+	 * @uml.property  name="viaje"
+	 */
+	public void setViaje(List<Viaje> viaje) {
+		this.viaje = viaje;
+	}
+
+
+
 }
