@@ -4,6 +4,9 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * @uml.dependency   supplier="domain.Pasajero"
+ */
 public class AccionPasajeroImpl implements IAccionPasajero{
 
 	private Pasajero p;

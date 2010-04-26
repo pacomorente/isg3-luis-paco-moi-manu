@@ -2,22 +2,22 @@ package domain;
 
 import java.util.List;
 
-import data.ITrayectoDAO;
+import data.IVehiculoDAO;
 import data.IViajeDAO;
-import data.JDBCTrayectoDAO;
+import data.JDBCVehiculoDAO;
 import data.JDBCViajeDAO;
 
 public class AccionConductorImpl implements IAccionConductor{
 
-    private IViajeDAO vdao = new JDBCViajeDAO();
-    private ITrayectoDAO tdao = new JDBCTrayectoDAO();
+    private IViajeDAO viadao = new JDBCViajeDAO();
+    private IVehiculoDAO vehdao = new JDBCVehiculoDAO();
 	
 	private Conductor cond;
-	private List<Trayecto> trayecto;
+	private List<Viaje> viaje;
 	
-	public AccionConductorImpl(Conductor c, List<Trayecto> t){
+	public AccionConductorImpl(Conductor c, List<Viaje> v){
 		this.setCond(c);
-		this.trayecto = t;
+		this.viaje = v;
 	}
 	
 
@@ -28,32 +28,53 @@ public class AccionConductorImpl implements IAccionConductor{
 
 
 	@Override
-	public Trayecto consultaTrayecto(Trayecto trayecto) {
-		return tdao.selectTrayectoOID(trayecto);
+	public Viaje consultaViaje(Viaje viaje) {
+		//return 	viadao.selectTrayectoOID(trayecto);
+		return null;
 	}
-
 	@Override
-	public boolean eliminaTrayecto(Trayecto tra) {
-        tdao.deleteTrayectoOID(tra.getIdTrayecto());
+	public boolean eliminaViaje(Viaje viaje) {
+        //tdao.deleteTrayectoOID(tra.getIdTrayecto());
         return true;
 		
 	}
 
 	@Override
-	public void insertarTrayecto(Trayecto tra) {
+	public void insertarViaje(Viaje viaje) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public Trayecto modificaTrayecto(Trayecto tra) {
+	public Viaje  modificaViaje(Viaje viaje) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public List<Viaje> verViajesAsignados(Viaje viaje) {
-		return vdao.selectAllViajes();
+		return viadao.selectAllViajes();
+	}
+
+
+	@Override
+	public boolean eliminaVehiculo(Vehiculo vehiculo) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public void insertarVehiculo(Vehiculo vehiculo) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public Vehiculo modificaVehiculo(Vehiculo vehiculo) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	/*@Override
