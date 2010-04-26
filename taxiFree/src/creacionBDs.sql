@@ -30,15 +30,9 @@ CREATE TABLE `conductor` (
   `OIDConductor` varchar(100) NOT NULL,
   `OIDViaje` varchar(100) NOT NULL,
   `OIDVehiculo` varchar(100) NOT NULL,
-  `OIDUsuario` varchar(100) NOT NULL,
-  `OIDTrayecto` varchar(100) NOT NULL,
   PRIMARY KEY (`OIDConductor`),
   KEY `OIDViaje` (`OIDViaje`),
   KEY `OIDVehiculo` (`OIDVehiculo`),
-  KEY `OIDUsuario` (`OIDUsuario`),
-  KEY `OIDTrayecto` (`OIDTrayecto`),
-  CONSTRAINT `OIDTrayecto` FOREIGN KEY (`OIDTrayecto`) REFERENCES `trayecto` (`OIDTrayecto`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `OIDUsuario` FOREIGN KEY (`OIDUsuario`) REFERENCES `usuario` (`OIDUsuario`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `OIDVehiculo` FOREIGN KEY (`OIDVehiculo`) REFERENCES `vehiculo` (`OIDVehiculo`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `OIDViaje` FOREIGN KEY (`OIDViaje`) REFERENCES `viaje` (`OIDViaje`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -58,13 +52,10 @@ CREATE TABLE `conductor` (
 DROP TABLE IF EXISTS `pasajero`;
 CREATE TABLE `pasajero` (
   `OIDPasajero` varchar(100) NOT NULL,
-  `OIDUsuario` varchar(100) NOT NULL,
   `OIDViaje` varchar(100) NOT NULL,
   PRIMARY KEY (`OIDPasajero`),
-  KEY `OIDUsuario` (`OIDUsuario`) USING BTREE,
   KEY `OIDViaje` (`OIDViaje`) USING BTREE,
-  CONSTRAINT `viaje` FOREIGN KEY (`OIDViaje`) REFERENCES `viaje` (`OIDViaje`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `usuario` FOREIGN KEY (`OIDUsuario`) REFERENCES `usuario` (`OIDUsuario`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `viaje` FOREIGN KEY (`OIDViaje`) REFERENCES `viaje` (`OIDViaje`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -85,8 +76,8 @@ CREATE TABLE `pasajero_ruta` (
   `OIDRuta` varchar(100) NOT NULL,
   PRIMARY KEY (`OIDPasajero`,`OIDRuta`),
   KEY `ruta` (`OIDRuta`),
-  CONSTRAINT `ruta` FOREIGN KEY (`OIDRuta`) REFERENCES `ruta` (`OIDRuta`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `pasajero` FOREIGN KEY (`OIDPasajero`) REFERENCES `pasajero` (`OIDPasajero`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `pasajero` FOREIGN KEY (`OIDPasajero`) REFERENCES `pasajero` (`OIDPasajero`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `ruta` FOREIGN KEY (`OIDRuta`) REFERENCES `ruta` (`OIDRuta`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -119,29 +110,6 @@ CREATE TABLE `ruta` (
 
 
 --
--- Definition of table `trayecto`
---
-
-DROP TABLE IF EXISTS `trayecto`;
-CREATE TABLE `trayecto` (
-  `OIDTrayecto` varchar(100) NOT NULL,
-  `idTrayecto` varchar(45) NOT NULL,
-  `origen` varchar(45) NOT NULL,
-  `destino` varchar(45) NOT NULL,
-  `fecha` date NOT NULL,
-  `OIDViaje` varchar(100) NOT NULL,
-  PRIMARY KEY (`OIDTrayecto`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `trayecto`
---
-
-/*!40000 ALTER TABLE `trayecto` DISABLE KEYS */;
-/*!40000 ALTER TABLE `trayecto` ENABLE KEYS */;
-
-
---
 -- Definition of table `usuario`
 --
 
@@ -155,7 +123,8 @@ CREATE TABLE `usuario` (
   `estrella` int(11) NOT NULL,
   `nick` varchar(25) NOT NULL,
   `pass` varchar(25) NOT NULL,
-  PRIMARY KEY (`OIDUsuario`)
+  PRIMARY KEY (`OIDUsuario`),
+  UNIQUE KEY `nick` (`nick`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
