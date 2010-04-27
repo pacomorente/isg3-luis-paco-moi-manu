@@ -5,7 +5,7 @@ import java.util.List;
 import domain.Ruta;
 
 /**
- * @uml.dependency   supplier="data.ConnectionManager"
+ * @uml.dependency  supplier="data.ConnectionManager"
  */
 public interface IRutaDAO {
 	public List<Ruta> selectAllRutas();

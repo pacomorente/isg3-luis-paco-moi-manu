@@ -5,29 +5,40 @@ import java.util.List;
 
 
 /**
- * @uml.dependency   supplier="modelado.ICalculaViaje"
- * @uml.dependency   supplier="modelado.IViajeStrategy" stereotypes="Standard::Call"
+ * @uml.dependency  supplier="modelado.IViajeStrategy" stereotypes="Standard::Call"
+ * @uml.dependency  supplier="modelado.ICalculaViaje"
  */
 public class Viaje {
 
 	
+	/**
+	 * @uml.property  name="viajeID"
+	 */
 	private String viajeID;
 	/**
 	 * @uml.property  name="origen"
 	 */
 	private String origen;
 
+	/**
+	 * @return
+	 * @uml.property  name="viajeID"
+	 */
 	public String getViajeID() {
 		return viajeID;
 	}
 
+	/**
+	 * @param  viajeID
+	 * @uml.property  name="viajeID"
+	 */
 	public void setViajeID(String viajeID) {
 		this.viajeID = viajeID;
 	}
 
 	/**
 	 * Getter of the property <tt>origen</tt>
-	 * @return  Returns the origen.
+	 * @return    Returns the origen.
 	 * @uml.property  name="origen"
 	 */
 	public String getOrigen() {
@@ -36,7 +47,7 @@ public class Viaje {
 
 	/**
 	 * Setter of the property <tt>origen</tt>
-	 * @param origen  The origen to set.
+	 * @param origen    The origen to set.
 	 * @uml.property  name="origen"
 	 */
 	public void setOrigen(String origen) {
@@ -50,7 +61,7 @@ public class Viaje {
 
 	/**
 	 * Getter of the property <tt>destino</tt>
-	 * @return  Returns the destino.
+	 * @return    Returns the destino.
 	 * @uml.property  name="destino"
 	 */
 	public String getDestino() {
@@ -59,7 +70,7 @@ public class Viaje {
 
 	/**
 	 * Setter of the property <tt>destino</tt>
-	 * @param destino  The destino to set.
+	 * @param destino    The destino to set.
 	 * @uml.property  name="destino"
 	 */
 	public void setDestino(String destino) {
@@ -73,7 +84,7 @@ public class Viaje {
 
 	/**
 	 * Getter of the property <tt>fecha</tt>
-	 * @return  Returns the fecha.
+	 * @return    Returns the fecha.
 	 * @uml.property  name="fecha"
 	 */
 	public Date getFecha() {
@@ -82,38 +93,72 @@ public class Viaje {
 
 	/**
 	 * Setter of the property <tt>fecha</tt>
-	 * @param fecha  The fecha to set.
+	 * @param fecha    The fecha to set.
 	 * @uml.property  name="fecha"
 	 */
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
 
+	/**
+	 * @uml.property  name="pasajeros"
+	 */
 	public List<Pasajero> pasajeros;
+	/**
+	 * @uml.property  name="conductor"
+	 * @uml.associationEnd  
+	 */
 	public Conductor conductor;
 
+	/**
+	 * @return
+	 * @uml.property  name="pasajeros"
+	 */
 	public List<Pasajero> getPasajeros() {
 		return pasajeros;
 	}
 
+	/**
+	 * @param  pasajeros
+	 * @uml.property  name="pasajeros"
+	 */
 	public void setPasajeros(List<Pasajero> pasajeros) {
 		this.pasajeros = pasajeros;
 	}
 
+	/**
+	 * @return
+	 * @uml.property  name="conductor"
+	 */
 	public Conductor getConductor() {
 		return conductor;
 	}
 
+	/**
+	 * @param  conductor
+	 * @uml.property  name="conductor"
+	 */
 	public void setConductor(Conductor conductor) {
 		this.conductor = conductor;
 	}
 	
+	/**
+	 * @uml.property  name="puntosIntermedios"
+	 */
 	public List<String> puntosIntermedios;
 
+	/**
+	 * @return
+	 * @uml.property  name="puntosIntermedios"
+	 */
 	public List<String> getPuntosIntermedios() {
 		return puntosIntermedios;
 	}
 
+	/**
+	 * @param  puntosIntermedios
+	 * @uml.property  name="puntosIntermedios"
+	 */
 	public void setPuntosIntermedios(List<String> puntosIntermedios) {
 		this.puntosIntermedios = puntosIntermedios;
 	}

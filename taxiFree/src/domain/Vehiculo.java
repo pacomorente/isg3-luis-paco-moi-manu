@@ -2,26 +2,29 @@ package domain;
 
 
 
+/**
+ * @author   morentefj
+ */
 public class Vehiculo {
 
-	/** 
-	 * @uml.property name="conductor"
-	 * @uml.associationEnd multiplicity="(1 1)" inverse="vehiculo:modelado.Conductor"
+	/**
+	 * @uml.property  name="conductor"
+	 * @uml.associationEnd  
 	 */
 	private Conductor conductor = new Conductor();
 
-	/** 
+	/**
 	 * Getter of the property <tt>conductor</tt>
-	 * @return  Returns the conductor.
+	 * @return    Returns the conductor.
 	 * @uml.property  name="conductor"
 	 */
 	public Conductor getConductor() {
 		return conductor;
 	}
 
-	/** 
+	/**
 	 * Setter of the property <tt>conductor</tt>
-	 * @param conductor  The conductor to set.
+	 * @param conductor    The conductor to set.
 	 * @uml.property  name="conductor"
 	 */
 	public void setConductor(Conductor conductor) {
@@ -35,7 +38,7 @@ public class Vehiculo {
 
 	/**
 	 * Getter of the property <tt>marca</tt>
-	 * @return  Returns the marca.
+	 * @return    Returns the marca.
 	 * @uml.property  name="marca"
 	 */
 	public String getMarca() {
@@ -44,7 +47,7 @@ public class Vehiculo {
 
 	/**
 	 * Setter of the property <tt>marca</tt>
-	 * @param marca  The marca to set.
+	 * @param marca    The marca to set.
 	 * @uml.property  name="marca"
 	 */
 	public void setMarca(String marca) {
@@ -58,7 +61,7 @@ public class Vehiculo {
 
 	/**
 	 * Getter of the property <tt>modelo</tt>
-	 * @return  Returns the modelo.
+	 * @return    Returns the modelo.
 	 * @uml.property  name="modelo"
 	 */
 	public String getModelo() {
@@ -67,7 +70,7 @@ public class Vehiculo {
 
 	/**
 	 * Setter of the property <tt>modelo</tt>
-	 * @param modelo  The modelo to set.
+	 * @param modelo    The modelo to set.
 	 * @uml.property  name="modelo"
 	 */
 	public void setModelo(String modelo) {
@@ -81,7 +84,7 @@ public class Vehiculo {
 
 	/**
 	 * Getter of the property <tt>color</tt>
-	 * @return  Returns the color.
+	 * @return    Returns the color.
 	 * @uml.property  name="color"
 	 */
 	public String getColor() {
@@ -90,7 +93,7 @@ public class Vehiculo {
 
 	/**
 	 * Setter of the property <tt>color</tt>
-	 * @param color  The color to set.
+	 * @param color    The color to set.
 	 * @uml.property  name="color"
 	 */
 	public void setColor(String color) {
@@ -104,7 +107,7 @@ public class Vehiculo {
 
 	/**
 	 * Getter of the property <tt>plazas</tt>
-	 * @return  Returns the plazas.
+	 * @return    Returns the plazas.
 	 * @uml.property  name="plazas"
 	 */
 	public int getPlazas() {
@@ -113,7 +116,7 @@ public class Vehiculo {
 
 	/**
 	 * Setter of the property <tt>plazas</tt>
-	 * @param plazas  The plazas to set.
+	 * @param plazas    The plazas to set.
 	 * @uml.property  name="plazas"
 	 */
 	public void setPlazas(int plazas) {
