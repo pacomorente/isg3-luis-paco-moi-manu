@@ -8,10 +8,25 @@ import java.util.Date;
  */
 public class Ruta {
 	
+	private String idRuta;
+	
 	/**
 	 * @uml.property  name="origen"
 	 */
 	public String origen;
+	
+	public String getIdRuta() {
+		return idRuta;
+	}
+	public void setIdRuta(String idRuta) {
+		this.idRuta = idRuta;
+	}
+	public Date getFecha() {
+		return fecha;
+	}
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
+	}
 	/**
 	 * @uml.property  name="destino"
 	 */
