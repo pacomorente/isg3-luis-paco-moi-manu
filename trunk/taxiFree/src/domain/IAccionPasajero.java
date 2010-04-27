@@ -3,8 +3,8 @@ package domain;
 import java.util.Collection;
 
 /**
- * @uml.dependency   supplier="domain.Ruta"
- * @uml.dependency   supplier="domain.Pasajero"
+ * @uml.dependency  supplier="domain.Ruta"
+ * @uml.dependency  supplier="domain.Pasajero"
  */
 public interface IAccionPasajero {
 	public Collection<Viaje> buscarViaje(Ruta r);

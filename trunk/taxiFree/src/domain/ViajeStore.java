@@ -6,7 +6,7 @@ import java.util.List;
 import data.JDBCViajeDAO;
 
 /**
- * @author  PACO
+ * @author    PACO
  */
 public class ViajeStore {
 
@@ -55,14 +55,12 @@ public class ViajeStore {
 
 	/**
 	 * @uml.property  name="viaje"
-	 * @uml.associationEnd  multiplicity="(1 -1)" inverse="viajeStore:domain.Viaje"
-	 * @uml.association  name="contiene"
 	 */
 	private List<Viaje> viaje;
 
 	/**
 	 * Getter of the property <tt>viaje</tt>
-	 * @return  Returns the viaje.
+	 * @return    Returns the viaje.
 	 * @uml.property  name="viaje"
 	 */
 	public List<Viaje> getViaje() {
@@ -71,7 +69,7 @@ public class ViajeStore {
 
 	/**
 	 * Setter of the property <tt>viaje</tt>
-	 * @param viaje  The viaje to set.
+	 * @param viaje    The viaje to set.
 	 * @uml.property  name="viaje"
 	 */
 	public void setViaje(List<Viaje> viaje) {

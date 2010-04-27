@@ -11,9 +11,16 @@ import java.util.List;
 import domain.Pasajero;
 import domain.Usuario;
 
+/**
+ * @author   morentefj
+ */
 public class JDBCPasajeroDAO implements IPasajeroDAO {
 
 	private Connection con;
+	/**
+	 * @uml.property  name="udao"
+	 * @uml.associationEnd  
+	 */
 	private IUsuarioDAO udao;
 	
 	public JDBCPasajeroDAO(){
@@ -67,7 +74,6 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
         return p;
 	}
 
-	@Override
 	public List<Pasajero> selectAllPasajeros() {
 		
 		PreparedStatement stmt = null;

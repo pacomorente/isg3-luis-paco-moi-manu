@@ -7,7 +7,14 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+/**
+ * @author   morentefj
+ */
 public class ConnectionManager {
+    /**
+	 * @uml.property  name="cm"
+	 * @uml.associationEnd  
+	 */
     private static ConnectionManager cm;
     private Driver dBDriver = null;
     private static Properties dbprops = new Properties();;

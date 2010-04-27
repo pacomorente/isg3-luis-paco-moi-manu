@@ -1,6 +1,9 @@
 package domain;
 
 
+/**
+ * @author   morentefj
+ */
 public class Usuario {
 
 	/**
@@ -10,7 +13,7 @@ public class Usuario {
 
 	/**
 	 * Getter of the property <tt>Nombre</tt>
-	 * @return  Returns the nombre.
+	 * @return    Returns the nombre.
 	 * @uml.property  name="Nombre"
 	 */
 	public String getNombre() {
@@ -19,7 +22,7 @@ public class Usuario {
 
 	/**
 	 * Setter of the property <tt>Nombre</tt>
-	 * @param Nombre  The nombre to set.
+	 * @param Nombre    The nombre to set.
 	 * @uml.property  name="Nombre"
 	 */
 	public void setNombre(String nombre) {
@@ -33,7 +36,7 @@ public class Usuario {
 
 	/**
 	 * Getter of the property <tt>Apellidos</tt>
-	 * @return  Returns the apellidos.
+	 * @return    Returns the apellidos.
 	 * @uml.property  name="Apellidos"
 	 */
 	public String getApellidos() {
@@ -42,7 +45,7 @@ public class Usuario {
 
 	/**
 	 * Setter of the property <tt>Apellidos</tt>
-	 * @param Apellidos  The apellidos to set.
+	 * @param Apellidos    The apellidos to set.
 	 * @uml.property  name="Apellidos"
 	 */
 	public void setApellidos(String apellidos) {
@@ -56,7 +59,7 @@ public class Usuario {
 
 	/**
 	 * Getter of the property <tt>Dni</tt>
-	 * @return  Returns the dni.
+	 * @return    Returns the dni.
 	 * @uml.property  name="Dni"
 	 */
 	public String getDni() {
@@ -65,7 +68,7 @@ public class Usuario {
 
 	/**
 	 * Setter of the property <tt>Dni</tt>
-	 * @param Dni  The dni to set.
+	 * @param Dni    The dni to set.
 	 * @uml.property  name="Dni"
 	 */
 	public void setDni(String dni) {
@@ -79,7 +82,7 @@ public class Usuario {
 
 	/**
 	 * Getter of the property <tt>Correo</tt>
-	 * @return  Returns the correo.
+	 * @return    Returns the correo.
 	 * @uml.property  name="Correo"
 	 */
 	public String getCorreo() {
@@ -88,7 +91,7 @@ public class Usuario {
 
 	/**
 	 * Setter of the property <tt>Correo</tt>
-	 * @param Correo  The correo to set.
+	 * @param Correo    The correo to set.
 	 * @uml.property  name="Correo"
 	 */
 	public void setCorreo(String correo) {
@@ -102,7 +105,7 @@ public class Usuario {
 
 	/**
 	 * Getter of the property <tt>Nick</tt>
-	 * @return  Returns the nick.
+	 * @return    Returns the nick.
 	 * @uml.property  name="Nick"
 	 */
 	public String getNick() {
@@ -111,7 +114,7 @@ public class Usuario {
 
 	/**
 	 * Setter of the property <tt>Nick</tt>
-	 * @param Nick  The nick to set.
+	 * @param Nick    The nick to set.
 	 * @uml.property  name="Nick"
 	 */
 	public void setNick(String nick) {
@@ -125,7 +128,7 @@ public class Usuario {
 
 	/**
 	 * Getter of the property <tt>Pass</tt>
-	 * @return  Returns the pass.
+	 * @return    Returns the pass.
 	 * @uml.property  name="Pass"
 	 */
 	public String getPass() {
@@ -134,7 +137,7 @@ public class Usuario {
 
 	/**
 	 * Setter of the property <tt>Pass</tt>
-	 * @param Pass  The pass to set.
+	 * @param Pass    The pass to set.
 	 * @uml.property  name="Pass"
 	 */
 	public void setPass(String pass) {
@@ -148,7 +151,7 @@ public class Usuario {
 
 	/**
 	 * Getter of the property <tt>Estrella</tt>
-	 * @return  Returns the estrella.
+	 * @return    Returns the estrella.
 	 * @uml.property  name="Estrella"
 	 */
 	public int getEstrella() {
@@ -157,7 +160,7 @@ public class Usuario {
 
 	/**
 	 * Setter of the property <tt>Estrella</tt>
-	 * @param Estrella  The estrella to set.
+	 * @param Estrella    The estrella to set.
 	 * @uml.property  name="Estrella"
 	 */
 	public void setEstrella(int estrella) {

@@ -11,11 +11,22 @@ import domain.Conductor;
 import domain.Usuario;
 import domain.Vehiculo;
 
+/**
+ * @author   morentefj
+ */
 public class JDBCConductorDAO implements IConductorDAO {
 
 	   private Connection conn;
 
+	    /**
+		 * @uml.property  name="udao"
+		 * @uml.associationEnd  
+		 */
 	    IUsuarioDAO udao;
+	    /**
+		 * @uml.property  name="vdao"
+		 * @uml.associationEnd  
+		 */
 	    IVehiculoDAO vdao;
 
 	    public JDBCConductorDAO() {
