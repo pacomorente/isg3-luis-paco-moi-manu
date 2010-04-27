@@ -1,19 +1,46 @@
 package data;
 
-import java.util.List;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 
 import domain.Viaje;
 
 public class JDBCViajeDAO implements IViajeDAO {
 
-	@Override
-	public void deleteViaje(Connection conn, String ViajeOID) {
-        String sql = "DELETE FROM Viaje WHERE (OID = ?) ";
+	
+    private Connection conn;
+
+    IUsuarioDAO usudao;
+
+    IVehiculoDAO vehdao;
+    
+    IPasajeroDAO pasdao;
+
+
+
+    public JDBCViajeDAO() {
+        conn = ConnectionManager.getInstance().checkOut();
+        usudao = new JDBCUsuarioDAO();
+        vehdao = new JDBCVehiculoDAO();
+        pasdao = new JDBCPasajeroDAO();
+        
+    }
+
+    protected void finalize() {
+        ConnectionManager.getInstance().checkIn(conn);
+    }
+	
+	public void deleteViaje(String ViajeOID) {
+		
+		String sql = "DELETE FROM Viaje WHERE (OID = ?) ";
         PreparedStatement stmt = null;
 
+        // Buscar si viaje tiene pasajero, para ello hay que meterse en Pasajero y ver si existe
+        // al menos un OID VIAJE, pasándole el OID VIAJE al método que devolverá boolean 
+        //  FALTA IMPLEMENTAR AÚN
+        
         try {
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, ViajeOID);
@@ -33,28 +60,37 @@ public class JDBCViajeDAO implements IViajeDAO {
 
 	}
 
-	@Override
-	public void insertViaje(Viaje v, String userOID) {
+	
+	public void insertViaje(Viaje v ) {
 		// TODO Auto-generated method stub
-
+		/*
+		 * Cuando inserte VIaje hay que comprobar si el usuario ya tiene vehículo dado de alta, en caso contrario,
+		 * solicitar el alta del vehículo. ( SE ACCEDE A TABLA VEHICULO )
+		 */
 	}
 
-	@Override
+	
 	public List<Viaje> selectAllViajes() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+	
 	public Viaje selectViaje(String s) {
 		// TODO Auto-generated method stub
+		/*
+		 *  Al seleccionar el viaje, mostaría el vehículo de dicho viaje y 
+		 *  se busca la existencia de pasajeros, y si los hubiera
+		 *  mostraría los datos del usuario pasajero asignado a dicho viaje; 
+		 *  SE ACCEDERÍA A TABLAS PASAJERO, VIAJE, USUARIO y VEHICULO 
+		 */
 		return null;
 	}
 
-	@Override
+/*	
 	public void updateViaje(Viaje v, String userOID) {
 		// TODO Auto-generated method stub
 		
-	}
+	}*/
 
 }
