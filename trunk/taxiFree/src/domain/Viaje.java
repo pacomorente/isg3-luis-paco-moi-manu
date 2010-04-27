@@ -10,7 +10,15 @@ import java.util.List;
  */
 public class Viaje {
 
-	
+	private Boolean anulado;
+	public Boolean getAnulado() {
+		return anulado;
+	}
+
+	public void setAnulado(Boolean anulado) {
+		this.anulado = anulado;
+	}
+
 	/**
 	 * @uml.property  name="viajeID"
 	 */

@@ -7,11 +7,20 @@ package domain;
  */
 public class Vehiculo {
 
+	private String idVehiculo;
 	/**
 	 * @uml.property  name="conductor"
 	 * @uml.associationEnd  
 	 */
 	private Conductor conductor = new Conductor();
+
+	public String getIdVehiculo() {
+		return idVehiculo;
+	}
+
+	public void setIdVehiculo(String idVehiculo) {
+		this.idVehiculo = idVehiculo;
+	}
 
 	/**
 	 * Getter of the property <tt>conductor</tt>
