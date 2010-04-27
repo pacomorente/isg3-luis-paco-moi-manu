@@ -7,11 +7,26 @@ import data.IViajeDAO;
 import data.JDBCVehiculoDAO;
 import data.JDBCViajeDAO;
 
+/**
+ * @author   morentefj
+ */
 public class AccionConductorImpl implements IAccionConductor{
 
+    /**
+	 * @uml.property  name="viadao"
+	 * @uml.associationEnd  
+	 */
     private IViajeDAO viadao = new JDBCViajeDAO();
+    /**
+	 * @uml.property  name="vehdao"
+	 * @uml.associationEnd  
+	 */
     private IVehiculoDAO vehdao = new JDBCVehiculoDAO();
 	
+	/**
+	 * @uml.property  name="cond"
+	 * @uml.associationEnd  
+	 */
 	private Conductor cond;
 	private List<Viaje> viaje;
 	
@@ -21,57 +36,61 @@ public class AccionConductorImpl implements IAccionConductor{
 	}
 	
 
+	/**
+	 * @param  c
+	 * @uml.property  name="cond"
+	 */
 	private void setCond(Conductor c) {
 		this.cond=c;
 		
 	}
 
 
-	@Override
+ 
 	public Viaje consultaViaje(Viaje viaje) {
 		//return 	viadao.selectTrayectoOID(trayecto);
 		return null;
 	}
-	@Override
+ 
 	public boolean eliminaViaje(Viaje viaje) {
         //tdao.deleteTrayectoOID(tra.getIdTrayecto());
         return true;
 		
 	}
 
-	@Override
+ 
 	public void insertarViaje(Viaje viaje) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
+ 
 	public Viaje  modificaViaje(Viaje viaje) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+ 
 	public List<Viaje> verViajesAsignados(Viaje viaje) {
 		return viadao.selectAllViajes();
 	}
 
 
-	@Override
+ 
 	public boolean eliminaVehiculo(Vehiculo vehiculo) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 
-	@Override
+ 
 	public void insertarVehiculo(Vehiculo vehiculo) {
 		// TODO Auto-generated method stub
 		
 	}
 
 
-	@Override
+ 
 	public Vehiculo modificaVehiculo(Vehiculo vehiculo) {
 		// TODO Auto-generated method stub
 		return null;
