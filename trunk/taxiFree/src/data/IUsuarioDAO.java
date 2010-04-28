@@ -9,7 +9,7 @@ import domain.Usuario;
  * @uml.dependency  supplier="data.ConnectionManager"
  */
 public interface IUsuarioDAO {
-    public Usuario select(Connection conn, String UsuarioOID);
+    public abstract Usuario select(Connection conn, String usuarioOID);
 	public List<Usuario> selectAllUsuarios();
 	public String selectUsuarioOID(Connection conn, String nick);
 }
