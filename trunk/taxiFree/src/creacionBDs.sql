@@ -193,3 +193,73 @@ CREATE TABLE `viaje` (
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+
+
+-- ******* Realizado por FRANCISCO JOSÉ MORENTE BONILLA 
+-- ******* GRUPO 1 - ISG3 - TAXIFREE
+-- ******* CASO DE USO ROL CONDUCTOR
+
+-- TABLA USUARIO
+
+INSERT INTO USUARIO(OIDUsuario,nombre,apellidos,dni,correo,estrella,nick,pass)
+values('00002','Manuel','Perez','90000002X','C1@US.ES',7,'USER2','USER2');
+
+INSERT INTO USUARIO(OIDUsuario,nombre,apellidos,dni,correo,estrella,nick,pass)
+values('00006','Monica','Ortiz','90000006X','C6@US.ES',1,'USER6','USER6');
+
+INSERT INTO USUARIO(OIDUsuario,nombre,apellidos,dni,correo,estrella,nick,pass)
+values('00003','Luis','Perez','90000003X','C3@US.ES',3,'USER3','USER3');
+
+INSERT INTO USUARIO(OIDUsuario,nombre,apellidos,dni,correo,estrella,nick,pass)
+values('00004','Jose','Lopez','90000004X','C4@US.ES',4,'USER4','USER4');
+
+INSERT INTO USUARIO(OIDUsuario,nombre,apellidos,dni,correo,estrella,nick,pass)
+values('00005','María','Rodriguez','90000005X','C5@US.ES',6,'USER5','USER5');
+
+COMMIT;
+
+
+-- TABLA VIAJE
+INSERT INTO VIAJE(OIDViaje,origen,destino,fecha,idViaje,anulado)
+values('VIAJE001','SEVILLA','CADIZ',STR_TO_DATE('01/06/2010','%d/%m/%Y'),'01',FALSE);
+
+		--UPDATE VIAJE SET ANULADO=FALSE WHERE OIDVIAJE='VIAJE001';
+
+		INSERT INTO VIAJE(OIDViaje,origen,destino,fecha,idViaje,anulado)
+values('VIAJE002','SEVILLA','GRANADA',STR_TO_DATE('15/05/2010','%d/%m/%Y'),'02',FALSE);
+
+INSERT INTO VIAJE(OIDViaje,origen,destino,fecha,idViaje,anulado)
+values('VIAJE003','CORDOBA','ALMERIA',STR_TO_DATE('12/05/2010','%d/%m/%Y'),'03',FALSE);
+
+--obtener fecha de mysql a string para variable
+--SELECT *, DATE_FORMAT(fecha,'%d/%m/%Y') AS `date` FROM `tabla` 
+COMMIT;
+
+
+-- TABLA VEHICULO
+
+INSERT INTO VEHICULO(OIDVehiculo,marca,Modelo,Color,Plazas,idVehiculo)
+values('VEH00010RENA','Renault','Renault','Verde',4,'01');
+
+INSERT INTO VEHICULO(OIDVehiculo,marca,Modelo,Color,Plazas,idVehiculo)
+values('VEH00011MERC','Mercedes','Mercedes','Blanco',4,'02');
+
+INSERT INTO VEHICULO(OIDVehiculo,marca,Modelo,Color,Plazas,idVehiculo)
+values('VEH00012AUDI','AUDI','AUDI','Negro',4,'03');
+
+COMMIT;
+
+
+-- TABLA CONDUCTOR
+
+INSERT INTO CONDUCTOR(OIDConductor,OIDViaje,OIDVehiculo)
+values('00006','VIAJE001','VEH00012AUDI');
+
+INSERT INTO CONDUCTOR(OIDConductor,OIDViaje,OIDVehiculo)
+values('00003','VIAJE003','VEH00011MERC');
+
+INSERT INTO CONDUCTOR(OIDConductor,OIDViaje,OIDVehiculo)
+values('00006','VIAJE002','VEH00012AUDI');
+
+
+COMMIT;
