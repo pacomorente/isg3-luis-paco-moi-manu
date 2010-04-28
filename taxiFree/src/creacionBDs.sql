@@ -30,9 +30,10 @@ CREATE TABLE `conductor` (
   `OIDConductor` varchar(100) NOT NULL,
   `OIDViaje` varchar(100) NOT NULL,
   `OIDVehiculo` varchar(100) NOT NULL,
-  PRIMARY KEY (`OIDConductor`),
+  PRIMARY KEY (`OIDConductor`,`OIDViaje`) USING BTREE,
   KEY `OIDViaje` (`OIDViaje`),
   KEY `OIDVehiculo` (`OIDVehiculo`),
+  CONSTRAINT `OIDConductor` FOREIGN KEY (`OIDConductor`) REFERENCES `usuario` (`OIDUsuario`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `OIDVehiculo` FOREIGN KEY (`OIDVehiculo`) REFERENCES `vehiculo` (`OIDVehiculo`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `OIDViaje` FOREIGN KEY (`OIDViaje`) REFERENCES `viaje` (`OIDViaje`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -55,6 +56,7 @@ CREATE TABLE `pasajero` (
   `OIDViaje` varchar(100) NOT NULL,
   PRIMARY KEY (`OIDPasajero`),
   KEY `OIDViaje` (`OIDViaje`) USING BTREE,
+  CONSTRAINT `usuario` FOREIGN KEY (`OIDPasajero`) REFERENCES `usuario` (`OIDUsuario`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `viaje` FOREIGN KEY (`OIDViaje`) REFERENCES `viaje` (`OIDViaje`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -98,6 +100,7 @@ CREATE TABLE `ruta` (
   `origen` varchar(100) NOT NULL,
   `desplazamiento` varchar(100) NOT NULL,
   `fecha` date NOT NULL,
+  `idRuta` varchar(50) NOT NULL,
   PRIMARY KEY (`OIDRuta`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -146,6 +149,7 @@ CREATE TABLE `vehiculo` (
   `modelo` varchar(50) NOT NULL,
   `color` varchar(50) NOT NULL,
   `plazas` int(11) NOT NULL,
+  `idVehiculo` varchar(50) NOT NULL,
   PRIMARY KEY (`OIDVehiculo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -167,6 +171,8 @@ CREATE TABLE `viaje` (
   `origen` varchar(50) NOT NULL,
   `destino` varchar(50) NOT NULL,
   `fecha` date NOT NULL,
+  `idViaje` varchar(50) NOT NULL,
+  `anulado` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`OIDViaje`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
