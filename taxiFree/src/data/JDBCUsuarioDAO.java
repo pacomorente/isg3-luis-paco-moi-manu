@@ -12,15 +12,16 @@ import domain.Usuario;
  * @uml.dependency   supplier="data.IUsuarioDAO"
  */
 public class JDBCUsuarioDAO implements IUsuarioDAO{
+	
+		public JDBCUsuarioDAO(){
+			
+		}
        
-
-
-
 		public Usuario select(Connection conn, String usuarioOID) {
 			PreparedStatement stmt = null;
 	        ResultSet result = null;
 	        Usuario user = null;
-	        String sql = "SELECT * FROM usuario WHERE (OID = ?) ";
+	        String sql = "SELECT * FROM usuario WHERE (OIDUsuario = ?) ";
 	        
 	        try{
 	        	stmt = conn.prepareStatement(sql);
@@ -54,7 +55,6 @@ public class JDBCUsuarioDAO implements IUsuarioDAO{
 	        }
 	        return user;
 		}
-
 
 		public List<Usuario> selectAllUsuarios() {
 			Connection conn = ConnectionManager.getInstance().checkOut();

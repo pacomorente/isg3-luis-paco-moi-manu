@@ -1,5 +1,6 @@
 package data;
 
+import java.sql.Connection;
 import java.util.List;
 
 import domain.Viaje;
@@ -14,6 +15,7 @@ public interface IViajeDAO {
 	public void insertViaje(Viaje v);
 	public List<Viaje> selectAllViajes();
 	public Viaje selectViaje(String s);
+	public List<Viaje> selectViajes(Connection con, String oidPasajero);
 	public void deleteViaje(String ViajeOID);
 	//public void updateViaje(Viaje v, String userOID);
 }
