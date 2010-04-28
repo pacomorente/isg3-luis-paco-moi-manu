@@ -2,9 +2,10 @@ package data;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.LinkedList;
 import java.util.List;
-
 import domain.Viaje;
 
 public class JDBCViajeDAO implements IViajeDAO {
@@ -85,6 +86,47 @@ public class JDBCViajeDAO implements IViajeDAO {
 		 *  SE ACCEDERÍA A TABLAS PASAJERO, VIAJE, USUARIO y VEHICULO 
 		 */
 		return null;
+	}
+	
+	public Viaje select(String oidViaje) {
+		// Yo Moi te aconsejo que lo pongas para separa el OID de los datos.
+		return null;
+	}
+	
+	public List<Viaje> selectViajes(Connection con, String oidPasajero) {
+		PreparedStatement stmt = null;
+        ResultSet result = null;
+        List<Viaje> listaViajes = new LinkedList<Viaje>();
+        
+        try {
+        	String sql = "SELECT * FROM pasajero WHERE (OIDPasajero = ?) ";
+            stmt = con.prepareStatement(sql);
+            stmt.executeQuery();
+            result = stmt.executeQuery();
+            stmt.setString(1, oidPasajero);
+            
+            while (result.next()){
+            	String oidViaje = result.getString("OIDViaje");
+            	Viaje v = select(oidViaje);
+            	listaViajes.add(v);
+            }
+        }catch (SQLException e) {
+            System.out.println("Message: " + e.getMessage());
+            System.out.println("SQLState: " + e.getSQLState());
+            System.out.println("ErrorCode: " + e.getErrorCode());
+        } finally {
+            try {
+                    if (result != null) {
+                            result.close();
+                    }
+                    if (stmt != null) {
+                            stmt.close();
+                    }
+            } catch (SQLException e) {
+            }
+        }
+        
+        return listaViajes;
 	}
 
 /*	

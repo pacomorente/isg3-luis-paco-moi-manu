@@ -9,87 +9,58 @@ import java.util.LinkedList;
 import java.util.List;
 
 import domain.Pasajero;
+import domain.Ruta;
 import domain.Usuario;
+import domain.Viaje;
 
 /**
  * @author   morentefj
  */
 public class JDBCPasajeroDAO implements IPasajeroDAO {
 
-	private Connection con;
 	/**
 	 * @uml.property  name="udao"
 	 * @uml.associationEnd  
 	 */
+	
+	private Connection conn;
 	private IUsuarioDAO udao;
+	private IViajeDAO vdao;
+	private IRutaDAO rdao;
 	
 	public JDBCPasajeroDAO(){
-		con = ConnectionManager.getInstance().checkOut();
+		conn = ConnectionManager.getInstance().checkOut();
 		udao = new JDBCUsuarioDAO();
+		vdao = new JDBCViajeDAO();
+		rdao = new JDBCRutaDAO();
 	}
 	
-	
-	public Pasajero selectPasajero(Connection conn, String nick) {
-		PreparedStatement stmt = null;
-        ResultSet result = null;
-        Pasajero p = null;
-        String sql = "SELECT * FROM pasajero p, Usuario u WHERE p.OIDPasajero = u.OIDUsuario AND u.nick = nick ";
-
-        try {
-            stmt = conn.prepareStatement(sql);
-            stmt.setString(1, nick);
-            result = stmt.executeQuery();
-
-            result.next();
-            
-            p = new Pasajero();
-            String oidUsuario = result.getString("OIDUsuario");
-			//String oidViaje = result.getString("OIDViaje");
-            
-            p.setNombre(result.getString("nombre"));	
-            p.setApellidos(result.getString("apellidos"));
-//            p.setCorreo(u.getCorreo());	
-//            p.setDni(u.getDni());	
-//            p.setNick(u.getNick());	
-//            p.setApellidos(u.getPass());	
-//            p.setEstrella(u.getEstrella());
-            
-        } catch (SQLException e) {
-            System.out.println("Message: " + e.getMessage());
-            System.out.println("SQLState: " + e.getSQLState());
-            System.out.println("ErrorCode: " + e.getErrorCode());
-        } finally {
-            try {
-                if (result != null) {
-                    result.close();
-                }
-                if (stmt != null) {
-                    stmt.close();
-                }
-            } catch (SQLException e) {
-            }
-        }
-        return p;
+	public String selectPasajeroOID(String nick) {
+		return udao.selectUsuarioOID(conn, nick);
 	}
 
 	public List<Pasajero> selectAllPasajeros() {
-		
 		PreparedStatement stmt = null;
-		List<Pasajero> searchResults = new LinkedList<Pasajero>();
+		List<Pasajero> listaPasajeros = new LinkedList<Pasajero>();
+		List<Viaje> listaViajes = new LinkedList<Viaje>();
+		List<Ruta> listaRutas = new LinkedList<Ruta>();
 		ResultSet result = null;
 		
-		String sql = "SELECT * FROM pasajero ";
 		try {
-			stmt = con.prepareStatement(sql);
+			String sql = "SELECT * FROM pasajero ";
+			stmt = conn.prepareStatement(sql);
 			stmt.executeQuery();
 			result = stmt.executeQuery();
+			
 			while (result.next()) {
 				Pasajero p = new Pasajero();
-				//String oidPasajero = result.getString("OIDPasajero");
-	            String oidUsuario = result.getString("OIDUsuario");
-				//String oidViaje = result.getString("OIDViaje");
+				
+				String oidPasajero = result.getString("OIDPasajero");
 	            
-	            Usuario u = udao.select(con, oidUsuario);
+	            Usuario u = udao.select(conn, oidPasajero);
+	            listaViajes = vdao.selectViajes(conn, oidPasajero);
+	            listaRutas = rdao.selectRutas(conn, oidPasajero);
+	            
 	            p.setNombre(u.getNombre());	
 	            p.setApellidos(u.getApellidos());
 	            p.setCorreo(u.getCorreo());	
@@ -97,8 +68,10 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
 	            p.setNick(u.getNick());	
 	            p.setApellidos(u.getPass());	
 	            p.setEstrella(u.getEstrella());
+	            p.setViaje(listaViajes);
+	            p.setRutas(listaRutas);
 	            
-	            searchResults.add(p);
+	            listaPasajeros.add(p);
 			}
 			result.close();
 			stmt.close();
@@ -107,7 +80,7 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
             System.out.println("SQLState: " + e.getSQLState());
             System.out.println("ErrorCode: " + e.getErrorCode());
 		}finally{
-			ConnectionManager.getInstance().checkIn(con);
+			ConnectionManager.getInstance().checkIn(conn);
             try {
                 if (result != null)
                     result.close();
@@ -116,7 +89,29 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
             } catch (SQLException e) {
             }
 		}
-		return searchResults;
+		return listaPasajeros;
+	}
+
+	public Pasajero selectPasajero(String pasajeroOID) {
+		
+		Pasajero p = new Pasajero();
+		List<Viaje> listaViajes = new LinkedList<Viaje>();
+		List<Ruta> listaRutas = new LinkedList<Ruta>();
+		Usuario u = udao.select(conn, pasajeroOID);
+        listaViajes = vdao.selectViajes(conn, pasajeroOID);
+        listaRutas = rdao.selectRutas(conn, pasajeroOID);
+        
+        p.setNombre(u.getNombre());	
+        p.setApellidos(u.getApellidos());
+        p.setCorreo(u.getCorreo());	
+        p.setDni(u.getDni());	
+        p.setNick(u.getNick());	
+        p.setApellidos(u.getPass());	
+        p.setEstrella(u.getEstrella());
+        p.setViaje(listaViajes);
+        p.setRutas(listaRutas);
+        
+        return p;
 	}
 
 }
