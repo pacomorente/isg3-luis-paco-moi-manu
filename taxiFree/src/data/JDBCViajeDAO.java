@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -14,19 +15,19 @@ public class JDBCViajeDAO implements IViajeDAO {
 	
     private Connection conn;
 
-    IUsuarioDAO usudao;
+    /*IUsuarioDAO usudao;
 
     IVehiculoDAO vehdao;
     
-    IPasajeroDAO pasdao;
+    IPasajeroDAO pasdao;*/
 
 
 
     public JDBCViajeDAO() {
         conn = ConnectionManager.getInstance().checkOut();
-        usudao = new JDBCUsuarioDAO();
+/*        usudao = new JDBCUsuarioDAO();
         vehdao = new JDBCVehiculoDAO();
-        pasdao = new JDBCPasajeroDAO();
+        pasdao = new JDBCPasajeroDAO();*/
         
     }
 
@@ -72,6 +73,7 @@ public class JDBCViajeDAO implements IViajeDAO {
 	}
 
 	
+	@SuppressWarnings("unchecked")
 	public List<Viaje> selectAllViajes() {
 		
 		ConnectionManager cn = ConnectionManager.getInstance();
@@ -81,7 +83,7 @@ public class JDBCViajeDAO implements IViajeDAO {
 		PreparedStatement stmt = null;
 		List searchResults = new LinkedList();
 		ResultSet result = null;
-		List<String> puntosInt = null;
+		List<String> puntosInt =new ArrayList();
 		String sql = "SELECT * FROM Viaje";
 		try {
 			stmt = con.prepareStatement(sql);
@@ -106,7 +108,7 @@ public class JDBCViajeDAO implements IViajeDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally{
-			System.out.println("Cerrando conexion...");
+			//System.out.println("Cerrando conexion...");
 			ConnectionManager.getInstance().checkIn(con);
 		}
 		
