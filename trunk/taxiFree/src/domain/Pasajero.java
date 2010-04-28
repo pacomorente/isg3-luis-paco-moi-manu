@@ -8,8 +8,15 @@ import java.util.Collection;
  */
 public class Pasajero extends Usuario  {
 	
+	
+	
+	public Pasajero(String nombre, String apellidos, String dni, String correo,
+			String nick, String pass, int estrella) {
+		super(nombre,apellidos,dni,correo,nick, pass, estrella);
+	}
+
 	public Pasajero(){
-		
+		super();
 	}
 	
 	/**
