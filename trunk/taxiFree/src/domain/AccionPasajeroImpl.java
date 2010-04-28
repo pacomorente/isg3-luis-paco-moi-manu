@@ -3,6 +3,8 @@ package domain;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
+import data.IRutaDAO;
+import data.JDBCRutaDAO;
 
 /**
  * @uml.dependency  supplier="domain.Pasajero"
@@ -14,11 +16,10 @@ public class AccionPasajeroImpl implements IAccionPasajero{
 	 * @uml.associationEnd  
 	 */
 	private Pasajero p;
-	private Collection<Viaje> v;
+	private List<Viaje> v;
 	
-	public AccionPasajeroImpl(Pasajero p, Collection<Viaje> v){
-		this.setP(p);
-		this.v = v;
+	public AccionPasajeroImpl(){
+		v = ViajeStore.getInstance().getViajes();
 	}
 	
 	public void apuntarseAViaje(Ruta r) {
@@ -43,9 +44,9 @@ public class AccionPasajeroImpl implements IAccionPasajero{
 	}
 
 
-	public Collection<Viaje> consultaRuta() {
-		// TODO Auto-generated method stub
-		return null;
+	public Collection<Ruta> consultaRuta() {
+		IRutaDAO rdao = new JDBCRutaDAO();
+		return rdao.selectAllRutas();
 	}
 
 

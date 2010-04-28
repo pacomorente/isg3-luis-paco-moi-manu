@@ -25,13 +25,11 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
 	
 	private Connection conn;
 	private IUsuarioDAO udao;
-	private IViajeDAO vdao;
 	private IRutaDAO rdao;
 	
 	public JDBCPasajeroDAO(){
 		conn = ConnectionManager.getInstance().checkOut();
 		udao = new JDBCUsuarioDAO();
-		vdao = new JDBCViajeDAO();
 		rdao = new JDBCRutaDAO();
 	}
 	
@@ -40,6 +38,7 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
 	}
 
 	public List<Pasajero> selectAllPasajeros() {
+		IViajeDAO vdao = new JDBCViajeDAO();
 		PreparedStatement stmt = null;
 		List<Pasajero> listaPasajeros = new LinkedList<Pasajero>();
 		List<Viaje> listaViajes = new LinkedList<Viaje>();
@@ -93,7 +92,7 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
 	}
 
 	public Pasajero selectPasajero(String pasajeroOID) {
-		
+		IViajeDAO vdao = new JDBCViajeDAO();
 		Pasajero p = new Pasajero();
 		List<Viaje> listaViajes = new LinkedList<Viaje>();
 		List<Ruta> listaRutas = new LinkedList<Ruta>();
