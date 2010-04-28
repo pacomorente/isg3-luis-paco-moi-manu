@@ -1,11 +1,9 @@
 package data;
 
-import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Properties;
 
 /**
  * @author   morentefj
@@ -17,28 +15,28 @@ public class ConnectionManager {
 	 */
     private static ConnectionManager cm;
     private Driver dBDriver = null;
-    private static Properties dbprops = new Properties();;
+    //private static Properties dbprops = new Properties();;
     // TODO Confirma los datos para las conexiones
-    //private static final String dBUri = "jdbc:mysql://127.0.0.1:3306/pos";
-    //private static final String driverName = "com.mysql.jdbc.Driver";
-    //private static final String password = "ganimedes";
-    //private static final String username = "root";
+    private static final String dBUri = "jdbc:mysql://127.0.0.1:3306/taxifree";
+    private static final String driverName = "com.mysql.jdbc.Driver";
+    private static final String password = "taxifree";
+    private static final String username = "taxifree";
     
     
       private ConnectionManager() {
        
 
-      try {
-    	  InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("dbconfiguration.properties"); 
-    	  dbprops.load(is);
-    	  //dbprops.load(new FileInputStream("dbconfiguration.properties"));
-	} catch (Exception e1) {
-		System.err.println("El fichero de propiedades de la BDs no se ha encontrado");
-		e1.printStackTrace();
-	}
+//      try {
+//    	  InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("dbconfiguration.properties"); 
+//    	  dbprops.load(is);
+//    	  //dbprops.load(new FileInputStream("dbconfiguration.properties"));
+//	} catch (Exception e1) {
+//		System.err.println("El fichero de propiedades de la BDs no se ha encontrado");
+//		e1.printStackTrace();
+//	}
 
      try {
-            String driverName =  dbprops.getProperty("driverName");
+            //String driverName =  dbprops.getProperty("driverName");
         	dBDriver = (Driver) Class.forName(driverName).newInstance();
             DriverManager.registerDriver(dBDriver);
         } catch (Exception e) {
@@ -58,10 +56,10 @@ public class ConnectionManager {
         Connection conn = null;
 
         try {
-        	String uri = dbprops.getProperty("dBUri");
-        	String user = dbprops.getProperty("username");
-        	String passwd  = dbprops.getProperty("password");
-            conn = DriverManager.getConnection(uri,user ,passwd);
+//        	String uri = dbprops.getProperty("dBUri");
+//        	String user = dbprops.getProperty("username");
+//        	String passwd  = dbprops.getProperty("password");
+            conn = DriverManager.getConnection(dBUri,username,password);
         } catch (Exception e) {
             System.err.println("Unable to open a new JDBC connection");
             e.printStackTrace();
