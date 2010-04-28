@@ -29,32 +29,30 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
 	}
 	
 	
-	public Pasajero selectPasajero(Connection conn, String pasajeroOID) {
+	public Pasajero selectPasajero(Connection conn, String nick) {
 		PreparedStatement stmt = null;
         ResultSet result = null;
         Pasajero p = null;
-        String sql = "SELECT * FROM pasajero p WHERE (OID = ?) ";
+        String sql = "SELECT * FROM pasajero p, Usuario u WHERE p.OIDPasajero = u.OIDUsuario AND u.nick = nick ";
 
         try {
             stmt = conn.prepareStatement(sql);
-            stmt.setString(1, pasajeroOID);
+            stmt.setString(1, nick);
             result = stmt.executeQuery();
 
             result.next();
             
             p = new Pasajero();
-			//String oidPasajero = result.getString("OIDPasajero");
             String oidUsuario = result.getString("OIDUsuario");
 			//String oidViaje = result.getString("OIDViaje");
             
-            Usuario u = udao.select(con, oidUsuario);
-            p.setNombre(u.getNombre());	
-            p.setApellidos(u.getApellidos());
-            p.setCorreo(u.getCorreo());	
-            p.setDni(u.getDni());	
-            p.setNick(u.getNick());	
-            p.setApellidos(u.getPass());	
-            p.setEstrella(u.getEstrella());
+            p.setNombre(result.getString("nombre"));	
+            p.setApellidos(result.getString("apellidos"));
+//            p.setCorreo(u.getCorreo());	
+//            p.setDni(u.getDni());	
+//            p.setNick(u.getNick());	
+//            p.setApellidos(u.getPass());	
+//            p.setEstrella(u.getEstrella());
             
         } catch (SQLException e) {
             System.out.println("Message: " + e.getMessage());
