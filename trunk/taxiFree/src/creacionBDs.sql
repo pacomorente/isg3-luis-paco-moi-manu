@@ -54,7 +54,7 @@ DROP TABLE IF EXISTS `pasajero`;
 CREATE TABLE `pasajero` (
   `OIDPasajero` varchar(100) NOT NULL,
   `OIDViaje` varchar(100) NOT NULL,
-  PRIMARY KEY (`OIDPasajero`),
+  PRIMARY KEY (`OIDPasajero`,`OIDViaje`) USING BTREE,
   KEY `OIDViaje` (`OIDViaje`) USING BTREE,
   CONSTRAINT `usuario` FOREIGN KEY (`OIDPasajero`) REFERENCES `usuario` (`OIDUsuario`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `viaje` FOREIGN KEY (`OIDViaje`) REFERENCES `viaje` (`OIDViaje`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -101,6 +101,7 @@ CREATE TABLE `ruta` (
   `desplazamiento` varchar(100) NOT NULL,
   `fecha` date NOT NULL,
   `idRuta` varchar(50) NOT NULL,
+  `destino` varchar(100) NOT NULL,
   PRIMARY KEY (`OIDRuta`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -223,7 +224,7 @@ COMMIT;
 INSERT INTO VIAJE(OIDViaje,origen,destino,fecha,idViaje,anulado)
 values('VIAJE001','SEVILLA','CADIZ',STR_TO_DATE('01/06/2010','%d/%m/%Y'),'01',FALSE);
 
---UPDATE VIAJE SET ANULADO=FALSE WHERE OIDVIAJE='VIAJE001';
+-- UPDATE VIAJE SET ANULADO=FALSE WHERE OIDVIAJE='VIAJE001';
 
 INSERT INTO VIAJE(OIDViaje,origen,destino,fecha,idViaje,anulado)
 values('VIAJE002','SEVILLA','GRANADA',STR_TO_DATE('15/05/2010','%d/%m/%Y'),'02',FALSE);
@@ -231,8 +232,8 @@ values('VIAJE002','SEVILLA','GRANADA',STR_TO_DATE('15/05/2010','%d/%m/%Y'),'02',
 INSERT INTO VIAJE(OIDViaje,origen,destino,fecha,idViaje,anulado)
 values('VIAJE003','CORDOBA','ALMERIA',STR_TO_DATE('12/05/2010','%d/%m/%Y'),'03',FALSE);
 
---obtener fecha de mysql a string para variable
---SELECT *, DATE_FORMAT(fecha,'%d/%m/%Y') AS `date` FROM `tabla` 
+-- obtener fecha de mysql a string para variable
+-- SELECT *, DATE_FORMAT(fecha,'%d/%m/%Y') AS `date` FROM `tabla`
 COMMIT;
 
 
