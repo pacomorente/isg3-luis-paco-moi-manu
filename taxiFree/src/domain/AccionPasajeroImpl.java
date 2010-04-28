@@ -3,7 +3,11 @@ package domain;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
+
+import utils.UIDGenerator;
+import data.IPasajeroDAO;
 import data.IRutaDAO;
+import data.JDBCPasajeroDAO;
 import data.JDBCRutaDAO;
 
 /**
@@ -17,17 +21,22 @@ public class AccionPasajeroImpl implements IAccionPasajero{
 	 */
 	private Pasajero p;
 	private List<Viaje> v;
+	private Ruta rutaDePasajero;
 	
 	public AccionPasajeroImpl(){
 		v = ViajeStore.getInstance().getViajes();
 	}
 	
-	public void apuntarseAViaje(Ruta r) {
-		
+	public void apuntarseAViaje(Viaje v) {
+		String pasajeroOID = UIDGenerator.getInstance().getKey();
+		String rutaOID = UIDGenerator.getInstance().getKey();
+		IPasajeroDAO pdao = new JDBCPasajeroDAO();
+		pdao.insert(pasajeroOID, p, rutaOID, rutaDePasajero, v);
 	}
 
 
 	public Collection<Viaje> buscarViaje(Ruta r) {
+		rutaDePasajero = r;
 		List<Viaje> res = new LinkedList<Viaje>();
 		for(Viaje vp:v){
 			if(vp.getDestino().equals(r.getDestino())){

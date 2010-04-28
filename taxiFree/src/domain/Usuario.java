@@ -5,6 +5,22 @@ package domain;
  * @author   morentefj
  */
 public class Usuario {
+	
+	public Usuario(){
+		
+	}
+	
+	public Usuario(String nombre, String apellidos, String dni, String correo,
+			String nick, String pass, int estrella) {
+		super();
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.dni = dni;
+		this.correo = correo;
+		this.nick = nick;
+		this.pass = pass;
+		this.estrella = estrella;
+	}
 
 	/**
 	 * @uml.property  name="Nombre"

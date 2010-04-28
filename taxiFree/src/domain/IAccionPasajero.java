@@ -8,8 +8,9 @@ import java.util.Collection;
  */
 public interface IAccionPasajero {
 	public Collection<Viaje> buscarViaje(Ruta r);
-	public void apuntarseAViaje(Ruta r);
+	public void apuntarseAViaje(Viaje v);
 	public Collection<Ruta> consultaRuta();
 	public Ruta modificaRuta(Ruta r);
 	public void eliminaRuta(Ruta r);
+	public void setP(Pasajero p);
 }

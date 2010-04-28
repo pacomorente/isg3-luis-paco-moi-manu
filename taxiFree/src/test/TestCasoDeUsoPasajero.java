@@ -25,6 +25,9 @@ public class TestCasoDeUsoPasajero {
 		for(Viaje v : listaViajes){
 			System.out.println(v.getOrigen()+"--->"+v.getDestino()+" -- "+v.getConductor());
 		}
+		
+		Pasajero p = new Pasajero("Moises","Arcos Santiago", "54689385-T","ce@us.es","moiarcsan","mmm", 1);
+		accPasajero.setP(p);
 	}
 
 }
