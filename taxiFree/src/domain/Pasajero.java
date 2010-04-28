@@ -7,7 +7,11 @@ import java.util.Collection;
  * @uml.dependency  supplier="domain.Ruta"
  */
 public class Pasajero extends Usuario  {
-
+	
+	public Pasajero(){
+		
+	}
+	
 	/**
 	 * @uml.property  name="viaje"
 	 */

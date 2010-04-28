@@ -8,6 +8,21 @@ import java.util.Date;
  */
 public class Ruta {
 	
+	
+	
+	public Ruta(String idRuta, String origen, String destino,
+			Integer desplazamiento, Date fecha) {
+		super();
+		this.idRuta = idRuta;
+		this.origen = origen;
+		this.destino = destino;
+		this.desplazamiento = desplazamiento;
+		this.fecha = fecha;
+	}
+	
+	public Ruta() {
+	}
+	
 	private String idRuta;
 	
 	/**

@@ -116,7 +116,7 @@ public class JDBCViajeDAO implements IViajeDAO {
 		
 
 	}
-
+//Moi: recuerda lo de los puntos intermedios que te comente.
 
 	public Viaje selectViaje(String s) {
 		// TODO Auto-generated method stub
