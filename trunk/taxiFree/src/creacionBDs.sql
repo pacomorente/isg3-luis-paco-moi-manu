@@ -195,7 +195,7 @@ CREATE TABLE `viaje` (
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 
 
--- ******* Realizado por FRANCISCO JOSÉ MORENTE BONILLA 
+-- ******* Realizado por FRANCISCO JOSE MORENTE BONILLA 
 -- ******* GRUPO 1 - ISG3 - TAXIFREE
 -- ******* CASO DE USO ROL CONDUCTOR
 
@@ -214,7 +214,7 @@ INSERT INTO USUARIO(OIDUsuario,nombre,apellidos,dni,correo,estrella,nick,pass)
 values('00004','Jose','Lopez','90000004X','C4@US.ES',4,'USER4','USER4');
 
 INSERT INTO USUARIO(OIDUsuario,nombre,apellidos,dni,correo,estrella,nick,pass)
-values('00005','María','Rodriguez','90000005X','C5@US.ES',6,'USER5','USER5');
+values('00005','Maria','Rodriguez','90000005X','C5@US.ES',6,'USER5','USER5');
 
 COMMIT;
 
@@ -223,9 +223,9 @@ COMMIT;
 INSERT INTO VIAJE(OIDViaje,origen,destino,fecha,idViaje,anulado)
 values('VIAJE001','SEVILLA','CADIZ',STR_TO_DATE('01/06/2010','%d/%m/%Y'),'01',FALSE);
 
-		--UPDATE VIAJE SET ANULADO=FALSE WHERE OIDVIAJE='VIAJE001';
+--UPDATE VIAJE SET ANULADO=FALSE WHERE OIDVIAJE='VIAJE001';
 
-		INSERT INTO VIAJE(OIDViaje,origen,destino,fecha,idViaje,anulado)
+INSERT INTO VIAJE(OIDViaje,origen,destino,fecha,idViaje,anulado)
 values('VIAJE002','SEVILLA','GRANADA',STR_TO_DATE('15/05/2010','%d/%m/%Y'),'02',FALSE);
 
 INSERT INTO VIAJE(OIDViaje,origen,destino,fecha,idViaje,anulado)
