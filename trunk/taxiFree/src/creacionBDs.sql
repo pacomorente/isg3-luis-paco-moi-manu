@@ -222,12 +222,12 @@ COMMIT;
 
 -- TABLA VIAJE
 INSERT INTO VIAJE(OIDViaje,origen,destino,fecha,idViaje,anulado)
-values('VIAJE001','SEVILLA','CADIZ',STR_TO_DATE('01/06/2010','%d/%m/%Y'),'01',FALSE);
+values('VIAJE001','SEVILLA','CADIZ',STR_TO_DATE('01/06/2010','%d/%m/%Y'),'01',TRUE);
 
 -- UPDATE VIAJE SET ANULADO=FALSE WHERE OIDVIAJE='VIAJE001';
 
 INSERT INTO VIAJE(OIDViaje,origen,destino,fecha,idViaje,anulado)
-values('VIAJE002','SEVILLA','GRANADA',STR_TO_DATE('15/05/2010','%d/%m/%Y'),'02',FALSE);
+values('VIAJE002','SEVILLA','GRANADA',STR_TO_DATE('15/05/2010','%d/%m/%Y'),'02',TRUE);
 
 INSERT INTO VIAJE(OIDViaje,origen,destino,fecha,idViaje,anulado)
 values('VIAJE003','CORDOBA','ALMERIA',STR_TO_DATE('12/05/2010','%d/%m/%Y'),'03',FALSE);
