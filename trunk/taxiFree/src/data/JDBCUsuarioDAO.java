@@ -101,7 +101,7 @@ public class JDBCUsuarioDAO implements IUsuarioDAO{
 	        PreparedStatement stmt = null;
 	        ResultSet result = null;
 	        String oidp = null;
-	        String sql = "SELECT * FROM Product WHERE (nick = ?) ";
+	        String sql = "SELECT * FROM Usuario WHERE (nick = ?) ";
 
 	        try {
 	            stmt = conn.prepareStatement(sql);
