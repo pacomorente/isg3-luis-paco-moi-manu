@@ -32,11 +32,13 @@ public class ViajeStore {
 
 	private List<Viaje> viajes;
 
-    private ViajeStore() {
+    public ViajeStore() {
         viajes = (new JDBCViajeDAO()).selectAllViajes();
     }
 
- 
+    public List<Viaje> getViajes() {
+        return viajes;
+    }
 
 
     public Viaje getViajes(String viajeID) {
