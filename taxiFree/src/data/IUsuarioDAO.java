@@ -10,6 +10,6 @@ import domain.Usuario;
  */
 public interface IUsuarioDAO {
     public Usuario select(Connection conn, String UsuarioOID);
-
-	List<Usuario> selectAllUsuarios();
+	public List<Usuario> selectAllUsuarios();
+	public String selectUsuarioOID(Connection conn, String nick);
 }
