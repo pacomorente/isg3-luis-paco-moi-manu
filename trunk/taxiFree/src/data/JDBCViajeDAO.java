@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
+
 import domain.Viaje;
 
 public class JDBCViajeDAO implements IViajeDAO {
@@ -72,11 +73,49 @@ public class JDBCViajeDAO implements IViajeDAO {
 
 	
 	public List<Viaje> selectAllViajes() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		ConnectionManager cn = ConnectionManager.getInstance();
+		
+		Connection con = cn.checkOut();
+		
+		PreparedStatement stmt = null;
+		List searchResults = new LinkedList();
+		ResultSet result = null;
+		List<String> puntosInt = null;
+		String sql = "SELECT * FROM Viaje";
+		try {
+			stmt = con.prepareStatement(sql);
+			stmt.executeQuery();
+			result = stmt.executeQuery();
+			while (result.next()) {
+			   Viaje temp = new Viaje();
+			   puntosInt.add("Sevilla");
+			   puntosInt.add("Málaga");
+			   puntosInt.add("Granada");
+			   temp.setViajeID(result.getString("idViaje"));
+			   temp.setOrigen(result.getString("origen"));
+			   temp.setDestino(result.getString("destino"));
+			   temp.setPuntosIntermedios(puntosInt);
+			   temp.setFecha(result.getDate("fecha"));
+			   temp.setAnulado(result.getBoolean("anulado"));
+			   searchResults.add(temp);
+			}
+			result.close();
+			stmt.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			System.out.println("Cerrando conexion...");
+			ConnectionManager.getInstance().checkIn(con);
+		}
+		
+		return searchResults;
+		
+
 	}
 
-	
+
 	public Viaje selectViaje(String s) {
 		// TODO Auto-generated method stub
 		/*
@@ -88,7 +127,7 @@ public class JDBCViajeDAO implements IViajeDAO {
 		return null;
 	}
 	
-	public Viaje select(String oidViaje) {
+	public Viaje select(String viajeOID) {
 		// Yo Moi te aconsejo que lo pongas para separa el OID de los datos.
 		return null;
 	}
