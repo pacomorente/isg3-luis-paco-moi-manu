@@ -121,7 +121,7 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
         return p;
 	}
 	
-	public void insert(String pasajeroOID, Pasajero p, String rutaOID, Ruta r, Viaje v){
+	public void insert(Pasajero p, Ruta r, Viaje v){
 		IViajeDAO vdao = new JDBCViajeDAO();
 		String sql2 = "INSERT INTO PASAJERO_RUTA(OIDPasajero,OIDRuta)values('?','?')";
 		String sql1 = "INSERT INTO PASAJERO(OIDPasajero,OIDViaje)values('?','?')";
@@ -129,17 +129,17 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
 
         try {
         	
-        	udao.insert(conn, p, pasajeroOID);
-        	rdao.insert(conn, rutaOID, r);
-            
+        	udao.insert(conn, p);
+        	rdao.insert(conn, r);
+        	
             stmt = conn.prepareStatement(sql1);
-            stmt.setString(1, pasajeroOID);
+            stmt.setString(1, udao.selectUsuarioOID(conn, p.getNick()));
             stmt.setString(2, vdao.selectViajeOID(v.getViajeID()));
             stmt.executeUpdate();
             
             stmt = conn.prepareStatement(sql2);
-            stmt.setString(1, pasajeroOID);
-            stmt.setString(2, rutaOID);
+            stmt.setString(1, udao.selectUsuarioOID(conn, p.getNick()));
+            stmt.setString(2, rdao.selectRutaOID(r.getIdRuta()));
             stmt.executeUpdate();
             
         } catch (SQLException e) {

@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
+import utils.UIDGenerator;
 import domain.Ruta;
 
 public class JDBCRutaDAO implements IRutaDAO {
@@ -25,9 +26,10 @@ public class JDBCRutaDAO implements IRutaDAO {
 	}
 
 
-	public void insert(Connection con, String rutaOID, Ruta r) {
+	public void insert(Connection con, Ruta r) {
 		String sql = "INSERT INTO RUTA(OIDRuta, origen, desplazamiento, fecha, idRuta, destino)values('?','?','?',?,'?','?')";
         PreparedStatement stmt = null;
+        String rutaOID = UIDGenerator.getInstance().getKey();
         
         try{
         	
