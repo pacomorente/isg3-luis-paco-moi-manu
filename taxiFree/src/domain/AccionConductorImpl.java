@@ -7,11 +7,15 @@ import data.IConductorDAO;
 import data.JDBCConductorDAO;
 
 /**
- * @author   morentefj
+ * @author    morentefj
  */
 public class AccionConductorImpl implements IAccionConductor{
 
  
+    /**
+	 * @uml.property  name="conddao"
+	 * @uml.associationEnd  
+	 */
     private IConductorDAO conddao = new JDBCConductorDAO();
 
 	
@@ -21,50 +25,6 @@ public class AccionConductorImpl implements IAccionConductor{
 
 	}
 	
-
-	public Viaje consultaViaje(Viaje viaje) {
-		//return 	viadao.selectTrayectoOID(trayecto);
-		return null;
-	}
- 
-	public boolean eliminaViaje(Viaje viaje) {
-        //tdao.deleteTrayectoOID(tra.getIdTrayecto());
-        return true;
-		
-	}
-
- 
-	public void insertarViaje(Viaje viaje) {
-		// TODO Auto-generated method stub
-		
-	}
-
- 
-	public Viaje  modificaViaje(Viaje viaje) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	public boolean eliminaVehiculo(Vehiculo vehiculo) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-
- 
-	public void insertarVehiculo(Vehiculo vehiculo) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
- 
-	public Vehiculo modificaVehiculo(Vehiculo vehiculo) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 
 	public List<Viaje> verViajesAsignados(String nickConductor) {
 		String oidc=conddao.selectOIDConductor(nickConductor);
@@ -88,6 +48,50 @@ public class AccionConductorImpl implements IAccionConductor{
 	
 		return ve;
 	}
+		
+
+		public Viaje consultaViaje(Viaje viaje) {
+			//return 	viadao.selectTrayectoOID(trayecto);
+			return null;
+		}
+	 
+		public boolean eliminaViaje(Viaje viaje) {
+	        //tdao.deleteTrayectoOID(tra.getIdTrayecto());
+	        return true;
+			
+		}
+
+	 
+		public void insertarViaje(Viaje viaje) {
+			// TODO Auto-generated method stub
+			
+		}
+
+	 
+		public Viaje  modificaViaje(Viaje viaje) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+
+		public boolean eliminaVehiculo(Vehiculo vehiculo) {
+			// TODO Auto-generated method stub
+			return false;
+		}
+
+
+	 
+		public void insertarVehiculo(Vehiculo vehiculo) {
+			// TODO Auto-generated method stub
+			
+		}
+
+
+	 
+		public Vehiculo modificaVehiculo(Vehiculo vehiculo) {
+			// TODO Auto-generated method stub
+			return null;
+		}
 
 
 

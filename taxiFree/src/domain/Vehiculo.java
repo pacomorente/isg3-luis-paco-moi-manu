@@ -3,10 +3,13 @@ package domain;
 
 
 /**
- * @author   morentefj
+ * @author    morentefj
  */
 public class Vehiculo {
 
+	/**
+	 * @uml.property  name="idVehiculo"
+	 */
 	private String idVehiculo;
 	/**
 	 * @uml.property  name="conductor"
@@ -14,10 +17,18 @@ public class Vehiculo {
 	 */
 	private Conductor conductor ;
 
+	/**
+	 * @return
+	 * @uml.property  name="idVehiculo"
+	 */
 	public String getIdVehiculo() {
 		return idVehiculo;
 	}
 
+	/**
+	 * @param idVehiculo
+	 * @uml.property  name="idVehiculo"
+	 */
 	public void setIdVehiculo(String idVehiculo) {
 		this.idVehiculo = idVehiculo;
 	}

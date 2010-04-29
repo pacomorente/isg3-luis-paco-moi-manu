@@ -6,7 +6,8 @@ import java.util.List;
 import data.JDBCViajeDAO;
 
 /**
- * @author    PACO
+ * @author             PACO
+ * @uml.dependency   supplier="domain.Viaje"
  */
 public class ViajeStore {
 
@@ -30,15 +31,22 @@ public class ViajeStore {
 
 
 
+	/**
+	 * @uml.property  name="viajes"
+	 */
 	private List<Viaje> viajes;
 
     public ViajeStore() {
         viajes = (new JDBCViajeDAO()).selectAllViajes();
     }
 
+    /**
+	 * @return
+	 * @uml.property  name="viajes"
+	 */
     public List<Viaje> getViajes() {
-        return viajes;
-    }
+		return viajes;
+	}
 
 
     public Viaje getViajes(String viajeID) {

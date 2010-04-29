@@ -4,7 +4,7 @@ import java.util.Date;
 
 
 /**
- * @author   morentefj
+ * @author    morentefj
  */
 public class Ruta {
 	
@@ -23,6 +23,9 @@ public class Ruta {
 	public Ruta() {
 	}
 	
+	/**
+	 * @uml.property  name="idRuta"
+	 */
 	private String idRuta;
 	
 	/**
@@ -30,15 +33,31 @@ public class Ruta {
 	 */
 	public String origen;
 	
+	/**
+	 * @return
+	 * @uml.property  name="idRuta"
+	 */
 	public String getIdRuta() {
 		return idRuta;
 	}
+	/**
+	 * @param idRuta
+	 * @uml.property  name="idRuta"
+	 */
 	public void setIdRuta(String idRuta) {
 		this.idRuta = idRuta;
 	}
+	/**
+	 * @return
+	 * @uml.property  name="fecha"
+	 */
 	public Date getFecha() {
 		return fecha;
 	}
+	/**
+	 * @param fecha
+	 * @uml.property  name="fecha"
+	 */
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
@@ -50,6 +69,9 @@ public class Ruta {
 	 * @uml.property  name="desplazamiento"
 	 */
 	public Integer desplazamiento;
+	/**
+	 * @uml.property  name="fecha"
+	 */
 	public Date fecha;
 	
 	/**
