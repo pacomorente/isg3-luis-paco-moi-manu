@@ -8,13 +8,8 @@ import java.util.List;
  * @uml.dependency   supplier="domain.Vehiculo"
  */
 public interface IAccionConductor {
-	public List<Viaje> verViajesAsignados(Viaje viaje);
-	public void insertarViaje(Viaje viaje);
-	public Viaje consultaViaje(Viaje tra);
-	public Viaje modificaViaje(Viaje viaje);
-	public boolean eliminaViaje(Viaje viaje);
-	
-	public void insertarVehiculo(Vehiculo vehiculo);
-	public Vehiculo modificaVehiculo(Vehiculo vehiculo);
-	public boolean eliminaVehiculo(Vehiculo vehiculo);
+	public List<Viaje> verViajesAsignados(String nickConcductor);
+
+
+	public Vehiculo obtenerVehiculoC(String nick);
 }

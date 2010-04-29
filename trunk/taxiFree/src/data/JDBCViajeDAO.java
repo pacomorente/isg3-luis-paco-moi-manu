@@ -128,6 +128,52 @@ public class JDBCViajeDAO implements IViajeDAO {
 		 */
 		return null;
 	}
+
+	public Viaje selectViajeConductor(Connection con,String oidViajeConductor){
+		PreparedStatement stmt = null;
+        ResultSet result = null;
+        Viaje viajeCond = new Viaje();
+		List<String> puntosInt = new ArrayList<String>();
+        try {
+        	String sql = "SELECT * FROM Viaje WHERE (OIDViaje = ?) ";
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, oidViajeConductor);
+
+            result = stmt.executeQuery();
+
+            result.next();
+            
+            viajeCond.setViajeID(result.getString("idViaje"));
+            viajeCond.setOrigen(result.getString("origen"));
+            viajeCond.setDestino(result.getString("destino"));
+			   puntosInt.add("Sevilla");
+			   puntosInt.add("Málaga");
+			   puntosInt.add("Granada");
+            viajeCond.setPuntosIntermedios(puntosInt);
+            viajeCond.setFecha(result.getDate("fecha"));
+			viajeCond.setAnulado(result.getBoolean("anulado"));
+			
+        }catch (SQLException e) {
+            System.out.println("Message: " + e.getMessage());
+            System.out.println("SQLState: " + e.getSQLState());
+            System.out.println("ErrorCode: " + e.getErrorCode());
+        } finally {
+            try {
+                    if (result != null) {
+                            result.close();
+                    }
+                    if (stmt != null) {
+                            stmt.close();
+                    }
+            } catch (SQLException e) {
+            }
+        }
+        
+        return viajeCond;
+	}
+        
+
+
 	
 	public Viaje select(String viajeOID) {
 		// Yo Moi te aconsejo que lo pongas para separa el OID de los datos.

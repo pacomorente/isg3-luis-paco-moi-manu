@@ -96,5 +96,49 @@ public class JDBCVehiculoDAO implements IVehiculoDAO{
 			// TODO Auto-generated method stub
 			
 		}
+
+		@Override
+		public Vehiculo selectViajeConductor(Connection conn,
+				String oidVehiculoConductor) {
+			
+				PreparedStatement stmt = null;
+		        ResultSet result = null;
+		        Vehiculo vehCond = new Vehiculo();
+				
+		        try {
+		        	String sql = "SELECT * FROM Vehiculo WHERE (OIDVehiculo = ?) ";
+		            stmt = conn.prepareStatement(sql);
+		            stmt.setString(1, oidVehiculoConductor);
+
+		            result = stmt.executeQuery();
+
+		            result.next();
+		            
+		            vehCond.setColor(result.getString("color"));
+		            vehCond.setMarca(result.getString("marca"));
+		            vehCond.setModelo(result.getString("modelo"));
+		            vehCond.setPlazas(result.getInt("plazas"));
+					
+		        }catch (SQLException e) {
+		            System.out.println("Message: " + e.getMessage());
+		            System.out.println("SQLState: " + e.getSQLState());
+		            System.out.println("ErrorCode: " + e.getErrorCode());
+		        } finally {
+		            try {
+		                    if (result != null) {
+		                            result.close();
+		                    }
+		                    if (stmt != null) {
+		                            stmt.close();
+		                    }
+		            } catch (SQLException e) {
+		            }
+		        }
+		        
+		        return vehCond;
+			}
+		        
+
+		
 }
 

@@ -100,7 +100,7 @@ public class JDBCUsuarioDAO implements IUsuarioDAO{
 		public String selectUsuarioOID(Connection conn, String nick) {
 	        PreparedStatement stmt = null;
 	        ResultSet result = null;
-	        String oidp = null;
+	        String oid = null;
 	        String sql = "SELECT * FROM Usuario WHERE (nick = ?) ";
 
 	        try {
@@ -109,7 +109,7 @@ public class JDBCUsuarioDAO implements IUsuarioDAO{
 	            result = stmt.executeQuery();
 
 	            result.next();
-	            oidp = result.getString("OIDUsuario");
+	            oid = result.getString("OIDUsuario");
 	            
 	        } catch (SQLException e) {
 	            System.out.println("Message: " + e.getMessage());
@@ -126,7 +126,7 @@ public class JDBCUsuarioDAO implements IUsuarioDAO{
 	            } catch (SQLException e) {
 	            }
 	        }
-	        return oidp;
+	        return oid;
 	    }
 }
 
