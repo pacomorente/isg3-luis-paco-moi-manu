@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
+import utils.UIDGenerator;
+
 import domain.Usuario;
 
 /**
@@ -129,9 +131,10 @@ public class JDBCUsuarioDAO implements IUsuarioDAO{
 	        return oid;
 	    }
 		
-		public void insert(Connection con, Usuario u, String usuarioOID){
+		public void insert(Connection con, Usuario u){
 			String sql = "INSERT INTO USUARIO(OIDUsuario, nombre, apellidos, dni, correo, estrella, nick, pass)values('?','?','?','?','?','?','?','?')";
 			PreparedStatement stmt = null;
+			String usuarioOID = UIDGenerator.getInstance().getKey();
 			
 			try{
 				

@@ -4,7 +4,6 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
-import utils.UIDGenerator;
 import data.IPasajeroDAO;
 import data.IRutaDAO;
 import data.JDBCPasajeroDAO;
@@ -32,14 +31,14 @@ public class AccionPasajeroImpl implements IAccionPasajero{
 	}
 	
 	public void apuntarseAViaje(Viaje v) {
-		String pasajeroOID = UIDGenerator.getInstance().getKey();
-		String rutaOID = UIDGenerator.getInstance().getKey();
 		IPasajeroDAO pdao = new JDBCPasajeroDAO();
-		pdao.insert(pasajeroOID, p, rutaOID, rutaDePasajero, v);
+		pdao.insert(p, rutaDePasajero, v);
 	}
 
 
 	public Collection<Viaje> buscarViaje(Ruta r) {
+		//Lo almacenamos aqui porque antes de apuntarse
+		//a un viaje obligatoriamente lo tiene que buscar.
 		rutaDePasajero = r;
 		List<Viaje> res = new LinkedList<Viaje>();
 		for(Viaje vp:v){
