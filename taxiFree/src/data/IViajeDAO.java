@@ -6,10 +6,10 @@ import java.util.List;
 import domain.Viaje;
 
 /**
- * @uml.dependency   supplier="data.IConductorDAO"
- * @uml.dependency   supplier="data.ConnectionManager"
- * @uml.dependency   supplier="data.IVehiculoDAO"
- * @uml.dependency   supplier="data.IPasajeroDAO"
+ * @uml.dependency  supplier="data.IConductorDAO"
+ * @uml.dependency  supplier="data.IPasajeroDAO"
+ * @uml.dependency  supplier="data.ConnectionManager"
+ * @uml.dependency  supplier="data.IVehiculoDAO"
  */
 public interface IViajeDAO {
 	public void insertViaje(Viaje v);

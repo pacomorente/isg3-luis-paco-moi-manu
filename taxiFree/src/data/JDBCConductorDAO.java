@@ -14,7 +14,7 @@ import domain.Vehiculo;
 import domain.Viaje;
 
 /**
- * @author   morentefj
+ * @author    morentefj
  */
 public class JDBCConductorDAO implements IConductorDAO {
 
@@ -30,6 +30,10 @@ public class JDBCConductorDAO implements IConductorDAO {
 		 * @uml.associationEnd  
 		 */
 	    IVehiculoDAO vdao;
+	    /**
+		 * @uml.property  name="viadao"
+		 * @uml.associationEnd  
+		 */
 	    IViajeDAO viadao;
 
 	    public JDBCConductorDAO() {

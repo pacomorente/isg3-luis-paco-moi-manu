@@ -9,7 +9,7 @@ import java.util.List;
 import domain.Usuario;
 
 /**
- * @uml.dependency   supplier="data.IUsuarioDAO"
+ * @uml.dependency  supplier="data.IUsuarioDAO"
  */
 public class JDBCUsuarioDAO implements IUsuarioDAO{
 	

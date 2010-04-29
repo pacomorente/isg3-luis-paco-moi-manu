@@ -14,7 +14,7 @@ import domain.Usuario;
 import domain.Viaje;
 
 /**
- * @author   morentefj
+ * @author    morentefj
  */
 public class JDBCPasajeroDAO implements IPasajeroDAO {
 
@@ -24,7 +24,15 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
 	 */
 	
 	private Connection conn;
+	/**
+	 * @uml.property  name="udao"
+	 * @uml.associationEnd  
+	 */
 	private IUsuarioDAO udao;
+	/**
+	 * @uml.property  name="rdao"
+	 * @uml.associationEnd  
+	 */
 	private IRutaDAO rdao;
 	
 	public JDBCPasajeroDAO(){
