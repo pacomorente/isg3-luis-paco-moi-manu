@@ -25,8 +25,33 @@ public class JDBCRutaDAO implements IRutaDAO {
 	}
 
 
-	public void insertRuta(Ruta r, String userOID) {
-		// TODO Auto-generated method stub
+	public void insert(Connection con, String rutaOID, Ruta r) {
+		String sql = "INSERT INTO RUTA(OIDRuta, origen, desplazamiento, fecha, idRuta, destino)values('?','?','?',?,'?','?')";
+        PreparedStatement stmt = null;
+        
+        try{
+        	
+        	stmt = con.prepareStatement(sql);
+            stmt.setString(1, rutaOID);
+            stmt.setString(2, r.getOrigen());
+            stmt.setString(3, r.getDesplazamiento().toString());
+            stmt.setString(4, "STR_TO_DATE("+r.getFecha()+",'%d/%m/%Y')");
+            stmt.setString(5, r.getIdRuta());
+            stmt.setString(6, r.getDestino());
+            stmt.executeUpdate();
+        	
+        }catch (SQLException e) {
+            System.out.println("Message: " + e.getMessage());
+            System.out.println("SQLState: " + e.getSQLState());
+            System.out.println("ErrorCode: " + e.getErrorCode());
+        } finally {
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException e) {
+            }
+        }
 
 	}
 

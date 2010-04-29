@@ -128,5 +128,36 @@ public class JDBCUsuarioDAO implements IUsuarioDAO{
 	        }
 	        return oid;
 	    }
+		
+		public void insert(Connection con, Usuario u, String usuarioOID){
+			String sql = "INSERT INTO USUARIO(OIDUsuario, nombre, apellidos, dni, correo, estrella, nick, pass)values('?','?','?','?','?','?','?','?')";
+			PreparedStatement stmt = null;
+			
+			try{
+				
+				stmt = con.prepareStatement(sql);
+	            stmt.setString(1, usuarioOID);
+	            stmt.setString(2, u.getNombre());
+	            stmt.setString(3, u.getApellidos());
+	            stmt.setString(4, u.getDni());
+	            stmt.setString(5, u.getCorreo());
+	            stmt.setString(6, String.valueOf(u.getEstrella()));
+	            stmt.setString(7, u.getNick());
+	            stmt.setString(8, u.getPass());
+	            stmt.executeUpdate();
+	            
+			}catch (SQLException e) {
+	            System.out.println("Message: " + e.getMessage());
+	            System.out.println("SQLState: " + e.getSQLState());
+	            System.out.println("ErrorCode: " + e.getErrorCode());
+	        } finally {
+	            try {
+	                if (stmt != null) {
+	                    stmt.close();
+	                }
+	            } catch (SQLException e) {
+	            }
+	        }
+		}
 }
 
