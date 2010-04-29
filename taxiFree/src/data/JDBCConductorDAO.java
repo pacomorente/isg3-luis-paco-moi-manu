@@ -4,12 +4,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 import domain.Conductor;
 import domain.Usuario;
 import domain.Vehiculo;
+import domain.Viaje;
 
 /**
  * @author   morentefj
@@ -28,25 +30,65 @@ public class JDBCConductorDAO implements IConductorDAO {
 		 * @uml.associationEnd  
 		 */
 	    IVehiculoDAO vdao;
+	    IViajeDAO viadao;
 
 	    public JDBCConductorDAO() {
 	        conn = ConnectionManager.getInstance().checkOut();
 	        udao = new JDBCUsuarioDAO();
 	        vdao = new JDBCVehiculoDAO();
+	        viadao = new JDBCViajeDAO();
 	    }
 
 	    protected void finalize() {
 	        ConnectionManager.getInstance().checkIn(conn);
 	    }
 	
-	public Conductor selectConductor(String nick) {
-			return null;
-
+	public String selectOIDConductor(String nick) {
+			return udao.selectUsuarioOID(conn, nick);
 	}
 
+	public List<String> obtenerViajesOIDConductor(String oidc){
+		 	PreparedStatement stmt = null;
+	        ResultSet result = null;
+	        String sql = "SELECT * FROM Conductor WHERE (OIDConductor = ?) ";
+	        List<String> searchResults = new ArrayList<String>();
+	        try {
+	            stmt = conn.prepareStatement(sql);
+	            stmt.setString(1, oidc);
+	            result = stmt.executeQuery();
 
+	            //result.next();
+	            while (result.next()) {
+					   String oidViajeC =(result.getString("OIDViaje"));
+					   searchResults.add(oidViajeC);
+					}
+  
+	        } catch (SQLException e) {
+	            System.out.println("Message: " + e.getMessage());
+	            System.out.println("SQLState: " + e.getSQLState());
+	            System.out.println("ErrorCode: " + e.getErrorCode());
+	        } finally {
+	            try {
+	                if (result != null) {
+	                    result.close();
+	                }
+	                if (stmt != null) {
+	                    stmt.close();
+	                }
+	            } catch (SQLException e) {
+	            }
+	        }
+	        return searchResults;
+	    
+	}
+	
+	public Viaje selectViajeConductor(String oidviaje){
+		return (Viaje) viadao.selectViajeConductor(conn,oidviaje);
+
+	}
+	
 	public List<Conductor> sellectAllConductores() {
-	        Connection conn = ConnectionManager.getInstance().checkOut();
+	        //Connection conn = ConnectionManager.getInstance().checkOut();
 	        PreparedStatement stmt = null;
 	        ResultSet result = null;
 	        List<Conductor> listaConductores = new LinkedList <Conductor>();
@@ -97,5 +139,51 @@ public class JDBCConductorDAO implements IConductorDAO {
 	        }
 	        return  listaConductores;
 	}
+
+	@Override
+	public Conductor selectConductor(String oid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String obtenerVehiculoOID(String oidc){
+	 	PreparedStatement stmt = null;
+        ResultSet result = null;
+        String sql = "SELECT * FROM Conductor WHERE (OIDConductor = ?) ";
+        String oidVehC = null;
+        try {
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, oidc);
+            result = stmt.executeQuery();
+
+            result.next();
+            oidVehC=(result.getString("OIDVehiculo"));
+
+
+        } catch (SQLException e) {
+            System.out.println("Message: " + e.getMessage());
+            System.out.println("SQLState: " + e.getSQLState());
+            System.out.println("ErrorCode: " + e.getErrorCode());
+        } finally {
+            try {
+                if (result != null) {
+                    result.close();
+                }
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException e) {
+            }
+        }
+        return oidVehC;
+    
+}
+
+	public Vehiculo selectVehiculoConductor(String oidVehiculoConductor){
+		return (Vehiculo) vdao.selectViajeConductor(conn,oidVehiculoConductor);
+		
+	}
+
+
 
 }

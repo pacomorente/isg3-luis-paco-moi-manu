@@ -18,4 +18,6 @@ public interface IViajeDAO {
 	public List<Viaje> selectViajes(Connection con, String oidPasajero);
 	public void deleteViaje(String ViajeOID);
 	//public void updateViaje(Viaje v, String userOID);
+	public Viaje selectViajeConductor(Connection con,String oidViajeConductor);
+	//public List<String> obtenerViajesOIDConductor(Connection conn, String oidc);
 }

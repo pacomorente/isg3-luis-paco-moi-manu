@@ -1,52 +1,27 @@
 package domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import data.IVehiculoDAO;
-import data.IViajeDAO;
-import data.JDBCVehiculoDAO;
-import data.JDBCViajeDAO;
+import data.IConductorDAO;
+import data.JDBCConductorDAO;
 
 /**
  * @author   morentefj
  */
 public class AccionConductorImpl implements IAccionConductor{
 
-    /**
-	 * @uml.property  name="viadao"
-	 * @uml.associationEnd  
-	 */
-    private IViajeDAO viadao = new JDBCViajeDAO();
-    /**
-	 * @uml.property  name="vehdao"
-	 * @uml.associationEnd  
-	 */
-    private IVehiculoDAO vehdao = new JDBCVehiculoDAO();
-	
-	/**
-	 * @uml.property  name="cond"
-	 * @uml.associationEnd  
-	 */
-	private Conductor cond;
-	private List<Viaje> viaje;
-	
-	public AccionConductorImpl(Conductor c, List<Viaje> v){
-		this.setCond(c);
-		this.viaje = v;
-	}
-	
-
-	/**
-	 * @param  c
-	 * @uml.property  name="cond"
-	 */
-	private void setCond(Conductor c) {
-		this.cond=c;
-		
-	}
-
-
  
+    private IConductorDAO conddao = new JDBCConductorDAO();
+
+	
+	private List<Viaje> listaViajeConductor=new ArrayList<Viaje>();
+	
+	public AccionConductorImpl(){
+
+	}
+	
+
 	public Viaje consultaViaje(Viaje viaje) {
 		//return 	viadao.selectTrayectoOID(trayecto);
 		return null;
@@ -70,13 +45,7 @@ public class AccionConductorImpl implements IAccionConductor{
 		return null;
 	}
 
- 
-	public List<Viaje> verViajesAsignados(Viaje viaje) {
-		return viadao.selectAllViajes();
-	}
 
-
- 
 	public boolean eliminaVehiculo(Vehiculo vehiculo) {
 		// TODO Auto-generated method stub
 		return false;
@@ -96,23 +65,31 @@ public class AccionConductorImpl implements IAccionConductor{
 		return null;
 	}
 
-	/*@Override
-	public Collection<Viaje> buscarViaje(Ruta r) {
-		List<Viaje> res = new LinkedList<Viaje>();
-		for(Viaje vp:v){
-			if(vp.getDestino().equals(r.getDestino())){
-				if(vp.getOrigen().equals(r.getOrigen())){
-					res.add(vp);
-				}else{
-					if(vp.getPuntosIntermedios().contains(r.getOrigen())){
-						res.add(vp);
-					}
-				}
-			}
+
+	public List<Viaje> verViajesAsignados(String nickConductor) {
+		String oidc=conddao.selectOIDConductor(nickConductor);
+		List<String> listaOIDViajeConductor= conddao.obtenerViajesOIDConductor(oidc);
+
+		for (String auxOIDCond: listaOIDViajeConductor){
+			
+			 Viaje viajeCond = conddao.selectViajeConductor(auxOIDCond);
+			 listaViajeConductor.add(viajeCond);
+
 		}
-		return res;
+		return listaViajeConductor;
 	}
-*/
+		
+			
+		public Vehiculo obtenerVehiculoC(String nickConductor) {
+			String oidc=conddao.selectOIDConductor(nickConductor);
+			String oidVehiculoConductor= conddao.obtenerVehiculoOID(oidc);
+
+		     Vehiculo ve = conddao.selectVehiculoConductor(oidVehiculoConductor);
+	
+		return ve;
+	}
+
+
 
 
 

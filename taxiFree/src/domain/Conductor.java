@@ -8,11 +8,30 @@ import java.util.List;
  */
 public class Conductor extends Usuario  {
 	
+	public Conductor(String string, String string2, String string3,
+			String string4, String string5, int i, String string6,
+			String string7) {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+	public Conductor() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+
 	/**
 	 * @uml.property  name="idConductor"
 	 */
 	private String idConductor;
 	
+
+
+
+
 	/**
 	 * @return
 	 * @uml.property  name="idConductor"
@@ -73,7 +92,7 @@ public class Conductor extends Usuario  {
 	 * @uml.property  name="vehiculo"
 	 * @uml.associationEnd  
 	 */
-	private Vehiculo vehiculo = new Vehiculo();
+	private Vehiculo vehiculo ;
 
 	/**
 	 * Getter of the property <tt>vehiculo</tt>

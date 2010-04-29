@@ -12,7 +12,7 @@ public class Vehiculo {
 	 * @uml.property  name="conductor"
 	 * @uml.associationEnd  
 	 */
-	private Conductor conductor = new Conductor();
+	private Conductor conductor ;
 
 	public String getIdVehiculo() {
 		return idVehiculo;
