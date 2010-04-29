@@ -54,7 +54,7 @@ public class JDBCConductorDAO implements IConductorDAO {
 	public List<String> obtenerViajesOIDConductor(String oidc){
 		 	PreparedStatement stmt = null;
 	        ResultSet result = null;
-	        String sql = "SELECT * FROM Conductor WHERE (OIDConductor = ?) ";
+	        String sql = "SELECT * FROM conductor WHERE (OIDConductor = ?) ";
 	        List<String> searchResults = new ArrayList<String>();
 	        try {
 	            stmt = conn.prepareStatement(sql);
@@ -96,7 +96,7 @@ public class JDBCConductorDAO implements IConductorDAO {
 	        PreparedStatement stmt = null;
 	        ResultSet result = null;
 	        List<Conductor> listaConductores = new LinkedList <Conductor>();
-	        String sql = "SELECT * FROM Conductor ";
+	        String sql = "SELECT * FROM conductor ";
 	        try {
 	                stmt = conn.prepareStatement(sql);
 	                result = stmt.executeQuery();
@@ -152,7 +152,7 @@ public class JDBCConductorDAO implements IConductorDAO {
 	public String obtenerVehiculoOID(String oidc){
 	 	PreparedStatement stmt = null;
         ResultSet result = null;
-        String sql = "SELECT * FROM Conductor WHERE (OIDConductor = ?) ";
+        String sql = "SELECT * FROM conductor WHERE (OIDConductor = ?) ";
         String oidVehC = null;
         try {
             stmt = conn.prepareStatement(sql);

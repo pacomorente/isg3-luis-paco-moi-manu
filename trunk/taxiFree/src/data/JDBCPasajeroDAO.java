@@ -129,7 +129,7 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
 
         try {
         	
-        	udao.insert(conn, p);
+        	//udao.insert(conn, p);
         	rdao.insert(conn, r);
         	
             stmt = conn.prepareStatement(sql1);

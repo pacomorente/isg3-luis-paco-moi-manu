@@ -30,7 +30,6 @@ CREATE TABLE `conductor` (
   `OIDConductor` varchar(100) NOT NULL,
   `OIDViaje` varchar(100) NOT NULL,
   `OIDVehiculo` varchar(100) NOT NULL,
-  PRIMARY KEY (`OIDConductor`,`OIDViaje`) USING BTREE,
   KEY `OIDViaje` (`OIDViaje`),
   KEY `OIDVehiculo` (`OIDVehiculo`),
   CONSTRAINT `OIDConductor` FOREIGN KEY (`OIDConductor`) REFERENCES `usuario` (`OIDUsuario`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -54,8 +53,8 @@ DROP TABLE IF EXISTS `pasajero`;
 CREATE TABLE `pasajero` (
   `OIDPasajero` varchar(100) NOT NULL,
   `OIDViaje` varchar(100) NOT NULL,
-  PRIMARY KEY (`OIDPasajero`,`OIDViaje`) USING BTREE,
-  KEY `OIDViaje` (`OIDViaje`) USING BTREE,
+  PRIMARY KEY (`OIDPasajero`,`OIDViaje`) ,
+  KEY `OIDViaje` (`OIDViaje`) ,
   CONSTRAINT `usuario` FOREIGN KEY (`OIDPasajero`) REFERENCES `usuario` (`OIDUsuario`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `viaje` FOREIGN KEY (`OIDViaje`) REFERENCES `viaje` (`OIDViaje`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -128,7 +127,7 @@ CREATE TABLE `usuario` (
   `nick` varchar(25) NOT NULL,
   `pass` varchar(25) NOT NULL,
   PRIMARY KEY (`OIDUsuario`),
-  UNIQUE KEY `nick` (`nick`) USING BTREE
+  UNIQUE KEY `nick` (`nick`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -202,34 +201,34 @@ CREATE TABLE `viaje` (
 
 -- TABLA USUARIO
 
-INSERT INTO USUARIO(OIDUsuario,nombre,apellidos,dni,correo,estrella,nick,pass)
+INSERT INTO usuario(OIDUsuario,nombre,apellidos,dni,correo,estrella,nick,pass)
 values('00002','Manuel','Perez','90000002X','C1@US.ES',7,'USER2','USER2');
 
-INSERT INTO USUARIO(OIDUsuario,nombre,apellidos,dni,correo,estrella,nick,pass)
+INSERT INTO usuario(OIDUsuario,nombre,apellidos,dni,correo,estrella,nick,pass)
 values('00006','Monica','Ortiz','90000006X','C6@US.ES',1,'USER6','USER6');
 
-INSERT INTO USUARIO(OIDUsuario,nombre,apellidos,dni,correo,estrella,nick,pass)
+INSERT INTO usuario(OIDUsuario,nombre,apellidos,dni,correo,estrella,nick,pass)
 values('00003','Luis','Perez','90000003X','C3@US.ES',3,'USER3','USER3');
 
-INSERT INTO USUARIO(OIDUsuario,nombre,apellidos,dni,correo,estrella,nick,pass)
+INSERT INTO usuario(OIDUsuario,nombre,apellidos,dni,correo,estrella,nick,pass)
 values('00004','Jose','Lopez','90000004X','C4@US.ES',4,'USER4','USER4');
 
-INSERT INTO USUARIO(OIDUsuario,nombre,apellidos,dni,correo,estrella,nick,pass)
+INSERT INTO usuario(OIDUsuario,nombre,apellidos,dni,correo,estrella,nick,pass)
 values('00005','Maria','Rodriguez','90000005X','C5@US.ES',6,'USER5','USER5');
 
 COMMIT;
 
 
 -- TABLA VIAJE
-INSERT INTO VIAJE(OIDViaje,origen,destino,fecha,idViaje,anulado)
+INSERT INTO viaje(OIDViaje,origen,destino,fecha,idViaje,anulado)
 values('VIAJE001','SEVILLA','CADIZ',STR_TO_DATE('01/06/2010','%d/%m/%Y'),'01',TRUE);
 
 -- UPDATE VIAJE SET ANULADO=FALSE WHERE OIDVIAJE='VIAJE001';
 
-INSERT INTO VIAJE(OIDViaje,origen,destino,fecha,idViaje,anulado)
+INSERT INTO viaje(OIDViaje,origen,destino,fecha,idViaje,anulado)
 values('VIAJE002','SEVILLA','GRANADA',STR_TO_DATE('15/05/2010','%d/%m/%Y'),'02',TRUE);
 
-INSERT INTO VIAJE(OIDViaje,origen,destino,fecha,idViaje,anulado)
+INSERT INTO viaje(OIDViaje,origen,destino,fecha,idViaje,anulado)
 values('VIAJE003','CORDOBA','ALMERIA',STR_TO_DATE('12/05/2010','%d/%m/%Y'),'03',FALSE);
 
 -- obtener fecha de mysql a string para variable
@@ -239,13 +238,13 @@ COMMIT;
 
 -- TABLA VEHICULO
 
-INSERT INTO VEHICULO(OIDVehiculo,marca,Modelo,Color,Plazas,idVehiculo)
+INSERT INTO vehiculo(OIDVehiculo,marca,Modelo,Color,Plazas,idVehiculo)
 values('VEH00010RENA','Renault','Renault','Verde',4,'01');
 
-INSERT INTO VEHICULO(OIDVehiculo,marca,Modelo,Color,Plazas,idVehiculo)
+INSERT INTO vehiculo(OIDVehiculo,marca,Modelo,Color,Plazas,idVehiculo)
 values('VEH00011MERC','Mercedes','Mercedes','Blanco',4,'02');
 
-INSERT INTO VEHICULO(OIDVehiculo,marca,Modelo,Color,Plazas,idVehiculo)
+INSERT INTO vehiculo(OIDVehiculo,marca,Modelo,Color,Plazas,idVehiculo)
 values('VEH00012AUDI','AUDI','AUDI','Negro',4,'03');
 
 COMMIT;
@@ -253,38 +252,38 @@ COMMIT;
 
 -- TABLA CONDUCTOR
 
-INSERT INTO CONDUCTOR(OIDConductor,OIDViaje,OIDVehiculo)
+INSERT INTO conductor(OIDConductor,OIDViaje,OIDVehiculo)
 values('00006','VIAJE001','VEH00012AUDI');
 
-INSERT INTO CONDUCTOR(OIDConductor,OIDViaje,OIDVehiculo)
+INSERT INTO conductor(OIDConductor,OIDViaje,OIDVehiculo)
 values('00003','VIAJE003','VEH00011MERC');
 
-INSERT INTO CONDUCTOR(OIDConductor,OIDViaje,OIDVehiculo)
+INSERT INTO conductor(OIDConductor,OIDViaje,OIDVehiculo)
 values('00006','VIAJE002','VEH00012AUDI');
 
 
 COMMIT;
 -- INSERT RELACIONADO CON EL CASO DE USO DE PASAJERO (MOISES)
-INSERT INTO PASAJERO(OIDPasajero,OIDViaje)
+INSERT INTO pasajero(OIDPasajero,OIDViaje)
 values('00002','VIAJE002');
 
-INSERT INTO PASAJERO(OIDPasajero,OIDViaje)
+INSERT INTO pasajero(OIDPasajero,OIDViaje)
 values('00006','VIAJE001');
 
-INSERT INTO PASAJERO(OIDPasajero,OIDViaje)
+INSERT INTO pasajero(OIDPasajero,OIDViaje)
 values('00006','VIAJE002');
 
-INSERT INTO RUTA(OIDRuta,origen, desplazamiento, fecha, idRuta, destino)
+INSERT INTO ruta(OIDRuta,origen, desplazamiento, fecha, idRuta, destino)
 values('RUTA001','SEVILLA','2',STR_TO_DATE('15/05/2010','%d/%m/%Y'),'R1','GRANADA');
 
-INSERT INTO RUTA(OIDRuta,origen, desplazamiento, fecha, idRuta, destino)
+INSERT INTO ruta(OIDRuta,origen, desplazamiento, fecha, idRuta, destino)
 values('RUTA002','SEVILLA','2',STR_TO_DATE('01/06/2010','%d/%m/%Y'),'R2','CADIZ');
 
-INSERT INTO PASAJERO_RUTA(OIDPasajero, OIDRuta)
+INSERT INTO pasajero_ruta(OIDPasajero, OIDRuta)
 values('00002','RUTA001');
 
-INSERT INTO PASAJERO_RUTA(OIDPasajero, OIDRuta)
+INSERT INTO pasajero_ruta(OIDPasajero, OIDRuta)
 values('00006','RUTA002');
 
-INSERT INTO PASAJERO_RUTA(OIDPasajero, OIDRuta)
+INSERT INTO pasajero_ruta(OIDPasajero, OIDRuta)
 values('00006','RUTA001');
