@@ -10,11 +10,22 @@ import java.util.List;
  */
 public class Viaje {
 
+	/**
+	 * @uml.property  name="anulado"
+	 */
 	private Boolean anulado;
+	/**
+	 * @return
+	 * @uml.property  name="anulado"
+	 */
 	public Boolean getAnulado() {
 		return anulado;
 	}
 
+	/**
+	 * @param anulado
+	 * @uml.property  name="anulado"
+	 */
 	public void setAnulado(Boolean anulado) {
 		this.anulado = anulado;
 	}

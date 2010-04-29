@@ -21,6 +21,10 @@ public class AccionPasajeroImpl implements IAccionPasajero{
 	 */
 	private Pasajero p;
 	private List<Viaje> v;
+	/**
+	 * @uml.property  name="rutaDePasajero"
+	 * @uml.associationEnd  
+	 */
 	private Ruta rutaDePasajero;
 	
 	public AccionPasajeroImpl(){
