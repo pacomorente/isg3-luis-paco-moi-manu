@@ -103,7 +103,7 @@ public class JDBCUsuarioDAO implements IUsuarioDAO{
 	        PreparedStatement stmt = null;
 	        ResultSet result = null;
 	        String oid = null;
-	        String sql = "SELECT * FROM Usuario WHERE (nick = ?) ";
+	        String sql = "SELECT * FROM usuario WHERE (nick = ?) ";
 
 	        try {
 	            stmt = conn.prepareStatement(sql);
@@ -132,7 +132,7 @@ public class JDBCUsuarioDAO implements IUsuarioDAO{
 	    }
 		
 		public void insert(Connection con, Usuario u){
-			String sql = "INSERT INTO USUARIO(OIDUsuario, nombre, apellidos, dni, correo, estrella, nick, pass)values('?','?','?','?','?','?','?','?')";
+			String sql = "INSERT INTO usuario(OIDUsuario, nombre, apellidos, dni, correo, estrella, nick, pass)values('?','?','?','?','?','?','?','?')";
 			PreparedStatement stmt = null;
 			String usuarioOID = UIDGenerator.getInstance().getKey();
 			

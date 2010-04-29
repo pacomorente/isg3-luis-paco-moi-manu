@@ -37,12 +37,12 @@ public class JDBCViajeDAO implements IViajeDAO {
 	
 	public void deleteViaje(String ViajeOID) {
 		
-		String sql = "DELETE FROM Viaje WHERE (OID = ?) ";
+		String sql = "DELETE FROM viaje WHERE (OID = ?) ";
         PreparedStatement stmt = null;
 
         // Buscar si viaje tiene pasajero, para ello hay que meterse en Pasajero y ver si existe
-        // al menos un OID VIAJE, pasándole el OID VIAJE al método que devolverá boolean 
-        //  FALTA IMPLEMENTAR AÚN
+        // al menos un OID VIAJE, pasï¿½ndole el OID VIAJE al mï¿½todo que devolverï¿½ boolean 
+        //  FALTA IMPLEMENTAR Aï¿½N
         
         try {
             stmt = conn.prepareStatement(sql);
@@ -67,8 +67,8 @@ public class JDBCViajeDAO implements IViajeDAO {
 	public void insertViaje(Viaje v ) {
 		// TODO Auto-generated method stub
 		/*
-		 * Cuando inserte VIaje hay que comprobar si el usuario ya tiene vehículo dado de alta, en caso contrario,
-		 * solicitar el alta del vehículo. ( SE ACCEDE A TABLA VEHICULO )
+		 * Cuando inserte VIaje hay que comprobar si el usuario ya tiene vehï¿½culo dado de alta, en caso contrario,
+		 * solicitar el alta del vehï¿½culo. ( SE ACCEDE A TABLA VEHICULO )
 		 */
 	}
 
@@ -84,7 +84,7 @@ public class JDBCViajeDAO implements IViajeDAO {
 		List searchResults = new LinkedList();
 		ResultSet result = null;
 		List<String> puntosInt =new ArrayList();
-		String sql = "SELECT * FROM Viaje";
+		String sql = "SELECT * FROM viaje";
 		try {
 			stmt = con.prepareStatement(sql);
 			stmt.executeQuery();
@@ -92,7 +92,7 @@ public class JDBCViajeDAO implements IViajeDAO {
 			while (result.next()) {
 			   Viaje temp = new Viaje();
 			   puntosInt.add("Sevilla");
-			   puntosInt.add("Málaga");
+			   puntosInt.add("Mï¿½laga");
 			   puntosInt.add("Granada");
 			   temp.setViajeID(result.getString("idViaje"));
 			   temp.setOrigen(result.getString("origen"));
@@ -121,10 +121,10 @@ public class JDBCViajeDAO implements IViajeDAO {
 	public Viaje selectViaje(String s) {
 		// TODO Auto-generated method stub
 		/*
-		 *  Al seleccionar el viaje, mostaría el vehículo de dicho viaje y 
+		 *  Al seleccionar el viaje, mostarï¿½a el vehï¿½culo de dicho viaje y 
 		 *  se busca la existencia de pasajeros, y si los hubiera
-		 *  mostraría los datos del usuario pasajero asignado a dicho viaje; 
-		 *  SE ACCEDERÍA A TABLAS PASAJERO, VIAJE, USUARIO y VEHICULO 
+		 *  mostrarï¿½a los datos del usuario pasajero asignado a dicho viaje; 
+		 *  SE ACCEDERï¿½A A TABLAS PASAJERO, VIAJE, USUARIO y VEHICULO 
 		 */
 		return null;
 	}
@@ -135,7 +135,7 @@ public class JDBCViajeDAO implements IViajeDAO {
         Viaje viajeCond = new Viaje();
 		List<String> puntosInt = new ArrayList<String>();
         try {
-        	String sql = "SELECT * FROM Viaje WHERE (OIDViaje = ?) ";
+        	String sql = "SELECT * FROM viaje WHERE (OIDViaje = ?) ";
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, oidViajeConductor);
 
@@ -147,7 +147,7 @@ public class JDBCViajeDAO implements IViajeDAO {
             viajeCond.setOrigen(result.getString("origen"));
             viajeCond.setDestino(result.getString("destino"));
 			   puntosInt.add("Sevilla");
-			   puntosInt.add("Málaga");
+			   puntosInt.add("Mï¿½laga");
 			   puntosInt.add("Granada");
             viajeCond.setPuntosIntermedios(puntosInt);
             viajeCond.setFecha(result.getDate("fecha"));

@@ -11,7 +11,7 @@ import domain.Vehiculo;
 public class JDBCVehiculoDAO implements IVehiculoDAO{
        
         public void delete(Connection conn, String VehiculoOID) {
-                String sql = "DELETE FROM Vehiculo WHERE (VehiculoOID = ?) ";
+                String sql = "DELETE FROM vehiculo WHERE (VehiculoOID = ?) ";
                 PreparedStatement stmt = null;
                 try{
                         stmt = conn.prepareStatement(sql);
@@ -31,7 +31,7 @@ public class JDBCVehiculoDAO implements IVehiculoDAO{
         }
        
         public void insert(Connection conn, String VehiculoOID, Vehiculo veh) {
-                String sql = "INSERT INTO Vehiculo (VehiculoOID, Marca, Modelo, Color, Plazas) VALUES (?, ?, ?, ?, ?) ";
+                String sql = "INSERT INTO vehiculo (VehiculoOID, Marca, Modelo, Color, Plazas) VALUES (?, ?, ?, ?, ?) ";
                 PreparedStatement stmt = null;
                 try {
                         stmt = conn.prepareStatement(sql);
@@ -60,7 +60,7 @@ public class JDBCVehiculoDAO implements IVehiculoDAO{
                 PreparedStatement stmt = null;          
                 ResultSet result = null;        
                 List<Vehiculo> listaVehiculos = new LinkedList<Vehiculo>();
-                String sql = "SELECT * FROM Vehiculo";          
+                String sql = "SELECT * FROM vehiculo";          
                 try {          
                         stmt = conn.prepareStatement(sql);      
                         result = stmt.executeQuery();          
@@ -105,7 +105,7 @@ public class JDBCVehiculoDAO implements IVehiculoDAO{
 		        Vehiculo vehCond = new Vehiculo();
 				
 		        try {
-		        	String sql = "SELECT * FROM Vehiculo WHERE (OIDVehiculo = ?) ";
+		        	String sql = "SELECT * FROM vehiculo WHERE (OIDVehiculo = ?) ";
 		            stmt = conn.prepareStatement(sql);
 		            stmt.setString(1, oidVehiculoConductor);
 
