@@ -123,25 +123,25 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
 	
 	public void insert(String pasajeroOID, Pasajero p, String rutaOID, Ruta r, Viaje v){
 		IViajeDAO vdao = new JDBCViajeDAO();
+		String sql2 = "INSERT INTO PASAJERO_RUTA(OIDPasajero,OIDRuta)values('?','?')";
 		String sql1 = "INSERT INTO PASAJERO(OIDPasajero,OIDViaje)values('?','?')";
-		String sql2 = "INSERT INTO RUTA(OIDRuta, origen, desplazamiento, fecha, idRuta, destino)values('?','?','?',?,'?','?')";
         PreparedStatement stmt = null;
 
         try {
-            stmt = conn.prepareStatement(sql2);
-            stmt.setString(1, rutaOID);
-            stmt.setString(2, r.getOrigen());
-            stmt.setString(3, r.getDesplazamiento().toString());
-            stmt.setString(4, "STR_TO_DATE("+r.getFecha()+",'%d/%m/%Y')");
-            stmt.setString(5, r.getIdRuta());
-            stmt.setString(6, r.getDestino());
-            stmt.executeUpdate();
+        	
+        	udao.insert(conn, p, pasajeroOID);
+        	rdao.insert(conn, rutaOID, r);
             
             stmt = conn.prepareStatement(sql1);
             stmt.setString(1, pasajeroOID);
-            //stmt.setString(2, vdao.selectViajeOID(v.getViajeID()));
+            stmt.setString(2, vdao.selectViajeOID(v.getViajeID()));
             stmt.executeUpdate();
-
+            
+            stmt = conn.prepareStatement(sql2);
+            stmt.setString(1, pasajeroOID);
+            stmt.setString(2, rutaOID);
+            stmt.executeUpdate();
+            
         } catch (SQLException e) {
             System.out.println("Message: " + e.getMessage());
             System.out.println("SQLState: " + e.getSQLState());

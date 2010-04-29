@@ -16,7 +16,8 @@ public class TestCasoDeUsoPasajero {
 		List<Ruta> listaRutas = (List<Ruta>) accPasajero.consultaRuta();
 		System.out.println("=== Lista de rutas ===\n");
 		for(Ruta r : listaRutas){
-			System.out.println(r.getOrigen()+"--->"+r.getDestino());
+			System.out.println(r.getIdRuta()+" -- "+r.getDesplazamiento()+
+					" -- "+r.getFecha()+": "+r.getOrigen()+"--->"+r.getDestino());
 		}
 		
 		Ruta r = new Ruta(null, "SEVILLA", "GRANADA", null,null);

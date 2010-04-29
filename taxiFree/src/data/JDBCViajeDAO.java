@@ -180,6 +180,11 @@ public class JDBCViajeDAO implements IViajeDAO {
 		return null;
 	}
 	
+	public String selectViajeOID(String idViaje){
+		//Yo Moi te aconsejo que separes los OID de los id
+		return null;
+	}
+	
 	public List<Viaje> selectViajes(Connection con, String oidPasajero) {
 		PreparedStatement stmt = null;
         ResultSet result = null;
