@@ -140,7 +140,6 @@ public class JDBCConductorDAO implements IConductorDAO {
 	        return  listaConductores;
 	}
 
-	@Override
 	public Conductor selectConductor(String oid) {
 		// TODO Auto-generated method stub
 		return null;

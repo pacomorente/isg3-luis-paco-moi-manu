@@ -97,7 +97,6 @@ public class JDBCVehiculoDAO implements IVehiculoDAO{
 			
 		}
 
-		@Override
 		public Vehiculo selectViajeConductor(Connection conn,
 				String oidVehiculoConductor) {
 			
