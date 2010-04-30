@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="ModeloUMLcompleto" size="1515,789" id="." metadata="uml2-1.0" initialized="true" zoom="0.75" scrolledX="394" tag="1000" key="32303037303533312D313030302054617869467265655F5041434F5F30312F6D6F72656E7465666A">
+  <children xsi:type="editmodel:PackageEditModel" name="googleMaps" location="972,117" size="112,60" id="googleMaps"/>
+  <children xsi:type="editmodel:PackageEditModel" targetConnections="//@children.3/@sourceConnections.1" name="utils" location="535,102" size="211,142" id="utils">
+    <children xsi:type="editmodel:ClassEditModel" name="UIDGenerator" location="50,50" size="128,85" id="utils/UIDGenerator" runTimeClassModel="getKey(),getInstance()">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="86,36">
+        <children xsi:type="editmodel:MethodEditModel" name="getKey" id="utils/UIDGenerator#getKey()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getInstance" id="utils/UIDGenerator#getInstance()"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+    </children>
+  </children>
+  <children xsi:type="editmodel:PackageEditModel" targetConnections="//@children.3/@sourceConnections.0" name="domain" location="447,299" size="389,467" id="domain">
+    <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@children.3/@sourceConnections.2 //@children.2/@children.10/@sourceConnections.0 //@children.3/@children.6/@sourceConnections.0 //@children.3/@children.10/@sourceConnections.4" name="Pasajero" location="270,406" size="98,29" id="domain/Pasajero" runTimeClassModel="">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="domain/Usuario&lt;-domain/Pasajero" source="//@children.2/@children.0" target="//@children.2/@children.8" targetEnd="//@children.2/@children.0/@sourceConnections.0/@children.1" sourceEnd="//@children.2/@children.0/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:AssociationEndEditModel" location="25,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="63,29"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/Pasajero-Soyatec::Import->domain/Ruta" source="//@children.2/@children.0" target="//@children.2/@children.9" targetEnd="//@children.2/@children.0/@sourceConnections.1/@children.2" label="//@children.2/@children.0/@sourceConnections.1/@children.0" sourceEnd="//@children.2/@children.0/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="29,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="40,29"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/Pasajero-Soyatec::Import->domain/Viaje" source="//@children.2/@children.0" target="//@children.2/@children.10" targetEnd="//@children.2/@children.0/@sourceConnections.2/@children.2" label="//@children.2/@children.0/@sourceConnections.2/@children.0" sourceEnd="//@children.2/@children.0/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="37,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="75,14"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/Pasajero-Standard::Derive->domain/Usuario" source="//@children.2/@children.0" target="//@children.2/@children.8" targetEnd="//@children.2/@children.0/@sourceConnections.3/@children.2" label="//@children.2/@children.0/@sourceConnections.3/@children.0" sourceEnd="//@children.2/@children.0/@sourceConnections.3/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Derive»" size="43,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="5,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="43,29"/>
+      </sourceConnections>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+    </children>
+    <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.2/@children.4/@sourceConnections.0 //@children.2/@children.4/@sourceConnections.5" name="IAccionConductor" location="16,116" size="154,43" id="domain/IAccionConductor" runTimeClassModel="">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/IAccionConductor-Soyatec::Import->domain/Viaje" source="//@children.2/@children.1" target="//@children.2/@children.10" targetEnd="//@children.2/@children.1/@sourceConnections.0/@children.1" label="//@children.2/@children.1/@sourceConnections.0/@children.2" sourceEnd="//@children.2/@children.1/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:AssociationEndEditModel" location="56,43" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="37,0"/>
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/IAccionConductor-Soyatec::Import->domain/Vehiculo" source="//@children.2/@children.1" target="//@children.2/@children.6" targetEnd="//@children.2/@children.1/@sourceConnections.1/@children.1" label="//@children.2/@children.1/@sourceConnections.1/@children.2" sourceEnd="//@children.2/@children.1/@sourceConnections.1/@children.0" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:AssociationEndEditModel" location="108,43" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="44,0"/>
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/IAccionConductor->domain/Conductor" source="//@children.2/@children.1" target="//@children.2/@children.2" targetEnd="//@children.2/@children.1/@sourceConnections.2/@children.2" label="//@children.2/@children.1/@sourceConnections.2/@children.0" sourceEnd="//@children.2/@children.1/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="152,43" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="1,0"/>
+      </sourceConnections>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@children.1/@sourceConnections.2 //@children.2/@children.4/@sourceConnections.1 //@children.2/@children.6/@sourceConnections.0 //@children.2/@children.10/@sourceConnections.1 //@children.3/@children.7/@sourceConnections.6 //@children.3/@children.8/@sourceConnections.0" name="Conductor" location="167,320" size="107,29" id="domain/Conductor" runTimeClassModel="">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="domain/Usuario&lt;-domain/Conductor" source="//@children.2/@children.2" target="//@children.2/@children.8" targetEnd="//@children.2/@children.2/@sourceConnections.0/@children.1" sourceEnd="//@children.2/@children.2/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:AssociationEndEditModel" location="85,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="20,29"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/Conductor-Soyatec::Import->domain/Viaje" source="//@children.2/@children.2" target="//@children.2/@children.10" targetEnd="//@children.2/@children.2/@sourceConnections.1/@children.2" label="//@children.2/@children.2/@sourceConnections.1/@children.0" sourceEnd="//@children.2/@children.2/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="0,6" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="60,29"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/Conductor-Standard::Derive->domain/Usuario" source="//@children.2/@children.2" target="//@children.2/@children.8" targetEnd="//@children.2/@children.2/@sourceConnections.2/@children.2" label="//@children.2/@children.2/@sourceConnections.2/@children.0" sourceEnd="//@children.2/@children.2/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Derive»" size="43,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="65,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="0,29"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/Conductor-Standard::Instantiate->domain/Vehiculo*domain/Conductor-Soyatec::Import->domain/Vehiculo" source="//@children.2/@children.2" target="//@children.2/@children.6" targetEnd="//@children.2/@children.2/@sourceConnections.3/@children.2" label="//@children.2/@children.2/@sourceConnections.3/@children.0" sourceEnd="//@children.2/@children.2/@sourceConnections.3/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Instantiate»" size="96,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="5,29" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="92,0"/>
+      </sourceConnections>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" name="AccionPasajeroImpl" location="204,203" size="169,29" id="domain/AccionPasajeroImpl" runTimeClassModel="">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="domain/IAccionPasajero&lt;-domain/AccionPasajeroImpl" source="//@children.2/@children.3" target="//@children.2/@children.5" targetEnd="//@children.2/@children.3/@sourceConnections.0/@children.1" sourceEnd="//@children.2/@children.3/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:AssociationEndEditModel" location="85,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="72,43"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/AccionPasajeroImpl-Soyatec::Implement->domain/IAccionPasajero" source="//@children.2/@children.3" target="//@children.2/@children.5" targetEnd="//@children.2/@children.3/@sourceConnections.1/@children.2" label="//@children.2/@children.3/@sourceConnections.1/@children.0" sourceEnd="//@children.2/@children.3/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Implement»" size="59,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="65,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="52,43"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/AccionPasajeroImpl-Soyatec::Import->domain/Pasajero" source="//@children.2/@children.3" target="//@children.2/@children.0" targetEnd="//@children.2/@children.3/@sourceConnections.2/@children.2" label="//@children.2/@children.3/@sourceConnections.2/@children.0" sourceEnd="//@children.2/@children.3/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="114,29" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="48,0"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/AccionPasajeroImpl-Standard::Call->domain/Ruta*domain/AccionPasajeroImpl-Soyatec::Import->domain/Ruta" source="//@children.2/@children.3" target="//@children.2/@children.9" targetEnd="//@children.2/@children.3/@sourceConnections.3/@children.2" label="//@children.2/@children.3/@sourceConnections.3/@children.0" sourceEnd="//@children.2/@children.3/@sourceConnections.3/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call»" size="64,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="90,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="35,29"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/AccionPasajeroImpl-Standard::Call->domain/Viaje*domain/AccionPasajeroImpl-Soyatec::Import->domain/Viaje" source="//@children.2/@children.3" target="//@children.2/@children.10" targetEnd="//@children.2/@children.3/@sourceConnections.4/@children.2" label="//@children.2/@children.3/@sourceConnections.4/@children.0" sourceEnd="//@children.2/@children.3/@sourceConnections.4/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call»" size="64,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="50,29" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="69,0"/>
+      </sourceConnections>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" name="AccionConductorImpl" location="12,51" size="178,29" id="domain/AccionConductorImpl" runTimeClassModel="">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="domain/IAccionConductor&lt;-domain/AccionConductorImpl" source="//@children.2/@children.4" target="//@children.2/@children.1" targetEnd="//@children.2/@children.4/@sourceConnections.0/@children.1" sourceEnd="//@children.2/@children.4/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:AssociationEndEditModel" location="80,29" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="76,0"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/AccionConductorImpl-Soyatec::Import->domain/Conductor" source="//@children.2/@children.4" target="//@children.2/@children.2" targetEnd="//@children.2/@children.4/@sourceConnections.1/@children.2" label="//@children.2/@children.4/@sourceConnections.1/@children.0" sourceEnd="//@children.2/@children.4/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="166,29" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="11,0"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/AccionConductorImpl-Soyatec::Import->data/IVehiculoDAO" source="//@children.2/@children.4" target="//@children.3/@children.4" targetEnd="//@children.2/@children.4/@sourceConnections.2/@children.2" label="//@children.2/@children.4/@sourceConnections.2/@children.0" sourceEnd="//@children.2/@children.4/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="178,24" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="0,14"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/AccionConductorImpl-Standard::Call->data/IViajeDAO*domain/AccionConductorImpl-Soyatec::Import->data/IViajeDAO" source="//@children.2/@children.4" target="//@children.3/@children.12" targetEnd="//@children.2/@children.4/@sourceConnections.3/@children.2" label="//@children.2/@children.4/@sourceConnections.3/@children.0" sourceEnd="//@children.2/@children.4/@sourceConnections.3/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call»" size="64,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="149,29" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="0,51"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/AccionConductorImpl-Standard::Instantiate->data/JDBCViajeDAO" source="//@children.2/@children.4" target="//@children.3/@children.13" targetEnd="//@children.2/@children.4/@sourceConnections.4/@children.2" label="//@children.2/@children.4/@sourceConnections.4/@children.0" sourceEnd="//@children.2/@children.4/@sourceConnections.4/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Instantiate»" size="61,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="120,29" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="39,0"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/AccionConductorImpl-Soyatec::Implement->domain/IAccionConductor" source="//@children.2/@children.4" target="//@children.2/@children.1" targetEnd="//@children.2/@children.4/@sourceConnections.5/@children.2" label="//@children.2/@children.4/@sourceConnections.5/@children.0" sourceEnd="//@children.2/@children.4/@sourceConnections.5/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Implement»" size="59,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="60,29" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="56,0"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/AccionConductorImpl-Soyatec::Import->domain/Vehiculo" source="//@children.2/@children.4" target="//@children.2/@children.6" targetEnd="//@children.2/@children.4/@sourceConnections.6/@children.2" label="//@children.2/@children.4/@sourceConnections.6/@children.0" sourceEnd="//@children.2/@children.4/@sourceConnections.6/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="116,29" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="48,0"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/AccionConductorImpl-Soyatec::Import->domain/Viaje" source="//@children.2/@children.4" target="//@children.2/@children.10" targetEnd="//@children.2/@children.4/@sourceConnections.7/@children.2" label="//@children.2/@children.4/@sourceConnections.7/@children.0" sourceEnd="//@children.2/@children.4/@sourceConnections.7/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="60,29" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="37,0"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/AccionConductorImpl-Standard::Instantiate->data/JDBCVehiculoDAO" source="//@children.2/@children.4" target="//@children.3/@children.2" targetEnd="//@children.2/@children.4/@sourceConnections.8/@children.2" label="//@children.2/@children.4/@sourceConnections.8/@children.0" sourceEnd="//@children.2/@children.4/@sourceConnections.8/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Instantiate»" size="61,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="178,6" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="0,21"/>
+      </sourceConnections>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+    </children>
+    <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.2/@children.3/@sourceConnections.0 //@children.2/@children.3/@sourceConnections.1" name="IAccionPasajero" location="217,115" size="145,43" id="domain/IAccionPasajero" runTimeClassModel="">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/IAccionPasajero-Soyatec::Import->domain/Ruta" source="//@children.2/@children.5" target="//@children.2/@children.9" targetEnd="//@children.2/@children.5/@sourceConnections.0/@children.2" label="//@children.2/@children.5/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@children.5/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="77,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="35,29"/>
+      </sourceConnections>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@children.1/@sourceConnections.1 //@children.2/@children.2/@sourceConnections.3 //@children.2/@children.4/@sourceConnections.6 //@children.3/@children.2/@sourceConnections.3 //@children.3/@children.4/@sourceConnections.0 //@children.3/@children.7/@sourceConnections.7" name="Vehiculo" location="80,360" size="98,29" id="domain/Vehiculo" runTimeClassModel="">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/Vehiculo-Standard::Instantiate->domain/Conductor*domain/Vehiculo-Soyatec::Import->domain/Conductor" source="//@children.2/@children.6" target="//@children.2/@children.2" targetEnd="//@children.2/@children.6/@sourceConnections.0/@children.2" label="//@children.2/@children.6/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@children.6/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Instantiate»" size="96,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="72,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="0,14"/>
+      </sourceConnections>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" name="ViajeStore" location="23,417" size="109,29" id="domain/ViajeStore" runTimeClassModel="">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/ViajeStore-Standard::Call->domain/Viaje*domain/ViajeStore-Soyatec::Import->domain/Viaje" source="//@children.2/@children.7" target="//@children.2/@children.10" targetEnd="//@children.2/@children.7/@sourceConnections.0/@children.2" label="//@children.2/@children.7/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@children.7/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call»" size="64,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="49,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="37,29"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/ViajeStore-Standard::Call->data/JDBCViajeDAO*domain/ViajeStore-Standard::Instantiate->data/JDBCViajeDAO" source="//@children.2/@children.7" target="//@children.3/@children.13" targetEnd="//@children.2/@children.7/@sourceConnections.1/@children.2" label="//@children.2/@children.7/@sourceConnections.1/@children.0" sourceEnd="//@children.2/@children.7/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Call, Instantiate»" size="84,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="109,9" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="0,20"/>
+      </sourceConnections>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@children.2/@sourceConnections.0 //@children.2/@children.0/@sourceConnections.0 //@children.2/@children.0/@sourceConnections.3 //@children.2/@children.2/@sourceConnections.2 //@children.3/@children.3/@sourceConnections.0 //@children.3/@children.5/@sourceConnections.2 //@children.3/@children.7/@sourceConnections.4 //@children.3/@children.10/@sourceConnections.1" name="Usuario" location="232,247" size="90,29" id="domain/Usuario" runTimeClassModel="">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@children.0/@sourceConnections.1 //@children.2/@children.3/@sourceConnections.3 //@children.2/@children.5/@sourceConnections.0 //@children.3/@children.0/@sourceConnections.0 //@children.3/@children.1/@sourceConnections.1" name="Ruta" location="259,51" size="71,29" id="domain/Ruta" runTimeClassModel="">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@children.1/@sourceConnections.0 //@children.2/@children.0/@sourceConnections.2 //@children.2/@children.2/@sourceConnections.1 //@children.2/@children.3/@sourceConnections.4 //@children.2/@children.4/@sourceConnections.7 //@children.2/@children.7/@sourceConnections.0 //@children.3/@children.12/@sourceConnections.4 //@children.3/@children.13/@sourceConnections.2" name="Viaje" location="35,297" size="75,29" id="domain/Viaje" runTimeClassModel="">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/Viaje-Soyatec::Import->domain/Pasajero" source="//@children.2/@children.10" target="//@children.2/@children.0" targetEnd="//@children.2/@children.10/@sourceConnections.0/@children.2" label="//@children.2/@children.10/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@children.10/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="71,29" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="17,0"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/Viaje-Soyatec::Import->domain/Conductor" source="//@children.2/@children.10" target="//@children.2/@children.2" targetEnd="//@children.2/@children.10/@sourceConnections.1/@children.2" label="//@children.2/@children.10/@sourceConnections.1/@children.0" sourceEnd="//@children.2/@children.10/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="75,25" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="0,2"/>
+      </sourceConnections>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+    </children>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="domain-Standard::Call->data*domain-Standard::Instantiate->data*domain-Soyatec::Import->data" source="//@children.2" target="//@children.3" targetEnd="//@children.2/@sourceConnections.0/@children.2" label="//@children.2/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call, Instantiate»" size="119,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="388,163" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,154"/>
+    </sourceConnections>
+  </children>
+  <children xsi:type="editmodel:PackageEditModel" targetConnections="//@children.2/@sourceConnections.0" name="data" location="900,210" size="564,546" id="data">
+    <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.3/@children.1/@sourceConnections.0 //@children.3/@children.1/@sourceConnections.2" name="IRutaDAO" location="431,169" size="103,43" id="data/IRutaDAO" runTimeClassModel="">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/IRutaDAO-Soyatec::Import->domain/Ruta" source="//@children.3/@children.0" target="//@children.2/@children.9" targetEnd="//@children.3/@children.0/@sourceConnections.0/@children.2" label="//@children.3/@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.3/@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="0,18" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="71,16"/>
+      </sourceConnections>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" name="JDBCRutaDAO" location="410,69" size="133,29" id="data/JDBCRutaDAO" runTimeClassModel="">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="data/IRutaDAO&lt;-data/JDBCRutaDAO" source="//@children.3/@children.1" target="//@children.3/@children.0" targetEnd="//@children.3/@children.1/@sourceConnections.0/@children.1" sourceEnd="//@children.3/@children.1/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:AssociationEndEditModel" location="72,29" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="51,0"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCRutaDAO-Soyatec::Import->domain/Ruta" source="//@children.3/@children.1" target="//@children.2/@children.9" targetEnd="//@children.3/@children.1/@sourceConnections.1/@children.2" label="//@children.3/@children.1/@sourceConnections.1/@children.0" sourceEnd="//@children.3/@children.1/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="0,21" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="71,10"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCRutaDAO-Soyatec::Implement->data/IRutaDAO" source="//@children.3/@children.1" target="//@children.3/@children.0" targetEnd="//@children.3/@children.1/@sourceConnections.2/@children.2" label="//@children.3/@children.1/@sourceConnections.2/@children.0" sourceEnd="//@children.3/@children.1/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Implement»" size="59,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="52,29" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="31,0"/>
+      </sourceConnections>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@children.4/@sourceConnections.8 //@children.3/@children.7/@sourceConnections.2 //@children.3/@children.13/@sourceConnections.7" name="JDBCVehiculoDAO" location="28,97" size="160,29" id="data/JDBCVehiculoDAO" runTimeClassModel="">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="data/IVehiculoDAO&lt;-data/JDBCVehiculoDAO" source="//@children.3/@children.2" target="//@children.3/@children.4" targetEnd="//@children.3/@children.2/@sourceConnections.0/@children.1" sourceEnd="//@children.3/@children.2/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:AssociationEndEditModel" location="76,29" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="64,0"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCVehiculoDAO-Soyatec::Implement->data/IVehiculoDAO" source="//@children.3/@children.2" target="//@children.3/@children.4" targetEnd="//@children.3/@children.2/@sourceConnections.1/@children.2" label="//@children.3/@children.2/@sourceConnections.1/@children.0" sourceEnd="//@children.3/@children.2/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Implement»" size="59,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="56,29" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="44,0"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCVehiculoDAO-Standard::Call->data/ConnectionManager" source="//@children.3/@children.2" target="//@children.3/@children.9" targetEnd="//@children.3/@children.2/@sourceConnections.2/@children.2" label="//@children.3/@children.2/@sourceConnections.2/@children.0" sourceEnd="//@children.3/@children.2/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Call»" size="29,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="160,14" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="0,64"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCVehiculoDAO-Standard::Call->domain/Vehiculo*data/JDBCVehiculoDAO-Standard::Instantiate->domain/Vehiculo*data/JDBCVehiculoDAO-Soyatec::Import->domain/Vehiculo" source="//@children.3/@children.2" target="//@children.2/@children.6" targetEnd="//@children.3/@children.2/@sourceConnections.3/@children.2" label="//@children.3/@children.2/@sourceConnections.3/@children.0" sourceEnd="//@children.3/@children.2/@sourceConnections.3/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call, Instantiate»" size="119,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="62,29" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="66,0"/>
+      </sourceConnections>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+    </children>
+    <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.3/@children.5/@sourceConnections.0 //@children.3/@children.5/@sourceConnections.1 //@children.3/@children.7/@sourceConnections.9 //@children.3/@children.10/@sourceConnections.6 //@children.3/@children.13/@sourceConnections.4" name="IUsuarioDAO" location="399,409" size="122,43" id="data/IUsuarioDAO" runTimeClassModel="">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/IUsuarioDAO-Soyatec::Import->domain/Usuario" source="//@children.3/@children.3" target="//@children.2/@children.8" targetEnd="//@children.3/@children.3/@sourceConnections.0/@children.2" label="//@children.3/@children.3/@sourceConnections.0/@children.0" sourceEnd="//@children.3/@children.3/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="0,13" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="90,20"/>
+      </sourceConnections>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+    </children>
+    <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.3/@children.2/@sourceConnections.0 //@children.3/@children.12/@sourceConnections.2 //@children.2/@children.4/@sourceConnections.2 //@children.3/@children.2/@sourceConnections.1 //@children.3/@children.7/@sourceConnections.8 //@children.3/@children.13/@sourceConnections.3" name="IVehiculoDAO" location="40,183" size="130,43" id="data/IVehiculoDAO" runTimeClassModel="">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/IVehiculoDAO-Soyatec::Import->domain/Vehiculo" source="//@children.3/@children.4" target="//@children.2/@children.6" targetEnd="//@children.3/@children.4/@sourceConnections.0/@children.2" label="//@children.3/@children.4/@sourceConnections.0/@children.0" sourceEnd="//@children.3/@children.4/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="29,43" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="72,0"/>
+      </sourceConnections>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.3/@children.7/@sourceConnections.3 //@children.3/@children.10/@sourceConnections.3 //@children.3/@children.13/@sourceConnections.6" name="JDBCUsuarioDAO" location="395,496" size="152,29" id="data/JDBCUsuarioDAO" runTimeClassModel="">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="data/IUsuarioDAO&lt;-data/JDBCUsuarioDAO" source="//@children.3/@children.5" target="//@children.3/@children.3" targetEnd="//@children.3/@children.5/@sourceConnections.0/@children.1" sourceEnd="//@children.3/@children.5/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:AssociationEndEditModel" location="64,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="60,43"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCUsuarioDAO-Soyatec::Implement->data/IUsuarioDAO" source="//@children.3/@children.5" target="//@children.3/@children.3" targetEnd="//@children.3/@children.5/@sourceConnections.1/@children.2" label="//@children.3/@children.5/@sourceConnections.1/@children.0" sourceEnd="//@children.3/@children.5/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Implement»" size="59,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="84,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="80,43"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCUsuarioDAO-Soyatec::Import->domain/Usuario" source="//@children.3/@children.5" target="//@children.2/@children.8" targetEnd="//@children.3/@children.5/@sourceConnections.2/@children.2" label="//@children.3/@children.5/@sourceConnections.2/@children.0" sourceEnd="//@children.3/@children.5/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="19,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="90,25"/>
+      </sourceConnections>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+    </children>
+    <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.3/@children.10/@sourceConnections.0 //@children.3/@children.12/@sourceConnections.3 //@children.3/@children.10/@sourceConnections.5 //@children.3/@children.13/@sourceConnections.9" name="IPasajeroDAO" location="407,248" size="130,43" id="data/IPasajeroDAO" runTimeClassModel="">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/IPasajeroDAO-Soyatec::Import->domain/Pasajero" source="//@children.3/@children.6" target="//@children.2/@children.0" targetEnd="//@children.3/@children.6/@sourceConnections.0/@children.2" label="//@children.3/@children.6/@sourceConnections.0/@children.0" sourceEnd="//@children.3/@children.6/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="9,43" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="84,0"/>
+      </sourceConnections>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" name="JDBCConductorDAO" location="23,413" size="169,29" id="data/JDBCConductorDAO" runTimeClassModel="">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="data/IConductorDAO&lt;-data/JDBCConductorDAO" source="//@children.3/@children.7" target="//@children.3/@children.8" targetEnd="//@children.3/@children.7/@sourceConnections.0/@children.1" sourceEnd="//@children.3/@children.7/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:AssociationEndEditModel" location="81,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="69,43"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCConductorDAO-Standard::Call->data/ConnectionManager" source="//@children.3/@children.7" target="//@children.3/@children.9" targetEnd="//@children.3/@children.7/@sourceConnections.1/@children.2" label="//@children.3/@children.7/@sourceConnections.1/@children.0" sourceEnd="//@children.3/@children.7/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Call»" size="29,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="92,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="54,103"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCConductorDAO-Standard::Instantiate->data/JDBCVehiculoDAO" source="//@children.3/@children.7" target="//@children.3/@children.2" targetEnd="//@children.3/@children.7/@sourceConnections.2/@children.2" label="//@children.3/@children.7/@sourceConnections.2/@children.0" sourceEnd="//@children.3/@children.7/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Instantiate»" size="61,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="84,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="79,29"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCConductorDAO-Standard::Instantiate->data/JDBCUsuarioDAO" source="//@children.3/@children.7" target="//@children.3/@children.5" targetEnd="//@children.3/@children.7/@sourceConnections.3/@children.2" label="//@children.3/@children.7/@sourceConnections.3/@children.0" sourceEnd="//@children.3/@children.7/@sourceConnections.3/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Instantiate»" size="61,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="150,29" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="15,0"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCConductorDAO-Standard::Call->domain/Usuario*data/JDBCConductorDAO-Soyatec::Import->domain/Usuario" source="//@children.3/@children.7" target="//@children.2/@children.8" targetEnd="//@children.3/@children.7/@sourceConnections.4/@children.2" label="//@children.3/@children.7/@sourceConnections.4/@children.0" sourceEnd="//@children.3/@children.7/@sourceConnections.4/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call»" size="64,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="33,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="90,26"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCConductorDAO-Soyatec::Implement->data/IConductorDAO" source="//@children.3/@children.7" target="//@children.3/@children.8" targetEnd="//@children.3/@children.7/@sourceConnections.5/@children.2" label="//@children.3/@children.7/@sourceConnections.5/@children.0" sourceEnd="//@children.3/@children.7/@sourceConnections.5/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Implement»" size="59,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="61,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="49,43"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCConductorDAO-Standard::Call->domain/Conductor*data/JDBCConductorDAO-Standard::Instantiate->domain/Conductor*data/JDBCConductorDAO-Soyatec::Import->domain/Conductor" source="//@children.3/@children.7" target="//@children.2/@children.2" targetEnd="//@children.3/@children.7/@sourceConnections.6/@children.2" label="//@children.3/@children.7/@sourceConnections.6/@children.0" sourceEnd="//@children.3/@children.7/@sourceConnections.6/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call, Instantiate»" size="119,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="0,12" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="107,16"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCConductorDAO-Soyatec::Import->domain/Vehiculo" source="//@children.3/@children.7" target="//@children.2/@children.6" targetEnd="//@children.3/@children.7/@sourceConnections.7/@children.2" label="//@children.3/@children.7/@sourceConnections.7/@children.0" sourceEnd="//@children.3/@children.7/@sourceConnections.7/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="0,21" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="98,10"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCConductorDAO-Standard::Call->data/IVehiculoDAO*data/JDBCConductorDAO-Soyatec::Import->data/IVehiculoDAO" source="//@children.3/@children.7" target="//@children.3/@children.4" targetEnd="//@children.3/@children.7/@sourceConnections.8/@children.2" label="//@children.3/@children.7/@sourceConnections.8/@children.0" sourceEnd="//@children.3/@children.7/@sourceConnections.8/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call»" size="64,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="81,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="64,43"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCConductorDAO-Standard::Call->data/IUsuarioDAO*data/JDBCConductorDAO-Soyatec::Import->data/IUsuarioDAO" source="//@children.3/@children.7" target="//@children.3/@children.3" targetEnd="//@children.3/@children.7/@sourceConnections.9/@children.2" label="//@children.3/@children.7/@sourceConnections.9/@children.0" sourceEnd="//@children.3/@children.7/@sourceConnections.9/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call»" size="64,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="169,14" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="0,18"/>
+      </sourceConnections>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+    </children>
+    <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.3/@children.7/@sourceConnections.0 //@children.3/@children.12/@sourceConnections.1 //@children.3/@children.7/@sourceConnections.5" name="IConductorDAO" location="35,305" size="139,43" id="data/IConductorDAO" runTimeClassModel="">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/IConductorDAO-Soyatec::Import->domain/Conductor" source="//@children.3/@children.8" target="//@children.2/@children.2" targetEnd="//@children.3/@children.8/@sourceConnections.0/@children.2" label="//@children.3/@children.8/@sourceConnections.0/@children.0" sourceEnd="//@children.3/@children.8/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="0,41" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="102,0"/>
+      </sourceConnections>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.3/@children.12/@sourceConnections.0 //@children.3/@children.2/@sourceConnections.2 //@children.3/@children.7/@sourceConnections.1 //@children.3/@children.10/@sourceConnections.2 //@children.3/@children.13/@sourceConnections.5" name="ConnectionManager" location="215,47" size="170,103" id="data/ConnectionManager" runTimeClassModel="checkIn(Ljava.sql.Connection;),getInstance(),checkOut()">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="86,54">
+        <children xsi:type="editmodel:MethodEditModel" name="checkIn" id="data/ConnectionManager#checkIn(Ljava.sql.Connection;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="checkOut" id="data/ConnectionManager#checkOut()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getInstance" id="data/ConnectionManager#getInstance()"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.3/@children.13/@sourceConnections.8" name="JDBCPasajeroDAO" location="386,346" size="160,29" id="data/JDBCPasajeroDAO" runTimeClassModel="">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="data/IPasajeroDAO&lt;-data/JDBCPasajeroDAO" source="//@children.3/@children.10" target="//@children.3/@children.6" targetEnd="//@children.3/@children.10/@sourceConnections.0/@children.1" sourceEnd="//@children.3/@children.10/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:AssociationEndEditModel" location="85,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="64,43"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCPasajeroDAO-Standard::Call->domain/Usuario*data/JDBCPasajeroDAO-Soyatec::Import->domain/Usuario" source="//@children.3/@children.10" target="//@children.2/@children.8" targetEnd="//@children.3/@children.10/@sourceConnections.1/@children.2" label="//@children.3/@children.10/@sourceConnections.1/@children.0" sourceEnd="//@children.3/@children.10/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call»" size="64,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="0,9" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="90,19"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCPasajeroDAO-Standard::Call->data/ConnectionManager" source="//@children.3/@children.10" target="//@children.3/@children.9" targetEnd="//@children.3/@children.10/@sourceConnections.2/@children.2" label="//@children.3/@children.10/@sourceConnections.2/@children.0" sourceEnd="//@children.3/@children.10/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Call»" size="29,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="71,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="118,103"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCPasajeroDAO-Standard::Instantiate->data/JDBCUsuarioDAO" source="//@children.3/@children.10" target="//@children.3/@children.5" targetEnd="//@children.3/@children.10/@sourceConnections.3/@children.2" label="//@children.3/@children.10/@sourceConnections.3/@children.0" sourceEnd="//@children.3/@children.10/@sourceConnections.3/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Instantiate»" size="61,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="84,29" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="75,0"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCPasajeroDAO-Standard::Call->domain/Pasajero*data/JDBCPasajeroDAO-Standard::Instantiate->domain/Pasajero*data/JDBCPasajeroDAO-Soyatec::Import->domain/Pasajero" source="//@children.3/@children.10" target="//@children.2/@children.0" targetEnd="//@children.3/@children.10/@sourceConnections.4/@children.2" label="//@children.3/@children.10/@sourceConnections.4/@children.0" sourceEnd="//@children.3/@children.10/@sourceConnections.4/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call, Instantiate»" size="119,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="20,29" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="98,2"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCPasajeroDAO-Soyatec::Implement->data/IPasajeroDAO" source="//@children.3/@children.10" target="//@children.3/@children.6" targetEnd="//@children.3/@children.10/@sourceConnections.5/@children.2" label="//@children.3/@children.10/@sourceConnections.5/@children.0" sourceEnd="//@children.3/@children.10/@sourceConnections.5/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Implement»" size="59,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="65,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="44,43"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCPasajeroDAO-Standard::Call->data/IUsuarioDAO*data/JDBCPasajeroDAO-Soyatec::Import->data/IUsuarioDAO" source="//@children.3/@children.10" target="//@children.3/@children.3" targetEnd="//@children.3/@children.10/@sourceConnections.6/@children.2" label="//@children.3/@children.10/@sourceConnections.6/@children.0" sourceEnd="//@children.3/@children.10/@sourceConnections.6/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call»" size="64,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="73,29" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="60,0"/>
+      </sourceConnections>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+    </children>
+    <children xsi:type="editmodel:GroupEditModel" location="184,494"/>
+    <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.3/@children.13/@sourceConnections.0 //@children.2/@children.4/@sourceConnections.3 //@children.3/@children.13/@sourceConnections.1" name="IViajeDAO" location="230,249" size="124,135" id="data/IViajeDAO" runTimeClassModel="selectViaje(Ljava.lang.String;),insertViaje(Ldomain.Viaje;),deleteViaje(Ljava.lang.String;),selectAllViajes()">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="101,72">
+        <children xsi:type="editmodel:MethodEditModel" name="insertViaje" id="data/IViajeDAO#insertViaje(Ldomain.Viaje;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="selectAllViajes" id="data/IViajeDAO#selectAllViajes()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="selectViaje" id="data/IViajeDAO#selectViaje(Ljava.lang.String;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="deleteViaje" id="data/IViajeDAO#deleteViaje(Ljava.lang.String;)"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" source="//@children.3/@children.12" target="//@children.3/@children.9" targetEnd="//@children.3/@children.12/@sourceConnections.0/@children.1" label="//@children.3/@children.12/@sourceConnections.0/@children.2" sourceEnd="//@children.3/@children.12/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:AssociationEndEditModel" location="61,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="76,103"/>
+        <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" source="//@children.3/@children.12" target="//@children.3/@children.8" targetEnd="//@children.3/@children.12/@sourceConnections.1/@children.1" label="//@children.3/@children.12/@sourceConnections.1/@children.2" sourceEnd="//@children.3/@children.12/@sourceConnections.1/@children.0" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:AssociationEndEditModel" location="0,77" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="139,21"/>
+        <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" source="//@children.3/@children.12" target="//@children.3/@children.4" targetEnd="//@children.3/@children.12/@sourceConnections.2/@children.1" label="//@children.3/@children.12/@sourceConnections.2/@children.2" sourceEnd="//@children.3/@children.12/@sourceConnections.2/@children.0" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:AssociationEndEditModel" location="0,30" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="102,43"/>
+        <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" source="//@children.3/@children.12" target="//@children.3/@children.6" targetEnd="//@children.3/@children.12/@sourceConnections.3/@children.1" label="//@children.3/@children.12/@sourceConnections.3/@children.2" sourceEnd="//@children.3/@children.12/@sourceConnections.3/@children.0" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:AssociationEndEditModel" location="124,20" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="0,21"/>
+        <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/IViajeDAO-Soyatec::Import->domain/Viaje" source="//@children.3/@children.12" target="//@children.2/@children.10" targetEnd="//@children.3/@children.12/@sourceConnections.4/@children.2" label="//@children.3/@children.12/@sourceConnections.4/@children.0" sourceEnd="//@children.3/@children.12/@sourceConnections.4/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="0,75" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="75,9"/>
+      </sourceConnections>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@children.4/@sourceConnections.4 //@children.2/@children.7/@sourceConnections.1" name="JDBCViajeDAO" location="214,447" size="137,29" id="data/JDBCViajeDAO" runTimeClassModel="">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="data/IViajeDAO&lt;-data/JDBCViajeDAO" source="//@children.3/@children.13" target="//@children.3/@children.12" targetEnd="//@children.3/@children.13/@sourceConnections.0/@children.1" sourceEnd="//@children.3/@children.13/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:AssociationEndEditModel" location="76,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="60,135"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCViajeDAO-Soyatec::Implement->data/IViajeDAO" source="//@children.3/@children.13" target="//@children.3/@children.12" targetEnd="//@children.3/@children.13/@sourceConnections.1/@children.2" label="//@children.3/@children.13/@sourceConnections.1/@children.0" sourceEnd="//@children.3/@children.13/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Implement»" size="59,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="56,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="40,135"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCViajeDAO-Soyatec::Import->domain/Viaje" source="//@children.3/@children.13" target="//@children.2/@children.10" targetEnd="//@children.3/@children.13/@sourceConnections.2/@children.2" label="//@children.3/@children.13/@sourceConnections.2/@children.0" sourceEnd="//@children.3/@children.13/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="0,8" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="75,17"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCViajeDAO-Soyatec::Import->data/IVehiculoDAO" source="//@children.3/@children.13" target="//@children.3/@children.4" targetEnd="//@children.3/@children.13/@sourceConnections.3/@children.2" label="//@children.3/@children.13/@sourceConnections.3/@children.0" sourceEnd="//@children.3/@children.13/@sourceConnections.3/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="58,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="80,43"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCViajeDAO-Soyatec::Import->data/IUsuarioDAO" source="//@children.3/@children.13" target="//@children.3/@children.3" targetEnd="//@children.3/@children.13/@sourceConnections.4/@children.2" label="//@children.3/@children.13/@sourceConnections.4/@children.0" sourceEnd="//@children.3/@children.13/@sourceConnections.4/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="137,2" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="0,40"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCViajeDAO-Standard::Call->data/ConnectionManager" source="//@children.3/@children.13" target="//@children.3/@children.9" targetEnd="//@children.3/@children.13/@sourceConnections.5/@children.2" label="//@children.3/@children.13/@sourceConnections.5/@children.0" sourceEnd="//@children.3/@children.13/@sourceConnections.5/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Call»" size="29,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="68,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="67,103"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCViajeDAO-Standard::Instantiate->data/JDBCUsuarioDAO" source="//@children.3/@children.13" target="//@children.3/@children.5" targetEnd="//@children.3/@children.13/@sourceConnections.6/@children.2" label="//@children.3/@children.13/@sourceConnections.6/@children.0" sourceEnd="//@children.3/@children.13/@sourceConnections.6/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Instantiate»" size="61,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="126,29" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="22,0"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCViajeDAO-Standard::Instantiate->data/JDBCVehiculoDAO" source="//@children.3/@children.13" target="//@children.3/@children.2" targetEnd="//@children.3/@children.13/@sourceConnections.7/@children.2" label="//@children.3/@children.13/@sourceConnections.7/@children.0" sourceEnd="//@children.3/@children.13/@sourceConnections.7/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Instantiate»" size="61,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="61,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="87,29"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCViajeDAO-Standard::Instantiate->data/JDBCPasajeroDAO" source="//@children.3/@children.13" target="//@children.3/@children.10" targetEnd="//@children.3/@children.13/@sourceConnections.8/@children.2" label="//@children.3/@children.13/@sourceConnections.8/@children.0" sourceEnd="//@children.3/@children.13/@sourceConnections.8/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Instantiate»" size="61,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="94,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="53,29"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/JDBCViajeDAO-Soyatec::Import->data/IPasajeroDAO" source="//@children.3/@children.13" target="//@children.3/@children.6" targetEnd="//@children.3/@children.13/@sourceConnections.9/@children.2" label="//@children.3/@children.13/@sourceConnections.9/@children.0" sourceEnd="//@children.3/@children.13/@sourceConnections.9/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="82,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="43,43"/>
+      </sourceConnections>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+    </children>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="data-Standard::Call->domain*data-Standard::Instantiate->domain*data-Soyatec::Import->domain" source="//@children.3" target="//@children.2" targetEnd="//@children.3/@sourceConnections.0/@children.2" label="//@children.3/@sourceConnections.0/@children.0" sourceEnd="//@children.3/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call, Instantiate»" location="843,490" size="119,14" automaticRelocationAllowed="false" locationOnWireFromSource="-17.756256870203963" distanceFromWire="30.310317417660524" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,237" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="386,247"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data->utils" source="//@children.3" target="//@children.1" targetEnd="//@children.3/@sourceConnections.1/@children.1" label="//@children.3/@sourceConnections.1/@children.2" sourceEnd="//@children.3/@sourceConnections.1/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,17" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="211,125"/>
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+    </sourceConnections>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=4;Product=eUML2;displayOptions=1"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
+</editmodel:ClassDiagramEditModel>
