@@ -30,6 +30,7 @@ CREATE TABLE `conductor` (
   `OIDConductor` varchar(100) NOT NULL,
   `OIDViaje` varchar(100) NOT NULL,
   `OIDVehiculo` varchar(100) NOT NULL,
+  PRIMARY KEY (`OIDConductor`,`OIDViaje`),
   KEY `OIDViaje` (`OIDViaje`),
   KEY `OIDVehiculo` (`OIDVehiculo`),
   CONSTRAINT `OIDConductor` FOREIGN KEY (`OIDConductor`) REFERENCES `usuario` (`OIDUsuario`) ON DELETE CASCADE ON UPDATE CASCADE,
