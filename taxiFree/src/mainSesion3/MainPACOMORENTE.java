@@ -33,9 +33,9 @@ public class MainPACOMORENTE {
 		System.out.println("---VIAJES DADOS DE ALTA EN TAXIFREE---");
 		System.out.println("===========================================");
 		for(Viaje via:l){
-			String viajeAnulado="VIAJE ACTUALMENTE ANULADO";
+			String viajeAnulado="VIAJE ESTA ACTUALMENTE ACTIVO";
 			if(via.getAnulado())
-				viajeAnulado="VIAJE ESTA ACTUALMENTE ACTIVO";					
+				viajeAnulado="VIAJE ACTUALMENTE ANULADO";					
 				
 			System.out.println(via.getViajeID()+ " - " + via.getOrigen() 
 					+ " - " + via.getDestino() 
@@ -48,11 +48,11 @@ public class MainPACOMORENTE {
 		viajesCond= accionCond.verViajesAsignados(c.getNick());
 		vehiculoCond = accionCond.obtenerVehiculoC(c.getNick());
 		System.out.println("NUMERO DE VIAJES DEL CONDUCTOR--> " + viajesCond.size());
-		String viajeAnulado="VIAJE ACTUALMENTE ANULADO";
+		String viajeAnulado="VIAJE ESTA ACTUALMENTE ACTIVO";
 
 		for(Viaje auxv : viajesCond){
-			if(auxv.getAnulado())
-				viajeAnulado="VIAJE ESTA ACTUALMENTE ACTIVO";
+			if(auxv.getAnulado()) // =0 --> ACTIVO
+				viajeAnulado="VIAJE ESTA ACTUALMENTE ANULADO";
 			System.out.println(auxv.getOrigen()+"--->"+auxv.getDestino()
 					/*+" -- "+auxv.getConductor().getNombre() 
 					+ "DNI: " + auxv.getConductor().getDni()
@@ -78,7 +78,7 @@ public class MainPACOMORENTE {
 			for(Viaje via:l){
 				String viajeAnulado="VIAJE ACTUALMENTE ANULADO";
 				if(via.getAnulado())
-					viajeAnulado="VIAJE EST� ACTUALMENTE ACTIVO";					
+					viajeAnulado="VIAJE ESTA ACTUALMENTE ACTIVO";					
 					
 				System.out.println(via.getViajeID()+ " - " + via.getOrigen() 
 						+ " - " + via.getDestino() 
