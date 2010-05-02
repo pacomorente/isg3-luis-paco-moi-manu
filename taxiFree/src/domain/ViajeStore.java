@@ -1,13 +1,18 @@
 package domain;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import Grafo.Graph;
+import Grafo.GraphImpl;
+import Grafo.Node;
+import Grafo.NodeData;
 import data.JDBCViajeDAO;
 
 /**
- * @author             PACO
- * @uml.dependency   supplier="domain.Viaje"
+ * @author               PACO
+ * @uml.dependency   supplier="domain.GraphImpl"
  */
 public class ViajeStore {
 
@@ -60,7 +65,34 @@ public class ViajeStore {
         return result;
     }
 
+    public Graph getViajesG(String viajeID) {
+    	Graph graf = new GraphImpl();
+    	Node nodo = (Node) new NodeData();
+    	List<String> trayecto = new ArrayList<String>();
+        for (Iterator<Viaje> iter = viajes.iterator(); iter.hasNext();) {
+            Viaje v = (Viaje) iter.next();
+            if (v.getOrigen()!=null) {
+            	trayecto.add(v.getOrigen());
+            }
+            if (v.getPuntosInt01()!=null) {
+            	trayecto.add(v.getPuntosInt01());
+            }
+            if (v.getPuntosInt02()!=null) {
+            	trayecto.add(v.getPuntosInt02());
+            }
+            if (v.getPuntosInt03()!=null) {
+            	trayecto.add(v.getPuntosInt03());
+            }
+            if (v.getDestino()!=null) {
+            	trayecto.add(v.getDestino());
+            }
+        }
+        
+        graf.add(trayecto);
+        return graf;
 
+        
+    }
 
 
 	/**
