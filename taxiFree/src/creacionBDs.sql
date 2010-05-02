@@ -171,6 +171,9 @@ CREATE TABLE `viaje` (
   `OIDViaje` varchar(100) NOT NULL,
   `origen` varchar(50) NOT NULL,
   `destino` varchar(50) NOT NULL,
+  `puntoint01` varchar(50) NOT NULL,
+  `puntoint02` varchar(50) NOT NULL,
+  `puntoint03` varchar(50) NOT NULL,
   `fecha` date NOT NULL,
   `idViaje` varchar(50) NOT NULL,
   `anulado` tinyint(1) DEFAULT NULL,
@@ -221,16 +224,16 @@ COMMIT;
 
 
 -- TABLA VIAJE
-INSERT INTO viaje(OIDViaje,origen,destino,fecha,idViaje,anulado)
-values('VIAJE001','SEVILLA','CADIZ',STR_TO_DATE('01/06/2010','%d/%m/%Y'),'01',TRUE);
+INSERT INTO viaje(OIDViaje,origen,destino,puntoint01,puntoint02,puntoint03,fecha,idViaje,anulado)
+values('VIAJE001','SEVILLA','ZARAGOZA','MADRID','','',STR_TO_DATE('01/06/2010','%d/%m/%Y'),'01',FALSE);
 
 -- UPDATE VIAJE SET ANULADO=FALSE WHERE OIDVIAJE='VIAJE001';
 
-INSERT INTO viaje(OIDViaje,origen,destino,fecha,idViaje,anulado)
-values('VIAJE002','SEVILLA','GRANADA',STR_TO_DATE('15/05/2010','%d/%m/%Y'),'02',TRUE);
+INSERT INTO viaje(OIDViaje,origen,destino,puntoint01,puntoint02,puntoint03,fecha,idViaje,anulado)
+values('VIAJE002','SEVILLA','BARCELONA','CORDOBA','JAEN','VALENCIA',STR_TO_DATE('15/05/2010','%d/%m/%Y'),'02',FALSE);
 
-INSERT INTO viaje(OIDViaje,origen,destino,fecha,idViaje,anulado)
-values('VIAJE003','CORDOBA','ALMERIA',STR_TO_DATE('12/05/2010','%d/%m/%Y'),'03',FALSE);
+INSERT INTO viaje(OIDViaje,origen,destino,puntoint01,puntoint02,puntoint03,fecha,idViaje,anulado)
+values('VIAJE003','SEVILLA','BURGOS','SALAMANCA','VALLADOLID','',STR_TO_DATE('12/05/2010','%d/%m/%Y'),'03',FALSE);
 
 -- obtener fecha de mysql a string para variable
 -- SELECT *, DATE_FORMAT(fecha,'%d/%m/%Y') AS `date` FROM `tabla`
