@@ -182,5 +182,32 @@ public class Viaje {
 		this.puntosIntermedios = puntosIntermedios;
 	}
 	
+	private String puntosInt01;
+	private String puntosInt02;
+	private String puntosInt03;
+	public String getPuntosInt01() {
+		return puntosInt01;
+	}
+
+	public void setPuntosInt01(String puntosInt01) {
+		this.puntosInt01 = puntosInt01;
+	}
+
+	public String getPuntosInt02() {
+		return puntosInt02;
+	}
+
+	public void setPuntosInt02(String puntosInt02) {
+		this.puntosInt02 = puntosInt02;
+	}
+
+	public String getPuntosInt03() {
+		return puntosInt03;
+	}
+
+	public void setPuntosInt03(String puntosInt03) {
+		this.puntosInt03 = puntosInt03;
+	}
+	
 	
 }
