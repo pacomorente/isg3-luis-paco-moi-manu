@@ -41,8 +41,8 @@ public class JDBCViajeDAO implements IViajeDAO {
         PreparedStatement stmt = null;
 
         // Buscar si viaje tiene pasajero, para ello hay que meterse en Pasajero y ver si existe
-        // al menos un OID VIAJE, pas�ndole el OID VIAJE al m�todo que devolver� boolean 
-        //  FALTA IMPLEMENTAR A�N
+        // al menos un OID VIAJE, pasandole el OID VIAJE al metodo que devolvera boolean 
+        //  FALTA IMPLEMENTAR AUN
         
         try {
             stmt = conn.prepareStatement(sql);
@@ -67,8 +67,8 @@ public class JDBCViajeDAO implements IViajeDAO {
 	public void insertViaje(Viaje v ) {
 		// TODO Auto-generated method stub
 		/*
-		 * Cuando inserte VIaje hay que comprobar si el usuario ya tiene veh�culo dado de alta, en caso contrario,
-		 * solicitar el alta del veh�culo. ( SE ACCEDE A TABLA VEHICULO )
+		 * Cuando inserte VIaje hay que comprobar si el usuario ya tiene vehiculo dado de alta, en caso contrario,
+		 * solicitar el alta del vehiculo. ( SE ACCEDE A TABLA VEHICULO )
 		 */
 	}
 
@@ -97,7 +97,10 @@ public class JDBCViajeDAO implements IViajeDAO {
 			   temp.setViajeID(result.getString("idViaje"));
 			   temp.setOrigen(result.getString("origen"));
 			   temp.setDestino(result.getString("destino"));
-			   temp.setPuntosIntermedios(puntosInt);
+			   temp.setPuntosInt01(result.getString("puntoint01"));
+			   temp.setPuntosInt02(result.getString("puntoint02"));
+			   temp.setPuntosInt03(result.getString("puntoint03"));
+			   //temp.setPuntosIntermedios(puntosInt);
 			   temp.setFecha(result.getDate("fecha"));
 			   temp.setAnulado(result.getBoolean("anulado"));
 			   searchResults.add(temp);
@@ -121,10 +124,10 @@ public class JDBCViajeDAO implements IViajeDAO {
 	public Viaje selectViaje(String s) {
 		// TODO Auto-generated method stub
 		/*
-		 *  Al seleccionar el viaje, mostar�a el veh�culo de dicho viaje y 
+		 *  Al seleccionar el viaje, mostaria el vehiculo de dicho viaje y 
 		 *  se busca la existencia de pasajeros, y si los hubiera
-		 *  mostrar�a los datos del usuario pasajero asignado a dicho viaje; 
-		 *  SE ACCEDER�A A TABLAS PASAJERO, VIAJE, USUARIO y VEHICULO 
+		 *  mostraria los datos del usuario pasajero asignado a dicho viaje; 
+		 *  SE ACCEDERIA A TABLAS PASAJERO, VIAJE, USUARIO y VEHICULO 
 		 */
 		return null;
 	}
@@ -146,10 +149,13 @@ public class JDBCViajeDAO implements IViajeDAO {
             viajeCond.setViajeID(result.getString("idViaje"));
             viajeCond.setOrigen(result.getString("origen"));
             viajeCond.setDestino(result.getString("destino"));
-			   puntosInt.add("Sevilla");
-			   puntosInt.add("M�laga");
-			   puntosInt.add("Granada");
-            viajeCond.setPuntosIntermedios(puntosInt);
+			/*   puntosInt.add("Sevilla");
+			   puntosInt.add("Mlaga");
+			   puntosInt.add("Granada");*/
+            viajeCond.setPuntosInt01(result.getString("puntoint01"));
+            viajeCond.setPuntosInt02(result.getString("puntoint02"));
+            viajeCond.setPuntosInt03(result.getString("puntoint03"));
+            //viajeCond.setPuntosIntermedios(puntosInt);
             viajeCond.setFecha(result.getDate("fecha"));
 			viajeCond.setAnulado(result.getBoolean("anulado"));
 			
