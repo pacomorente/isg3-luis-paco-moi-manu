@@ -13,10 +13,10 @@
   <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.2/@sourceConnections.0" name="IViajeDAO" location="314,516" size="124,153" id="data/IViajeDAO" runTimeClassModel="insertViaje(Ldomain.Viaje;Ljava.lang.String;),deleteViaje(Ljava.sql.Connection;Ljava.lang.String;),updateViaje(Ldomain.Viaje;Ljava.lang.String;),selectViaje(Ljava.lang.String;),selectAllViajes()">
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="101,90">
-      <children xsi:type="editmodel:MethodEditModel" name="insertViaje" id="data/IViajeDAO#insertViaje(Ldomain.Viaje;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="insertViaje" id="data/IViajeDAO#insertViaje(Ldomain.GraphImpl;Ljava.lang.String;)"/>
       <children xsi:type="editmodel:MethodEditModel" name="selectAllViajes" id="data/IViajeDAO#selectAllViajes()"/>
       <children xsi:type="editmodel:MethodEditModel" name="selectViaje" id="data/IViajeDAO#selectViaje(Ljava.lang.String;)"/>
-      <children xsi:type="editmodel:MethodEditModel" name="updateViaje" id="data/IViajeDAO#updateViaje(Ldomain.Viaje;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateViaje" id="data/IViajeDAO#updateViaje(Ldomain.GraphImpl;Ljava.lang.String;)"/>
       <children xsi:type="editmodel:MethodEditModel" name="deleteViaje" id="data/IViajeDAO#deleteViaje(Ljava.sql.Connection;Ljava.lang.String;)"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
@@ -30,10 +30,10 @@
   <children xsi:type="editmodel:ClassEditModel" name="JDBCViajeDAO" location="119,482" size="137,139" id="data/JDBCViajeDAO" runTimeClassModel="insertViaje(Ldomain.Viaje;Ljava.lang.String;),deleteViaje(Ljava.sql.Connection;Ljava.lang.String;),updateViaje(Ldomain.Viaje;Ljava.lang.String;),selectViaje(Ljava.lang.String;),selectAllViajes()">
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="101,90">
-      <children xsi:type="editmodel:MethodEditModel" name="insertViaje" id="data/JDBCViajeDAO#insertViaje(Ldomain.Viaje;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="insertViaje" id="data/JDBCViajeDAO#insertViaje(Ldomain.GraphImpl;Ljava.lang.String;)"/>
       <children xsi:type="editmodel:MethodEditModel" name="selectAllViajes" id="data/JDBCViajeDAO#selectAllViajes()"/>
       <children xsi:type="editmodel:MethodEditModel" name="selectViaje" id="data/JDBCViajeDAO#selectViaje(Ljava.lang.String;)"/>
-      <children xsi:type="editmodel:MethodEditModel" name="updateViaje" id="data/JDBCViajeDAO#updateViaje(Ldomain.Viaje;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateViaje" id="data/JDBCViajeDAO#updateViaje(Ldomain.GraphImpl;Ljava.lang.String;)"/>
       <children xsi:type="editmodel:MethodEditModel" name="deleteViaje" id="data/JDBCViajeDAO#deleteViaje(Ljava.sql.Connection;Ljava.lang.String;)"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
@@ -43,7 +43,7 @@
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" name="JDBCConductorDAO" location="674,523" size="169,139" id="data/JDBCConductorDAO" runTimeClassModel="selectConductor(Ljava.lang.String;),sellectAllConductores(),vdao,JDBCConductorDAO(),udao">
+  <children xsi:type="editmodel:ClassEditModel" name="JDBCConductorDAO" location="674,523" size="169,139" id="data/JDBCConductorDAO" runTimeClassModel="selectConductor(Ljava.lang.String;),vdao,sellectAllConductores(),JDBCConductorDAO(),udao">
     <children xsi:type="editmodel:CompartmentEditModel" size="116,36">
       <children xsi:type="editmodel:AttributeEditModel" name="vdao" id="data/JDBCConductorDAO#vdao"/>
       <children xsi:type="editmodel:AttributeEditModel" name="udao" id="data/JDBCConductorDAO#udao"/>
@@ -132,7 +132,7 @@
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
   </children>
-  <children xsi:type="editmodel:InterfaceEditModel" name="Connection" location="453,212" size="114,57" id="java.sql/Connection" runTimeClassModel="commit(),prepareCall(Ljava.lang.String;),prepareCall(Ljava.lang.String;III),setReadOnly(Z),prepareStatement(Ljava.lang.String;),close(),prepareStatement(Ljava.lang.String;[Ljava.lang.String;),setTypeMap(Ljava.util.Map;),prepareStatement(Ljava.lang.String;II),getMetaData(),getTransactionIsolation(),createStatement(III),rollback(),prepareCall(Ljava.lang.String;II),setCatalog(Ljava.lang.String;),getCatalog(),setSavepoint(Ljava.lang.String;),getAutoCommit(),getHoldability(),isClosed(),prepareStatement(Ljava.lang.String;[I),releaseSavepoint(Ljava.sql.Savepoint;),prepareStatement(Ljava.lang.String;I),getWarnings(),setTransactionIsolation(I),rollback(Ljava.sql.Savepoint;),nativeSQL(Ljava.lang.String;),setAutoCommit(Z),clearWarnings(),tRANSACTION_SERIALIZABLE,tRANSACTION_READ_UNCOMMITTED,prepareStatement(Ljava.lang.String;III),tRANSACTION_REPEATABLE_READ,createStatement(),createStatement(II),setHoldability(I),getTypeMap(),tRANSACTION_READ_COMMITTED,setSavepoint(),isReadOnly(),tRANSACTION_NONE">
+  <children xsi:type="editmodel:InterfaceEditModel" name="Connection" location="453,212" size="114,57" id="java.sql/Connection" runTimeClassModel="prepareCall(Ljava.lang.String;),commit(),prepareCall(Ljava.lang.String;III),setReadOnly(Z),prepareStatement(Ljava.lang.String;),prepareStatement(Ljava.lang.String;[Ljava.lang.String;),close(),setTypeMap(Ljava.util.Map;),prepareStatement(Ljava.lang.String;II),getTransactionIsolation(),getMetaData(),createStatement(III),rollback(),prepareCall(Ljava.lang.String;II),setCatalog(Ljava.lang.String;),getCatalog(),setSavepoint(Ljava.lang.String;),getAutoCommit(),getHoldability(),isClosed(),prepareStatement(Ljava.lang.String;[I),releaseSavepoint(Ljava.sql.Savepoint;),prepareStatement(Ljava.lang.String;I),getWarnings(),setTransactionIsolation(I),nativeSQL(Ljava.lang.String;),rollback(Ljava.sql.Savepoint;),setAutoCommit(Z),tRANSACTION_SERIALIZABLE,clearWarnings(),tRANSACTION_READ_UNCOMMITTED,prepareStatement(Ljava.lang.String;III),createStatement(),tRANSACTION_REPEATABLE_READ,createStatement(II),setHoldability(I),getTypeMap(),tRANSACTION_READ_COMMITTED,setSavepoint(),tRANSACTION_NONE,isReadOnly()">
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>

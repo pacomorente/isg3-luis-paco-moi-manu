@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="Modelo TO - BO CONDUCTOR" size="1127,871" id="domain" metadata="uml2-1.0" initialized="true" zoom="0.75" scrolledY="18" tag="1000" key="32303037303533312D313030302054617869467265655F534553494F4E332F6D6F72656E7465666A">
-  <children xsi:type="editmodel:ClassEditModel" name="Conductor" location="524,464" size="134,121" id="domain/Conductor" runTimeClassModel="idConductor,viaje,Conductor(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;ILjava.lang.String;Ljava.lang.String;),Conductor()">
+  <children xsi:type="editmodel:ClassEditModel" name="Conductor" location="524,464" size="134,121" id="domain/Conductor" runTimeClassModel="idConductor,Conductor(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;ILjava.lang.String;Ljava.lang.String;),viaje,Conductor()">
     <children xsi:type="editmodel:CompartmentEditModel" size="111,36">
       <children xsi:type="editmodel:AttributeEditModel" name="idConductor" id="domain/Conductor#idConductor"/>
       <children xsi:type="editmodel:AttributeEditModel" name="viaje" id="domain/Conductor#viaje"/>
@@ -42,7 +42,7 @@
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.5/@sourceConnections.0 //@children.0/@sourceConnections.3 //@children.0/@sourceConnections.1" name="Vehiculo" location="329,510" size="126,129" id="domain/Vehiculo" runTimeClassModel="color,plazas,idVehiculo,marca,modelo">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.5/@sourceConnections.0 //@children.0/@sourceConnections.3 //@children.0/@sourceConnections.1" name="Vehiculo" location="329,510" size="126,129" id="domain/Vehiculo" runTimeClassModel="idVehiculo,color,plazas,marca,modelo">
     <children xsi:type="editmodel:CompartmentEditModel" size="103,90">
       <children xsi:type="editmodel:AttributeEditModel" name="color" id="domain/Vehiculo#color"/>
       <children xsi:type="editmodel:AttributeEditModel" name="marca" id="domain/Vehiculo#marca"/>
@@ -54,7 +54,7 @@
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.0" name="Usuario" location="802,508" size="120,211" id="domain/Usuario" runTimeClassModel="Apellidos,Correo,Usuario(),Pass,Estrella,Nombre,Nick,Dni,Usuario(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;I)">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.0" name="Usuario" location="802,508" size="120,211" id="domain/Usuario" runTimeClassModel="Apellidos,Correo,Estrella,Usuario(),Usuario(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;I),Dni,Nombre,Pass,Nick">
     <children xsi:type="editmodel:CompartmentEditModel" size="97,126">
       <children xsi:type="editmodel:AttributeEditModel" name="Apellidos" id="domain/Usuario#Apellidos"/>
       <children xsi:type="editmodel:AttributeEditModel" name="Correo" id="domain/Usuario#Correo"/>
@@ -71,28 +71,28 @@
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.2" name="Viaje" location="585,660" size="193,165" id="domain/Viaje" runTimeClassModel="anulado,fecha,viajeID,destino,pasajeros,origen,puntosIntermedios">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.2" name="Viaje" location="585,660" size="193,165" id="domain/GraphImpl" runTimeClassModel="puntosIntermedios,destino,pasajeros,viajeID,fecha,anulado,origen">
     <children xsi:type="editmodel:CompartmentEditModel" size="170,126">
-      <children xsi:type="editmodel:AttributeEditModel" name="destino" id="domain/Viaje#destino"/>
-      <children xsi:type="editmodel:AttributeEditModel" name="fecha" id="domain/Viaje#fecha"/>
-      <children xsi:type="editmodel:AttributeEditModel" name="origen" id="domain/Viaje#origen"/>
-      <children xsi:type="editmodel:AttributeEditModel" name="pasajeros" id="domain/Viaje#pasajeros"/>
-      <children xsi:type="editmodel:AttributeEditModel" name="puntosIntermedios" id="domain/Viaje#puntosIntermedios"/>
-      <children xsi:type="editmodel:AttributeEditModel" name="viajeID" id="domain/Viaje#viajeID"/>
-      <children xsi:type="editmodel:AttributeEditModel" name="anulado" id="domain/Viaje#anulado"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="destino" id="domain/GraphImpl#destino"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="fecha" id="domain/GraphImpl#fecha"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="origen" id="domain/GraphImpl#origen"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pasajeros" id="domain/GraphImpl#pasajeros"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="puntosIntermedios" id="domain/GraphImpl#puntosIntermedios"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="viajeID" id="domain/GraphImpl#viajeID"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="anulado" id="domain/GraphImpl#anulado"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" name="AccionConductorImpl" location="704,237" size="178,229" id="domain/AccionConductorImpl" runTimeClassModel="insertarVehiculo(Ldomain.Vehiculo;),AccionConductorImpl(),modificaVehiculo(Ldomain.Vehiculo;),obtenerVehiculoC(Ljava.lang.String;),modificaViaje(Ldomain.Viaje;),verViajesAsignados(Ljava.lang.String;),eliminaVehiculo(Ldomain.Vehiculo;),insertarViaje(Ldomain.Viaje;),eliminaViaje(Ldomain.Viaje;),consultaViaje(Ldomain.Viaje;)">
+  <children xsi:type="editmodel:ClassEditModel" name="AccionConductorImpl" location="704,237" size="178,229" id="domain/AccionConductorImpl" runTimeClassModel="verViajesAsignados(Ljava.lang.String;),modificaVehiculo(Ldomain.Vehiculo;),insertarVehiculo(Ldomain.Vehiculo;),consultaViaje(Ldomain.Viaje;),eliminaVehiculo(Ldomain.Vehiculo;),AccionConductorImpl(),modificaViaje(Ldomain.Viaje;),eliminaViaje(Ldomain.Viaje;),insertarViaje(Ldomain.Viaje;),obtenerVehiculoC(Ljava.lang.String;)">
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="132,180">
-      <children xsi:type="editmodel:MethodEditModel" name="consultaViaje" id="domain/AccionConductorImpl#consultaViaje(Ldomain.Viaje;)"/>
-      <children xsi:type="editmodel:MethodEditModel" name="eliminaViaje" id="domain/AccionConductorImpl#eliminaViaje(Ldomain.Viaje;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="consultaViaje" id="domain/AccionConductorImpl#consultaViaje(Ldomain.GraphImpl;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="eliminaViaje" id="domain/AccionConductorImpl#eliminaViaje(Ldomain.GraphImpl;)"/>
       <children xsi:type="editmodel:MethodEditModel" name="eliminaVehiculo" id="domain/AccionConductorImpl#eliminaVehiculo(Ldomain.Vehiculo;)"/>
-      <children xsi:type="editmodel:MethodEditModel" name="insertarViaje" id="domain/AccionConductorImpl#insertarViaje(Ldomain.Viaje;)"/>
-      <children xsi:type="editmodel:MethodEditModel" name="modificaViaje" id="domain/AccionConductorImpl#modificaViaje(Ldomain.Viaje;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="insertarViaje" id="domain/AccionConductorImpl#insertarViaje(Ldomain.GraphImpl;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="modificaViaje" id="domain/AccionConductorImpl#modificaViaje(Ldomain.GraphImpl;)"/>
       <children xsi:type="editmodel:MethodEditModel" name="insertarVehiculo" id="domain/AccionConductorImpl#insertarVehiculo(Ldomain.Vehiculo;)"/>
       <children xsi:type="editmodel:MethodEditModel" name="modificaVehiculo" id="domain/AccionConductorImpl#modificaVehiculo(Ldomain.Vehiculo;)"/>
       <children xsi:type="editmodel:MethodEditModel" name="obtenerVehiculoC" id="domain/AccionConductorImpl#obtenerVehiculoC(Ljava.lang.String;)"/>
@@ -111,7 +111,7 @@
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.4/@sourceConnections.0 //@children.4/@sourceConnections.1" name="IAccionConductor" location="314,300" size="154,99" id="domain/IAccionConductor" runTimeClassModel="obtenerVehiculoC(Ljava.lang.String;),verViajesAsignados(Ljava.lang.String;)">
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.4/@sourceConnections.0 //@children.4/@sourceConnections.1" name="IAccionConductor" location="314,300" size="154,99" id="domain/IAccionConductor" runTimeClassModel="verViajesAsignados(Ljava.lang.String;),obtenerVehiculoC(Ljava.lang.String;)">
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="128,36">
       <children xsi:type="editmodel:MethodEditModel" name="verViajesAsignados" id="domain/IAccionConductor#verViajesAsignados(Ljava.lang.String;)"/>
