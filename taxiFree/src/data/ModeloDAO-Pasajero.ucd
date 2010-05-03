@@ -14,10 +14,10 @@
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="101,90">
       <children xsi:type="editmodel:MethodEditModel" name="deleteViaje" id="data/IViajeDAO#deleteViaje(Ljava.sql.Connection;Ljava.lang.String;)"/>
-      <children xsi:type="editmodel:MethodEditModel" name="insertViaje" id="data/IViajeDAO#insertViaje(Ldomain.Viaje;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="insertViaje" id="data/IViajeDAO#insertViaje(Ldomain.GraphImpl;Ljava.lang.String;)"/>
       <children xsi:type="editmodel:MethodEditModel" name="selectAllViajes" id="data/IViajeDAO#selectAllViajes()"/>
       <children xsi:type="editmodel:MethodEditModel" name="selectViaje" id="data/IViajeDAO#selectViaje(Ljava.lang.String;)"/>
-      <children xsi:type="editmodel:MethodEditModel" name="updateViaje" id="data/IViajeDAO#updateViaje(Ldomain.Viaje;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateViaje" id="data/IViajeDAO#updateViaje(Ldomain.GraphImpl;Ljava.lang.String;)"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="data/IViajeDAO->data/ConnectionManager" source="//@children.1" target="//@children.0" targetEnd="//@children.1/@sourceConnections.0/@children.1" label="//@children.1/@sourceConnections.0/@children.2" sourceEnd="//@children.1/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
@@ -31,10 +31,10 @@
     <children xsi:type="editmodel:CompartmentEditModel"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="101,90">
       <children xsi:type="editmodel:MethodEditModel" name="deleteViaje" id="data/JDBCViajeDAO#deleteViaje(Ljava.sql.Connection;Ljava.lang.String;)"/>
-      <children xsi:type="editmodel:MethodEditModel" name="insertViaje" id="data/JDBCViajeDAO#insertViaje(Ldomain.Viaje;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="insertViaje" id="data/JDBCViajeDAO#insertViaje(Ldomain.GraphImpl;Ljava.lang.String;)"/>
       <children xsi:type="editmodel:MethodEditModel" name="selectAllViajes" id="data/JDBCViajeDAO#selectAllViajes()"/>
       <children xsi:type="editmodel:MethodEditModel" name="selectViaje" id="data/JDBCViajeDAO#selectViaje(Ljava.lang.String;)"/>
-      <children xsi:type="editmodel:MethodEditModel" name="updateViaje" id="data/JDBCViajeDAO#updateViaje(Ldomain.Viaje;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateViaje" id="data/JDBCViajeDAO#updateViaje(Ldomain.GraphImpl;Ljava.lang.String;)"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel"/>
     <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="data/IViajeDAO&lt;-data/JDBCViajeDAO" source="//@children.2" target="//@children.1" targetEnd="//@children.2/@sourceConnections.0/@children.1" sourceEnd="//@children.2/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
@@ -86,7 +86,7 @@
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.5/@sourceConnections.0" name="IRutaDAO" location="570,46" size="122,153" id="data/IRutaDAO" runTimeClassModel="selectRuta(Ljava.lang.String;),updateRuta(Ldomain.Ruta;Ljava.lang.String;),selectAllRutas(),deleteRuta(Ljava.lang.String;),insertRuta(Ldomain.Ruta;Ljava.lang.String;)">
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.5/@sourceConnections.0" name="IRutaDAO" location="570,46" size="122,153" id="data/IRutaDAO" runTimeClassModel="selectRuta(Ljava.lang.String;),updateRuta(Ldomain.Ruta;Ljava.lang.String;),deleteRuta(Ljava.lang.String;),selectAllRutas(),insertRuta(Ldomain.Ruta;Ljava.lang.String;)">
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="99,90">
       <children xsi:type="editmodel:MethodEditModel" name="deleteRuta" id="data/IRutaDAO#deleteRuta(Ljava.lang.String;)"/>

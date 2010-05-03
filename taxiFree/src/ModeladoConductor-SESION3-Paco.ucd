@@ -15,14 +15,14 @@
       <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
       <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
     </children>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="mainSesion3-Standard::Call->domain*mainSesion3-Standard::Instantiate->domain*mainSesion3-Soyatec::Import->domain" source="//@children.1" target="//@children.2" targetEnd="//@children.1/@sourceConnections.0/@children.2" label="//@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="mainSesion3->Standard::Call" source="//@children.1" target="//@children.2" targetEnd="//@children.1/@sourceConnections.0/@children.2" label="//@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Call, Instantiate, Import»" location="240,225" size="119,14" automaticRelocationAllowed="false" locationOnWireFromSource="-45.0" distanceFromWire="30.0" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="229,37" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="0,217"/>
     </sourceConnections>
   </children>
   <children xsi:type="editmodel:PackageEditModel" targetConnections="//@children.1/@sourceConnections.0 //@children.3/@sourceConnections.0" name="domain" location="390,45" size="476,289" id="domain">
-    <children xsi:type="editmodel:ClassEditModel" name="AccionConductorImpl" location="153,81" size="313,103" id="domain/AccionConductorImpl" runTimeClassModel="modificaVehiculo(Ldomain.Vehiculo;),insertarVehiculo(Ldomain.Vehiculo;),AccionConductorImpl(),obtenerVehiculoC(Ljava.lang.String;),modificaViaje(Ldomain.Viaje;),verViajesAsignados(Ljava.lang.String;),eliminaVehiculo(Ldomain.Vehiculo;),insertarViaje(Ldomain.Viaje;),eliminaViaje(Ldomain.Viaje;),consultaViaje(Ldomain.Viaje;)">
+    <children xsi:type="editmodel:ClassEditModel" name="AccionConductorImpl" location="153,81" size="313,103" id="domain/AccionConductorImpl" runTimeClassModel="verViajesAsignados(Ljava.lang.String;),modificaVehiculo(Ldomain.Vehiculo;),insertarVehiculo(Ldomain.Vehiculo;),consultaViaje(Ldomain.Viaje;),eliminaVehiculo(Ldomain.Vehiculo;),AccionConductorImpl(),modificaViaje(Ldomain.Viaje;),eliminaViaje(Ldomain.Viaje;),insertarViaje(Ldomain.Viaje;),obtenerVehiculoC(Ljava.lang.String;)">
       <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
       <children xsi:type="editmodel:CompartmentEditModel" size="290,54">
         <children xsi:type="editmodel:MethodEditModel" name="AccionConductorImpl" id="domain/AccionConductorImpl#AccionConductorImpl()"/>
@@ -74,7 +74,7 @@
       </sourceConnections>
       <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
     </children>
-    <children xsi:type="editmodel:ClassEditModel" name="Viaje" location="11,229" size="75,29" id="domain/Viaje" runTimeClassModel="">
+    <children xsi:type="editmodel:ClassEditModel" name="Viaje" location="11,229" size="75,29" id="domain/GraphImpl" runTimeClassModel="">
       <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
       <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
       <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
@@ -108,7 +108,7 @@
       <children xsi:type="editmodel:AssociationEndEditModel" location="0,89" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="182,44"/>
     </sourceConnections>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="domain-Standard::Call->data*domain-Standard::Instantiate->data*domain-Soyatec::Import->data" source="//@children.2" target="//@children.3" targetEnd="//@children.2/@sourceConnections.1/@children.2" label="//@children.2/@sourceConnections.1/@children.0" sourceEnd="//@children.2/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="domain->Standard::Call" source="//@children.2" target="//@children.3" targetEnd="//@children.2/@sourceConnections.1/@children.2" label="//@children.2/@sourceConnections.1/@children.0" sourceEnd="//@children.2/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Call, Instantiate, Import»" location="645,343" size="119,14" automaticRelocationAllowed="false" locationOnWireFromSource="-1.9999999999999998" distanceFromWire="79.0" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="235,289" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="560,0"/>
@@ -145,7 +145,7 @@
       <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
       <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
     </children>
-    <children xsi:type="editmodel:ClassEditModel" name="JDBCConductorDAO" location="209,40" size="328,193" id="data/JDBCConductorDAO" runTimeClassModel="sellectAllConductores(),obtenerViajesOIDConductor(Ljava.lang.String;),selectOIDConductor(Ljava.lang.String;),selectVehiculoConductor(Ljava.lang.String;),selectConductor(Ljava.lang.String;),selectViajeConductor(Ljava.lang.String;),conn,obtenerVehiculoOID(Ljava.lang.String;)">
+    <children xsi:type="editmodel:ClassEditModel" name="JDBCConductorDAO" location="209,40" size="328,193" id="data/JDBCConductorDAO" runTimeClassModel="selectVehiculoConductor(Ljava.lang.String;),conn,obtenerVehiculoOID(Ljava.lang.String;),selectConductor(Ljava.lang.String;),sellectAllConductores(),obtenerViajesOIDConductor(Ljava.lang.String;),selectOIDConductor(Ljava.lang.String;),selectViajeConductor(Ljava.lang.String;)">
       <children xsi:type="editmodel:CompartmentEditModel" size="103,18">
         <children xsi:type="editmodel:AttributeEditModel" name="conn" id="data/JDBCConductorDAO#conn"/>
       </children>
@@ -225,7 +225,7 @@
       </sourceConnections>
       <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsReturnType="true" showMethodsParameterNames="true" attributeSorter="Natural" methodSorter="Name" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
     </children>
-    <children xsi:type="editmodel:ClassEditModel" name="JDBCViajeDAO" location="10,245" size="298,121" id="data/JDBCViajeDAO" runTimeClassModel="selectViajes(Ljava.sql.Connection;Ljava.lang.String;),select(Ljava.lang.String;),selectViajeConductor(Ljava.sql.Connection;Ljava.lang.String;),selectAllViajes()">
+    <children xsi:type="editmodel:ClassEditModel" name="JDBCViajeDAO" location="10,245" size="298,121" id="data/JDBCViajeDAO" runTimeClassModel="selectViajeConductor(Ljava.sql.Connection;Ljava.lang.String;),selectViajes(Ljava.sql.Connection;Ljava.lang.String;),select(Ljava.lang.String;),selectAllViajes()">
       <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
       <children xsi:type="editmodel:CompartmentEditModel" size="275,72">
         <children xsi:type="editmodel:MethodEditModel" name="selectAllViajes" id="data/JDBCViajeDAO#selectAllViajes()"/>
@@ -246,7 +246,7 @@
       </sourceConnections>
       <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsReturnType="true" showMethodsParameterNames="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3"/>
     </children>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="data-Standard::Call->domain*data-Standard::Instantiate->domain*data-Soyatec::Import->domain" source="//@children.3" target="//@children.2" targetEnd="//@children.3/@sourceConnections.0/@children.2" label="//@children.3/@sourceConnections.0/@children.0" sourceEnd="//@children.3/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="data->Standard::Call" source="//@children.3" target="//@children.2" targetEnd="//@children.3/@sourceConnections.0/@children.2" label="//@children.3/@sourceConnections.0/@children.0" sourceEnd="//@children.3/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Call, Instantiate, Import»" location="375,346" size="119,14" automaticRelocationAllowed="false" locationOnWireFromSource="-1.5980037422045514" distanceFromWire="72.01004363309261" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="442,0" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="117,289"/>
