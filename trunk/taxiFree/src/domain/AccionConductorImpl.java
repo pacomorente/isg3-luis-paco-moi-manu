@@ -50,9 +50,11 @@ public class AccionConductorImpl implements IAccionConductor{
 	}
 		
 
-		public Viaje consultaViaje(Viaje viaje) {
+		public Viaje consultaViaje(String idViaje) {
+				Viaje viaje = new Viaje();
+				viaje = conddao.selectViaje(idViaje);
 			//return 	viadao.selectTrayectoOID(trayecto);
-			return null;
+			return viaje;
 		}
 	 
 		public boolean eliminaViaje(Viaje viaje) {
@@ -62,13 +64,13 @@ public class AccionConductorImpl implements IAccionConductor{
 		}
 
 	 
-		public void insertarViaje(Viaje viaje) {
+		public void insertarViaje(String nick,Viaje viaje) {
 			// TODO Auto-generated method stub
 			
 		}
 
 	 
-		public Viaje  modificaViaje(Viaje viaje) {
+		public Viaje  modificaViaje(String nick,Viaje viaje) {
 			// TODO Auto-generated method stub
 			return null;
 		}
