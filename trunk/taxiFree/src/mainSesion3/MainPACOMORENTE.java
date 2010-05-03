@@ -2,9 +2,11 @@ package mainSesion3;
 
 import java.util.List;
 
+import data.IConductorDAO;
+import data.JDBCConductorDAO;
 import domain.AccionConductorImpl;
+import domain.Conductor;
 import domain.IAccionConductor;
-import domain.Usuario;
 import domain.Vehiculo;
 import domain.Viaje;
 import domain.ViajeStore;
@@ -16,16 +18,29 @@ public class MainPACOMORENTE {
 	 */
 		
 	public static void main(String[] args) {
-		
-		Usuario c = new Usuario();
+		IConductorDAO iconddao= new JDBCConductorDAO();
+		//IUsuarioDAO iuserdao= new JDBCUsuarioDAO();
+		Conductor c = new Conductor();
+		//Usuario c = new Usuario();
+		c = (Conductor) iconddao.selectConductor("USER6");
 		//("00006","Monica","Ortiz","90000006X","C6@US.ES",1,"USER6","USER6");
-		c.setNick("USER6");
+		//c.setNick("USER6");
 		
 		//Viaje viaje = new Viaje();
 		List<Viaje> viajesCond ;
 		Vehiculo vehiculoCond;
-
+		
 		IAccionConductor accionCond = new AccionConductorImpl();
+		
+		
+		System.out.println("===========================================");
+		System.out.println("---USUARIO CONECTADO EN TAXIFREE---");
+		System.out.println("===========================================");
+		
+		System.out.println(c.getNombre()+ " - " + c.getApellidos() 
+				+ " - " + c.getDni() 
+				+ " - " + c.getCorreo()  + "   * Puntos Estrella-> "+ c.getEstrella());
+
 		
 		ViajeStore v = new ViajeStore();
 		List<Viaje> l = v.getViajes();
@@ -47,6 +62,8 @@ public class MainPACOMORENTE {
 		System.out.println("===========================================");
 		viajesCond= accionCond.verViajesAsignados(c.getNick());
 		vehiculoCond = accionCond.obtenerVehiculoC(c.getNick());
+		c.setVehiculo(vehiculoCond);
+		c.setViaje(viajesCond);
 		System.out.println("NUMERO DE VIAJES DEL CONDUCTOR--> " + viajesCond.size());
 		String viajeAnulado="VIAJE ESTA ACTUALMENTE ACTIVO";
 
