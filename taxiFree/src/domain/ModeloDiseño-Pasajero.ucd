@@ -18,25 +18,25 @@
     <children xsi:type="editmodel:CompartmentEditModel"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.3/@sourceConnections.2 //@children.4/@sourceConnections.1 //@children.5/@sourceConnections.3" name="Viaje" location="705,41" size="193,319" id="domain/Viaje">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.3/@sourceConnections.2 //@children.4/@sourceConnections.1 //@children.5/@sourceConnections.3" name="Viaje" location="705,41" size="193,319" id="domain/GraphImpl">
     <children xsi:type="editmodel:CompartmentEditModel" size="170,126">
-      <children xsi:type="editmodel:AttributeEditModel" name="conductor" id="domain/Viaje#conductor"/>
-      <children xsi:type="editmodel:AttributeEditModel" name="destino" id="domain/Viaje#destino"/>
-      <children xsi:type="editmodel:AttributeEditModel" name="fecha" id="domain/Viaje#fecha"/>
-      <children xsi:type="editmodel:AttributeEditModel" name="origen" id="domain/Viaje#origen"/>
-      <children xsi:type="editmodel:AttributeEditModel" name="pasajeros" id="domain/Viaje#pasajeros"/>
-      <children xsi:type="editmodel:AttributeEditModel" name="puntosIntermedios" id="domain/Viaje#puntosIntermedios"/>
-      <children xsi:type="editmodel:AttributeEditModel" name="viajeID" id="domain/Viaje#viajeID"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="conductor" id="domain/GraphImpl#conductor"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="destino" id="domain/GraphImpl#destino"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="fecha" id="domain/GraphImpl#fecha"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="origen" id="domain/GraphImpl#origen"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pasajeros" id="domain/GraphImpl#pasajeros"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="puntosIntermedios" id="domain/GraphImpl#puntosIntermedios"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="viajeID" id="domain/GraphImpl#viajeID"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="133,144">
-      <children xsi:type="editmodel:MethodEditModel" name="getConductor" id="domain/Viaje#getConductor()"/>
-      <children xsi:type="editmodel:MethodEditModel" name="getPasajeros" id="domain/Viaje#getPasajeros()"/>
-      <children xsi:type="editmodel:MethodEditModel" name="getPuntosIntermedios" id="domain/Viaje#getPuntosIntermedios()"/>
-      <children xsi:type="editmodel:MethodEditModel" name="getViajeID" id="domain/Viaje#getViajeID()"/>
-      <children xsi:type="editmodel:MethodEditModel" name="setConductor" id="domain/Viaje#setConductor(Ldomain.Conductor;)"/>
-      <children xsi:type="editmodel:MethodEditModel" name="setPasajeros" id="domain/Viaje#setPasajeros(Ljava.util.List;)"/>
-      <children xsi:type="editmodel:MethodEditModel" name="setPuntosIntermedios" id="domain/Viaje#setPuntosIntermedios(Ljava.util.List;)"/>
-      <children xsi:type="editmodel:MethodEditModel" name="setViajeID" id="domain/Viaje#setViajeID(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getConductor" id="domain/GraphImpl#getConductor()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPasajeros" id="domain/GraphImpl#getPasajeros()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPuntosIntermedios" id="domain/GraphImpl#getPuntosIntermedios()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getViajeID" id="domain/GraphImpl#getViajeID()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setConductor" id="domain/GraphImpl#setConductor(Ldomain.Conductor;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setPasajeros" id="domain/GraphImpl#setPasajeros(Ljava.util.List;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setPuntosIntermedios" id="domain/GraphImpl#setPuntosIntermedios(Ljava.util.List;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setViajeID" id="domain/GraphImpl#setViajeID(Ljava.lang.String;)"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel"/>
     <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/Viaje-Soyatec::Import->domain/Pasajero" source="//@children.1" target="//@children.3" targetEnd="//@children.1/@sourceConnections.0/@children.2" label="//@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
@@ -131,12 +131,12 @@
       <children xsi:type="editmodel:AssociationEndEditModel" location="66,0" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="111,103"/>
     </sourceConnections>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/AccionPasajeroImpl-Standard::Call->domain/Ruta*domain/AccionPasajeroImpl-Soyatec::Import->domain/Ruta" source="//@children.5" target="//@children.0" targetEnd="//@children.5/@sourceConnections.2/@children.2" label="//@children.5/@sourceConnections.2/@children.0" sourceEnd="//@children.5/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/AccionPasajeroImpl->Standard::Call" source="//@children.5" target="//@children.0" targetEnd="//@children.5/@sourceConnections.2/@children.2" label="//@children.5/@sourceConnections.2/@children.0" sourceEnd="//@children.5/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call»" size="64,14" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="0,69" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="156,159"/>
     </sourceConnections>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/AccionPasajeroImpl-Standard::Call->domain/Viaje*domain/AccionPasajeroImpl-Soyatec::Import->domain/Viaje" source="//@children.5" target="//@children.1" targetEnd="//@children.5/@sourceConnections.3/@children.2" label="//@children.5/@sourceConnections.3/@children.0" sourceEnd="//@children.5/@sourceConnections.3/@children.1" connectionRouterKind="Manual">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="domain/AccionPasajeroImpl->Standard::Call" source="//@children.5" target="//@children.1" targetEnd="//@children.5/@sourceConnections.3/@children.2" label="//@children.5/@sourceConnections.3/@children.0" sourceEnd="//@children.5/@sourceConnections.3/@children.1" connectionRouterKind="Manual">
       <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call»" size="64,14" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="169,22" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="0,296"/>
