@@ -13,7 +13,10 @@ public interface IVehiculoDAO {
     public void insert(Connection conn, String VehiculoOID, Vehiculo veh);
     public List<Vehiculo> selectAllVehiculos();
     public Vehiculo select(Connection conn, String VehiculoOID);
-	public Vehiculo selectViajeConductor(Connection conn,
+    public Vehiculo selectVehiculoConductor(Connection conn,
 			String oidVehiculoConductor);
+	
+/*	public Vehiculo selectVehiculobyViaje(Connection conn,
+			String oidViaje);*/
 
 }

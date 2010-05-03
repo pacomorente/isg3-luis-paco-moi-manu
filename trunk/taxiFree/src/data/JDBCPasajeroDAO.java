@@ -121,6 +121,44 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
         return p;
 	}
 	
+	public List<Pasajero> selectPasajerosbyViaje(String oidviaje){
+			
+		List<Pasajero> listaPasajeros = new LinkedList<Pasajero>();
+		PreparedStatement stmt = null;
+        ResultSet result = null;
+              
+        try {
+        	String sql = "SELECT * FROM pasajero WHERE (OIDViaje = ?) ";
+            stmt = conn.prepareStatement(sql);
+            stmt.executeQuery();
+            result = stmt.executeQuery();
+            stmt.setString(1, oidviaje);
+            
+            while (result.next()){
+            	String oidPasajero = result.getString("OIDPasajero");
+            	Pasajero p = selectPasajero(oidPasajero);
+            	listaPasajeros.add(p);
+            }
+        }catch (SQLException e) {
+            System.out.println("Message: " + e.getMessage());
+            System.out.println("SQLState: " + e.getSQLState());
+            System.out.println("ErrorCode: " + e.getErrorCode());
+        } finally {
+            try {
+                    if (result != null) {
+                            result.close();
+                    }
+                    if (stmt != null) {
+                            stmt.close();
+                    }
+            } catch (SQLException e) {
+            }
+        }
+        
+		return listaPasajeros;
+		
+	}
+	
 	public void insert(Pasajero p, Ruta r, Viaje v){
 		IViajeDAO vdao = new JDBCViajeDAO();
 		String sql2 = "INSERT INTO PASAJERO_RUTA(OIDPasajero,OIDRuta)values('?','?')";
@@ -134,7 +172,7 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
         	
             stmt = conn.prepareStatement(sql1);
             stmt.setString(1, udao.selectUsuarioOID(conn, p.getNick()));
-            stmt.setString(2, vdao.selectViajeOID(v.getViajeID()));
+            stmt.setString(2, vdao.selectViajeOID(conn,v.getViajeID()));
             stmt.executeUpdate();
             
             stmt = conn.prepareStatement(sql2);
