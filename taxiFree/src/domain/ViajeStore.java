@@ -40,9 +40,11 @@ public class ViajeStore {
 	 * @uml.property  name="viajes"
 	 */
 	private List<Viaje> viajes;
+	private Graph grafoViaje;
 
     public ViajeStore() {
         viajes = (new JDBCViajeDAO()).selectAllViajes();
+        //grafoViaje = (new JDBCViajeDAO()).selectAllViajesGrafo();
     }
 
     /**
@@ -53,6 +55,9 @@ public class ViajeStore {
 		return viajes;
 	}
 
+    public Graph getViajesGrafo() {
+		return grafoViaje;
+	}
 
     public Viaje getViajes(String viajeID) {
         Viaje result = null;

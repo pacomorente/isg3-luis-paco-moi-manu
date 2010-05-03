@@ -144,9 +144,13 @@ public class JDBCConductorDAO implements IConductorDAO {
 	        return  listaConductores;
 	}
 
-	public Conductor selectConductor(String oid) {
-		// TODO Auto-generated method stub
-		return null;
+	public Conductor selectConductor(String nick) {
+		Conductor cond = new Conductor();
+		Vehiculo vehiculo = new Vehiculo();
+		cond =  udao.selectUsuariobyNick(conn, nick);
+		/*vehiculo = leeVehiculoConductor(nick);
+		cond.getVehiculo(vehiculo);*/
+		return cond;
 	}
 
 	public String obtenerVehiculoOID(String oidc){

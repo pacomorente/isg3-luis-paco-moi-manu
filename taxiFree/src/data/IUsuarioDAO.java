@@ -3,6 +3,7 @@ package data;
 import java.sql.Connection;
 import java.util.List;
 
+import domain.Conductor;
 import domain.Usuario;
 
 /**
@@ -12,5 +13,6 @@ public interface IUsuarioDAO {
     public abstract Usuario select(Connection conn, String usuarioOID);
 	public List<Usuario> selectAllUsuarios();
 	public String selectUsuarioOID(Connection conn, String nick);
+	public Conductor selectUsuariobyNick(Connection conn, String nick);
 	public void insert(Connection con, Usuario u);
 }

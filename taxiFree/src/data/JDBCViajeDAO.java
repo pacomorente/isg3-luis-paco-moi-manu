@@ -15,14 +15,6 @@ public class JDBCViajeDAO implements IViajeDAO {
 	
     private Connection conn;
 
-    /*IUsuarioDAO usudao;
-
-    IVehiculoDAO vehdao;
-    
-    IPasajeroDAO pasdao;*/
-
-
-
     public JDBCViajeDAO() {
         conn = ConnectionManager.getInstance().checkOut();
 /*        usudao = new JDBCUsuarioDAO();
@@ -42,7 +34,6 @@ public class JDBCViajeDAO implements IViajeDAO {
 
         // Buscar si viaje tiene pasajero, para ello hay que meterse en Pasajero y ver si existe
         // al menos un OID VIAJE, pasandole el OID VIAJE al metodo que devolvera boolean 
-        //  FALTA IMPLEMENTAR AUN
         
         try {
             stmt = conn.prepareStatement(sql);
@@ -67,7 +58,9 @@ public class JDBCViajeDAO implements IViajeDAO {
 	public void insertViaje(Viaje v ) {
 		// TODO Auto-generated method stub
 		/*
-		 * Cuando inserte VIaje hay que comprobar si el usuario ya tiene vehiculo dado de alta, en caso contrario,
+		 * Cuando inserte VIaje hay que comprobar si el usuario 
+		 * ya tiene vehiculo dado de alta, 
+		 * en caso contrario,
 		 * solicitar el alta del vehiculo. ( SE ACCEDE A TABLA VEHICULO )
 		 */
 	}
@@ -75,7 +68,7 @@ public class JDBCViajeDAO implements IViajeDAO {
 	
 	@SuppressWarnings("unchecked")
 	public List<Viaje> selectAllViajes() {
-		
+		System.out.println("Abriendo conexion...en Viaje");
 		ConnectionManager cn = ConnectionManager.getInstance();
 		
 		Connection con = cn.checkOut();
@@ -113,8 +106,9 @@ public class JDBCViajeDAO implements IViajeDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally{
-			//System.out.println("Cerrando conexion...");
-			ConnectionManager.getInstance().checkIn(con);
+			System.out.println("Cerrando conexion...en Viaje");
+			//ConnectionManager.getInstance().checkIn(con);
+			cn.finalize();
 		}
 		
 		return searchResults;
