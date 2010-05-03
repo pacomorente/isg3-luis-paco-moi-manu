@@ -18,7 +18,7 @@ public class JDBCViajeDAO implements IViajeDAO {
     public JDBCViajeDAO() {
         conn = ConnectionManager.getInstance().checkOut();
 /*        usudao = new JDBCUsuarioDAO();
-        vehdao = new JDBCVehiculoDAO();
+        
         pasdao = new JDBCPasajeroDAO();*/
         
     }
@@ -117,7 +117,7 @@ public class JDBCViajeDAO implements IViajeDAO {
 	}
 //Moi: recuerda lo de los puntos intermedios que te comente.
 
-	public Viaje selectViaje(String s) {
+	public Viaje selectViaje(Connection con,String viajeid) {
 		// TODO Auto-generated method stub
 		/*
 		 *  Al seleccionar el viaje, mostaria el vehiculo de dicho viaje y 
@@ -125,8 +125,20 @@ public class JDBCViajeDAO implements IViajeDAO {
 		 *  mostraria los datos del usuario pasajero asignado a dicho viaje; 
 		 *  SE ACCEDERIA A TABLAS PASAJERO, VIAJE, USUARIO y VEHICULO 
 		 */
-		return null;
+		
+		IPasajeroDAO pasdao = new JDBCPasajeroDAO();
+		IConductorDAO cdao = new JDBCConductorDAO();
+		Viaje viaje = new Viaje();
+		String oidviaje= selectViajeOID(con,viajeid);
+		viaje=selectViajeConductor(con, oidviaje);
+		
+		viaje.setPasajeros(pasdao.selectPasajerosbyViaje(oidviaje));
+		//Obtenemos conductor, datos de usuario y también los datos de su vehículo
+		viaje.setConductor(cdao.selectConductorbyViaje(oidviaje));
+		
+		return viaje;
 	}
+	
 
 	public Viaje selectViajeConductor(Connection con,String oidViajeConductor){
 		PreparedStatement stmt = null;
@@ -182,10 +194,38 @@ public class JDBCViajeDAO implements IViajeDAO {
 		return null;
 	}
 	
-	public String selectViajeOID(String idViaje){
-		//Yo Moi te aconsejo que separes los OID de los id
-		return null;
-	}
+	public String selectViajeOID(Connection con,String idViaje){
+        PreparedStatement stmt = null;
+        ResultSet result = null;
+        String oid = null;
+        String sql = "SELECT * FROM viaje WHERE (idViaje = ?) ";
+
+        try {
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, idViaje);
+            result = stmt.executeQuery();
+
+            result.next();
+            oid = result.getString("OIDViaje");
+            
+        } catch (SQLException e) {
+            System.out.println("Message: " + e.getMessage());
+            System.out.println("SQLState: " + e.getSQLState());
+            System.out.println("ErrorCode: " + e.getErrorCode());
+        } finally {
+            try {
+                if (result != null) {
+                    result.close();
+                }
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException e) {
+            }
+        }
+        return oid;
+    }
+	
 	
 	public List<Viaje> selectViajes(Connection con, String oidPasajero) {
 		PreparedStatement stmt = null;

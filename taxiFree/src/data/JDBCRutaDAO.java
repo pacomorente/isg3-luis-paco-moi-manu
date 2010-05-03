@@ -100,7 +100,7 @@ public class JDBCRutaDAO implements IRutaDAO {
 		PreparedStatement stmt = null;
         ResultSet result = null;
         String oidr = null;
-        String sql = "SELECT * FROM Product WHERE (idRuta = ?) ";
+        String sql = "SELECT * FROM ruta WHERE (idRuta = ?) ";
 
         try {
             stmt = conn.prepareStatement(sql);
@@ -132,7 +132,7 @@ public class JDBCRutaDAO implements IRutaDAO {
 		PreparedStatement stmt = null;
         ResultSet result = null;
         Ruta r = null;
-        String sql = "SELECT * FROM usuario WHERE (OIDRuta = ?) ";
+        String sql = "SELECT * FROM ruta WHERE (OIDRuta = ?) ";
         
         try{
         	stmt = conn.prepareStatement(sql);

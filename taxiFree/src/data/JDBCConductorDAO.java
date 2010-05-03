@@ -91,6 +91,64 @@ public class JDBCConductorDAO implements IConductorDAO {
 
 	}
 	
+	public Conductor selectConductorbyViaje(String oidviaje){
+		PreparedStatement stmt = null;
+        ResultSet result = null;
+        String sql = "SELECT * FROM conductor WHERE (OIDViaje = ?) ";
+        String oidCond = null;
+        Conductor cond= new Conductor();
+        List<Viaje>listaViajesC=new LinkedList<Viaje>();
+        try {
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, oidviaje);
+            result = stmt.executeQuery();
+
+            result.next();
+            
+            oidCond=(result.getString("OIDConductor"));
+            List<String> listaViajes = obtenerViajesOIDConductor(oidCond);
+    		for (String auxvOID: listaViajes){
+    			
+   			 Viaje viajeCond = selectViajeConductor(auxvOID);
+   			 listaViajesC.add(viajeCond);
+
+    			}
+   		
+            Vehiculo v = vdao.selectVehiculoConductor(conn, oidCond);
+            
+            Usuario u = udao.select(conn, oidCond);
+            cond.setApellidos(u.getApellidos());
+            cond.setNombre(u.getNombre());
+            cond.setCorreo(u.getCorreo());
+            cond.setDni(u.getDni());
+            cond.setEstrella(u.getEstrella());
+            cond.setNick(u.getNick());
+            cond.setPass(u.getPass());
+            cond.setVehiculo(v);
+            cond.setViaje(listaViajesC);
+
+        } catch (SQLException e) {
+            System.out.println("Message: " + e.getMessage());
+            System.out.println("SQLState: " + e.getSQLState());
+            System.out.println("ErrorCode: " + e.getErrorCode());
+        } finally {
+            try {
+                if (result != null) {
+                    result.close();
+                }
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException e) {
+            }
+        }
+        return cond;
+	}
+	
+	public Viaje selectViaje(String idViaje){
+		return (Viaje) viadao.selectViaje(conn,idViaje);
+	}
+	
 	public List<Conductor> sellectAllConductores() {
 	        //Connection conn = ConnectionManager.getInstance().checkOut();
 	        PreparedStatement stmt = null;
@@ -187,9 +245,11 @@ public class JDBCConductorDAO implements IConductorDAO {
 }
 
 	public Vehiculo selectVehiculoConductor(String oidVehiculoConductor){
-		return (Vehiculo) vdao.selectViajeConductor(conn,oidVehiculoConductor);
+		return (Vehiculo) vdao.selectVehiculoConductor(conn,oidVehiculoConductor);
 		
 	}
+	
+	
 
 
 
