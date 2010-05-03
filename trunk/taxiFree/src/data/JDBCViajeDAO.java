@@ -91,16 +91,18 @@ public class JDBCViajeDAO implements IViajeDAO {
 			result = stmt.executeQuery();
 			while (result.next()) {
 			   Viaje temp = new Viaje();
-			   puntosInt.add("Sevilla");
-			   puntosInt.add("M�laga");
-			   puntosInt.add("Granada");
 			   temp.setViajeID(result.getString("idViaje"));
 			   temp.setOrigen(result.getString("origen"));
 			   temp.setDestino(result.getString("destino"));
 			   temp.setPuntosInt01(result.getString("puntoint01"));
 			   temp.setPuntosInt02(result.getString("puntoint02"));
 			   temp.setPuntosInt03(result.getString("puntoint03"));
-			   //temp.setPuntosIntermedios(puntosInt);
+	           puntosInt.add(temp.getPuntosInt01());
+	           puntosInt.add(temp.getPuntosInt02());
+	           puntosInt.add(temp.getPuntosInt03());
+	           temp.setPuntosIntermedios(puntosInt);
+			   
+			   temp.setPuntosIntermedios(puntosInt);
 			   temp.setFecha(result.getDate("fecha"));
 			   temp.setAnulado(result.getBoolean("anulado"));
 			   searchResults.add(temp);
@@ -149,13 +151,13 @@ public class JDBCViajeDAO implements IViajeDAO {
             viajeCond.setViajeID(result.getString("idViaje"));
             viajeCond.setOrigen(result.getString("origen"));
             viajeCond.setDestino(result.getString("destino"));
-			/*   puntosInt.add("Sevilla");
-			   puntosInt.add("Mlaga");
-			   puntosInt.add("Granada");*/
-            viajeCond.setPuntosInt01(result.getString("puntoint01"));
+  		    viajeCond.setPuntosInt01(result.getString("puntoint01"));
             viajeCond.setPuntosInt02(result.getString("puntoint02"));
             viajeCond.setPuntosInt03(result.getString("puntoint03"));
-            //viajeCond.setPuntosIntermedios(puntosInt);
+            puntosInt.add(viajeCond.getPuntosInt01());
+            puntosInt.add(viajeCond.getPuntosInt02());
+            puntosInt.add(viajeCond.getPuntosInt03());
+            viajeCond.setPuntosIntermedios(puntosInt);
             viajeCond.setFecha(result.getDate("fecha"));
 			viajeCond.setAnulado(result.getBoolean("anulado"));
 			
