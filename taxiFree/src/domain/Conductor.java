@@ -1,6 +1,7 @@
 package domain;
 
 import java.util.List;
+import java.util.Collection;
 
 
 /**
@@ -110,6 +111,38 @@ public class Conductor extends Usuario  {
 	 */
 	public void setVehiculo(Vehiculo vehiculo) {
 		this.vehiculo = vehiculo;
+	}
+
+
+
+	/** 
+	 * @uml.property name="tiene"
+	 * @uml.associationEnd multiplicity="(1 -1)" inverse="es:domain.Comentarios"
+	 */
+	private Collection comentarios;
+
+
+
+
+
+	/**
+	 * Getter of the property <tt>tiene</tt>
+	 * @return  Returns the comentarios.
+	 * @uml.property  name="tiene"
+	 */
+	public Collection getTiene() {
+		return comentarios;
+	}
+
+
+
+	/**
+	 * Setter of the property <tt>tiene</tt>
+	 * @param tiene  The comentarios to set.
+	 * @uml.property  name="tiene"
+	 */
+	public void setTiene(Collection tiene) {
+		comentarios = tiene;
 	}
 
 
