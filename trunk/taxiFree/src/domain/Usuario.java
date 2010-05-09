@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.Collection;
+
 
 /**
  * @author   morentefj
@@ -181,6 +183,30 @@ public class Usuario {
 	 */
 	public void setEstrella(int estrella) {
 		this.estrella = estrella;
+	}
+
+	/** 
+	 * @uml.property name="comentarios"
+	 * @uml.associationEnd multiplicity="(1 -1)" inverse="usuario:domain.Comentarios"
+	 */
+	private Collection comentarios;
+
+	/** 
+	 * Getter of the property <tt>comentarios</tt>
+	 * @return  Returns the comentarios.
+	 * @uml.property  name="comentarios"
+	 */
+	public Collection getComentarios() {
+		return comentarios;
+	}
+
+	/** 
+	 * Setter of the property <tt>comentarios</tt>
+	 * @param comentarios  The comentarios to set.
+	 * @uml.property  name="comentarios"
+	 */
+	public void setComentarios(Collection comentarios) {
+		this.comentarios = comentarios;
 	}
 
 }
