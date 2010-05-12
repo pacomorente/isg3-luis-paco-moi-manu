@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="923,565" id="data" metadata="uml2-1.0" initialized="true" tag="1000" key="32303037303533312D313030302074617869467265652F6D616E75656C206172636F73">
+  <children xsi:type="editmodel:ClassEditModel" name="ConnectionManager" location="50,442" size="170,103" id="data/ConnectionManager" runTimeClassModel="checkIn(Ljava.sql.Connection;),getInstance(),checkOut()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="86,54">
+      <children xsi:type="editmodel:MethodEditModel" name="checkIn" id="data/ConnectionManager#checkIn(Ljava.sql.Connection;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="checkOut" id="data/ConnectionManager#checkOut()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInstance" id="data/ConnectionManager#getInstance()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.2/@sourceConnections.0" name="IViajeDAO" location="56,50" size="124,153" id="data/IViajeDAO" runTimeClassModel="insertViaje(Ldomain.Viaje;Ljava.lang.String;),updateViaje(Ldomain.Viaje;Ljava.lang.String;),selectViaje(Ljava.lang.String;),deleteViaje(Ljava.lang.String;),selectAllViajes()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="101,90">
+      <children xsi:type="editmodel:MethodEditModel" name="deleteViaje" id="data/IViajeDAO#deleteViaje(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="insertViaje" id="data/IViajeDAO#insertViaje(Ldomain.Viaje;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="selectAllViajes" id="data/IViajeDAO#selectAllViajes()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="selectViaje" id="data/IViajeDAO#selectViaje(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateViaje" id="data/IViajeDAO#updateViaje(Ldomain.Viaje;Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="JDBCViajeDAO" location="50,253" size="137,139" id="data/JDBCViajeDAO" runTimeClassModel="insertViaje(Ldomain.Viaje;Ljava.lang.String;),updateViaje(Ldomain.Viaje;Ljava.lang.String;),selectViaje(Ljava.lang.String;),deleteViaje(Ljava.lang.String;),selectAllViajes()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="101,90">
+      <children xsi:type="editmodel:MethodEditModel" name="deleteViaje" id="data/JDBCViajeDAO#deleteViaje(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="insertViaje" id="data/JDBCViajeDAO#insertViaje(Ldomain.Viaje;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="selectAllViajes" id="data/JDBCViajeDAO#selectAllViajes()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="selectViaje" id="data/JDBCViajeDAO#selectViaje(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateViaje" id="data/JDBCViajeDAO#updateViaje(Ldomain.Viaje;Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="data/IViajeDAO&lt;-data/JDBCViajeDAO" source="//@children.2" target="//@children.1" targetEnd="//@children.2/@sourceConnections.0/@children.1" sourceEnd="//@children.2/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="68,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="62,153"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.4/@sourceConnections.0" name="IRutaDAO" location="242,50" size="122,153" id="data/IRutaDAO" runTimeClassModel="selectRuta(Ljava.lang.String;),updateRuta(Ldomain.Ruta;Ljava.lang.String;),deleteRuta(Ljava.lang.String;),selectAllRutas(),insertRuta(Ldomain.Ruta;Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="99,90">
+      <children xsi:type="editmodel:MethodEditModel" name="deleteRuta" id="data/IRutaDAO#deleteRuta(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="insertRuta" id="data/IRutaDAO#insertRuta(Ldomain.Ruta;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="selectAllRutas" id="data/IRutaDAO#selectAllRutas()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="selectRuta" id="data/IRutaDAO#selectRuta(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateRuta" id="data/IRutaDAO#updateRuta(Ldomain.Ruta;Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="JDBCRutaDAO" location="237,253" size="133,139" id="data/JDBCRutaDAO" runTimeClassModel="selectRuta(Ljava.lang.String;),updateRuta(Ldomain.Ruta;Ljava.lang.String;),deleteRuta(Ljava.lang.String;),selectAllRutas(),insertRuta(Ldomain.Ruta;Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="99,90">
+      <children xsi:type="editmodel:MethodEditModel" name="deleteRuta" id="data/JDBCRutaDAO#deleteRuta(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="insertRuta" id="data/JDBCRutaDAO#insertRuta(Ldomain.Ruta;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="selectAllRutas" id="data/JDBCRutaDAO#selectAllRutas()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="selectRuta" id="data/JDBCRutaDAO#selectRuta(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="updateRuta" id="data/JDBCRutaDAO#updateRuta(Ldomain.Ruta;Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="data/IRutaDAO&lt;-data/JDBCRutaDAO" source="//@children.4" target="//@children.3" targetEnd="//@children.4/@sourceConnections.0/@children.1" sourceEnd="//@children.4/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="66,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="61,153"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="JDBCConductorDAO" location="420,199" size="169,85" id="data/JDBCConductorDAO" runTimeClassModel="selectConductor(Ljava.lang.String;),sellectAllConductores()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="135,36">
+      <children xsi:type="editmodel:MethodEditModel" name="selectConductor" id="data/JDBCConductorDAO#selectConductor(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="sellectAllConductores" id="data/JDBCConductorDAO#sellectAllConductores()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="data/IConductorDAO&lt;-data/JDBCConductorDAO" source="//@children.5" target="//@children.6" targetEnd="//@children.5/@sourceConnections.0/@children.1" sourceEnd="//@children.5/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="84,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="79,99"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.5/@sourceConnections.0" name="IConductorDAO" location="425,50" size="158,99" id="data/IConductorDAO" runTimeClassModel="selectConductor(Ljava.lang.String;),sellectAllConductores()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="135,36">
+      <children xsi:type="editmodel:MethodEditModel" name="selectConductor" id="data/IConductorDAO#selectConductor(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="sellectAllConductores" id="data/IConductorDAO#sellectAllConductores()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.8/@sourceConnections.0" name="IPasajeroDAO" location="648,50" size="142,99" id="data/IPasajeroDAO" runTimeClassModel="selectPasajero(Ljava.lang.String;),selectAllPasajeros()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="119,36">
+      <children xsi:type="editmodel:MethodEditModel" name="selectPasajero" id="data/IPasajeroDAO#selectPasajero(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="selectAllPasajeros" id="data/IPasajeroDAO#selectAllPasajeros()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="JDBCPasajeroDAO" location="639,199" size="160,85" id="data/JDBCPasajeroDAO" runTimeClassModel="selectPasajero(Ljava.lang.String;),selectAllPasajeros()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="119,36">
+      <children xsi:type="editmodel:MethodEditModel" name="selectPasajero" id="data/JDBCPasajeroDAO#selectPasajero(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="selectAllPasajeros" id="data/JDBCPasajeroDAO#selectAllPasajeros()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="data/IPasajeroDAO&lt;-data/JDBCPasajeroDAO" source="//@children.8" target="//@children.7" targetEnd="//@children.8/@sourceConnections.0/@children.1" sourceEnd="//@children.8/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="80,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="71,99"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" level="-1" showScope="InPackage" properties="wireOptions=1;Product=eUML2"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>
