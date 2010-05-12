@@ -99,14 +99,14 @@ public class Viaje {
 	/**
 	 * @uml.property  name="fecha"
 	 */
-	private Date fecha;
+	private String fecha;
 
 	/**
 	 * Getter of the property <tt>fecha</tt>
 	 * @return    Returns the fecha.
 	 * @uml.property  name="fecha"
 	 */
-	public Date getFecha() {
+	public String getFecha() {
 		return fecha;
 	}
 
@@ -115,7 +115,7 @@ public class Viaje {
 	 * @param fecha    The fecha to set.
 	 * @uml.property  name="fecha"
 	 */
-	public void setFecha(Date fecha) {
+	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
 
