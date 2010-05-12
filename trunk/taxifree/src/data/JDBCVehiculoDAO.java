@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
+import utils.UIDGenerator;
+
 import domain.Vehiculo;
 
 public class JDBCVehiculoDAO implements IVehiculoDAO{
@@ -30,12 +32,13 @@ public class JDBCVehiculoDAO implements IVehiculoDAO{
                 }
         }
        
-        public void insert(Connection conn, String VehiculoOID, Vehiculo veh) {
+        public void insert(Connection conn, Vehiculo veh) {
                 String sql = "INSERT INTO vehiculo (VehiculoOID, Marca, Modelo, Color, Plazas) VALUES (?, ?, ?, ?, ?) ";
                 PreparedStatement stmt = null;
+                String vehOID= UIDGenerator.getInstance().getKey();
                 try {
                         stmt = conn.prepareStatement(sql);
-                        stmt.setString(1, VehiculoOID);
+                        stmt.setString(1, vehOID);
                         stmt.setString(2, veh.getMarca());
                         stmt.setString(3, veh.getModelo());
                         stmt.setString(4, veh.getColor());

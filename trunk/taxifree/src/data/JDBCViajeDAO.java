@@ -14,12 +14,10 @@ public class JDBCViajeDAO implements IViajeDAO {
 
 	
     private Connection conn;
-
+   
     public JDBCViajeDAO() {
         conn = ConnectionManager.getInstance().checkOut();
-/*        usudao = new JDBCUsuarioDAO();
-        
-        pasdao = new JDBCPasajeroDAO();*/
+ 
         
     }
 
@@ -55,7 +53,7 @@ public class JDBCViajeDAO implements IViajeDAO {
 	}
 
 	
-	public void insertViaje(Viaje v ) {
+	public void insertViaje(Connection con, String viajeOID,Viaje v ) {
 		// TODO Auto-generated method stub
 		/*
 		 * Cuando inserte VIaje hay que comprobar si el usuario 
@@ -63,6 +61,42 @@ public class JDBCViajeDAO implements IViajeDAO {
 		 * en caso contrario,
 		 * solicitar el alta del vehiculo. ( SE ACCEDE A TABLA VEHICULO )
 		 */
+
+	        PreparedStatement stmt = null;
+	        String sql = "INSERT INTO viaje( OIDViaje,origen,destino,puntoint01,puntoint02,puntoint03,fecha,idViaje,anulado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) ";
+	        //String viajeOID = UIDGenerator.getInstance().getKey();
+	        try {
+	            stmt = conn.prepareStatement(sql);
+
+	            stmt.setString(1, viajeOID);
+	            stmt.setString(2, v.getOrigen());
+	            stmt.setString(3, v.getDestino());
+	            stmt.setString(4, v.getPuntosInt01());
+	            stmt.setString(5, v.getPuntosInt02());
+	            stmt.setString(6, v.getPuntosInt03());
+	            stmt.setString(7, v.getFecha());
+	            stmt.setString(8, v.getViajeID());
+	            stmt.setBoolean(9, false);
+
+
+	            stmt.executeUpdate();
+
+	           
+	        } catch (SQLException e) {
+	            System.out.println("Message: " + e.getMessage());
+	            System.out.println("SQLState: " + e.getSQLState());
+	            System.out.println("ErrorCode: " + e.getErrorCode());
+	        } finally {
+	            try {
+	                if (stmt != null) {
+	                    stmt.close();
+	                }
+	            } catch (SQLException e) {
+	            }
+	        }
+	    
+
+
 	}
 
 	
@@ -264,6 +298,7 @@ public class JDBCViajeDAO implements IViajeDAO {
         
         return listaViajes;
 	}
+
 
 /*	
 	public void updateViaje(Viaje v, String userOID) {

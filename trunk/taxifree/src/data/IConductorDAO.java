@@ -21,4 +21,9 @@ public interface IConductorDAO {
 	public Viaje selectViaje(String idViaje);
 	public Conductor selectConductorbyViaje(String oidviaje);
 	
+	public void insertarViajeC(String nick, Viaje viaje);
+	
+	public void insertarC(String oidc, String oidv,
+			String oidveh);
+	
 }

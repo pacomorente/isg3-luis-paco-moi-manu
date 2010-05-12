@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import utils.UIDGenerator;
 import domain.Conductor;
 import domain.Usuario;
 import domain.Vehiculo;
@@ -35,6 +36,8 @@ public class JDBCConductorDAO implements IConductorDAO {
 		 * @uml.associationEnd  
 		 */
 	    IViajeDAO viadao;
+
+		private String vehiculoRegistrado;
 
 	    public JDBCConductorDAO() {
 	        conn = ConnectionManager.getInstance().checkOut();
@@ -206,8 +209,10 @@ public class JDBCConductorDAO implements IConductorDAO {
 		Conductor cond = new Conductor();
 		Vehiculo vehiculo = new Vehiculo();
 		cond =  udao.selectUsuariobyNick(conn, nick);
-		/*vehiculo = leeVehiculoConductor(nick);
-		cond.getVehiculo(vehiculo);*/
+		String oidc = selectOIDConductor(nick);
+		String oidVehiculoConductor = obtenerVehiculoOID(oidc);
+	    vehiculo=selectVehiculoConductor(oidVehiculoConductor);
+		cond.setVehiculo(vehiculo);
 		return cond;
 	}
 
@@ -248,9 +253,50 @@ public class JDBCConductorDAO implements IConductorDAO {
 		return (Vehiculo) vdao.selectVehiculoConductor(conn,oidVehiculoConductor);
 		
 	}
-	
-	
 
+	public void insertarViajeC(String nick, Viaje viaje) {
+		String oidc;
+		String OIDViaje= UIDGenerator.getInstance().getKey();
+		viadao.insertViaje(conn, OIDViaje, viaje);
+		oidc= selectOIDConductor(nick);
+		
+		vehiculoRegistrado = obtenerVehiculoOID(oidc);
+		/* Si no nos diera el vehículo Registrado ( lo busca en la 
+		 * tabla conductor ( OIDCond, OIDViaje, OIDVehiculo )
+		 * y al menos existe ya un viaje del conductor dado de alta
+		 * con su vehículo ya asignado.
+		 */
+
+		insertarC(oidc,OIDViaje,vehiculoRegistrado);
+
+	
+	}
+
+	public void insertarC(String oidc, String oidv, String oidveh) {
+        String sql = "INSERT INTO conductor (OIDConductor,OIDViaje,OIDVehiculo) VALUES (?, ?, ?) ";
+        PreparedStatement stmt = null;
+        	
+        try {
+                stmt = conn.prepareStatement(sql);
+                stmt.setString(1, oidc);
+                stmt.setString(2, oidv);
+                stmt.setString(3, oidveh);
+
+                stmt.executeUpdate();
+        } catch (SQLException e) {
+                System.out.println("Message: " + e.getMessage());
+                System.out.println("SQLState: " + e.getSQLState());
+                System.out.println("ErrorCode: " + e.getErrorCode());
+        } finally {
+                try {
+                        if (stmt != null)
+                                stmt.close();
+                } catch (SQLException e){
+                }
+        
+        	}
+		
+	}
 
 
 }

@@ -12,7 +12,7 @@ import domain.Viaje;
  * @uml.dependency  supplier="data.IVehiculoDAO"
  */
 public interface IViajeDAO {
-	public void insertViaje(Viaje v);
+	public void insertViaje(Connection conn, String OIDViaje, Viaje v );
 	public List<Viaje> selectAllViajes();
 	public Viaje selectViaje(Connection conn, String s);
 	public String selectViajeOID(Connection con,String idViaje);
