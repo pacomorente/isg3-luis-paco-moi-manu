@@ -64,8 +64,9 @@ public class AccionConductorImpl implements IAccionConductor{
 		}
 
 	 
-		public void insertarViaje(String nick,Viaje viaje) {
-			// TODO Auto-generated method stub
+		public void insertarViajeConductor(String nick,Viaje viaje) {
+			
+			conddao.insertarViajeC(nick,viaje);
 			
 		}
 
