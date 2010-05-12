@@ -77,7 +77,7 @@ public class JDBCViajeDAO implements IViajeDAO {
 		List searchResults = new LinkedList();
 		ResultSet result = null;
 		List<String> puntosInt =new ArrayList();
-		String sql = "SELECT * FROM viaje";
+		String sql = "SELECT *, DATE_FORMAT(fecha,'%d/%m/%Y') AS fechaEUR FROM viaje";
 		try {
 			stmt = con.prepareStatement(sql);
 			stmt.executeQuery();
@@ -96,7 +96,8 @@ public class JDBCViajeDAO implements IViajeDAO {
 	           temp.setPuntosIntermedios(puntosInt);
 			   
 			   temp.setPuntosIntermedios(puntosInt);
-			   temp.setFecha(result.getDate("fecha"));
+			   //temp.setFecha(result.getDate("fecha"));
+			   temp.setFecha(result.getString("fechaEUR"));
 			   temp.setAnulado(result.getBoolean("anulado"));
 			   searchResults.add(temp);
 			}
@@ -146,7 +147,7 @@ public class JDBCViajeDAO implements IViajeDAO {
         Viaje viajeCond = new Viaje();
 		List<String> puntosInt = new ArrayList<String>();
         try {
-        	String sql = "SELECT * FROM viaje WHERE (OIDViaje = ?) ";
+        	String sql = "SELECT * ,DATE_FORMAT(fecha,'%d/%m/%Y') AS fechaEUR FROM viaje WHERE (OIDViaje = ?) ";
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, oidViajeConductor);
 
@@ -164,7 +165,8 @@ public class JDBCViajeDAO implements IViajeDAO {
             puntosInt.add(viajeCond.getPuntosInt02());
             puntosInt.add(viajeCond.getPuntosInt03());
             viajeCond.setPuntosIntermedios(puntosInt);
-            viajeCond.setFecha(result.getDate("fecha"));
+            //viajeCond.setFecha(result.getDate("fecha"));
+            viajeCond.setFecha(result.getString("fechaEUR"));
 			viajeCond.setAnulado(result.getBoolean("anulado"));
 			
         }catch (SQLException e) {
