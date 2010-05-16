@@ -11,9 +11,17 @@ import javax.servlet.http.HttpSession;
 
 public class FrontController extends HttpServlet {
 
-	String user = "taxifree";
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
-	String passwd = "taxifree";
+	String userC = "USER6";
+
+	String passwdC = "USER6";
+	
+	String userP="";
+	String passwdP="";
 
 	public void init() throws ServletException {
 	}
@@ -37,7 +45,7 @@ public class FrontController extends HttpServlet {
 			if(d!=null){
 				d.forward(request,response);
 			}
-			System.out.println("Vd. está accediendo a " + resource);
+			System.out.println("Vd. accediendo a " + resource);
 		} else {
 			response.sendRedirect("error.html");
 		}
@@ -86,7 +94,8 @@ public class FrontController extends HttpServlet {
 
 	public boolean valido(String userForm, String passwdForm) {
 		boolean res = false;
-		res = (userForm.equals(this.user) && passwdForm.equals(this.passwd));
+		res = ((userForm.equals(this.userC) && passwdForm.equals(this.passwdC))
+				|| (userForm.equals(this.userP) && passwdForm.equals(this.passwdP)));
 		return res;
 
 	}

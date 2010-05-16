@@ -268,6 +268,7 @@ public class JDBCConductorDAO implements IConductorDAO {
 		 */
 
 		insertarC(oidc,OIDViaje,vehiculoRegistrado);
+		
 
 	
 	}
