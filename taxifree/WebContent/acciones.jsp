@@ -36,7 +36,7 @@
 	</tr>
 
 
-			<tr align="center" id="productos">
+			<tr align="center" id="acciones">
 				
 				<td><a href="FrontController?res=conductor.jsp"> <img src='images/coche.jpeg' style="height: 45px; width: 50px"> </a></td>
 				<td> <img src='images/pasajero.jpeg' style="height: 45px; width: 50px"></td>
