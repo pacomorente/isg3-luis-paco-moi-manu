@@ -1,0 +1,18 @@
+@CHARSET "UTF-8";
+#top{
+	width: 1000px;
+	height: 150px;
+	display: inline;
+	margin-left: 350px;
+}
+body{
+	background-color: #A36EBA;
+}
+fieldset{
+	background-color: #825794;
+	width: 500px;
+	height: 100px;
+	float: middle;
+	margin-left: 350px;
+	margin-top: 150px;
+}
