@@ -10,6 +10,7 @@ import java.util.List;
 public interface IAccionConductor {
 	public List<Viaje> verViajesAsignados(String nickConcductor);
 
-
+	public Conductor datosConductor(String nickConductor);
 	public Vehiculo obtenerVehiculoC(String nick);
+	public Viaje  cambiaEstadoViaje( String idViaje);
 }
