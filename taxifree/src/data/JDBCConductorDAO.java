@@ -253,6 +253,10 @@ public class JDBCConductorDAO implements IConductorDAO {
 		return (Vehiculo) vdao.selectVehiculoConductor(conn,oidVehiculoConductor);
 		
 	}
+	
+	public Viaje  cambiaEstadoViaje(String idViaje){
+		return viadao.cambiaEstadoViaje(conn,idViaje);
+	}
 
 	public void insertarViajeC(String nick, Viaje viaje) {
 		String oidc;
@@ -268,7 +272,6 @@ public class JDBCConductorDAO implements IConductorDAO {
 		 */
 
 		insertarC(oidc,OIDViaje,vehiculoRegistrado);
-		
 
 	
 	}

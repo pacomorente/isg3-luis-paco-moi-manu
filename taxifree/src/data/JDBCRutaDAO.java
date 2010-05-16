@@ -169,13 +169,14 @@ public class JDBCRutaDAO implements IRutaDAO {
 		PreparedStatement stmt = null;
         ResultSet result = null;
         List<Ruta> listaRutas = new LinkedList<Ruta>();
-        
+        String sql = "SELECT * FROM pasajero_ruta WHERE (OIDPasajero = ?) ";
         try {
-        	String sql = "SELECT * FROM pasajero_ruta WHERE (OIDPasajero = ?) ";
+        	
             stmt = con.prepareStatement(sql);
-            stmt.executeQuery();
-            result = stmt.executeQuery();
             stmt.setString(1, oidPasajero);
+            
+            result = stmt.executeQuery();
+            
             
             while (result.next()){
             	String oidRuta = result.getString("OIDRuta");
