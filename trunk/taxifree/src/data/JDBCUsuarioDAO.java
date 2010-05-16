@@ -21,6 +21,7 @@ public class JDBCUsuarioDAO implements IUsuarioDAO{
 		}
        
 		public Usuario select(Connection conn, String usuarioOID) {
+     
 			PreparedStatement stmt = null;
 	        ResultSet result = null;
 	        Usuario user = null;
@@ -28,8 +29,9 @@ public class JDBCUsuarioDAO implements IUsuarioDAO{
 	        
 	        try{
 	        	stmt = conn.prepareStatement(sql);
-	        	result = stmt.executeQuery(sql);
 	        	stmt.setString(1, usuarioOID);
+	        	result = stmt.executeQuery();
+	        	
 	        	result.next();
 	        	
 	        	user = new Usuario();

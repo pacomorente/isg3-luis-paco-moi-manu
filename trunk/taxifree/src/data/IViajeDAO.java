@@ -21,5 +21,5 @@ public interface IViajeDAO {
 	//public void modificaViaje(Connection con, String userOID);
 	public Viaje selectViajeConductor(Connection con,String oidViajeConductor);
 	//public List<String> obtenerViajesOIDConductor(Connection conn, String oidc);
-
+	public Viaje  cambiaEstadoViaje(Connection con, String idViaje);
 }

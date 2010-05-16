@@ -130,9 +130,9 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
         try {
         	String sql = "SELECT * FROM pasajero WHERE (OIDViaje = ?) ";
             stmt = conn.prepareStatement(sql);
-            stmt.executeQuery();
-            result = stmt.executeQuery();
+            
             stmt.setString(1, oidviaje);
+            result = stmt.executeQuery();
             
             while (result.next()){
             	String oidPasajero = result.getString("OIDPasajero");

@@ -98,7 +98,40 @@ public class JDBCViajeDAO implements IViajeDAO {
 
 
 	}
+	public Viaje  cambiaEstadoViaje(Connection con, String idViaje){
+        PreparedStatement stmt = null;
+        String sql = "UPDATE viaje SET anulado = ? where idViaje= ? ";
+        Boolean nuevoEstado=false;
+        Viaje v = null;
+        Boolean estado=selectEstadoViaje(con, idViaje);
+        if (estado==false){
+        	nuevoEstado=true;
+               		
+        }
+        	
+        //String viajeOID = UIDGenerator.getInstance().getKey();
+        try {
+            stmt = conn.prepareStatement(sql);
 
+            stmt.setBoolean(1, nuevoEstado);
+            stmt.setString(2, idViaje);
+            stmt.executeUpdate();
+            v=selectViaje(con, idViaje);
+           
+        } catch (SQLException e) {
+            System.out.println("Message: " + e.getMessage());
+            System.out.println("SQLState: " + e.getSQLState());
+            System.out.println("ErrorCode: " + e.getErrorCode());
+        } finally {
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException e) {
+            }
+        }
+        return v;
+	}
 	
 	@SuppressWarnings("unchecked")
 	public List<Viaje> selectAllViajes() {
@@ -262,6 +295,38 @@ public class JDBCViajeDAO implements IViajeDAO {
         return oid;
     }
 	
+	public Boolean selectEstadoViaje(Connection con,String idViaje){
+        PreparedStatement stmt = null;
+        ResultSet result = null;
+        Boolean estado = null;
+        String sql = "SELECT * FROM viaje WHERE (idViaje = ?) ";
+
+        try {
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, idViaje);
+            result = stmt.executeQuery();
+
+            result.next();
+            estado = result.getBoolean("anulado");
+            
+        } catch (SQLException e) {
+            System.out.println("Message: " + e.getMessage());
+            System.out.println("SQLState: " + e.getSQLState());
+            System.out.println("ErrorCode: " + e.getErrorCode());
+        } finally {
+            try {
+                if (result != null) {
+                    result.close();
+                }
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException e) {
+            }
+        }
+        return estado;
+    }
+	
 	
 	public List<Viaje> selectViajes(Connection con, String oidPasajero) {
 		PreparedStatement stmt = null;
@@ -271,9 +336,10 @@ public class JDBCViajeDAO implements IViajeDAO {
         try {
         	String sql = "SELECT * FROM pasajero WHERE (OIDPasajero = ?) ";
             stmt = con.prepareStatement(sql);
-            stmt.executeQuery();
-            result = stmt.executeQuery();
+            //stmt.executeQuery();
             stmt.setString(1, oidPasajero);
+            result = stmt.executeQuery();
+            
             
             while (result.next()){
             	String oidViaje = result.getString("OIDViaje");
