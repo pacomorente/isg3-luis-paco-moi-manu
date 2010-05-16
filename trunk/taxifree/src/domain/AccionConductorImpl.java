@@ -49,6 +49,13 @@ public class AccionConductorImpl implements IAccionConductor{
 		return ve;
 	}
 		
+		public Conductor datosConductor(String nickConductor) {
+			Conductor user=conddao.selectConductor(nickConductor);
+
+	
+		return user;
+	}
+		
 
 		public Viaje consultaViaje(String idViaje) {
 				Viaje viaje = new Viaje();
@@ -71,9 +78,9 @@ public class AccionConductorImpl implements IAccionConductor{
 		}
 
 	 
-		public Viaje  modificaViaje(String nick,Viaje viaje) {
-			// TODO Auto-generated method stub
-			return null;
+		public Viaje  cambiaEstadoViaje( String idViaje) {
+			return conddao.cambiaEstadoViaje(idViaje);
+			
 		}
 
 
