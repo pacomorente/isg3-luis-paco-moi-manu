@@ -22,15 +22,15 @@
 </div>
 
 <div id="content">
-<table summary ="Listado de Productos" cellSpacing="1" cellPadding="3" width="770" align="center" border="0" style="width: 475px">
+<table summary ="Acciones del Usuario" cellSpacing="1" cellPadding="3" width="770" align="center" border="0" style="width: 475px">
 	<tr valign ="middle" align="center">
-		<td  colspan="3">ACCIONES DEL USUARIO<br>¿ Qué desea hacer ?<br><br></td>
+		<td  colspan="3">ACCIONES DEL USUARIO<br>¿ Qué desea hacer ?<br><br><br></td>
 	</tr>
 	<tr valign ="middle" align="center" id="cabecera">
 		<td>CONDUCTOR</td><td>PASAJERO</td> <td>LOCALIZAR MAPAS</td>
 	</tr>
 	<%
-	//
+	System.out.println("El usuario debe elegir el rol a usar");
 	%>
 
 			<tr align="center" id="productos">
