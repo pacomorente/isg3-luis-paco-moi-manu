@@ -13,4 +13,6 @@ public interface IAccionConductor {
 	public Conductor datosConductor(String nickConductor);
 	public Vehiculo obtenerVehiculoC(String nick);
 	public Viaje  cambiaEstadoViaje( String idViaje);
+	public boolean eliminaViaje( String idViaje);
+	
 }
