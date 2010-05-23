@@ -14,18 +14,7 @@
  		border-top-color: rgb(153, 0, 51);
  		
 	}
-	.enlaceboton {
-	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-WEIGHT: bold; FONT-SIZE: 8pt; PADDING-BOTTOM: 2px; COLOR: #666666; PADDING-TOP: 2px; FONT-FAMILY: verdana, arial, sans-serif; BACKGROUND-COLOR: #ffffcc; TEXT-DECORATION: none
-}
-.enlaceboton:link {
-	BORDER-RIGHT: #666666 2px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #666666 2px solid
-}
-.enlaceboton:visited {
-	BORDER-RIGHT: #666666 2px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #666666 2px solid
-}
-.enlaceboton:hover {
-	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #666666 2px solid; BORDER-LEFT: #666666 2px solid; BORDER-BOTTOM: #cccccc 1px solid
-}
+
 	
 -->
 </style>
@@ -41,6 +30,15 @@
 </div>
 
 <div id="content">
+<table align="center">
+<tr style="height: 11px"></tr>
+<tr align="center" id="separador">
+<td colspan='6'><a class=enlaceboton href="FrontController?res=conductor.jsp">Menú Conductor</a></td>
+<td colspan='6'><a class=enlaceboton href="FrontController?res=acciones.jsp"> Menú  Usuario</a></td>
+
+</tr>
+
+</table>
 <table summary ="Datos del Conductor" cellSpacing="1" cellPadding="3" width="770" align="center" border="0" style="width: 475px">
 	<tr valign ="middle" align="center">
 		<td  colspan="7"><b>CONDUCTOR</b><br> <%=sessionUser%><br><br><br></td>
@@ -102,15 +100,6 @@
 			</tr>
         <%}
 %>			
-</table>
-<table>
-<tr style="height: 11px"></tr>
-<tr align="center" id="separador">
-<td colspan='6'><a class=enlaceboton href="FrontController?res=conductor.jsp">Menú Conductor</a></td>
-<td colspan='6'><a class=enlaceboton href="FrontController?res=acciones.jsp"> Menú  Usuario</a></td>
-
-</tr>
-
 </table>
 </div>
 

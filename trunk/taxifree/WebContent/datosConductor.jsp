@@ -27,10 +27,20 @@
 </div>
 
 <div id="content">
+<table align="center">
+<tr style="height: 11px"></tr>
+<tr align="center" id="separador">
+<td colspan='6'><a class=enlaceboton href="FrontController?res=conductor.jsp">Menú Conductor</a></td>
+<td colspan='6'><a class=enlaceboton href="FrontController?res=acciones.jsp"> Menú  Usuario</a></td>
+
+</tr>
+
+</table>
 <table summary ="Datos del Conductor" cellSpacing="1" cellPadding="3" width="770" align="center" border="0" style="width: 475px">
 	<tr valign ="middle" align="center">
 		<td  colspan="4"><b>CONDUCTOR</b><br> <%=sessionUser%><br><br><br></td>
 	</tr>
+
 	<%
         IAccionConductor accionCond = new AccionConductorImpl();
         Conductor datosCond= accionCond.datosConductor(sessionUser);
@@ -92,11 +102,7 @@
 
 			</tr>						
 </table>
-</div>
-<div>
-<li><b><a href="FrontController?res=conductor.jsp">Menú Conductor</a></b></li>
-<li><a href="FrontController?res=acciones.jsp"><b>Menú Usuario</b></a></li>
-<li class="noborder"><a href="#">Salir</a></li>
+
 </div>
 </body>
 </html>
