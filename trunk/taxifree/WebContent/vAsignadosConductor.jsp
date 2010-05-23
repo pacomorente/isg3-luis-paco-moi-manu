@@ -2,7 +2,7 @@
 <!DOCTYPE HTML PUBLIC "-//w3c//dtd html 4.0 transitional//en">
 <html>
 <head>
-<title>Datos Personales Conductor</title>
+<title>Viajes Asignados al Conductor</title>
 <link rel="stylesheet" type="text/css" href="estilo.css" />
 <style type="text/css">
 <!--
@@ -49,7 +49,7 @@
         IAccionConductor accionCond = new AccionConductorImpl();
 		List<Viaje> viajesCond= accionCond.verViajesAsignados(sessionUser);
 		
-		
+		if (viajesCond!=null){
         for (Iterator iter = viajesCond.iterator(); iter.hasNext();) {
             Viaje viaje = (Viaje) iter.next();
             String activo="SI";
@@ -60,9 +60,9 @@
 %>
 			<tr id="separador" style="height: 24px">
 			<td colspan="2">VIAJE -- <%=viaje.getViajeID()%><b></b></td>
-			<td colspan="2"><b><a class=enlaceboton href="FrontController?res=modificarViajeC.jsp?pid=<%=viaje.getViajeID()%>">Modificar</a></b></td>
-			<td colspan="1"><b><a class=enlaceboton href="FrontController?res=cambiarEstadoViajeC.jsp?pid=<%=viaje.getViajeID()%>">Activar/Anular</a></b></td>
-			<td colspan="2"><b><a class=enlaceboton href="FrontController?res=eliminarViajeC.jsp?pid=<%=viaje.getViajeID()%>">Eliminar Viaje</a></b></td>
+			<td colspan="2"><b><a class=enlaceboton href="FrontController?res=modificarViajeC.jsp?pid=<%=viaje.getViajeID()%>">MODIFICAR</a></b></td>
+			<td colspan="1"><b><a class=enlaceboton href="FrontController?res=cambiarEstadoViajeC.jsp?pid=<%=viaje.getViajeID()%>">ACTIVAR/ANULAR</a></b></td>
+			<td colspan="2"><b><a class=enlaceboton href="FrontController?res=eliminarViajeC.jsp?pid=<%=viaje.getViajeID()%>">ELIMINAR</a></b></td>
 			</td>
 			</tr>
 			<tr align="center" id="cabecera">
@@ -93,14 +93,26 @@
 	
 	
 <%
-		}
-%>	
-				
+        }
+        }
+        else
+        {%>
+			<tr align="center" id="productos">
+			<td colspan='6'>ACTUALMENTE NO EXISTEN VIAJES ASIGNADOS.</td>
+			</tr>
+        <%}
+%>			
+</table>
+<table>
+<tr style="height: 11px"></tr>
+<tr align="center" id="separador">
+<td colspan='6'><a class=enlaceboton href="FrontController?res=conductor.jsp">Menú Conductor</a></td>
+<td colspan='6'><a class=enlaceboton href="FrontController?res=acciones.jsp"> Menú  Usuario</a></td>
+
+</tr>
+
 </table>
 </div>
-<div id="menu">
-<li><b><a href="FrontController?res=conductor.jsp">Menú Conductor</a></b></li>
-<li><a href="FrontController?res=acciones.jsp"><b>Menú Usuario</b></a></li>
-</div>
+
 </body>
 </html>

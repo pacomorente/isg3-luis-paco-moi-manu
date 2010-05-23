@@ -2,7 +2,7 @@
 <!DOCTYPE HTML PUBLIC "-//w3c//dtd html 4.0 transitional//en">
 <html>
 <head>
-<title>Datos Personales Conductor</title>
+<title>Modificar Viaje Conductor</title>
 <link rel="stylesheet" type="text/css" href="estilo.css" />
 <style type="text/css">
 <!--
@@ -81,10 +81,16 @@
 		}
 %>							
 </table>
+<table>
+<tr style="height: 11px"></tr>
+<tr align="center" id="separador">
+<td colspan='6'><a class=enlaceboton href="FrontController?res=conductor.jsp">Menú Conductor</a></td>
+<td colspan='6'><a class=enlaceboton href="FrontController?res=acciones.jsp"> Menú  Usuario</a></td>
+
+</tr>
+
+</table>
 </div>
-<div>
-<li><b><a href="FrontController?res=conductor.jsp">Menú Conductor</a></b></li>
-<li><a href="FrontController?res=acciones.jsp"><b>Menú Usuario</b></a></li>
-</div>
+
 </body>
 </html>
