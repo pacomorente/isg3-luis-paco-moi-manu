@@ -17,20 +17,9 @@
 </style>
 </head>
 <body>
-	<%
-	//String nick="USER6";
-	String sessionUser= (String)session.getAttribute("session.user");
-
-	%>
-<div id="top">
-<jsp:include  page="head.html"/>
-</div>
-
 <div id="content">
 <table summary ="Datos del Conductor" cellSpacing="1" cellPadding="3" width="770" align="center" border="0" style="width: 475px">
-	<tr valign ="middle" align="center">
-		<td  colspan="7"><b>CONDUCTOR</b><br> <%=sessionUser%><br><br><br></td>
-	</tr>
+
 	<%
         IAccionConductor accionCond = new AccionConductorImpl();
 		String pid = request.getParameter("pid");
@@ -41,58 +30,19 @@
 		for (Iterator iter = viajemod.iterator(); iter.hasNext();) {
             Viaje viaje = (Viaje) iter.next();
             if (viaje.getViajeID()==pid){
-            */
+            
                 String activo="SI";
             	
                 if (viaje.getAnulado()==true){
                 
                 	activo="NO";
                 	}
-            	
+            	*/
 %>
-	<tr valign ="middle" align="center">
-		<td  colspan="7"><b>EL SIGUIENTE VIAJE HA SIDO MODIFICADO POR EL USUARIO </td>
-	</tr>
-			<tr id="separador" style="height: 24px">
-			<td colspan="2">VIAJE -- <%=viaje.getViajeID()%><b><a href="FrontController?res=modificarViajeC.jsp?pid=<%=viaje.getViajeID()%>">Modificar</a></b></td>
-			<td colspan="2"><b><a href="FrontController?res=cambiarEstadoViajeC.jsp?pid=<%=viaje.getViajeID()%>">Activar/Anular</a></b></td>
-			<td colspan="4">
-			</td>
-			</tr>
-			<tr align="center" id="cabecera">
-				
-				<td><u>Origen</u></td>
-				<td><u>Destino</u></td>
-				<td><u>Fecha</u></td>
-				<td><u>PuntoIntermedio1</u></td>
-				<td><u>PuntoIntermedio2</u></td>
-				<td><u>PuntoIntermedio3</u></td>
-				<td><u>ACTIVO</u></td>
 
-
-				
-
-			</tr>
-			<tr align="center" id="datosconductor">
-				
-				<td><%=viaje.getOrigen()%></td>
-				<td><%=viaje.getDestino()%></td>
-				<td><%=viaje.getFecha()%></td>
-				<td><%=viaje.getPuntosInt01()%></td>
-				<td><%=viaje.getPuntosInt02()%></td>
-				<td><%=viaje.getPuntosInt03()%></td>
-				<td><%=activo%></td>
-
-			</tr>
-	
-	
-	
 				
 </table>
-</div>
-<div id="menu">
-<li><b><a href="FrontController?res=conductor.jsp">Menú Conductor</a></b></li>
-<li><a href="FrontController?res=acciones.jsp"><b>Menú Usuario</b></a></li>
+<jsp:include page="vAsignadosConductor.jsp"></jsp:include>
 </div>
 </body>
 </html>
