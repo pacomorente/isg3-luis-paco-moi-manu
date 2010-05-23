@@ -116,7 +116,7 @@ public class JDBCViajeDAO implements IViajeDAO {
             stmt.setBoolean(1, nuevoEstado);
             stmt.setString(2, idViaje);
             stmt.executeUpdate();
-            v=selectViaje(con, idViaje);
+            //v=selectViaje(con, idViaje);
            
         } catch (SQLException e) {
             System.out.println("Message: " + e.getMessage());
