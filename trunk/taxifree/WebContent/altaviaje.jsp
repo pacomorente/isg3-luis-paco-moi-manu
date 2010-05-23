@@ -1,12 +1,28 @@
-<%@ page language="java" import="domain.*,java.util.*,utils.*"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" import="domain.*,java.util.*" %>
+<!DOCTYPE HTML PUBLIC "-//w3c//dtd html 4.0 transitional//en">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Alta Viaje Conductor</title>
+<link rel="stylesheet" type="text/css" href="estilo.css" />
+<style type="text/css">
+<!--
+	#cabecera td{background-color: rgb(238, 238, 238);}
+	#separador td{background-color: rgb(124, 123, 134);}
+  	#datosconductor td{
+		border-top-width: 1px;
+    border-top-style: solid;
+ 		border-top-color: rgb(153, 0, 51);
+	}
+-->
+</style>
 </head>
 <body>
-<%!
+	<%
+	//String nick="USER6";
+	String sessionUser= (String)session.getAttribute("session.user");
+
+	%>
+<%!	
 //función de validación simple que permite mirar si se han rellenado todos los campos
 private boolean validar(Map elements)
 {
@@ -35,73 +51,53 @@ String mensaje = new String();
 IAccionConductor accionCond = new AccionConductorImpl();
 
 
-if(sessionRoute == null)
-{
 		//saco un mapa con los parametros del formulario
 		Map datosForm = request.getParameterMap();
 
 		//datos relativos a la tarjeta de crédito
-		String fromForm = request.getParameter("from");
-		String toForm = request.getParameter("to");
-		String delimiter=",";
-		String [] fieldsFrom= fromForm.split(delimiter,-1);
+		String desdeForm = request.getParameter("desde");
+		String hastaForm = request.getParameter("hasta");
 		
-		String fromLocalidad=fieldsFrom[0];
-		String fromProvincia=fieldsFrom[1];
-		String [] fieldsTo= toForm.split(delimiter, -1);
-		String toLocalidad=fieldsTo[0];
-		String toProvincia= fieldsTo[1];
-		String dateForm = request.getParameter("date");
-		String descForm = request.getParameter("descripcion");
-		String usuario= request.getParameter("u");
-		Integer ocupadasForm= Integer.parseInt(request.getParameter("ocupadas"));
-		
-UsuarioStore sessionUserStore= (UsuarioStore)session.getAttribute("session.userStore");
+		String fechaForm = request.getParameter("date");
+		String punto01Form = request.getParameter("pto01");
+		String punto02Form = request.getParameter("pto02");
+		String punto03Form = request.getParameter("pto03");
 
-	List<Usuario> usuarios= sessionUserStore.getInstance().getUsuarios();
-	for (Iterator iter = usuarios.iterator(); iter.hasNext();) {
-	Usuario u = (Usuario) iter.next();
+		Random rnd = new Random();
+		String viajeID= Integer.toString(rnd.nextInt());
 
-	if(u.getNombre().equals(usuario)){
-	
-	
-		
 		
 		if(validar(datosForm))
 		{
 
-			Trayecto t = new Trayecto();
-			t.setDescripcion(descForm);
-			t.setFechaTrayecto(dateForm);
-			t.setLocalidadOrigen(fromLocalidad);
-			t.setProvinciaOrigen(fromProvincia);
-			t.setLocalidadDestino(toLocalidad);
-			t.setProvinciaDestino(toProvincia);
-			t.setPropietario(u);
-			t.setNumeroPlazasOcupadas(ocupadasForm);
+			Viaje viaje = new Viaje();
+			viaje.setOrigen(desdeForm);
+			viaje.setFecha(fechaForm);
+			viaje.setDestino(hastaForm);
+			viaje.setPuntosInt01(punto01Form);
+			viaje.setPuntosInt02(punto02Form);
+			viaje.setPuntosInt03(punto03Form);
+			viaje.setViajeID(viajeID);
+			viaje.setAnulado(false);
+			// ID vIAJE ?? VER CÓMO AÑADIR
 			
-			atr.añadirTrayecto(t);
+			accionCond.insertarViajeConductor(sessionUser,viaje);
 			
-			mensaje = new String("SU ORDEN HA SIDO PROCESADA CON ÉXITO");
+			mensaje = new String("SU VIAJE SE HA DADO DE ALTA CORRECTAMENTE.");
 		}
 		else
 		{
 			mensaje = new String("FALTAN CAMPOS POR RELLENAR");
 		}
 
-	}
-	}
 
-}
-else// no tiene orden o no tiene producto
-{
-		mensaje = new String ("NO TIENE NINGÚN ELEMENTO SELECCIONADO EN SU PEDIDO");
-}
-	
+		String mensajefinal="<script language='javascript'>alert('" + mensaje + "');</script>";
+		out.println(mensajefinal);
 
 %>
 <p>
-<%=mensaje%>
+
 </p>
+<jsp:include page="altaViajeConductor.jsp"></jsp:include>
 </body>
 </html>
