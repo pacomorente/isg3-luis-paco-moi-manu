@@ -15,4 +15,6 @@ public interface IAccionConductor {
 	public Viaje  cambiaEstadoViaje( String idViaje);
 	public boolean eliminaViaje( String idViaje);
 	
+	public void insertarViajeConductor(String nick, Viaje viaje);
+	
 }
