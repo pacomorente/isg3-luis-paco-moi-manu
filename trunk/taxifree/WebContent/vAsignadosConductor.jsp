@@ -12,7 +12,21 @@
 		border-top-width: 1px;
     border-top-style: solid;
  		border-top-color: rgb(153, 0, 51);
+ 		
 	}
+	.enlaceboton {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-WEIGHT: bold; FONT-SIZE: 8pt; PADDING-BOTTOM: 2px; COLOR: #666666; PADDING-TOP: 2px; FONT-FAMILY: verdana, arial, sans-serif; BACKGROUND-COLOR: #ffffcc; TEXT-DECORATION: none
+}
+.enlaceboton:link {
+	BORDER-RIGHT: #666666 2px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #666666 2px solid
+}
+.enlaceboton:visited {
+	BORDER-RIGHT: #666666 2px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #666666 2px solid
+}
+.enlaceboton:hover {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #666666 2px solid; BORDER-LEFT: #666666 2px solid; BORDER-BOTTOM: #cccccc 1px solid
+}
+	
 -->
 </style>
 </head>
@@ -45,9 +59,10 @@
             	
 %>
 			<tr id="separador" style="height: 24px">
-			<td colspan="2">VIAJE -- <%=viaje.getViajeID()%><b><a href="FrontController?res=modificarViajeC.jsp?pid=<%=viaje.getViajeID()%>">Modificar</a></b></td>
-			<td colspan="2"><b><a href="FrontController?res=cambiarEstadoViajeC.jsp?pid=<%=viaje.getViajeID()%>">Activar/Anular</a></b></td>
-			<td colspan="4">
+			<td colspan="2">VIAJE -- <%=viaje.getViajeID()%><b></b></td>
+			<td colspan="2"><b><a class=enlaceboton href="FrontController?res=modificarViajeC.jsp?pid=<%=viaje.getViajeID()%>">Modificar</a></b></td>
+			<td colspan="1"><b><a class=enlaceboton href="FrontController?res=cambiarEstadoViajeC.jsp?pid=<%=viaje.getViajeID()%>">Activar/Anular</a></b></td>
+			<td colspan="2"><b><a class=enlaceboton href="FrontController?res=eliminarViajeC.jsp?pid=<%=viaje.getViajeID()%>">Eliminar Viaje</a></b></td>
 			</td>
 			</tr>
 			<tr align="center" id="cabecera">
