@@ -53,6 +53,10 @@ public class JDBCConductorDAO implements IConductorDAO {
 	public String selectOIDConductor(String nick) {
 			return udao.selectUsuarioOID(conn, nick);
 	}
+	
+	public boolean eliminaViajeC(String idViaje){
+		return viadao.eliminaViaje(conn, idViaje);
+	}
 
 	public List<String> obtenerViajesOIDConductor(String oidc){
 		 	PreparedStatement stmt = null;
@@ -300,6 +304,29 @@ public class JDBCConductorDAO implements IConductorDAO {
         
         	}
 		
+	}
+	
+	public void delete(String nick,String oidViaje){
+		
+		String sql = "DELETE FROM conductor WHERE (OIDConductor = ?) and (OIDViaje=?) ";
+        PreparedStatement stmt = null;
+        String oidc= selectOIDConductor(nick);
+        try {
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, oidc);
+            stmt.setString(2, oidViaje);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            System.err.println("Message: " + e.getMessage());
+            System.err.println("SQLState: " + e.getSQLState());
+            System.err.println("ErrorCode: " + e.getErrorCode());
+        } finally {
+            try {
+                if (stmt != null)
+                    stmt.close();
+            } catch (SQLException e) {
+            }
+        }
 	}
 
 

@@ -136,8 +136,9 @@ public class JDBCRutaDAO implements IRutaDAO {
         
         try{
         	stmt = conn.prepareStatement(sql);
-        	result = stmt.executeQuery(sql);
+        	
         	stmt.setString(1, rutaOID);
+        	result = stmt.executeQuery();
         	result.next();
         	
         	r = new Ruta();
