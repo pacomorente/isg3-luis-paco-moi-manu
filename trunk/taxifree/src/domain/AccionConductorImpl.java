@@ -82,6 +82,10 @@ public class AccionConductorImpl implements IAccionConductor{
 			return conddao.cambiaEstadoViaje(idViaje);
 			
 		}
+		
+		public boolean eliminaViaje( String idViaje){
+			return conddao.eliminaViajeC(idViaje);
+		}
 
 
 		public boolean eliminaVehiculo(Vehiculo vehiculo) {
