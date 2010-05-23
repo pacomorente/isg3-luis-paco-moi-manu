@@ -82,7 +82,7 @@ public class JDBCViajeDAO implements IViajeDAO {
 		 */
 
 	        PreparedStatement stmt = null;
-	        String sql = "INSERT INTO viaje( OIDViaje,origen,destino,puntoint01,puntoint02,puntoint03,fecha,idViaje,anulado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) ";
+	        String sql = "INSERT INTO viaje( OIDViaje,origen,destino,puntoint01,puntoint02,puntoint03,fecha,idViaje,anulado) VALUES (?, ?, ?, ?, ?, ?, STR_TO_DATE(?,'%d/%m/%Y'),?, ?) ";
 	        //String viajeOID = UIDGenerator.getInstance().getKey();
 	        try {
 	            stmt = conn.prepareStatement(sql);
@@ -94,12 +94,13 @@ public class JDBCViajeDAO implements IViajeDAO {
 	            stmt.setString(5, v.getPuntosInt02());
 	            stmt.setString(6, v.getPuntosInt03());
 	            stmt.setString(7, v.getFecha());
+	            //stmt.setString(7, STR_TO_DATE(v.getFecha(),'%d/%m/%Y'));
 	            stmt.setString(8, v.getViajeID());
 	            stmt.setBoolean(9, false);
 
 
 	            stmt.executeUpdate();
-
+	            //SUMAR ESTRELLAS A CONDUCTOR
 	           
 	        } catch (SQLException e) {
 	            System.out.println("Message: " + e.getMessage());
