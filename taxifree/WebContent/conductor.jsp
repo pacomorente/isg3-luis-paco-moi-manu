@@ -26,6 +26,15 @@
 </div>
 
 <div id="content">
+<table align="center">
+<tr style="height: 11px"></tr>
+<tr align="center" id="separador">
+<td colspan='6'><a class=enlaceboton href="FrontController?res=conductor.jsp">Menú Conductor</a></td>
+<td colspan='6'><a class=enlaceboton href="FrontController?res=acciones.jsp"> Menú  Usuario</a></td>
+
+</tr>
+
+</table>
 <table summary ="Acciones del Usuario" cellSpacing="1" cellPadding="3" width="770" align="center" border="0" style="width: 475px">
 	<tr valign ="middle" align="center">
 		<td  colspan="3"><b>CONDUCTOR</b><br> <%=sessionUser%><br><br><br></td>
@@ -43,6 +52,7 @@
 			</tr>
 
 </table>
+
 </div>
 </body>
 </html>
