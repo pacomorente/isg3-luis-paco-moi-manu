@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import domain.Conductor;
+import domain.Pasajero;
 import domain.Viaje;
 
 public class JDBCViajeDAO implements IViajeDAO {
@@ -48,9 +50,26 @@ public class JDBCViajeDAO implements IViajeDAO {
             } catch (SQLException e) {
             }
         }
-	    
+	     
 
 	}
+	
+	public boolean  eliminaViaje(Connection con, String idViaje){
+		String oidviaje= selectViajeOID(con,idViaje);
+		IPasajeroDAO pasdao = new JDBCPasajeroDAO();
+		IConductorDAO cdao = new JDBCConductorDAO();
+		List<Pasajero> listaPasajeros=pasdao.selectPasajerosbyViaje(oidviaje);
+		if (listaPasajeros==null){ // no existe viaje asociado a pasajeros
+			Conductor cond= cdao.selectConductorbyViaje(oidviaje);
+			cdao.delete(cond.getNick(), oidviaje);
+			deleteViaje(oidviaje);
+			return true;
+		}else
+			return false;
+			
+	}
+	
+	
 
 	
 	public void insertViaje(Connection con, String viajeOID,Viaje v ) {
