@@ -16,6 +16,52 @@ fieldset{
 	margin-left: 350px;
 	margin-top: 150px;
 }
+h1{
+	text-align:center;
+	color:blue;
+}
+#tablaViajero{
+	width: 550px;
+	height: 100px;
+	float: middle;
+	margin-left: 350px;
+	margin-top: 50px;
+	
+}
+#tablaResultados{
+	width: 600px;
+	float: middle;
+	margin-left: 350px;
+	background-color: #825794;
+}
+#cabecera td{
+	background-color: rgb(238, 238, 238);
+	height: 30px;
+}
+#formularioPasajero{
+	width: 550px;
+	height: 500px;
+	float: middle;
+	margin-left: 350px;
+}
+#lfrom{
+	margin-right:100px;	
+}
+#lto{
+	margin-right:104px;	
+}
+#lfecha{
+	margin-right:103px;	
+}
+#lmove{
+	margin-right:25px;	
+}
+label{
+	margin-left: 75px;	
+}
+#botonEnviar{
+	margin-left:220px;
+}
 	.enlaceboton {
 	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-WEIGHT: bold; FONT-SIZE: 8pt; PADDING-BOTTOM: 2px; COLOR: #666666; PADDING-TOP: 2px; FONT-FAMILY: verdana, arial, sans-serif; BACKGROUND-COLOR: #ffffcc; TEXT-DECORATION: none
 }

@@ -38,9 +38,19 @@
 
 			<tr align="center" id="acciones">
 				
-				<td><a href="FrontController?res=conductor.jsp"> <img src='images/coche.jpeg' style="height: 45px; width: 50px"> </a></td>
-				<td> <img src='images/pasajero.jpeg' style="height: 45px; width: 50px"></td>
-				<td> <img src='images/localizar.jpeg' style="height: 45px; width: 50px"> </td>
+				<td>
+					<a href="FrontController?res=conductor.jsp"> 
+					<img src='images/coche.jpeg' style="height: 45px; width: 50px"> 
+					</a>
+				</td>
+				<td>
+					<a href="FrontController?res=pasajero.jsp">
+					<img src='images/pasajero.jpeg' style="height: 45px; width: 50px">
+					</a>
+					</td>
+				<td> 
+					<img src='images/localizar.jpeg' style="height: 45px; width: 50px"> 
+				</td>
 			</tr>
 
 </table>
