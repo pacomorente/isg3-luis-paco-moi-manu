@@ -27,7 +27,7 @@ public class AccionPasajeroImpl implements IAccionPasajero{
 	private Ruta rutaDePasajero;
 	
 	public AccionPasajeroImpl(){
-		v = ViajeStore.getInstance().getViajes();
+		v = new ViajeStore().getViajes();
 	}
 	
 	public void apuntarseAViaje(Viaje v) {
@@ -42,12 +42,18 @@ public class AccionPasajeroImpl implements IAccionPasajero{
 		rutaDePasajero = r;
 		List<Viaje> res = new LinkedList<Viaje>();
 		for(Viaje vp:v){
-			if(vp.getDestino().equals(r.getDestino())){
-				if(vp.getOrigen().equals(r.getOrigen())){
+			String origen = vp.getOrigen().toLowerCase();
+			String destino = vp.getDestino().toLowerCase();
+			String desde = r.getOrigen();
+			String hasta = r.getDestino();
+			if(destino.equals(hasta)){
+				if(origen.equals(desde)){
 					res.add(vp);
 				}else{
-					if(vp.getPuntosIntermedios().contains(r.getOrigen())){
-						res.add(vp);
+					for(String o: vp.getPuntosIntermedios()){
+						if(o.toLowerCase().equals(desde)){
+							res.add(vp);
+						}
 					}
 				}
 			}
