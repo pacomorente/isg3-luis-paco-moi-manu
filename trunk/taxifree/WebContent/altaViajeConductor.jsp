@@ -132,7 +132,7 @@ Idioma: <select id="locale" name="locale">
 <p>
 <label for="date">&nbsp;&nbsp;Fecha:&nbsp;</label>
 <input type="text" size="25" id="date" name="date"
-value="dd/mm/aaaa" />
+value="30/06/2010" />
 </p>
 
 <p>
