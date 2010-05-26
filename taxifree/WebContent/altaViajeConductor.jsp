@@ -6,16 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>TAXIFREE - Alta Viaje</title>
 <link rel="stylesheet" type="text/css" href="estilo.css" />
-<style type="text/css">
-<!--
-	#cabecera td{background-color: rgb(238, 238, 238);}
-  	#productos td{
-		border-top-width: 1px;
-    border-top-style: solid;
- 		border-top-color: rgb(153, 0, 51);
-	}
--->
-</style>
+
 <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAcLh6AS0I-FssUKcFU9GPZRTIc-IpND3enRGJyyNbCDc9zQv35RTnJJ6dLi5WkJ8XfZvrhYm9ltpJsA"
 type="text/javascript"></script>
 <script type="text/javascript">
@@ -34,7 +25,7 @@ gdir = new GDirections(map, document.getElementById("direcciones"));
 GEvent.addListener(gdir, "load", onGDirectionsLoad);
 GEvent.addListener(gdir, "error", handleErrors);
 
-setDirections("Sevilla", "Sevilla", "es");
+setDirections("Sevilla", "Santander", "es");
 
 }
 }
@@ -97,9 +88,9 @@ function onGDirectionsLoad(){
 <div id="mapa_ruta" align="center" style="width: 710px; height: 300px; border: 4px solid #FF6600;"></div>
 <form action="#" onsubmit="setDirections(this.from.value, this.to.value, this.locale.value); return false" name="form">
 
-Origen: <input type="text" size="25" id="fromAddress" name="from"/>
+Origen: <input type="text" size="25" id="fromAddress" name="from"/ value="SEVILLA">
 
-Destino: <input name="to" type="text" id="toAddress" size="25"/><br>
+Destino: <input name="to" type="text" id="toAddress" size="25" value="SANTANDER"/><br>
 
 Idioma: <select id="locale" name="locale">
 <option value="es" selected>Castellano</option>
@@ -123,29 +114,27 @@ Idioma: <select id="locale" name="locale">
 
 <br />
 <p><label for="from">&nbsp;&nbsp;Desde:&nbsp;</label>
-<input class="mayusculas" type="text" size="25" id="fromAddress" name="desde" />
+<input class="mayusculas" type="text" size="25" id="fromAddress" name="desde" value="SEVILLA"/>
 </p>
 <p>
 <label for="toAddress">&nbsp;&nbsp;Hasta:&nbsp;</label>
-<input class="mayusculas" type="text" size="25" id="toAddress" name="hasta" />
+<input class="mayusculas" type="text" size="25" id="toAddress" name="hasta" value="SANTANDER"/>
 </p>
 <p>
 <label for="date">&nbsp;&nbsp;Fecha:&nbsp;</label>
-<input type="text" size="25" id="date" name="date"
-value="30/06/2010" />
+<input size="10" id="date" name="date" value="30/06/2010" type="text"></input>
 </p>
-
 <p>
 <label for="pto01">&nbsp;&nbsp;Punto Intermedio 1:&nbsp;</label>
-<input class="mayusculas" type="text" size="25" id="pto01" name="pto01" value="-"/>
+<input class="mayusculas" type="text" size="20" id="pto01" name="pto01" value="CACERES"/>
 </p>
 <p>
 <label for="pto02">&nbsp;&nbsp;Punto Intermedio 2:&nbsp;</label>
-<input class="mayusculas" type="text" size="25" id="pto02" name="pto02" value="-"/>
+<input class="mayusculas" type="text" size="20" id="pto02" name="pto02" value="SALAMANCA"/>
 </p>
 <p>
 <label for="pto03">&nbsp;&nbsp;Punto Intermedio 3:&nbsp;</label>
-<input class="mayusculas" type="text" size="25" id="pto03" name="pto03" value="-"/>
+<input class="mayusculas" type="text" size="20" id="pto03" name="pto03" value="VALLADOLID"/>
 </p>
 
 <p>
@@ -155,6 +144,8 @@ value="30/06/2010" />
 
 </form>
 </div>
+<div id="testdiv1" style="position:absolute;visibility:hidden;background-color:white;layer-background-color:white;"></div>
+
 </td>
 </tr>
 </table>
