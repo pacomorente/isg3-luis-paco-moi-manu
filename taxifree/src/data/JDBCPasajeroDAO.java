@@ -41,8 +41,9 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
 		rdao = new JDBCRutaDAO();
 	}
 	
-	public String selectPasajeroOID(String nick) {
-		return udao.selectUsuarioOID(conn, nick);
+	public Pasajero selectPasajero(String nick) {
+		String pas = udao.selectUsuarioOID(conn, nick);
+		return this.selectPasajeroPorOID(pas);
 	}
 
 	public List<Pasajero> selectAllPasajeros() {
@@ -99,7 +100,7 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
 		return listaPasajeros;
 	}
 
-	public Pasajero selectPasajero(String pasajeroOID) {
+	public Pasajero selectPasajeroPorOID(String pasajeroOID) {
 		IViajeDAO vdao = new JDBCViajeDAO();
 		Pasajero p = new Pasajero();
 		List<Viaje> listaViajes = new LinkedList<Viaje>();

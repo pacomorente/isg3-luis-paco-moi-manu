@@ -11,8 +11,8 @@ import domain.Viaje;
  */
 public interface IPasajeroDAO {
 	public List<Pasajero> selectAllPasajeros();
-	public String selectPasajeroOID(String nick);
-	public Pasajero selectPasajero(String pasajeroOID);
+	public Pasajero selectPasajero(String nick);
+	public Pasajero selectPasajeroPorOID(String pasajeroOID);
 	public void insert(Pasajero p, Ruta r, Viaje v);
 	public List<Pasajero> selectPasajerosbyViaje(String oidviaje);
 }

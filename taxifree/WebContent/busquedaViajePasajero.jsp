@@ -44,7 +44,7 @@
 		<input class="mayusculas" type="text" size="25" id="to" name="destino" />
 		<br></br><br></br>
 		<label for="date" id="lfecha">Fecha:</label>
-		<input type="text" size="25" id="date" name="date" value="mm/dd/aaaa" />
+		<input type="text" size="25" id="date" name="date" value="dd/mm/aaaa" />
 		<br></br><br></br>
 		<label for="move" id="lmove">Desplazamiento:</label>
 		<input class="mayusculas" type="text" size="25" id="move" name="desplazamiento" />

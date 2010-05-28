@@ -44,8 +44,7 @@
 	<%
         IAccionConductor accionCond = new AccionConductorImpl();
         Conductor datosCond= accionCond.datosConductor(sessionUser);
-
-%>
+	%>
 			<tr id="separador" style="height: 24px">
 			<td colspan="4"></td>
 			</tr>

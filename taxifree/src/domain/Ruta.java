@@ -1,7 +1,5 @@
 package domain;
 
-import java.util.Date;
-
 
 /**
  * @author    morentefj
@@ -11,7 +9,7 @@ public class Ruta {
 	
 	
 	public Ruta(String idRuta, String origen, String destino,
-			Integer desplazamiento, Date fecha) {
+			Integer desplazamiento, String fecha) {
 		super();
 		this.idRuta = idRuta;
 		this.origen = origen;
@@ -51,14 +49,14 @@ public class Ruta {
 	 * @return
 	 * @uml.property  name="fecha"
 	 */
-	public Date getFecha() {
+	public String getFecha() {
 		return fecha;
 	}
 	/**
 	 * @param fecha
 	 * @uml.property  name="fecha"
 	 */
-	public void setFecha(Date fecha) {
+	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
 	/**
@@ -72,7 +70,7 @@ public class Ruta {
 	/**
 	 * @uml.property  name="fecha"
 	 */
-	public Date fecha;
+	public String fecha;
 	
 	/**
 	 * @return
