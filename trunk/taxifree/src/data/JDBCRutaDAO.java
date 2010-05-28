@@ -27,7 +27,7 @@ public class JDBCRutaDAO implements IRutaDAO {
 
 
 	public void insert(Connection con, Ruta r) {
-		String sql = "INSERT INTO RUTA(OIDRuta, origen, desplazamiento, fecha, idRuta, destino)values('?','?','?',?,'?','?')";
+		String sql = "INSERT INTO RUTA(OIDRuta, origen, desplazamiento, fecha, idRuta, destino)values('?','?','?',STR_TO_DATE(?,'%d/%m/%Y'),'?','?')";
         PreparedStatement stmt = null;
         String rutaOID = UIDGenerator.getInstance().getKey();
         
@@ -63,7 +63,7 @@ public class JDBCRutaDAO implements IRutaDAO {
         List<Ruta> listaRutas = new LinkedList<Ruta>();
         
         try {
-        	String sql = "SELECT * FROM ruta ";
+        	String sql = "SELECT *, DATE_FORMAT(fecha,'%d/%m/%Y') AS fechaEUR FROM ruta";
             stmt = conn.prepareStatement(sql);
             stmt.executeQuery();
             result = stmt.executeQuery();
@@ -74,7 +74,7 @@ public class JDBCRutaDAO implements IRutaDAO {
             	r.setOrigen(result.getString("origen"));
             	r.setDestino(result.getString("destino"));
             	r.setDesplazamiento(Integer.parseInt(result.getString("desplazamiento")));
-            	r.setFecha(Date.valueOf(result.getString("fecha")));
+            	r.setFecha("fecha");
             	listaRutas.add(r);
             }
         }catch (SQLException e) {
@@ -146,7 +146,7 @@ public class JDBCRutaDAO implements IRutaDAO {
         	r.setOrigen(result.getString("origen"));
         	r.setDestino(result.getString("destino"));
         	r.setDesplazamiento(Integer.parseInt(result.getString("desplazamiento")));
-        	r.setFecha(Date.valueOf(result.getString("fecha")));
+        	r.setFecha("fecha");
         	
         }catch(SQLException e){
         	System.out.println("Message: " + e.getMessage());

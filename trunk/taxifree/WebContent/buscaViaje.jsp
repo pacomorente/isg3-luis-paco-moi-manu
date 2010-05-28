@@ -25,13 +25,10 @@
 	Ruta r = new Ruta();
 	r.setOrigen(desdeForm.toLowerCase());
 	r.setDestino(hastaForm.toLowerCase());
-	Date d = new Date(fechaForm);
-	r.setFecha(d);
+	r.setFecha(fechaForm);
 	r.setDesplazamiento(desplazamientoForm);
 	
 	List<Viaje> viajes = (List<Viaje>)accionPas.buscarViaje(r);
-	
-	
 	
 %>
 <div id="top">
@@ -57,9 +54,9 @@
 		</td>
 	</tr>
 	</table>
-	<table id="tablaResultados" border=1>
+	<table id="tablaResultados">
 		<tr valign ="middle" align="center">
-		<th>ORIGEN</th><th>DESTINO</th><th>PUNTO 1</th><th>PUNTO 2</th><th>PUNTO 3</th><th>FECHA</th>
+		<th>ORIGEN</th><th>DESTINO</th><th>PUNTO 1</th><th>PUNTO 2</th><th>PUNTO 3</th><th>FECHA</th><th>PASAJEROS</th>
 		</tr>
 		<%
 		if(viajes.isEmpty()){
@@ -74,6 +71,8 @@
 				String puntInt2 = v.getPuntosInt02();
 				String puntInt3 = v.getPuntosInt03();
 				String fecha = v.getFecha();
+				//int numPas = v.getPasajeros().size();
+				int numPas = 0;
 		%>
 		<tr>
 			<td align="center"><%=origenPasajero%> </td>
@@ -82,6 +81,7 @@
 			<td align="center"><%=puntInt2%> </td>
 			<td align="center"><%=puntInt3%> </td>
 			<td align="center"><%=fecha%> </td>
+			<td align="center"><%=numPas%> </td>
 		<%
 			}
 		}
