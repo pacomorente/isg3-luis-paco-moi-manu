@@ -4,16 +4,6 @@
 <head>
 <title>Acciones del Usuario</title>
 <link rel="stylesheet" type="text/css" href="estilo.css" />
-<style type="text/css">
-<!--
-	#cabecera td{background-color: rgb(238, 238, 238);}
-  	#productos td{
-		border-top-width: 1px;
-    border-top-style: solid;
- 		border-top-color: rgb(153, 0, 51);
-	}
--->
-</style>
 </head>
 <body>
 	<%
