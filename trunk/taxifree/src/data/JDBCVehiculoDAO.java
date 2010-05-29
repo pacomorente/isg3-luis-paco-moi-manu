@@ -154,7 +154,7 @@ public class JDBCVehiculoDAO implements IVehiculoDAO{
 		            stmt.setString(1, oidVehiculoConductor);
 
 		            result = stmt.executeQuery();
-
+		            System.out.println(stmt);
 		            result.next();
 		            
 		            vehCond.setColor(result.getString("color"));
