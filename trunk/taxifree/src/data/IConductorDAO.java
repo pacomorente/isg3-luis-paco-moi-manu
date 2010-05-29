@@ -15,7 +15,7 @@ public interface IConductorDAO {
 	
 	public String selectOIDConductor(String nickConductor);
 	
-	public List<String>obtenerViajesOIDConductor(String oidc);
+	public List<Viaje>obtenerViajesOIDConductor(String oidc);
 	
 	public Viaje selectViajeConductor(String auxOIDCond);
 	public String obtenerVehiculoOID(String oidc);
@@ -32,5 +32,7 @@ public interface IConductorDAO {
 	public void insertarC(String oidc, String oidv,
 			String oidveh);
 	public void delete(String nick,String oidViaje);
+	public Vehiculo obtenerVehiculo(String nick);
+	public List<Viaje> obtenerViajesConductor(String nickConductor);
 	
 }

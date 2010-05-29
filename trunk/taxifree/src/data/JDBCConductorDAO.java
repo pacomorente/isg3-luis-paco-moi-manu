@@ -58,21 +58,28 @@ public class JDBCConductorDAO implements IConductorDAO {
 		return viadao.eliminaViaje(conn, idViaje);
 	}
 
-	public List<String> obtenerViajesOIDConductor(String oidc){
+	public List<Viaje> obtenerViajesOIDConductor(String oidc){
 		 	PreparedStatement stmt = null;
 	        ResultSet result = null;
 	        String sql = "SELECT * FROM conductor WHERE (OIDConductor = ?) ";
-	        List<String> searchResults = new ArrayList<String>();
+	        List<Viaje> searchResults = new ArrayList<Viaje>();
 	        try {
 	            stmt = conn.prepareStatement(sql);
 	            stmt.setString(1, oidc);
 	            result = stmt.executeQuery();
-
+	            List<String> listaoids=new ArrayList<String>();
 	            //result.next();
 	            while (result.next()) {
+	            	
+	           
 					   String oidViajeC =(result.getString("OIDViaje"));
-					   searchResults.add(oidViajeC);
+					   listaoids.add(oidViajeC);
 					}
+				for (String auxOIDCond: listaoids){
+					
+					 Viaje viajeCond = selectViajeConductor(auxOIDCond);
+					 searchResults.add(viajeCond);
+			}
   
 	        } catch (SQLException e) {
 	            System.out.println("Message: " + e.getMessage());
@@ -113,13 +120,13 @@ public class JDBCConductorDAO implements IConductorDAO {
             result.next();
             
             oidCond=(result.getString("OIDConductor"));
-            List<String> listaViajes = obtenerViajesOIDConductor(oidCond);
-    		for (String auxvOID: listaViajes){
+            listaViajesC = obtenerViajesOIDConductor(oidCond);
+/*    		for (String auxvOID: listaViajes){
     			
    			 Viaje viajeCond = selectViajeConductor(auxvOID);
    			 listaViajesC.add(viajeCond);
 
-    			}
+    			}*/
     		//String oidc = selectOIDConductor(nick);
     		String oidVehiculoConductor = obtenerVehiculoOID(oidCond);
     		Vehiculo v=vdao.selectVehiculoConductor(conn,oidVehiculoConductor);
@@ -225,6 +232,23 @@ public class JDBCConductorDAO implements IConductorDAO {
 		return cond;
 	}
 
+	
+	public List<Viaje> obtenerViajesConductor(String nickConductor){
+		String oidc;
+		List<Viaje> listaViajeConductor= new ArrayList<Viaje>();
+		oidc=selectOIDConductor(nickConductor);
+		listaViajeConductor=obtenerViajesOIDConductor(oidc);
+		return listaViajeConductor;
+	}
+	public Vehiculo obtenerVehiculo(String nickConductor){
+			
+		Vehiculo veh = null;
+		String oidc=selectOIDConductor(nickConductor);
+		String oidVehiculoConductor= obtenerVehiculoOID(oidc);
+		veh = selectVehiculoConductor(oidVehiculoConductor);
+		return veh;
+		
+	}
 	public String obtenerVehiculoOID(String oidc){
 	 	PreparedStatement stmt = null;
         ResultSet result = null;
