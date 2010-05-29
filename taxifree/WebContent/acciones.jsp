@@ -40,16 +40,16 @@
 				
 				<td>
 					<a href="FrontController?res=conductor.jsp"> 
-					<img src='images/coche.jpeg' style="height: 45px; width: 50px"> 
+					<img src='images/coche.jpeg' border="0" style="height: 45px; width: 50px"> 
 					</a>
 				</td>
 				<td>
 					<a href="FrontController?res=pasajero.jsp">
-					<img src='images/pasajero.jpeg' style="height: 45px; width: 50px">
+					<img src='images/pasajero.jpeg' border="0" style="height: 45px; width: 50px">
 					</a>
 					</td>
 				<td> 
-					<img src='images/localizar.jpeg' style="height: 45px; width: 50px"> 
+					<img src='images/localizar.jpeg' border="0" style="height: 45px; width: 50px"> 
 				</td>
 			</tr>
 
