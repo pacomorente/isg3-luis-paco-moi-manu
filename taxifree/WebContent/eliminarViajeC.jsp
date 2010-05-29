@@ -27,7 +27,7 @@
 		viajeEliminado= accionCond.eliminaViaje(pid);
 		if (!viajeEliminado){
 		
-String mensaje="<script language='javascript'>alert('El viaje " + pid + " está asignado a un pasajero. No puede ser eliminado.');</script>";
+String mensaje="<script language='javascript'>alert('El viaje seleccionado está asignado a un pasajero. No puede ser eliminado.');</script>";
 out.println(mensaje);
  
 		
