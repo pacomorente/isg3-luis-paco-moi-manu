@@ -177,6 +177,40 @@ public class JDBCUsuarioDAO implements IUsuarioDAO{
 	        return  user;
 	    }		
 		
+		public void actualizarPuntosConductor(Connection con,String oidc, String tipo, int estrellas){
+			String sql = "UPDATE usuario SET estrella=? where OIDUsuario=? ";
+			PreparedStatement stmt = null;
+			try{
+				stmt = con.prepareStatement(sql);
+			
+			
+				if (tipo.equals("ALTA")) {
+	            stmt.setInt(1, estrellas+1);
+	            stmt.setString(2, oidc);
+				}else{ //baja
+					if (estrellas>0){
+						stmt.setInt(1, estrellas-1);
+					}else{
+							stmt.setInt(1, estrellas);
+					}
+		            stmt.setString(2, oidc);
+				}
+				stmt.executeUpdate();
+				System.out.println(stmt);
+			}catch (SQLException e) {
+	            System.out.println("Message: " + e.getMessage());
+	            System.out.println("SQLState: " + e.getSQLState());
+	            System.out.println("ErrorCode: " + e.getErrorCode());
+	        } finally {
+	            try {
+	                if (stmt != null) {
+	                    stmt.close();
+	                }
+	            } catch (SQLException e) {
+	            }
+	        }
+	}
+		
 		public void insert(Connection con, Usuario u){
 			String sql = "INSERT INTO usuario(OIDUsuario, nombre, apellidos, dni, correo, estrella, nick, pass)values('?','?','?','?','?','?','?','?')";
 			PreparedStatement stmt = null;
