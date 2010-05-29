@@ -15,4 +15,5 @@ public interface IUsuarioDAO {
 	public String selectUsuarioOID(Connection conn, String nick);
 	public Conductor selectUsuariobyNick(Connection conn, String nick);
 	public void insert(Connection con, Usuario u);
+	public void actualizarPuntosConductor(Connection con,String oidc, String tipo, int estrellas);
 }
