@@ -113,27 +113,27 @@ Idioma: <select id="locale" name="locale">
 <form action="FrontController?res=altaviaje.jsp" method="post">
 
 <br />
-<p><label for="from">&nbsp;&nbsp;Desde:&nbsp;</label>
-<input class="mayusculas" type="text" size="25" id="fromAddress" name="desde" value="SEVILLA"/>
+<p><label for="from">Desde:</label>
+<input class="mayusculas" type="text" size="20" id="fromAddress" name="desde" value="SEVILLA"/>
 </p>
 <p>
-<label for="toAddress">&nbsp;&nbsp;Hasta:&nbsp;</label>
-<input class="mayusculas" type="text" size="25" id="toAddress" name="hasta" value="SANTANDER"/>
+<label for="toAddress">Hasta:</label>
+<input class="mayusculas" type="text" size="20" id="toAddress" name="hasta" value="SANTANDER"/>
 </p>
 <p>
-<label for="date">&nbsp;&nbsp;Fecha:&nbsp;</label>
+<label for="date">Fecha:</label>
 <input size="10" id="date" name="date" value="30/06/2010" type="text"></input>
 </p>
 <p>
-<label for="pto01">&nbsp;&nbsp;Punto Intermedio 1:&nbsp;</label>
+<label for="pto01">Punto Intermedio 1:</label>
 <input class="mayusculas" type="text" size="20" id="pto01" name="pto01" value="CACERES"/>
 </p>
 <p>
-<label for="pto02">&nbsp;&nbsp;Punto Intermedio 2:&nbsp;</label>
+<label for="pto02">Punto Intermedio 2:</label>
 <input class="mayusculas" type="text" size="20" id="pto02" name="pto02" value="SALAMANCA"/>
 </p>
 <p>
-<label for="pto03">&nbsp;&nbsp;Punto Intermedio 3:&nbsp;</label>
+<label for="pto03">Punto Intermedio 3:</label>
 <input class="mayusculas" type="text" size="20" id="pto03" name="pto03" value="VALLADOLID"/>
 </p>
 
