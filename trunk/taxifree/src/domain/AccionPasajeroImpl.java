@@ -6,8 +6,10 @@ import java.util.List;
 
 import data.IPasajeroDAO;
 import data.IRutaDAO;
+import data.IViajeDAO;
 import data.JDBCPasajeroDAO;
 import data.JDBCRutaDAO;
+import data.JDBCViajeDAO;
 
 /**
  * @uml.dependency  supplier="domain.Pasajero"
@@ -30,9 +32,9 @@ public class AccionPasajeroImpl implements IAccionPasajero{
 		v = new ViajeStore().getViajes();
 	}
 	
-	public void apuntarseAViaje(Viaje v) {
+	public void apuntarseAViaje(Pasajero pas,Ruta ruta, Viaje v) {
 		IPasajeroDAO pdao = new JDBCPasajeroDAO();
-		pdao.insert(p, rutaDePasajero, v);
+		pdao.insert(pas, ruta, v);
 	}
 
 
@@ -53,15 +55,17 @@ public class AccionPasajeroImpl implements IAccionPasajero{
 				if(origen.equals(desde)){
 					if(fechaRuta.equals(fecha) /*&& numPas<4*/){
 						res.add(vp);
-					}else{
+					}
+				}else{
 						for(String o: vp.getPuntosIntermedios()){
 							if(o.toLowerCase().equals(desde)){
-								res.add(vp);
+								if(fechaRuta.equals(fecha) /*&& numPas<4*/){
+									res.add(vp);
+								}
 							}
 						}
 					}
 				}
-			}
 		}
 		return res;
 	}
@@ -70,6 +74,11 @@ public class AccionPasajeroImpl implements IAccionPasajero{
 	public Collection<Ruta> consultaRuta() {
 		IRutaDAO rdao = new JDBCRutaDAO();
 		return rdao.selectAllRutas();
+	}
+	
+	public Viaje seleccionaViajePasajero(String viajeID){
+		IPasajeroDAO ip = new JDBCPasajeroDAO();
+		return ip.selectViajeDePasajero(viajeID);
 	}
 
 
@@ -105,6 +114,8 @@ public class AccionPasajeroImpl implements IAccionPasajero{
 		return pasajero.selectPasajero(nick);
 	}
 	
-	
+	public void setRuta(Ruta r){
+		this.rutaDePasajero = r;
+	}
 	
 }
