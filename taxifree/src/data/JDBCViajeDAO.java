@@ -29,7 +29,7 @@ public class JDBCViajeDAO implements IViajeDAO {
 	
 	public void deleteViaje(String ViajeOID) {
 		
-		String sql = "DELETE FROM viaje WHERE (OID = ?) ";
+		String sql = "DELETE FROM viaje WHERE (OIDViaje = ?) ";
         PreparedStatement stmt = null;
 
         // Buscar si viaje tiene pasajero, para ello hay que meterse en Pasajero y ver si existe
@@ -59,7 +59,7 @@ public class JDBCViajeDAO implements IViajeDAO {
 		IPasajeroDAO pasdao = new JDBCPasajeroDAO();
 		IConductorDAO cdao = new JDBCConductorDAO();
 		List<Pasajero> listaPasajeros=pasdao.selectPasajerosbyViaje(oidviaje);
-		if (listaPasajeros==null){ // no existe viaje asociado a pasajeros
+		if (listaPasajeros==null || listaPasajeros.size()==0){ // no existe viaje asociado a pasajeros
 			Conductor cond= cdao.selectConductorbyViaje(oidviaje);
 			cdao.delete(cond.getNick(), oidviaje);
 			deleteViaje(oidviaje);

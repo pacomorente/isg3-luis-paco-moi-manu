@@ -137,7 +137,7 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
             
             while (result.next()){
             	String oidPasajero = result.getString("OIDPasajero");
-            	Pasajero p = selectPasajero(oidPasajero);
+            	Pasajero p = selectPasajeroPorOID(oidPasajero);
             	listaPasajeros.add(p);
             }
         }catch (SQLException e) {

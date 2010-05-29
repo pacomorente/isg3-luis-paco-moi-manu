@@ -120,8 +120,11 @@ public class JDBCConductorDAO implements IConductorDAO {
    			 listaViajesC.add(viajeCond);
 
     			}
-   		
-            Vehiculo v = vdao.selectVehiculoConductor(conn, oidCond);
+    		//String oidc = selectOIDConductor(nick);
+    		String oidVehiculoConductor = obtenerVehiculoOID(oidCond);
+    		Vehiculo v=vdao.selectVehiculoConductor(conn,oidVehiculoConductor);
+            
+    	    //Vehiculo v = vdao.selectVehiculoConductor(conn, oidCond);
             
             Usuario u = udao.select(conn, oidCond);
             cond.setApellidos(u.getApellidos());
@@ -167,8 +170,10 @@ public class JDBCConductorDAO implements IConductorDAO {
 	                result = stmt.executeQuery();
 	                while (result.next()) {
 	                        Conductor cond = new Conductor();
-	                        String oidConductor = result.getString("OIDConductor");
-	                        String oidviaje = result.getString("OIDViaje");
+	                        @SuppressWarnings("unused")
+							String oidConductor = result.getString("OIDConductor");
+	                        @SuppressWarnings("unused")
+							String oidviaje = result.getString("OIDViaje");
 	                        String oidvehiculo = result.getString("OIDVehiculo");
 	                        String oidusuario = result.getString("OIDUsuario");
 	                        cond.setIdConductor(result.getString("OIDConductor"));
@@ -265,6 +270,8 @@ public class JDBCConductorDAO implements IConductorDAO {
 	public void insertarViajeC(String nick, Viaje viaje) {
 		String oidc;
 		String OIDViaje= UIDGenerator.getInstance().getKey();
+				
+		
 		viadao.insertViaje(conn, OIDViaje, viaje);
 		oidc= selectOIDConductor(nick);
 		
@@ -277,7 +284,6 @@ public class JDBCConductorDAO implements IConductorDAO {
 
 		insertarC(oidc,OIDViaje,vehiculoRegistrado);
 
-	
 	}
 
 	public void insertarC(String oidc, String oidv, String oidveh) {
