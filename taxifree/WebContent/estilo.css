@@ -49,6 +49,13 @@ h1{
 	background-color: rgb(238, 238, 238);
 	height: 30px;
 }
+
+#separador td{background-color: rgb(124, 123, 134);}
+#datosconductor td{
+		border-top-width: 1px;
+    	border-top-style: solid;
+ 		border-top-color: rgb(153, 0, 51);
+	}
 #formularioPasajero{
 	width: 550px;
 	height: 500px;
