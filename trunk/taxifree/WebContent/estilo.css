@@ -57,18 +57,22 @@ h1{
 }
 #lfrom{
 	margin-right:100px;	
+	margin-left: 75px;	
 }
 #lto{
-	margin-right:104px;	
+	margin-right:104px;
+	margin-left: 75px;		
 }
 #lfecha{
-	margin-right:103px;	
+	margin-right:103px;
+	margin-left: 75px;		
 }
 #lmove{
 	margin-right:25px;	
+	margin-left: 75px;	
 }
 label{
-	margin-left: 75px;	
+	
 }
 #botonEnviar{
 	margin-left:220px;
