@@ -4,17 +4,6 @@
 <head>
 <title>Eliminar Viaje Conductor</title>
 <link rel="stylesheet" type="text/css" href="estilo.css" />
-<style type="text/css">
-<!--
-	#cabecera td{background-color: rgb(238, 238, 238);}
-	#separador td{background-color: rgb(124, 123, 134);}
-  	#datosconductor td{
-		border-top-width: 1px;
-    border-top-style: solid;
- 		border-top-color: rgb(153, 0, 51);
-	}
--->
-</style>
 </head>
 <body>
 <div id="content">
