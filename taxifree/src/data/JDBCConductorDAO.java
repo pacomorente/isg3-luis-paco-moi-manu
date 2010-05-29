@@ -298,7 +298,8 @@ public class JDBCConductorDAO implements IConductorDAO {
 		
 		viadao.insertViaje(conn, OIDViaje, viaje);
 		oidc= selectOIDConductor(nick);
-		
+		Conductor cond=udao.selectUsuariobyNick(conn, nick);
+		actualizarPuntosConductor(oidc,"ALTA",cond.getEstrella());
 		vehiculoRegistrado = obtenerVehiculoOID(oidc);
 		/* Si no nos diera el vehículo Registrado ( lo busca en la 
 		 * tabla conductor ( OIDCond, OIDViaje, OIDVehiculo )
@@ -308,6 +309,10 @@ public class JDBCConductorDAO implements IConductorDAO {
 
 		insertarC(oidc,OIDViaje,vehiculoRegistrado);
 
+	}
+	public void actualizarPuntosConductor(String oidc,String tipo, int estrellas){
+		udao.actualizarPuntosConductor(conn,oidc,tipo,estrellas);
+		
 	}
 
 	public void insertarC(String oidc, String oidv, String oidveh) {
