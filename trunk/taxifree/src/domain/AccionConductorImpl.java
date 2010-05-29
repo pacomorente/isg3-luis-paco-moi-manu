@@ -27,24 +27,14 @@ public class AccionConductorImpl implements IAccionConductor{
 	
 
 	public List<Viaje> verViajesAsignados(String nickConductor) {
-		String oidc=conddao.selectOIDConductor(nickConductor);
-		List<String> listaOIDViajeConductor= conddao.obtenerViajesOIDConductor(oidc);
-
-		for (String auxOIDCond: listaOIDViajeConductor){
-			
-			 Viaje viajeCond = conddao.selectViajeConductor(auxOIDCond);
-			 listaViajeConductor.add(viajeCond);
-
-		}
+		listaViajeConductor= conddao.obtenerViajesConductor(nickConductor);
+		
 		return listaViajeConductor;
 	}
 		
 			
 		public Vehiculo obtenerVehiculoC(String nickConductor) {
-			String oidc=conddao.selectOIDConductor(nickConductor);
-			String oidVehiculoConductor= conddao.obtenerVehiculoOID(oidc);
-
-		     Vehiculo ve = conddao.selectVehiculoConductor(oidVehiculoConductor);
+			Vehiculo ve=conddao.obtenerVehiculo(nickConductor);
 	
 		return ve;
 	}
@@ -60,8 +50,7 @@ public class AccionConductorImpl implements IAccionConductor{
 		public Viaje consultaViaje(String idViaje) {
 				Viaje viaje = new Viaje();
 				viaje = conddao.selectViaje(idViaje);
-			//return 	viadao.selectTrayectoOID(trayecto);
-			return viaje;
+				return viaje;
 		}
 	 
 		public boolean eliminaViaje(Viaje viaje) {
