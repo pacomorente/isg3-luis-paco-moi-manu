@@ -73,7 +73,7 @@ public class AccionConductorImpl implements IAccionConductor{
 	 
 		public void insertarViajeConductor(String nick,Viaje viaje) {
 			
-			conddao.insertarViajeC(nick,viaje);
+			 conddao.insertarViajeC(nick,viaje);
 			
 		}
 
