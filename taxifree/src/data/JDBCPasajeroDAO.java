@@ -162,13 +162,12 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
 	
 	public void insert(Pasajero p, Ruta r, Viaje v){
 		IViajeDAO vdao = new JDBCViajeDAO();
-		String sql2 = "INSERT INTO PASAJERO_RUTA(OIDPasajero,OIDRuta)values('?','?')";
-		String sql1 = "INSERT INTO PASAJERO(OIDPasajero,OIDViaje)values('?','?')";
+		String sql2 = "INSERT INTO pasajero_ruta(OIDPasajero,OIDRuta)values(?,?)";
+		String sql1 = "INSERT INTO pasajero(OIDPasajero,OIDViaje)values(?,?)";
         PreparedStatement stmt = null;
 
         try {
         	
-        	//udao.insert(conn, p);
         	rdao.insert(conn, r);
         	
             stmt = conn.prepareStatement(sql1);
@@ -194,6 +193,11 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
             }
         }
 
+	}
+	
+	public Viaje selectViajeDePasajero(String idViaje){
+		IViajeDAO iv = new JDBCViajeDAO();
+		return iv.selectViaje(conn, idViaje);
 	}
 
 }

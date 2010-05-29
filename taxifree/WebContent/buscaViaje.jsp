@@ -27,7 +27,7 @@
 	r.setDestino(hastaForm.toLowerCase());
 	r.setFecha(fechaForm);
 	r.setDesplazamiento(desplazamientoForm);
-	
+	session.setAttribute("session.ruta",r);
 	List<Viaje> viajes = (List<Viaje>)accionPas.buscarViaje(r);
 	
 %>
@@ -56,7 +56,7 @@
 	</table>
 	<table id="tablaResultados">
 		<tr valign ="middle" align="center">
-		<th>ORIGEN</th><th>DESTINO</th><th>PUNTO 1</th><th>PUNTO 2</th><th>PUNTO 3</th><th>FECHA</th><th>PASAJEROS</th>
+		<th>Nº</th><th>ORIGEN</th><th>DESTINO</th><th>FECHA</th><th>PASAJEROS</th><th>UNIRSE A VIAJE</th>
 		</tr>
 		<%
 		if(viajes.isEmpty()){
@@ -65,23 +65,29 @@
 		<%	
 		}else{
 			for(Viaje v: viajes){
-				String origenPasajero = v.getOrigen();
+				String origenPasajero = r.getOrigen().toUpperCase();
 				String destinoPasajero = v.getDestino();
 				String puntInt1 = v.getPuntosInt01();
 				String puntInt2 = v.getPuntosInt02();
 				String puntInt3 = v.getPuntosInt03();
 				String fecha = v.getFecha();
-				//int numPas = v.getPasajeros().size();
+				Random rnd = new Random();
+				String rutaID= Integer.toString(rnd.nextInt());
+				
+				r.setIdRuta(rutaID);
 				int numPas = 0;
 		%>
 		<tr>
+			<td align="center"><%=v.getViajeID()%> </td>
 			<td align="center"><%=origenPasajero%> </td>
 			<td align="center"><%=destinoPasajero%> </td>
-			<td align="center"><%=puntInt1%> </td>
-			<td align="center"><%=puntInt2%> </td>
-			<td align="center"><%=puntInt3%> </td>
 			<td align="center"><%=fecha%> </td>
 			<td align="center"><%=numPas%> </td>
+			<td align="center">
+				<a href="FrontController?res=unirse.jsp?vid=<%=v.getViajeID()%>">
+					<img alt="Unirse" src="images/confirmar.jpg"></img>
+				</a>
+			</td>
 		<%
 			}
 		}

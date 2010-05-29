@@ -39,6 +39,12 @@ h1{
 	background-color: rgb(124, 123, 134);
 }
 
+#tablaUnirse{
+	color:blue;
+	font-size:30px;
+	margin-left: 320px;	
+}
+
 #cabecera td{
 	background-color: rgb(238, 238, 238);
 	height: 30px;

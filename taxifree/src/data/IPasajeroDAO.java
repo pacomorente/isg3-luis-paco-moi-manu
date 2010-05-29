@@ -15,4 +15,5 @@ public interface IPasajeroDAO {
 	public Pasajero selectPasajeroPorOID(String pasajeroOID);
 	public void insert(Pasajero p, Ruta r, Viaje v);
 	public List<Pasajero> selectPasajerosbyViaje(String oidviaje);
+	public Viaje selectViajeDePasajero(String idViaje);
 }

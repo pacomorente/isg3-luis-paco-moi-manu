@@ -9,9 +9,11 @@ import java.util.Collection;
 public interface IAccionPasajero {
 	public Pasajero datosPasajero(String nick);
 	public Collection<Viaje> buscarViaje(Ruta r);
-	public void apuntarseAViaje(Viaje v);
+	public void apuntarseAViaje(Pasajero pas,Ruta ruta, Viaje v);
 	public Collection<Ruta> consultaRuta();
 	public Ruta modificaRuta(Ruta r);
 	public void eliminaRuta(Ruta r);
 	public void setP(Pasajero p);
+	public void setRuta(Ruta r);
+	public Viaje seleccionaViajePasajero(String viajeID);
 }
