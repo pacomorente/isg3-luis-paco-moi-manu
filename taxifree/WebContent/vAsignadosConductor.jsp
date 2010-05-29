@@ -10,7 +10,8 @@
 	<%
 	//String nick="USER6";
 	String sessionUser= (String)session.getAttribute("session.user");
-
+	IAccionConductor accionCond = new AccionConductorImpl();
+	int puntosactuales=accionCond.verPuntosActualesConductor(sessionUser);
 	%>
 <div id="top">
 <jsp:include  page="head.html"/>
@@ -27,20 +28,24 @@
 
 </table>
 <table summary ="Datos del Conductor" cellSpacing="1" cellPadding="3" width="770" align="center" border="0" style="width: 475px">
-	<tr valign ="middle" align="center">
-		<td  colspan="7"><b>CONDUCTOR</b><br> <%=sessionUser%><br><br><br></td>
+	<tr id="nickconductor" valign ="middle" align="center">
+		<td  colspan="7"><b>CONDUCTOR</b><br> <%=sessionUser%><br></td>
 	</tr>
+	<tr id="nickconductor" valign ="middle" align="center">
+		<td  colspan="7"><b>PUNTOS ESTRELLAS ACTUALES: </b> <%=puntosactuales%><br></td>
+	</tr>	
 	<%
-        IAccionConductor accionCond = new AccionConductorImpl();
+        //IAccionConductor accionCond = new AccionConductorImpl();
+	
 		List<Viaje> viajesCond= accionCond.verViajesAsignados(sessionUser);
 		
-		if (viajesCond!=null){
-        for (Iterator iter = viajesCond.iterator(); iter.hasNext();) {
-            Viaje viaje = (Viaje) iter.next();
-            String activo="SI";
-            	
-            if (viaje.getAnulado()==true)
-            	activo="NO";
+		if (viajesCond!=null && viajesCond.size()!=0){
+	        for (Iterator iter = viajesCond.iterator(); iter.hasNext();) {
+	            Viaje viaje = (Viaje) iter.next();
+	            String activo="SI";
+	            	
+	            if (viaje.getAnulado()==true)
+	            	activo="NO";
             	
 %>
 			<tr id="separador" style="height: 24px">
@@ -78,11 +83,11 @@
 	
 	
 <%
-        }
+        	}
         }
         else
         {%>
-			<tr align="center" id="productos">
+			<tr align="center" id="cabecera">
 			<td colspan='6'>ACTUALMENTE NO EXISTEN VIAJES ASIGNADOS.</td>
 			</tr>
         <%}

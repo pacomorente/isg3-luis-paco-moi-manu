@@ -45,6 +45,10 @@ public class AccionConductorImpl implements IAccionConductor{
 	
 		return user;
 	}
+
+		public int verPuntosActualesConductor(String nickConductor){
+			return conddao.obtenerPuntos(nickConductor);
+		}
 		
 
 		public Viaje consultaViaje(String idViaje) {

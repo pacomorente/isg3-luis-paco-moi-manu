@@ -60,7 +60,8 @@ function onGDirectionsLoad(){
 <%
 	//String nick="USER6";
 	String sessionUser= (String)session.getAttribute("session.user");
-
+	IAccionConductor accionCond = new AccionConductorImpl();
+	int puntosactuales=accionCond.verPuntosActualesConductor(sessionUser);
 	%>
 <div id="top">
 <jsp:include  page="head.html"/>
@@ -77,9 +78,13 @@ function onGDirectionsLoad(){
 
 </table>
 <table summary ="Acciones del Usuario" cellSpacing="1" cellPadding="3" width="770" align="center" border="0" style="width: 475px">
-	<tr valign ="middle" align="center">
-		<td  colspan="3"><b>CONDUCTOR</b><br> <%=sessionUser%><br><br><br></td>
+	<tr valign ="middle" align="center" id="nickconductor">
+		
+		<td  colspan="3"><b>CONDUCTOR</b><br> <%=sessionUser%><br></td>
 	</tr>
+	<tr valign ="middle" align="center" id="nickconductor">
+		<td  colspan="3"><b>PUNTOS ESTRELLAS ACTUALES: </b> <%=puntosactuales%><br></td>
+	</tr>		
 	</table>
 
 <table>

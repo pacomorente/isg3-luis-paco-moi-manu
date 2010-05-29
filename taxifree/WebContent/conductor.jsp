@@ -26,8 +26,8 @@
 
 </table>
 <table summary ="Acciones del Usuario" cellSpacing="1" cellPadding="3" width="770" align="center" border="0" style="width: 475px">
-	<tr valign ="middle" align="center">
-		<td  colspan="3"><b>CONDUCTOR</b><br> <%=sessionUser%><br><br><br></td>
+	<tr valign ="middle" align="center" id="nickconductor">
+		<td  colspan="3"><b>CONDUCTOR</b><br> <%=sessionUser%><br><br></td>
 	</tr>
 	<tr valign ="middle" align="center" id="cabecera">
 		<td><a href="FrontController?res=altaViajeConductor.jsp">ALTA DE VIAJE </a></td><td><a href="FrontController?res=vAsignadosConductor.jsp">VIAJES ASIGNADOS</a></td> <td><a href="FrontController?res=datosConductor.jsp">DATOS PERSONALES</a></td>

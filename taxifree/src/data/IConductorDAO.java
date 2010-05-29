@@ -35,4 +35,5 @@ public interface IConductorDAO {
 	public Vehiculo obtenerVehiculo(String nick);
 	public List<Viaje> obtenerViajesConductor(String nickConductor);
 	public void actualizarPuntosConductor(String oidc, String tipo, int estrellas);
+	public int obtenerPuntos (String nick);
 }

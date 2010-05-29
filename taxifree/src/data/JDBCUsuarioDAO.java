@@ -102,6 +102,40 @@ public class JDBCUsuarioDAO implements IUsuarioDAO{
             return listaUsuarios;
 		}
 		
+		public int verPuntosUsuario (Connection conn, String oidc){
+			PreparedStatement stmt = null;
+	        ResultSet result = null;
+	        int puntos=0;
+	        
+	        String sql = "SELECT estrella FROM usuario WHERE (OIDUsuario = ?) ";
+	        try {
+	            stmt = conn.prepareStatement(sql);
+	            stmt.setString(1, oidc);
+	            result = stmt.executeQuery();
+
+	            result.next();
+	            puntos = result.getInt("estrella");
+	            
+	        } catch (SQLException e) {
+	            System.out.println("Message: " + e.getMessage());
+	            System.out.println("SQLState: " + e.getSQLState());
+	            System.out.println("ErrorCode: " + e.getErrorCode());
+	        } finally {
+	            try {
+	                if (result != null) {
+	                    result.close();
+	                }
+	                if (stmt != null) {
+	                    stmt.close();
+	                }
+	            } catch (SQLException e) {
+	            }
+	        }
+	        return puntos;
+			
+			
+		}
+		
 		public String selectUsuarioOID(Connection conn, String nick) {
 	        PreparedStatement stmt = null;
 	        ResultSet result = null;
@@ -242,5 +276,7 @@ public class JDBCUsuarioDAO implements IUsuarioDAO{
 	            }
 	        }
 		}
+
+
 }
 
