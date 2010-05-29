@@ -50,6 +50,12 @@ h1{
 	height: 30px;
 }
 
+#nickconductor td{
+	background-color: maroon;
+	height: 20px;
+	color:yellow;
+}
+
 #separador td{background-color: rgb(124, 123, 134);}
 #datosconductor td{
 		border-top-width: 1px;

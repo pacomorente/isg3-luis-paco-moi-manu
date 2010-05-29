@@ -16,5 +16,6 @@ public interface IAccionConductor {
 	public boolean eliminaViaje( String idViaje);
 	
 	public void insertarViajeConductor(String nick, Viaje viaje);
+	public int verPuntosActualesConductor (String nick);
 	
 }

@@ -105,6 +105,13 @@ public class JDBCConductorDAO implements IConductorDAO {
 
 	}
 	
+	public int obtenerPuntos (String nick){
+		String oidc= udao.selectUsuarioOID(conn, nick);
+		int puntos = udao.verPuntosUsuario(conn,oidc);
+		return puntos;
+	}
+	
+	
 	public Conductor selectConductorbyViaje(String oidviaje){
 		PreparedStatement stmt = null;
         ResultSet result = null;
