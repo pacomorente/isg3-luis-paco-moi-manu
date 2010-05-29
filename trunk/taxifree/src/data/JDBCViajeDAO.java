@@ -63,6 +63,8 @@ public class JDBCViajeDAO implements IViajeDAO {
 			Conductor cond= cdao.selectConductorbyViaje(oidviaje);
 			cdao.delete(cond.getNick(), oidviaje);
 			deleteViaje(oidviaje);
+			String oidc = cdao.selectOIDConductor(cond.getNick());
+			cdao.actualizarPuntosConductor(oidc,"BAJA",cond.getEstrella());
 			return true;
 		}else
 			return false;
@@ -97,10 +99,11 @@ public class JDBCViajeDAO implements IViajeDAO {
 	            //stmt.setString(7, STR_TO_DATE(v.getFecha(),'%d/%m/%Y'));
 	            stmt.setString(8, v.getViajeID());
 	            stmt.setBoolean(9, false);
-
+	            
 
 	            stmt.executeUpdate();
 	            //SUMAR ESTRELLAS A CONDUCTOR
+	            
 	           
 	        } catch (SQLException e) {
 	            System.out.println("Message: " + e.getMessage());
