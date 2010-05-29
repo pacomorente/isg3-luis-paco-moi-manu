@@ -4,20 +4,7 @@
 <head>
 <title>Viajes Asignados al Conductor</title>
 <link rel="stylesheet" type="text/css" href="estilo.css" />
-<style type="text/css">
-<!--
-	#cabecera td{background-color: rgb(238, 238, 238);}
-	#separador td{background-color: rgb(124, 123, 134);}
-  	#datosconductor td{
-		border-top-width: 1px;
-    border-top-style: solid;
- 		border-top-color: rgb(153, 0, 51);
- 		
-	}
 
-	
--->
-</style>
 </head>
 <body>
 	<%
@@ -57,11 +44,11 @@
             	
 %>
 			<tr id="separador" style="height: 24px">
-			<td colspan="2">VIAJE -- <%=viaje.getViajeID()%><b></b></td>
+			<td colspan="1"></td>
 			<td colspan="2"><b><a class=enlaceboton href="FrontController?res=modificarViajeC.jsp?pid=<%=viaje.getViajeID()%>">MODIFICAR</a></b></td>
-			<td colspan="1"><b><a class=enlaceboton href="FrontController?res=cambiarEstadoViajeC.jsp?pid=<%=viaje.getViajeID()%>">ACTIVAR/ANULAR</a></b></td>
+			<td colspan="2"><b><a class=enlaceboton href="FrontController?res=cambiarEstadoViajeC.jsp?pid=<%=viaje.getViajeID()%>">ACTIVAR/ANULAR</a></b></td>
 			<td colspan="2"><b><a class=enlaceboton href="FrontController?res=eliminarViajeC.jsp?pid=<%=viaje.getViajeID()%>">ELIMINAR</a></b></td>
-			</td>
+
 			</tr>
 			<tr align="center" id="cabecera">
 				
