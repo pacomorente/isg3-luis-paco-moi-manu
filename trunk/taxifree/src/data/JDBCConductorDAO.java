@@ -57,6 +57,9 @@ public class JDBCConductorDAO implements IConductorDAO {
 	public boolean eliminaViajeC(String idViaje){
 		return viadao.eliminaViaje(conn, idViaje);
 	}
+	public void updateViaje(Viaje viaje){
+		viadao.updateViaje(conn, viaje);
+	}
 
 	public List<Viaje> obtenerViajesOIDConductor(String oidc){
 		 	PreparedStatement stmt = null;
@@ -171,6 +174,10 @@ public class JDBCConductorDAO implements IConductorDAO {
 	
 	public Viaje selectViaje(String idViaje){
 		return (Viaje) viadao.selectViaje(conn,idViaje);
+	}
+	
+	public boolean existePasajerosViaje(String idViaje){
+		return viadao.existePasajerosViaje(conn, idViaje);
 	}
 	
 	public List<Conductor> sellectAllConductores() {

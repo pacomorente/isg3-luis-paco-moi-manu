@@ -56,10 +56,9 @@ public class JDBCViajeDAO implements IViajeDAO {
 	
 	public boolean  eliminaViaje(Connection con, String idViaje){
 		String oidviaje= selectViajeOID(con,idViaje);
-		IPasajeroDAO pasdao = new JDBCPasajeroDAO();
-		IConductorDAO cdao = new JDBCConductorDAO();
-		List<Pasajero> listaPasajeros=pasdao.selectPasajerosbyViaje(oidviaje);
-		if (listaPasajeros==null || listaPasajeros.size()==0){ // no existe viaje asociado a pasajeros
+		boolean noExisteP = bExistePasajeroViaje(con, oidviaje);
+		if (noExisteP){
+			IConductorDAO cdao = new JDBCConductorDAO();
 			Conductor cond= cdao.selectConductorbyViaje(oidviaje);
 			cdao.delete(cond.getNick(), oidviaje);
 			deleteViaje(oidviaje);
@@ -68,10 +67,61 @@ public class JDBCViajeDAO implements IViajeDAO {
 			return true;
 		}else
 			return false;
-			
+		
 	}
 	
+	public boolean existePasajerosViaje(Connection con, String idViaje){
+		String oidviaje= selectViajeOID(con,idViaje);
+		return bExistePasajeroViaje(con,oidviaje);
+		
+	}
 	
+	public boolean bExistePasajeroViaje(Connection con, String oidviaje){
+		//String oidviaje= selectViajeOID(con,idViaje);
+		IPasajeroDAO pasdao = new JDBCPasajeroDAO();
+		List<Pasajero> listaPasajeros=pasdao.selectPasajerosbyViaje(oidviaje);
+		if (listaPasajeros==null || listaPasajeros.size()==0){
+			return true;
+		}else
+			return false;	
+		
+	}
+	
+	public void updateViaje(Connection conn, Viaje v){
+        String oidViaje=selectViajeOID(conn, v.getViajeID());
+		PreparedStatement stmt = null;
+        String sql = "UPDATE viaje SET origen=?,destino=?,puntoint01=?,puntoint02=?,puntoint03=?,fecha=STR_TO_DATE(?,'%d/%m/%Y') WHERE OIDViaje=? ";
+        //String viajeOID = UIDGenerator.getInstance().getKey();
+        try {
+            stmt = conn.prepareStatement(sql);
+
+
+            stmt.setString(1, v.getOrigen());
+            stmt.setString(2, v.getDestino());
+            stmt.setString(3, v.getPuntosInt01());
+            stmt.setString(4, v.getPuntosInt02());
+            stmt.setString(5, v.getPuntosInt03());
+            stmt.setString(6, v.getFecha());
+            //stmt.setString(7, STR_TO_DATE(v.getFecha(),'%d/%m/%Y'));
+            stmt.setString(7, oidViaje);
+            stmt.executeUpdate();
+           
+            
+           
+        } catch (SQLException e) {
+            System.out.println("Message: " + e.getMessage());
+            System.out.println("SQLState: " + e.getSQLState());
+            System.out.println("ErrorCode: " + e.getErrorCode());
+        } finally {
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException e) {
+            }
+        }
+		
+	}
 
 	
 	public void insertViaje(Connection con, String viajeOID,Viaje v ) {

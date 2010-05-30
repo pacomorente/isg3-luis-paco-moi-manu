@@ -23,4 +23,6 @@ public interface IViajeDAO {
 	//public List<String> obtenerViajesOIDConductor(Connection conn, String oidc);
 	public Viaje  cambiaEstadoViaje(Connection con, String idViaje);
 	public boolean  eliminaViaje(Connection con, String idViaje);
+	public void updateViaje(Connection conn, Viaje viaje);
+	public boolean existePasajerosViaje(Connection con, String idViaje);
 }

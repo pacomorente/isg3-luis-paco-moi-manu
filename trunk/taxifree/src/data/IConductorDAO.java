@@ -36,4 +36,6 @@ public interface IConductorDAO {
 	public List<Viaje> obtenerViajesConductor(String nickConductor);
 	public void actualizarPuntosConductor(String oidc, String tipo, int estrellas);
 	public int obtenerPuntos (String nick);
+	public void updateViaje(Viaje viaje);
+	public boolean existePasajerosViaje(String idViaje);
 }

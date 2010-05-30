@@ -23,16 +23,17 @@
 <td colspan='6'><a class=enlaceboton href="FrontController?res=acciones.jsp"> Menú  Usuario</a></td>
 
 </tr>
-
+<tr style="height: 15px"></tr>
 </table>
 <table summary ="Acciones del Usuario" cellSpacing="1" cellPadding="3" width="770" align="center" border="0" style="width: 475px">
 	<tr valign ="middle" align="center" id="nickconductor">
-		<td  colspan="3"><b>CONDUCTOR</b><br> <%=sessionUser%><br><br></td>
+		<td  colspan="3"><b>CONDUCTOR</b><br> <%=sessionUser%><br></td>
 	</tr>
+	<tr style="height: 15px"></tr>
 	<tr valign ="middle" align="center" id="cabecera">
 		<td><a href="FrontController?res=altaViajeConductor.jsp">ALTA DE VIAJE </a></td><td><a href="FrontController?res=vAsignadosConductor.jsp">VIAJES ASIGNADOS</a></td> <td><a href="FrontController?res=datosConductor.jsp">DATOS PERSONALES</a></td>
 	</tr>
-
+<tr style="height: 15px"></tr>
 
 			<tr align="center" id="conductor">
 				

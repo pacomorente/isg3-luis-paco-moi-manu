@@ -4,17 +4,6 @@
 <head>
 <title>Alta Viaje Conductor</title>
 <link rel="stylesheet" type="text/css" href="estilo.css" />
-<style type="text/css">
-<!--
-	#cabecera td{background-color: rgb(238, 238, 238);}
-	#separador td{background-color: rgb(124, 123, 134);}
-  	#datosconductor td{
-		border-top-width: 1px;
-    border-top-style: solid;
- 		border-top-color: rgb(153, 0, 51);
-	}
--->
-</style>
 </head>
 <body>
 	<%
@@ -54,14 +43,14 @@ IAccionConductor accionCond = new AccionConductorImpl();
 		//saco un mapa con los parametros del formulario
 		Map datosForm = request.getParameterMap();
 
-		//datos relativos a la tarjeta de crédito
-		String desdeForm = request.getParameter("desde");
-		String hastaForm = request.getParameter("hasta");
+		//datos relativos a Viaje
+		String desdeForm = request.getParameter("desde").toUpperCase();
+		String hastaForm = request.getParameter("hasta").toUpperCase();
 		
 		String fechaForm = request.getParameter("date");
-		String punto01Form = request.getParameter("pto01");
-		String punto02Form = request.getParameter("pto02");
-		String punto03Form = request.getParameter("pto03");
+		String punto01Form = request.getParameter("pto01").toUpperCase();
+		String punto02Form = request.getParameter("pto02").toUpperCase();
+		String punto03Form = request.getParameter("pto03").toUpperCase();
 
 		Random rnd = new Random();
 		String viajeID= Integer.toString(rnd.nextInt());
