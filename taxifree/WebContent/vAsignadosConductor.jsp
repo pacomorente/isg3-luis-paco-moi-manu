@@ -25,7 +25,7 @@
 <td colspan='6'><a class=enlaceboton href="FrontController?res=acciones.jsp"> Menú  Usuario</a></td>
 
 </tr>
-
+<tr style="height: 15px"></tr>
 </table>
 <table summary ="Datos del Conductor" cellSpacing="1" cellPadding="3" width="770" align="center" border="0" style="width: 475px">
 	<tr id="nickconductor" valign ="middle" align="center">
@@ -33,7 +33,8 @@
 	</tr>
 	<tr id="nickconductor" valign ="middle" align="center">
 		<td  colspan="7"><b>PUNTOS ESTRELLAS ACTUALES: </b> <%=puntosactuales%><br></td>
-	</tr>	
+	</tr>
+	<tr style="height: 15px"></tr>	
 	<%
         //IAccionConductor accionCond = new AccionConductorImpl();
 	
@@ -48,18 +49,20 @@
 	            	activo="NO";
             	
 %>
-			<tr id="separador" style="height: 24px">
+			<tr id="separador" style="height: 20px">
+			<td colspan="1"></td>			
 			<td colspan="1"></td>
-			<td colspan="2"><b><a class=enlaceboton href="FrontController?res=modificarViajeC.jsp?pid=<%=viaje.getViajeID()%>">MODIFICAR</a></b></td>
-			<td colspan="2"><b><a class=enlaceboton href="FrontController?res=cambiarEstadoViajeC.jsp?pid=<%=viaje.getViajeID()%>">ACTIVAR/ANULAR</a></b></td>
-			<td colspan="2"><b><a class=enlaceboton href="FrontController?res=eliminarViajeC.jsp?pid=<%=viaje.getViajeID()%>">ELIMINAR</a></b></td>
-
+			<td colspan="1" align="center"><b><a class=enlaceboton href="FrontController?res=modificarViajeC.jsp?pid=<%=viaje.getViajeID()%>">MODIFICAR</a></b></td>
+			<td colspan="1" align="center"><b><a class=enlaceboton href="FrontController?res=cambiarEstadoViajeC.jsp?pid=<%=viaje.getViajeID()%>">ACTIVAR/ANULAR</a></b></td>
+			<td colspan="1" align="center"><b><a class=enlaceboton href="FrontController?res=eliminarViajeC.jsp?pid=<%=viaje.getViajeID()%>">ELIMINAR</a></b></td>
+			<td colspan="1"></td>
+			<td colspan="1"></td>
 			</tr>
 			<tr align="center" id="cabecera">
 				
 				<td><u>Origen</u></td>
-				<td><u>Destino</u></td>
-				<td><u>Fecha</u></td>
+				<td style="width: 110px"><u>Destino</u></td>
+				<td style="width: 107px"><u>Fecha</u></td>
 				<td><u>PuntoIntermedio1</u></td>
 				<td><u>PuntoIntermedio2</u></td>
 				<td><u>PuntoIntermedio3</u></td>

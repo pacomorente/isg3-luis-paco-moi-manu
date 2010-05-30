@@ -17,5 +17,8 @@ public interface IAccionConductor {
 	
 	public void insertarViajeConductor(String nick, Viaje viaje);
 	public int verPuntosActualesConductor (String nick);
+	public Viaje consultaViaje(String idViaje);
+	public void updateViajeConductor(Viaje idViaje);
+	public boolean existePasajerosViaje(String idViaje);
 	
 }

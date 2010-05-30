@@ -75,7 +75,7 @@ function onGDirectionsLoad(){
 <td colspan='6'><a class=enlaceboton href="FrontController?res=acciones.jsp"> Menú  Usuario</a></td>
 
 </tr>
-
+<tr style="height: 15px"></tr>
 </table>
 <table summary ="Acciones del Usuario" cellSpacing="1" cellPadding="3" width="770" align="center" border="0" style="width: 475px">
 	<tr valign ="middle" align="center" id="nickconductor">
@@ -84,7 +84,8 @@ function onGDirectionsLoad(){
 	</tr>
 	<tr valign ="middle" align="center" id="nickconductor">
 		<td  colspan="3"><b>PUNTOS ESTRELLAS ACTUALES: </b> <%=puntosactuales%><br></td>
-	</tr>		
+	</tr>
+	<tr style="height: 15px"></tr>		
 	</table>
 
 <table>

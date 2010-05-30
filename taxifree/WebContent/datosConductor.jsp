@@ -23,13 +23,13 @@
 <td colspan='6'><a class=enlaceboton href="FrontController?res=acciones.jsp"> Menú  Usuario</a></td>
 
 </tr>
-
+<tr style="height: 15px"></tr>
 </table>
 <table summary ="Datos del Conductor" cellSpacing="1" cellPadding="3" width="770" align="center" border="0" style="width: 475px">
-	<tr valign ="middle" align="center">
-		<td  colspan="4"><b>CONDUCTOR</b><br> <%=sessionUser%><br><br><br></td>
+	<tr valign ="middle" align="center" id="nickconductor">
+		<td  colspan="4"><b>CONDUCTOR</b><br> <%=sessionUser%><br></td>
 	</tr>
-
+<tr style="height: 15px"></tr>
 	<%
         IAccionConductor accionCond = new AccionConductorImpl();
         Conductor datosCond= accionCond.datosConductor(sessionUser);

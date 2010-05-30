@@ -56,6 +56,12 @@ public class AccionConductorImpl implements IAccionConductor{
 				viaje = conddao.selectViaje(idViaje);
 				return viaje;
 		}
+		
+		public void updateViajeConductor(Viaje viaje) {
+			
+			conddao.updateViaje(viaje);
+
+		}
 	 
 		public boolean eliminaViaje(Viaje viaje) {
 	        //tdao.deleteTrayectoOID(tra.getIdTrayecto());
@@ -63,6 +69,9 @@ public class AccionConductorImpl implements IAccionConductor{
 			
 		}
 
+		public boolean existePasajerosViaje(String idViaje){
+			return conddao.existePasajerosViaje(idViaje);
+		}
 	 
 		public void insertarViajeConductor(String nick,Viaje viaje) {
 			
