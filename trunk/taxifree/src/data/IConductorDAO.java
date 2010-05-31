@@ -38,4 +38,5 @@ public interface IConductorDAO {
 	public int obtenerPuntos (String nick);
 	public void updateViaje(Viaje viaje);
 	public boolean existePasajerosViaje(String idViaje);
+	public boolean existeViaje(Viaje viaje);
 }

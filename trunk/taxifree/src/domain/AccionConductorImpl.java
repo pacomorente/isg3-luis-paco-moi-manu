@@ -50,6 +50,9 @@ public class AccionConductorImpl implements IAccionConductor{
 			return conddao.obtenerPuntos(nickConductor);
 		}
 		
+		public boolean existeViaje(Viaje viaje){
+			return conddao.existeViaje(viaje);
+		}
 
 		public Viaje consultaViaje(String idViaje) {
 				Viaje viaje = new Viaje();
