@@ -87,6 +87,19 @@ public class JDBCViajeDAO implements IViajeDAO {
 		
 	}
 	
+	public boolean existeViaje(Connection conn,Viaje v){
+		Viaje auxViaje=selectViaje(conn, v.getViajeID());
+		if (auxViaje.getOrigen().equals(v.getOrigen())
+				&& auxViaje.getDestino().equals(v.getDestino())
+				&& auxViaje.getFecha().equals(v.getFecha())
+				&& auxViaje.getPuntosInt01().equals(v.getPuntosInt01())
+				&& auxViaje.getPuntosInt02().equals(v.getPuntosInt02())
+				&& auxViaje.getPuntosInt03().equals(v.getPuntosInt03()))
+			return true;
+		else
+			return false;
+	}
+	
 	public void updateViaje(Connection conn, Viaje v){
         String oidViaje=selectViajeOID(conn, v.getViajeID());
 		PreparedStatement stmt = null;

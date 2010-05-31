@@ -108,6 +108,11 @@ public class JDBCConductorDAO implements IConductorDAO {
 
 	}
 	
+	public boolean existeViaje(Viaje viaje){
+		return viadao.existeViaje(conn,viaje);
+		
+	}
+	
 	public int obtenerPuntos (String nick){
 		String oidc= udao.selectUsuarioOID(conn, nick);
 		int puntos = udao.verPuntosUsuario(conn,oidc);

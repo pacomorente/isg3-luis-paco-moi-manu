@@ -73,10 +73,13 @@ IAccionConductor accionCond = new AccionConductorImpl();
 				viaje.setAnulado(true);
 			}
 			// ID vIAJE ?? VER CÓMO AÑADIR
-			
-			accionCond.updateViajeConductor(viaje);
-			
-			mensaje = new String("SU VIAJE SE HA MODIFICADO CORRECTAMENTE.");
+			if (!accionCond.existeViaje(viaje)){
+				accionCond.updateViajeConductor(viaje);
+				
+				mensaje = new String("SU VIAJE SE HA MODIFICADO CORRECTAMENTE.");
+			}else{
+				mensaje = new String("YA EXISTE EL MISMO VIAJE CON LOS MISMOS DATOS.");
+			}
 		}
 		else
 		{

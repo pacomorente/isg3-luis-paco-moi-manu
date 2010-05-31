@@ -25,4 +25,5 @@ public interface IViajeDAO {
 	public boolean  eliminaViaje(Connection con, String idViaje);
 	public void updateViaje(Connection conn, Viaje viaje);
 	public boolean existePasajerosViaje(Connection con, String idViaje);
+	public boolean existeViaje(Connection con,Viaje viaje);
 }
