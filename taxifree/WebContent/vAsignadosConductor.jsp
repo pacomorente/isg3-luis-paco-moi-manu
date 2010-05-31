@@ -9,6 +9,7 @@
 <body>
 	<%
 	//String nick="USER6";
+	 
 	String sessionUser= (String)session.getAttribute("session.user");
 	IAccionConductor accionCond = new AccionConductorImpl();
 	int puntosactuales=accionCond.verPuntosActualesConductor(sessionUser);
@@ -47,6 +48,10 @@
 	            	
 	            if (viaje.getAnulado()==true)
 	            	activo="NO";
+	            
+
+	            
+	            
             	
 %>
 			<tr id="separador" style="height: 20px">
@@ -63,9 +68,9 @@
 				<td><u>Origen</u></td>
 				<td style="width: 110px"><u>Destino</u></td>
 				<td style="width: 107px"><u>Fecha</u></td>
-				<td><u>PuntoIntermedio1</u></td>
-				<td><u>PuntoIntermedio2</u></td>
-				<td><u>PuntoIntermedio3</u></td>
+				<td><u>Parada 1</u></td>
+				<td><u>Parada 2</u></td>
+				<td><u>Parada 3</u></td>
 				<td><u>ACTIVO</u></td>
 
 
