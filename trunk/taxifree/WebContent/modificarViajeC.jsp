@@ -53,6 +53,7 @@ out.println(mensaje);
 <tr style="height: 11px"></tr>
 <tr align="center" >
 <td colspan='6'><a class=enlaceboton href="FrontController?res=vAsignadosConductor.jsp">Volver Viajes Asignados</a></td>
+</tr>
 
 <%
 
@@ -67,7 +68,7 @@ out.println(mensaje);
             	
 %>
 
-			<tr align="center" id="cabecera"">
+			<tr align="center" id="cabecera">
 				
 				<td><u>Origen</u></td>
 				<td><u>Destino</u></td>
@@ -81,9 +82,9 @@ out.println(mensaje);
 			</tr>	
 			<tr align="center" id="cabecera"">
 				
-				<td><u>PuntoIntermedio1</u></td>
-				<td><u>PuntoIntermedio2</u></td>
-				<td><u>PuntoIntermedio3</u></td>
+				<td><u>Parada 1</u></td>
+				<td><u>Parada 2</u></td>
+				<td><u>Parada 3</u></td>
 
 			</tr>
 			<tr align="center" id="datosconductor">
