@@ -68,7 +68,9 @@ function onGDirectionsLoad(){
 </div>
 
 <div id="content">
+
 <table align="center">
+
 <tr style="height: 11px"></tr>
 <tr align="center" id="separador">
 <td colspan='6'><a class=enlaceboton href="FrontController?res=conductor.jsp">Menú Conductor</a></td>
@@ -117,8 +119,6 @@ Idioma: <select id="locale" name="locale">
 <div id="right">
 
 <form action="FrontController?res=altaviaje.jsp" method="post">
-
-<br />
 <p><label for="from">Desde:</label>
 <input class="mayusculas" type="text" size="20" id="fromAddress" name="desde" value="SEVILLA"/>
 </p>
@@ -131,15 +131,15 @@ Idioma: <select id="locale" name="locale">
 <input size="10" id="date" name="date" value="30/06/2010" type="text"></input>
 </p>
 <p>
-<label for="pto01">Punto Intermedio 1:</label>
+<label for="pto01">Parada  1:</label>
 <input class="mayusculas" type="text" size="20" id="pto01" name="pto01" value="CACERES"/>
 </p>
 <p>
-<label for="pto02">Punto Intermedio 2:</label>
+<label for="pto02">Parada  2:</label>
 <input class="mayusculas" type="text" size="20" id="pto02" name="pto02" value="SALAMANCA"/>
 </p>
 <p>
-<label for="pto03">Punto Intermedio 3:</label>
+<label for="pto03">Parada  3:</label>
 <input class="mayusculas" type="text" size="20" id="pto03" name="pto03" value="VALLADOLID"/>
 </p>
 
@@ -156,7 +156,7 @@ Idioma: <select id="locale" name="locale">
 </tr>
 </table>
 
-
+</div>
 <div id="direcciones" style="width: 710px"></div> 
 </body>
 </html>
