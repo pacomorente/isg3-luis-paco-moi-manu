@@ -48,14 +48,17 @@
 	            	
 	            if (viaje.getAnulado()==true)
 	            	activo="NO";
-	            
-
+	            int plazasLibres=4;
+	            Viaje v=accionCond.consultaViaje(viaje.getViajeID());
+	            if (v.getPasajeros()!=null)
+	            	plazasLibres=plazasLibres - v.getPasajeros().size();
 	            
 	            
             	
 %>
 			<tr id="separador" style="height: 20px">
 			<td colspan="1"></td>			
+			<td colspan="1"></td>
 			<td colspan="1"></td>
 			<td colspan="1" align="center"><b><a class=enlaceboton href="FrontController?res=modificarViajeC.jsp?pid=<%=viaje.getViajeID()%>">MODIFICAR</a></b></td>
 			<td colspan="1" align="center"><b><a class=enlaceboton href="FrontController?res=cambiarEstadoViajeC.jsp?pid=<%=viaje.getViajeID()%>">ACTIVAR/ANULAR</a></b></td>
@@ -71,6 +74,7 @@
 				<td><u>Parada 1</u></td>
 				<td><u>Parada 2</u></td>
 				<td><u>Parada 3</u></td>
+				<td><u>Plazas Libres</u></td>				
 				<td><u>ACTIVO</u></td>
 
 
@@ -85,6 +89,7 @@
 				<td><%=viaje.getPuntosInt01()%></td>
 				<td><%=viaje.getPuntosInt02()%></td>
 				<td><%=viaje.getPuntosInt03()%></td>
+				<td><%=plazasLibres%></td>				
 				<td><%=activo%></td>
 
 			</tr>
