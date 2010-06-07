@@ -18,7 +18,7 @@
 
 <div id="content">
 <table summary ="Acciones del Usuario" cellSpacing="1" cellPadding="3" width="770" align="center" border="0" style="width: 475px">
-	<tr valign ="middle" align="center">
+	<tr valign ="middle" align="center"  id="nickconductor">
 		<td  colspan="3"><br><br><u>ACCIONES DEL USUARIO<b></b></u><b><br></b><b><br></b><b>BIENVENIDO : </b><%=sessionUser%><br><br><br>¿ Qué desea hacer ?<br></td>
 	</tr>
 	<tr valign ="middle" align="center" id="cabecera">
