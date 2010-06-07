@@ -96,7 +96,7 @@ function onGDirectionsLoad(){
 <div id="mapa_ruta" align="center" style="width: 710px; height: 300px; border: 4px solid #FF6600;"></div>
 <form action="#" onsubmit="setDirections(this.from.value, this.to.value, this.locale.value); return false" name="form">
 
-Origen: <input type="text" size="25" id="fromAddress" name="from"/ value="SEVILLA">
+Origen: <input type="text" size="25" id="fromAddress" name="from" value="SEVILLA"/>
 
 Destino: <input name="to" type="text" id="toAddress" size="25" value="SANTANDER"/><br>
 
@@ -110,9 +110,10 @@ Idioma: <select id="locale" name="locale">
 
 <input type="submit" name="Submit" value="Calcular Viaje"/>
 
-</form> 
 
+</form> 
 </div>
+
 </td>
 
 <td>
