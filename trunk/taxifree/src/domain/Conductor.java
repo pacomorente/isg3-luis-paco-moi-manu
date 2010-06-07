@@ -119,6 +119,7 @@ public class Conductor extends Usuario  {
 	 * @uml.property name="tiene"
 	 * @uml.associationEnd multiplicity="(1 -1)" inverse="es:domain.Comentarios"
 	 */
+	@SuppressWarnings("unchecked")
 	private Collection comentarios;
 
 
@@ -130,6 +131,7 @@ public class Conductor extends Usuario  {
 	 * @return  Returns the comentarios.
 	 * @uml.property  name="tiene"
 	 */
+	@SuppressWarnings("unchecked")
 	public Collection getTiene() {
 		return comentarios;
 	}
@@ -141,6 +143,7 @@ public class Conductor extends Usuario  {
 	 * @param tiene  The comentarios to set.
 	 * @uml.property  name="tiene"
 	 */
+	@SuppressWarnings("unchecked")
 	public void setTiene(Collection tiene) {
 		comentarios = tiene;
 	}
