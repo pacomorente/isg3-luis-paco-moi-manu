@@ -189,6 +189,7 @@ public class Usuario {
 	 * @uml.property name="comentarios"
 	 * @uml.associationEnd multiplicity="(1 -1)" inverse="usuario:domain.Comentarios"
 	 */
+	@SuppressWarnings("unchecked")
 	private Collection comentarios;
 
 	/** 
@@ -196,6 +197,7 @@ public class Usuario {
 	 * @return  Returns the comentarios.
 	 * @uml.property  name="comentarios"
 	 */
+	@SuppressWarnings("unchecked")
 	public Collection getComentarios() {
 		return comentarios;
 	}
@@ -205,6 +207,7 @@ public class Usuario {
 	 * @param comentarios  The comentarios to set.
 	 * @uml.property  name="comentarios"
 	 */
+	@SuppressWarnings("unchecked")
 	public void setComentarios(Collection comentarios) {
 		this.comentarios = comentarios;
 	}
