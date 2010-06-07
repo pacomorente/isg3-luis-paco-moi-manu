@@ -66,11 +66,6 @@ public class AccionConductorImpl implements IAccionConductor{
 
 		}
 	 
-		public boolean eliminaViaje(Viaje viaje) {
-	        //tdao.deleteTrayectoOID(tra.getIdTrayecto());
-	        return true;
-			
-		}
 
 		public boolean existePasajerosViaje(String idViaje){
 			return conddao.existePasajerosViaje(idViaje);
@@ -92,31 +87,5 @@ public class AccionConductorImpl implements IAccionConductor{
 			return conddao.eliminaViajeC(idViaje);
 		}
 
-
-		public boolean eliminaVehiculo(Vehiculo vehiculo) {
-			// TODO Auto-generated method stub
-			return false;
-		}
-
-
-	 
-		public void insertarVehiculo(Vehiculo vehiculo) {
-			// TODO Auto-generated method stub
-			
-		}
-
-
-	 
-		public Vehiculo modificaVehiculo(Vehiculo vehiculo) {
-			// TODO Auto-generated method stub
-			return null;
-		}
-
-
-
-
-
-	
-	
 	
 }
