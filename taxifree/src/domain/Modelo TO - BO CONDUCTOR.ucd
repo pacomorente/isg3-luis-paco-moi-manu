@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="Modelo TO - BO CONDUCTOR" size="1127,871" id="domain" metadata="uml2-1.0" initialized="true" zoom="0.75" scrolledX="154" scrolledY="133" tag="1000" key="32303037303533312D3130303020746178696672656530322F7061636F">
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="Modelo TO - BO CONDUCTOR" size="1127,871" id="domain" metadata="uml2-1.0" initialized="true" zoom="0.75" scrolledX="154" scrolledY="184" tag="1000" key="32303037303533312D3130303020746178696672656530322F7061636F">
   <children xsi:type="editmodel:ClassEditModel" name="Conductor" location="599,420" size="152,122" id="domain/Conductor" runTimeClassModel="idConductor,Conductor(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;ILjava.lang.String;Ljava.lang.String;),viaje,Conductor()">
     <children xsi:type="editmodel:CompartmentEditModel" size="129,36">
       <children xsi:type="editmodel:AttributeEditModel" name="idConductor" id="domain/Conductor#idConductor"/>
@@ -52,7 +52,7 @@
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.0" name="Usuario" location="855,655" size="135,212" id="domain/Usuario" runTimeClassModel="Apellidos,Correo,Usuario(),Estrella,Usuario(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;I),Dni,Nombre,Pass,Nick">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.0" name="Usuario" location="855,555" size="135,212" id="domain/Usuario" runTimeClassModel="Apellidos,Correo,Usuario(),Estrella,Usuario(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;I),Dni,Nombre,Pass,Nick">
     <children xsi:type="editmodel:CompartmentEditModel" size="112,126">
       <children xsi:type="editmodel:AttributeEditModel" name="Apellidos" id="domain/Usuario#Apellidos"/>
       <children xsi:type="editmodel:AttributeEditModel" name="Correo" id="domain/Usuario#Correo"/>
