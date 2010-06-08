@@ -73,6 +73,7 @@
 				String rutaID= Integer.toString(rnd.nextInt());
 				
 				r.setIdRuta(rutaID);
+				r.setViaje(v.getViajeID());
 				int numPas = v.getPasajeros().size();
 		%>
 		<tr>
