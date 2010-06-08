@@ -209,7 +209,7 @@ INSERT INTO usuario(OIDUsuario,nombre,apellidos,dni,correo,estrella,nick,pass)
 values('00002','Manuel','Perez','90000002X','C1@US.ES',7,'USER2','USER2');
 
 INSERT INTO usuario(OIDUsuario,nombre,apellidos,dni,correo,estrella,nick,pass)
-values('00006','Monica','Ortiz','90000006X','C6@US.ES',1,'USER6','USER6');
+values('00006','Monica','Ortiz','90000006X','C6@US.ES',2,'USER6','USER6');
 
 INSERT INTO usuario(OIDUsuario,nombre,apellidos,dni,correo,estrella,nick,pass)
 values('00003','Luis','Perez','90000003X','C3@US.ES',3,'USER3','USER3');
