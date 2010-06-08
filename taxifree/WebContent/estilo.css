@@ -90,6 +90,11 @@ label{
 #botonEnviar{
 	margin-left:220px;
 }
+#botonVolverBuscar{
+	align:center;
+	margin-left: 570px;
+	margin-top:30px;
+}
 	.enlaceboton {
 	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-WEIGHT: bold; FONT-SIZE: 8pt; PADDING-BOTTOM: 2px; COLOR: #666666; PADDING-TOP: 2px; FONT-FAMILY: verdana, arial, sans-serif; BACKGROUND-COLOR: #ffffcc; TEXT-DECORATION: none
 }

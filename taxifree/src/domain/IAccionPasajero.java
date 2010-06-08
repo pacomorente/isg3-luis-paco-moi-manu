@@ -1,6 +1,7 @@
 package domain;
 
 import java.util.Collection;
+import java.util.List;
 
 /**
  * @uml.dependency  supplier="domain.Ruta"
@@ -16,4 +17,6 @@ public interface IAccionPasajero {
 	public void setP(Pasajero p);
 	public void setRuta(Ruta r);
 	public Viaje seleccionaViajePasajero(String viajeID);
+	public List<Ruta> seleccionaRutasDelPasajero(String nick);
+	public Ruta seleccionaRuta(String idRuta);
 }

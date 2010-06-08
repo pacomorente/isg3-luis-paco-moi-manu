@@ -6,10 +6,8 @@ import java.util.List;
 
 import data.IPasajeroDAO;
 import data.IRutaDAO;
-import data.IViajeDAO;
 import data.JDBCPasajeroDAO;
 import data.JDBCRutaDAO;
-import data.JDBCViajeDAO;
 
 /**
  * @uml.dependency  supplier="domain.Pasajero"
@@ -41,7 +39,6 @@ public class AccionPasajeroImpl implements IAccionPasajero{
 	public Collection<Viaje> buscarViaje(Ruta r) {
 		//Lo almacenamos aqui porque antes de apuntarse
 		//a un viaje obligatoriamente lo tiene que buscar.
-		rutaDePasajero = r;
 		List<Viaje> res = new LinkedList<Viaje>();
 		for(Viaje vp:v){
 			String origen = vp.getOrigen().toLowerCase();
@@ -74,6 +71,11 @@ public class AccionPasajeroImpl implements IAccionPasajero{
 	public Collection<Ruta> consultaRuta() {
 		IRutaDAO rdao = new JDBCRutaDAO();
 		return rdao.selectAllRutas();
+	}
+	
+	public List<Ruta> seleccionaRutasDelPasajero(String nick){
+		IRutaDAO ruta = new JDBCRutaDAO();
+		return ruta.selectRutaPasajero(nick);
 	}
 	
 	public Viaje seleccionaViajePasajero(String viajeID){
@@ -116,6 +118,11 @@ public class AccionPasajeroImpl implements IAccionPasajero{
 	
 	public void setRuta(Ruta r){
 		this.rutaDePasajero = r;
+	}
+
+	public Ruta seleccionaRuta(String idRuta) {
+		IRutaDAO rDao = new JDBCRutaDAO();
+		return rDao.selectRuta(idRuta);
 	}
 	
 }

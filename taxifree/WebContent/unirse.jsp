@@ -16,14 +16,22 @@
 	//A partir de la url tomo el vid
 	String vid = request.getParameter("vid");
 	//Nos creamos la accion para poder añadir al pasajero en el viaje
+	//Ver si el usuario tiene al menos una estrella para gastar
 	IAccionPasajero accionPas = new AccionPasajeroImpl();
 	Pasajero p = accionPas.datosPasajero(sessionUser);
-	//Nos creamos un viaje nuevo para almacenar el que ha seleccionado el usuario
-	Viaje viajePasajero = accionPas.seleccionaViajePasajero(vid);
-	
-	if(vid!=null && vid.length()>0){
-		 accionPas.apuntarseAViaje(p, rutaPasajero, viajePasajero);
+	int numEstrellas = p.getEstrella();
+	boolean hayEstrellas = true;
+	if(numEstrellas>0){
+		//Nos creamos un viaje nuevo para almacenar el que ha seleccionado el usuario
+		Viaje viajePasajero = accionPas.seleccionaViajePasajero(vid);
+		
+		if(vid!=null && vid.length()>0){
+			 accionPas.apuntarseAViaje(p, rutaPasajero, viajePasajero);
+		}
+	}else{
+		hayEstrellas = false;
 	}
+	
 	
 %>
 <div id="top">
@@ -51,7 +59,11 @@
 	</table>
 	<table id="tablaUnirse">
 		<tr valign ="middle" align="center">
+			<% if(hayEstrellas){ %>
 			<td>SE HA UNIDO CORRECTAMENTE AL VIAJE</td>
+			<%}else{%>
+			<td>NO TIENE ESTRELLAS SUFICIENTES</td>
+			<%} %>
 		</tr>
 	</table>
 </div>
