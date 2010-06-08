@@ -225,7 +225,7 @@ public class JDBCViajeDAO implements IViajeDAO {
 		ConnectionManager cn = ConnectionManager.getInstance();
 		
 		Connection con = cn.checkOut();
-		
+		IPasajeroDAO pasDAO = new JDBCPasajeroDAO();
 		PreparedStatement stmt = null;
 		List searchResults = new LinkedList();
 		ResultSet result = null;
@@ -252,6 +252,8 @@ public class JDBCViajeDAO implements IViajeDAO {
 			   //temp.setFecha(result.getDate("fecha"));
 			   temp.setFecha(result.getString("fechaEUR"));
 			   temp.setAnulado(result.getBoolean("anulado"));
+			   
+			   temp.setPasajeros(pasDAO.selectPasajerosbyViaje(result.getString("OIDViaje")));
 			   searchResults.add(temp);
 			}
 			result.close();

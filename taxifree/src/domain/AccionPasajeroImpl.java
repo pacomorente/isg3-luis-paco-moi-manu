@@ -44,19 +44,19 @@ public class AccionPasajeroImpl implements IAccionPasajero{
 			String origen = vp.getOrigen().toLowerCase();
 			String destino = vp.getDestino().toLowerCase();
 			String fecha = vp.getFecha();
-			//int numPas = vp.getPasajeros().size();
+			int numPas = vp.getPasajeros().size();
 			String desde = r.getOrigen();
 			String hasta = r.getDestino();
 			String fechaRuta = r.getFecha();
 			if(destino.equals(hasta)){
 				if(origen.equals(desde)){
-					if(fechaRuta.equals(fecha) /*&& numPas<4*/){
+					if(fechaRuta.equals(fecha) && numPas<4){
 						res.add(vp);
 					}
 				}else{
 						for(String o: vp.getPuntosIntermedios()){
 							if(o.toLowerCase().equals(desde)){
-								if(fechaRuta.equals(fecha) /*&& numPas<4*/){
+								if(fechaRuta.equals(fecha) && numPas<4){
 									res.add(vp);
 								}
 							}
