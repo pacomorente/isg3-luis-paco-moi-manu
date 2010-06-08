@@ -99,48 +99,6 @@ public class JDBCVehiculoDAO implements IVehiculoDAO{
 
 			
 		}
-		
-		
-/*		public Vehiculo selectVehiculobyViaje(Connection conn,
-				String oidViaje) {
-				
-				PreparedStatement stmt = null;
-		        ResultSet result = null;
-		        Vehiculo vehCond = new Vehiculo();
-				
-		        try {
-		        	String sql = "SELECT * FROM vehiculo WHERE (OIDViaje = ?) ";
-		            stmt = conn.prepareStatement(sql);
-		            stmt.setString(1, oidViaje);
-
-		            result = stmt.executeQuery();
-
-		            result.next();
-		            
-		            vehCond.setColor(result.getString("color"));
-		            vehCond.setMarca(result.getString("marca"));
-		            vehCond.setModelo(result.getString("modelo"));
-		            vehCond.setPlazas(result.getInt("plazas"));
-					
-		        }catch (SQLException e) {
-		            System.out.println("Message: " + e.getMessage());
-		            System.out.println("SQLState: " + e.getSQLState());
-		            System.out.println("ErrorCode: " + e.getErrorCode());
-		        } finally {
-		            try {
-		                    if (result != null) {
-		                            result.close();
-		                    }
-		                    if (stmt != null) {
-		                            stmt.close();
-		                    }
-		            } catch (SQLException e) {
-		            }
-		        }
-		        
-		        return vehCond;
-			}*/
-
 		public Vehiculo selectVehiculoConductor(Connection conn,
 				String oidVehiculoConductor) {
 			
@@ -154,7 +112,7 @@ public class JDBCVehiculoDAO implements IVehiculoDAO{
 		            stmt.setString(1, oidVehiculoConductor);
 
 		            result = stmt.executeQuery();
-		            System.out.println(stmt);
+		            //System.out.println(stmt);
 		            result.next();
 		            
 		            vehCond.setColor(result.getString("color"));

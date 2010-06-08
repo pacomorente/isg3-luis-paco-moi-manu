@@ -230,7 +230,7 @@ public class JDBCUsuarioDAO implements IUsuarioDAO{
 		            stmt.setString(2, oidc);
 				}
 				stmt.executeUpdate();
-				System.out.println(stmt);
+				//System.out.println(stmt);
 			}catch (SQLException e) {
 	            System.out.println("Message: " + e.getMessage());
 	            System.out.println("SQLState: " + e.getSQLState());
