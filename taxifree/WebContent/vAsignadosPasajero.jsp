@@ -67,7 +67,7 @@
 				</a>
 			</td>
 			<td align="center">
-				<a href="FrontController?res=modificarRuta.jsp">
+				<a href="FrontController?res=modificarRuta.jsp?rid=<%=r.getIdRuta()%>">
 					<img alt="Unirse" src="images/update.jpg"></img>
 				</a>
 			</td>
