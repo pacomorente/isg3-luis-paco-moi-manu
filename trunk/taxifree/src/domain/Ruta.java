@@ -72,6 +72,16 @@ public class Ruta {
 	 */
 	public String fecha;
 	
+	public String idViaje;
+	
+	public void setViaje(String idViaje){
+		this.idViaje = idViaje;
+	}
+	
+	public String getViajeID(){
+		return idViaje;
+	}
+	
 	/**
 	 * @return
 	 * @uml.property  name="origen"
