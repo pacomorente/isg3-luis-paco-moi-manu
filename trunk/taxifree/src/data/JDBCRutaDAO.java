@@ -144,6 +144,7 @@ public class JDBCRutaDAO implements IRutaDAO {
         	r.setOrigen(result.getString("origen"));
         	r.setDestino(result.getString("destino"));
         	r.setFecha(result.getString("fechaEUR"));
+        	r.setIdRuta(result.getString("idRuta"));
         	
         }catch(SQLException e){
         	System.out.println("Message: " + e.getMessage());
