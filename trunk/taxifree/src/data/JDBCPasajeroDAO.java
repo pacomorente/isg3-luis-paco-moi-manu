@@ -180,6 +180,8 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
             stmt.setString(2, rdao.selectRutaOID(r.getIdRuta()));
             stmt.executeUpdate();
             
+            udao.actualizarPuntosConductor(conn, udao.selectUsuarioOID(conn, p.getNick()), "BAJA", 1);
+            
         } catch (SQLException e) {
             System.out.println("Message: " + e.getMessage());
             System.out.println("SQLState: " + e.getSQLState());

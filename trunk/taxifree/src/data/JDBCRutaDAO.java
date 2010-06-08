@@ -1,7 +1,6 @@
 package data;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -132,7 +131,7 @@ public class JDBCRutaDAO implements IRutaDAO {
 		PreparedStatement stmt = null;
         ResultSet result = null;
         Ruta r = null;
-        String sql = "SELECT * FROM ruta WHERE (OIDRuta = ?) ";
+        String sql = "SELECT *, DATE_FORMAT(fecha,'%d/%m/%Y') AS fechaEUR FROM ruta WHERE (OIDRuta = ?)";
         
         try{
         	stmt = conn.prepareStatement(sql);
@@ -142,11 +141,9 @@ public class JDBCRutaDAO implements IRutaDAO {
         	result.next();
         	
         	r = new Ruta();
-        	r.setIdRuta(result.getString("idRuta"));
         	r.setOrigen(result.getString("origen"));
         	r.setDestino(result.getString("destino"));
-        	r.setDesplazamiento(Integer.parseInt(result.getString("desplazamiento")));
-        	r.setFecha("fecha");
+        	r.setFecha(result.getString("fechaEUR"));
         	
         }catch(SQLException e){
         	System.out.println("Message: " + e.getMessage());
@@ -164,6 +161,18 @@ public class JDBCRutaDAO implements IRutaDAO {
             }
         }
         return r;
+	}
+	
+	public Ruta selectRuta(String idRuta){
+		String oidRuta = this.selectRutaOID(idRuta);
+		return this.select(oidRuta);
+	}
+	
+	public List<Ruta> selectRutaPasajero(String nick){
+		IUsuarioDAO usuario = new JDBCUsuarioDAO();
+		String oidPasajero = usuario.selectUsuarioOID(conn, nick);
+		List<Ruta> listaRutas = this.selectRutas(conn, oidPasajero);
+		return listaRutas;
 	}
 	
 	public List<Ruta> selectRutas(Connection con, String oidPasajero) {

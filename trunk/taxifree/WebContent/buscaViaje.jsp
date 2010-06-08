@@ -96,6 +96,11 @@
 			
 		</tr>
 	</table>
+	<table id="botonVolverBuscar">
+		<tr>
+			<td><a class=enlaceboton href="FrontController?res=busquedaViajePasajero.jsp">VOLVER A BUSCAR</a></td>
+		</tr>
+	</table>
 </div>
 </body>
 </html>
