@@ -46,8 +46,6 @@
 		<label for="date" id="lfecha">Fecha:</label>
 		<input type="text" size="25" id="date" name="date" value="dd/mm/aaaa" />
 		<br></br><br></br>
-		<label for="desp" id="lmove">Desplazamiento:</label>
-		<input type="text" size="25" id="desplazamiento" name="desplazamiento"/>
 		<p id="botonEnviar">
 			<input name="submit" type="submit" value="Buscar" />
 		</p>

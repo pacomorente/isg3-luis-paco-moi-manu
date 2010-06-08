@@ -78,6 +78,7 @@ public class AccionPasajeroImpl implements IAccionPasajero{
 		return ruta.selectRutaPasajero(nick);
 	}
 	
+	
 	public Viaje seleccionaViajePasajero(String viajeID){
 		IPasajeroDAO ip = new JDBCPasajeroDAO();
 		return ip.selectViajeDePasajero(viajeID);

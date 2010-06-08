@@ -20,13 +20,11 @@
 	String desdeForm = request.getParameter("origen");
 	String hastaForm = request.getParameter("destino");
 	String fechaForm = request.getParameter("date");
-	int desplazamientoForm = Integer.parseInt(request.getParameter("desplazamiento"));
 	
 	Ruta r = new Ruta();
 	r.setOrigen(desdeForm.toLowerCase());
 	r.setDestino(hastaForm.toLowerCase());
 	r.setFecha(fechaForm);
-	r.setDesplazamiento(desplazamientoForm);
 	session.setAttribute("session.ruta",r);
 	List<Viaje> viajes = (List<Viaje>)accionPas.buscarViaje(r);
 	
