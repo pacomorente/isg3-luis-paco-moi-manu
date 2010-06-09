@@ -40,6 +40,7 @@ public class JDBCConductorDAO implements IConductorDAO {
 		private String vehiculoRegistrado;
 
 	    public JDBCConductorDAO() {
+	    	//System.out.print("Abriendo conexión BD desde Conductor");
 	        conn = ConnectionManager.getInstance().checkOut();
 	        udao = new JDBCUsuarioDAO();
 	        vdao = new JDBCVehiculoDAO();
@@ -48,6 +49,7 @@ public class JDBCConductorDAO implements IConductorDAO {
 
 	    protected void finalize() {
 	        ConnectionManager.getInstance().checkIn(conn);
+	        //System.out.print("Finalizando conexión BD desde Conductor");
 	    }
 	
 	public String selectOIDConductor(String nick) {
@@ -125,9 +127,11 @@ public class JDBCConductorDAO implements IConductorDAO {
         ResultSet result = null;
         String sql = "SELECT * FROM conductor WHERE (OIDViaje = ?) ";
         String oidCond = null;
+        String nickCond= null;
         Conductor cond= new Conductor();
         List<Viaje>listaViajesC=new LinkedList<Viaje>();
         try {
+        	
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, oidviaje);
             result = stmt.executeQuery();
@@ -135,6 +139,9 @@ public class JDBCConductorDAO implements IConductorDAO {
             result.next();
             
             oidCond=(result.getString("OIDConductor"));
+            Usuario user= udao.select(conn, oidCond);
+            nickCond= user.getNick();
+            
             listaViajesC = obtenerViajesOIDConductor(oidCond);
 /*    		for (String auxvOID: listaViajes){
     			
@@ -143,7 +150,7 @@ public class JDBCConductorDAO implements IConductorDAO {
 
     			}*/
     		//String oidc = selectOIDConductor(nick);
-    		String oidVehiculoConductor = obtenerVehiculoOID(oidCond);
+    		String oidVehiculoConductor = obtenerVehiculoOID(nickCond);
     		Vehiculo v=vdao.selectVehiculoConductor(conn,oidVehiculoConductor);
             
     	    //Vehiculo v = vdao.selectVehiculoConductor(conn, oidCond);
@@ -244,8 +251,9 @@ public class JDBCConductorDAO implements IConductorDAO {
 		Conductor cond = new Conductor();
 		Vehiculo vehiculo = new Vehiculo();
 		cond =  udao.selectUsuariobyNick(conn, nick);
-		String oidc = selectOIDConductor(nick);
-		String oidVehiculoConductor = obtenerVehiculoOID(oidc);
+		//String oidc = selectOIDConductor(nick);
+		//String oidVehiculoConductor = obtenerVehiculoOID(oidc);
+		String oidVehiculoConductor = obtenerVehiculoOID(nick);
 	    vehiculo=selectVehiculoConductor(oidVehiculoConductor);
 		cond.setVehiculo(vehiculo);
 		return cond;
@@ -262,20 +270,22 @@ public class JDBCConductorDAO implements IConductorDAO {
 	public Vehiculo obtenerVehiculo(String nickConductor){
 			
 		Vehiculo veh = null;
-		String oidc=selectOIDConductor(nickConductor);
-		String oidVehiculoConductor= obtenerVehiculoOID(oidc);
+		//String oidc=selectOIDConductor(nickConductor);
+		//String oidVehiculoConductor= obtenerVehiculoOID(oidc);
+		String oidVehiculoConductor= obtenerVehiculoOID(nickConductor);
 		veh = selectVehiculoConductor(oidVehiculoConductor);
 		return veh;
 		
 	}
-	public String obtenerVehiculoOID(String oidc){
+	public String obtenerVehiculoOID(String nickconductor){
 	 	PreparedStatement stmt = null;
         ResultSet result = null;
-        String sql = "SELECT * FROM conductor WHERE (OIDConductor = ?) ";
+        //String sql = "SELECT * FROM conductor WHERE (OIDConductor = ?) ";
+        String sql = "SELECT * FROM vehiculo WHERE (conductorID = ?) ";
         String oidVehC = null;
         try {
             stmt = conn.prepareStatement(sql);
-            stmt.setString(1, oidc);
+            stmt.setString(1, nickconductor);
             result = stmt.executeQuery();
 
             result.next();
@@ -319,7 +329,7 @@ public class JDBCConductorDAO implements IConductorDAO {
 		oidc= selectOIDConductor(nick);
 		Conductor cond=udao.selectUsuariobyNick(conn, nick);
 		actualizarPuntosConductor(oidc,"ALTA",cond.getEstrella());
-		vehiculoRegistrado = obtenerVehiculoOID(oidc);
+		vehiculoRegistrado = obtenerVehiculoOID(nick);
 		/* Si no nos diera el vehículo Registrado ( lo busca en la 
 		 * tabla conductor ( OIDCond, OIDViaje, OIDVehiculo )
 		 * y al menos existe ya un viaje del conductor dado de alta

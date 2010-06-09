@@ -11,6 +11,15 @@ public class Vehiculo {
 	 * @uml.property  name="idVehiculo"
 	 */
 	private String idVehiculo;
+	private String idConductor;
+	public String getIdConductor() {
+		return idConductor;
+	}
+
+	public void setIdConductor(String idConductor) {
+		this.idConductor = idConductor;
+	}
+
 	/**
 	 * @uml.property  name="conductor"
 	 * @uml.associationEnd  
