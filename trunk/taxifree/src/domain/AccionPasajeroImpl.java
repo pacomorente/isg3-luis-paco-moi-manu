@@ -86,8 +86,8 @@ public class AccionPasajeroImpl implements IAccionPasajero{
 
 
 	public void eliminaRuta(Ruta r) {
-		// TODO Auto-generated method stub
-		
+		IRutaDAO rutaDAO = new JDBCRutaDAO();
+		rutaDAO.deleteRuta(r);
 	}
 
 
