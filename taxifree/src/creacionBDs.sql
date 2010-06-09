@@ -98,10 +98,10 @@ DROP TABLE IF EXISTS `ruta`;
 CREATE TABLE `ruta` (
   `OIDRuta` varchar(100) NOT NULL,
   `origen` varchar(100) NOT NULL,
-  `desplazamiento` varchar(100) NOT NULL,
   `fecha` date NOT NULL,
   `idRuta` varchar(50) NOT NULL,
   `destino` varchar(100) NOT NULL,
+  `viajeID` varchar(100) NOT NULL,
   PRIMARY KEY (`OIDRuta`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -267,27 +267,3 @@ values('00006','VIAJE002','VEH00012AUDI');
 
 
 COMMIT;
--- INSERT RELACIONADO CON EL CASO DE USO DE PASAJERO (MOISES)
-INSERT INTO pasajero(OIDPasajero,OIDViaje)
-values('00002','VIAJE002');
-
-INSERT INTO pasajero(OIDPasajero,OIDViaje)
-values('00006','VIAJE001');
-
-INSERT INTO pasajero(OIDPasajero,OIDViaje)
-values('00006','VIAJE002');
-
-INSERT INTO ruta(OIDRuta,origen, desplazamiento, fecha, idRuta, destino)
-values('RUTA001','SEVILLA','2',STR_TO_DATE('15/05/2010','%d/%m/%Y'),'R1','GRANADA');
-
-INSERT INTO ruta(OIDRuta,origen, desplazamiento, fecha, idRuta, destino)
-values('RUTA002','SEVILLA','2',STR_TO_DATE('01/06/2010','%d/%m/%Y'),'R2','CADIZ');
-
-INSERT INTO pasajero_ruta(OIDPasajero, OIDRuta)
-values('00002','RUTA001');
-
-INSERT INTO pasajero_ruta(OIDPasajero, OIDRuta)
-values('00006','RUTA002');
-
-INSERT INTO pasajero_ruta(OIDPasajero, OIDRuta)
-values('00006','RUTA001');
