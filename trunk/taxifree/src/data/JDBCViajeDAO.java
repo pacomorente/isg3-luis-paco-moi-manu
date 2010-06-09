@@ -15,7 +15,7 @@ import domain.Viaje;
 public class JDBCViajeDAO implements IViajeDAO {
 
 	
-    private Connection conn;
+/*    private Connection conn;
    
     public JDBCViajeDAO() {
         conn = ConnectionManager.getInstance().checkOut();
@@ -25,9 +25,9 @@ public class JDBCViajeDAO implements IViajeDAO {
 
     protected void finalize() {
         ConnectionManager.getInstance().checkIn(conn);
-    }
+    }*/
 	
-	public void deleteViaje(String ViajeOID) {
+	public void deleteViaje(Connection con,String ViajeOID) {
 		
 		String sql = "DELETE FROM viaje WHERE (OIDViaje = ?) ";
         PreparedStatement stmt = null;
@@ -36,7 +36,7 @@ public class JDBCViajeDAO implements IViajeDAO {
         // al menos un OID VIAJE, pasandole el OID VIAJE al metodo que devolvera boolean 
         
         try {
-            stmt = conn.prepareStatement(sql);
+            stmt = con.prepareStatement(sql);
             stmt.setString(1, ViajeOID);
             stmt.executeUpdate();
         } catch (SQLException e) {
@@ -61,7 +61,7 @@ public class JDBCViajeDAO implements IViajeDAO {
 			IConductorDAO cdao = new JDBCConductorDAO();
 			Conductor cond= cdao.selectConductorbyViaje(oidviaje);
 			cdao.delete(cond.getNick(), oidviaje);
-			deleteViaje(oidviaje);
+			deleteViaje(con,oidviaje);
 			String oidc = cdao.selectOIDConductor(cond.getNick());
 			cdao.actualizarPuntosConductor(oidc,"BAJA",cond.getEstrella());
 			return true;
@@ -150,7 +150,7 @@ public class JDBCViajeDAO implements IViajeDAO {
 	        String sql = "INSERT INTO viaje( OIDViaje,origen,destino,puntoint01,puntoint02,puntoint03,fecha,idViaje,anulado) VALUES (?, ?, ?, ?, ?, ?, STR_TO_DATE(?,'%d/%m/%Y'),?, ?) ";
 
 	        try {
-	            stmt = conn.prepareStatement(sql);
+	            stmt = con.prepareStatement(sql);
 
 	            stmt.setString(1, viajeOID);
 	            stmt.setString(2, v.getOrigen());
@@ -193,7 +193,7 @@ public class JDBCViajeDAO implements IViajeDAO {
         }
         	
         try {
-            stmt = conn.prepareStatement(sql);
+            stmt = con.prepareStatement(sql);
 
             stmt.setBoolean(1, nuevoEstado);
             stmt.setString(2, idViaje);
@@ -297,7 +297,7 @@ public class JDBCViajeDAO implements IViajeDAO {
 		List<String> puntosInt = new ArrayList<String>();
         try {
         	String sql = "SELECT * ,DATE_FORMAT(fecha,'%d/%m/%Y') AS fechaEUR FROM viaje WHERE (OIDViaje = ?) ";
-            stmt = conn.prepareStatement(sql);
+            stmt = con.prepareStatement(sql);
             stmt.setString(1, oidViajeConductor);
 
             result = stmt.executeQuery();
@@ -345,7 +345,7 @@ public class JDBCViajeDAO implements IViajeDAO {
         String sql = "SELECT * FROM viaje WHERE (idViaje = ?) ";
 
         try {
-            stmt = conn.prepareStatement(sql);
+            stmt = con.prepareStatement(sql);
             stmt.setString(1, idViaje);
             result = stmt.executeQuery();
 
@@ -377,7 +377,7 @@ public class JDBCViajeDAO implements IViajeDAO {
         String sql = "SELECT * FROM viaje WHERE (idViaje = ?) ";
 
         try {
-            stmt = conn.prepareStatement(sql);
+            stmt = con.prepareStatement(sql);
             stmt.setString(1, idViaje);
             result = stmt.executeQuery();
 
