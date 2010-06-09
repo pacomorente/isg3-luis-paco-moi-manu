@@ -151,6 +151,7 @@ CREATE TABLE `vehiculo` (
   `color` varchar(50) NOT NULL,
   `plazas` int(11) NOT NULL,
   `idVehiculo` varchar(50) NOT NULL,
+  `conductorID` varchar(50) NOT NULL,
   PRIMARY KEY (`OIDVehiculo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -242,14 +243,14 @@ COMMIT;
 
 -- TABLA VEHICULO
 
-INSERT INTO vehiculo(OIDVehiculo,marca,Modelo,Color,Plazas,idVehiculo)
-values('VEH00010RENA','Renault','Renault','Verde',4,'01');
+INSERT INTO vehiculo(OIDVehiculo,marca,Modelo,Color,Plazas,idVehiculo,conductorID)
+values('VEH00010RENA','Renault','Renault','Verde',4,'01','USER5');
 
-INSERT INTO vehiculo(OIDVehiculo,marca,Modelo,Color,Plazas,idVehiculo)
-values('VEH00011MERC','Mercedes','Mercedes','Blanco',4,'02');
+INSERT INTO vehiculo(OIDVehiculo,marca,Modelo,Color,Plazas,idVehiculo,conductorID)
+values('VEH00011MERC','Mercedes','Mercedes','Blanco',4,'02','USER3');
 
-INSERT INTO vehiculo(OIDVehiculo,marca,Modelo,Color,Plazas,idVehiculo)
-values('VEH00012AUDI','AUDI','AUDI','Negro',4,'03');
+INSERT INTO vehiculo(OIDVehiculo,marca,Modelo,Color,Plazas,idVehiculo,conductorID)
+values('VEH00012AUDI','AUDI','AUDI','Negro',4,'03','USER6');
 
 COMMIT;
 
