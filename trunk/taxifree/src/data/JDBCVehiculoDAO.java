@@ -72,7 +72,8 @@ public class JDBCVehiculoDAO implements IVehiculoDAO{
                                 aux.setMarca(result.getString("Marca"));        
                                 aux.setModelo(result.getString("Modelo"));
                                 aux.setColor(result.getString("Color"));
-                                aux.setPlazas(result.getInt("Plazas"));  
+                                aux.setPlazas(result.getInt("Plazas"));
+                                aux.setIdConductor(result.getString("conductorID"));
                                 listaVehiculos.add(aux);                
                         }
                 } catch(SQLException e) {      
@@ -119,7 +120,8 @@ public class JDBCVehiculoDAO implements IVehiculoDAO{
 		            vehCond.setMarca(result.getString("marca"));
 		            vehCond.setModelo(result.getString("modelo"));
 		            vehCond.setPlazas(result.getInt("plazas"));
-					
+		            vehCond.setIdConductor(result.getString("conductorID"));
+		            
 		        }catch (SQLException e) {
 		            System.out.println("Message: " + e.getMessage());
 		            System.out.println("SQLState: " + e.getSQLState());
