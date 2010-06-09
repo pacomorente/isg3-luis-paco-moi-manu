@@ -160,6 +160,38 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
 		
 	}
 	
+	public Pasajero selectPasajeroEnRuta(String rutaOID){
+		ResultSet result = null;
+		Pasajero pasajero = new Pasajero();
+		PreparedStatement stmt = null;
+		try {
+        	String sql = "SELECT * FROM pasajero_ruta WHERE (OIDRuta = ?) ";
+        	stmt = conn.prepareStatement(sql);
+            
+            stmt.setString(1, rutaOID);
+            result = stmt.executeQuery();
+            String oidPasajero = result.getString("OIDPasajero");
+            Usuario u = udao.select(conn, oidPasajero);
+            pasajero = (Pasajero)u;
+            
+        }catch (SQLException e) {
+            System.out.println("Message: " + e.getMessage());
+            System.out.println("SQLState: " + e.getSQLState());
+            System.out.println("ErrorCode: " + e.getErrorCode());
+        } finally {
+            try {
+                    if (result != null) {
+                            result.close();
+                    }
+                    if (stmt != null) {
+                            stmt.close();
+                    }
+            } catch (SQLException e) {
+            }
+        }
+        return pasajero;
+	}
+	
 	public void insert(Pasajero p, Ruta r, Viaje v){
 		IViajeDAO vdao = new JDBCViajeDAO();
 		String sql2 = "INSERT INTO pasajero_ruta(OIDPasajero,OIDRuta)values(?,?)";
@@ -200,6 +232,50 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
 	public Viaje selectViajeDePasajero(String idViaje){
 		IViajeDAO iv = new JDBCViajeDAO();
 		return iv.selectViaje(conn, idViaje);
+	}
+	
+	public void eliminaPasajero(Viaje v){
+		String sql = "DELETE FROM pasajero WHERE (OIDViaje = ?) ";
+        PreparedStatement stmt = null;
+		IViajeDAO iv = new JDBCViajeDAO();
+        String viajeOID = iv.selectViajeOID(conn, v.getViajeID());
+        try {
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, viajeOID);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            System.err.println("Message: " + e.getMessage());
+            System.err.println("SQLState: " + e.getSQLState());
+            System.err.println("ErrorCode: " + e.getErrorCode());
+        } finally {
+            try {
+                if (stmt != null)
+                    stmt.close();
+            } catch (SQLException e) {
+            }
+        }
+	}
+	
+	public void eliminaPasajeroEnRuta(String rutaOID, Pasajero p){
+		String sql = "DELETE FROM pasajero_ruta WHERE (OIDRuta = ?) && (OIDPasajero = ?) ";
+		String pasajeroOID = udao.selectUsuarioOID(conn, p.getNick());
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, rutaOID);
+            stmt.setString(2, pasajeroOID);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            System.err.println("Message: " + e.getMessage());
+            System.err.println("SQLState: " + e.getSQLState());
+            System.err.println("ErrorCode: " + e.getErrorCode());
+        } finally {
+            try {
+                if (stmt != null)
+                    stmt.close();
+            } catch (SQLException e) {
+            }
+        }
 	}
 
 }

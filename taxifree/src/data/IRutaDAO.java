@@ -13,7 +13,7 @@ public interface IRutaDAO {
 	public String selectRutaOID(String idRuta);
 	public Ruta select(String rutaOID);
 	public void insert(Connection con, Ruta r);
-	public void deleteRuta(String idRuta);
+	public void deleteRuta(Ruta r);
 	public void updateRuta(Ruta r, String userOID);
 	public List<Ruta> selectRutas(Connection conn, String oidPasajero);
 	public List<Ruta> selectRutaPasajero(String nick);

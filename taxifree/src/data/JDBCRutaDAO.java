@@ -8,7 +8,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 import utils.UIDGenerator;
+import domain.Pasajero;
 import domain.Ruta;
+import domain.Viaje;
 
 public class JDBCRutaDAO implements IRutaDAO {
 
@@ -19,8 +21,49 @@ public class JDBCRutaDAO implements IRutaDAO {
 		conn = ConnectionManager.getInstance().checkOut();
 	}
 	
-	public void deleteRuta(String idRuta) {
-		// TODO Auto-generated method stub
+	public void deleteRuta(Ruta r) {
+		//A partir de la ruta tenemos que seleccionar el viaje asociado
+		String idViaje = r.getViajeID();
+		String rutaOID = selectRutaOID(r.getIdRuta());
+		
+		IViajeDAO viajeDAO = new JDBCViajeDAO();
+		IPasajeroDAO pasajeroDAO = new JDBCPasajeroDAO();
+		
+		Pasajero p = pasajeroDAO.selectPasajeroEnRuta(rutaOID);
+		Viaje v = viajeDAO.selectViaje(conn, idViaje);
+		
+		//Primero eliminamos al pasajero del viaje
+		pasajeroDAO.eliminaPasajero(v);
+		
+		//Eliminamos al pasajero de la ruta
+		pasajeroDAO.eliminaPasajeroEnRuta(rutaOID,p);
+		
+		//Eliminamos el pasajero asociado al viaje de la lista de pasajeros
+		List<Pasajero> pasajeros = v.getPasajeros();
+		if(pasajeros.contains(p)){
+			pasajeros.remove(p);
+		}
+		v.setPasajeros(pasajeros);
+		viajeDAO.updateViaje(conn, v);
+		
+		//Eliminamos la ruta
+		String sql = "DELETE FROM ruta WHERE (OIDRuta = ?) ";
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, rutaOID);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            System.err.println("Message: " + e.getMessage());
+            System.err.println("SQLState: " + e.getSQLState());
+            System.err.println("ErrorCode: " + e.getErrorCode());
+        } finally {
+            try {
+                if (stmt != null)
+                    stmt.close();
+            } catch (SQLException e) {
+            }
+        }
 
 	}
 

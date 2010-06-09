@@ -3,6 +3,7 @@ package data;
 import java.sql.Connection;
 import java.util.List;
 
+import domain.Pasajero;
 import domain.Viaje;
 
 /**
