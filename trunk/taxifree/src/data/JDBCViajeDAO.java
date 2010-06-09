@@ -104,7 +104,7 @@ public class JDBCViajeDAO implements IViajeDAO {
         String oidViaje=selectViajeOID(conn, v.getViajeID());
 		PreparedStatement stmt = null;
         String sql = "UPDATE viaje SET origen=?,destino=?,puntoint01=?,puntoint02=?,puntoint03=?,fecha=STR_TO_DATE(?,'%d/%m/%Y') WHERE OIDViaje=? ";
-        //String viajeOID = UIDGenerator.getInstance().getKey();
+
         try {
             stmt = conn.prepareStatement(sql);
 
@@ -148,7 +148,7 @@ public class JDBCViajeDAO implements IViajeDAO {
 
 	        PreparedStatement stmt = null;
 	        String sql = "INSERT INTO viaje( OIDViaje,origen,destino,puntoint01,puntoint02,puntoint03,fecha,idViaje,anulado) VALUES (?, ?, ?, ?, ?, ?, STR_TO_DATE(?,'%d/%m/%Y'),?, ?) ";
-	        //String viajeOID = UIDGenerator.getInstance().getKey();
+
 	        try {
 	            stmt = conn.prepareStatement(sql);
 
@@ -165,8 +165,6 @@ public class JDBCViajeDAO implements IViajeDAO {
 	            
 
 	            stmt.executeUpdate();
-	            //SUMAR ESTRELLAS A CONDUCTOR
-	            
 	           
 	        } catch (SQLException e) {
 	            System.out.println("Message: " + e.getMessage());
@@ -180,10 +178,9 @@ public class JDBCViajeDAO implements IViajeDAO {
 	            } catch (SQLException e) {
 	            }
 	        }
-	    
-
 
 	}
+	
 	public Viaje  cambiaEstadoViaje(Connection con, String idViaje){
         PreparedStatement stmt = null;
         String sql = "UPDATE viaje SET anulado = ? where idViaje= ? ";
@@ -195,14 +192,12 @@ public class JDBCViajeDAO implements IViajeDAO {
                		
         }
         	
-        //String viajeOID = UIDGenerator.getInstance().getKey();
         try {
             stmt = conn.prepareStatement(sql);
 
             stmt.setBoolean(1, nuevoEstado);
             stmt.setString(2, idViaje);
             stmt.executeUpdate();
-            //v=selectViaje(con, idViaje);
            
         } catch (SQLException e) {
             System.out.println("Message: " + e.getMessage());
@@ -259,7 +254,6 @@ public class JDBCViajeDAO implements IViajeDAO {
 			result.close();
 			stmt.close();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally{
 			System.out.println("Cerrando conexion...en Viaje");
@@ -343,13 +337,6 @@ public class JDBCViajeDAO implements IViajeDAO {
         return viajeCond;
 	}
         
-
-
-	
-	public Viaje select(String viajeOID) {
-		// Yo Moi te aconsejo que lo pongas para separa el OID de los datos.
-		return null;
-	}
 	
 	public String selectViajeOID(Connection con,String idViaje){
         PreparedStatement stmt = null;
@@ -431,7 +418,7 @@ public class JDBCViajeDAO implements IViajeDAO {
             
             while (result.next()){
             	String oidViaje = result.getString("OIDViaje");
-            	Viaje v = select(oidViaje);
+            	Viaje v = selectViajeConductor(con,oidViaje);
             	listaViajes.add(v);
             }
         }catch (SQLException e) {
@@ -452,12 +439,5 @@ public class JDBCViajeDAO implements IViajeDAO {
         
         return listaViajes;
 	}
-
-
-/*	
-	public void updateViaje(Viaje v, String userOID) {
-		// TODO Auto-generated method stub
-		
-	}*/
 
 }
