@@ -27,68 +27,69 @@
 </table>
 <table summary ="Datos del Conductor" cellSpacing="1" cellPadding="3" width="770" align="center" border="0" style="width: 475px">
 	<tr valign ="middle" align="center" id="nickconductor">
-		<td  colspan="4"><b>CONDUCTOR</b><br> <%=sessionUser%><br></td>
+		<td  colspan="4"><b>CONDUCTOR</b><br> <%=sessionUser%></td>
 	</tr>
-<tr style="height: 15px"></tr>
+<tr style="height: 10px"></tr>
 	<%
         IAccionConductor accionCond = new AccionConductorImpl();
         Conductor datosCond= accionCond.datosConductor(sessionUser);
 	%>
-			<tr id="separador" style="height: 24px">
+			<tr id="" style="height: 15px">
 			<td colspan="4"></td>
 			</tr>
-			<tr align="center" id="cabecera"">
+			<tr align="center" id="separador"">
 				
-				<td colspan="2"><u>Nombre</u></td>
-				<td><u>Apellidos</u></td>
-				<td><u>DNI</u></td>
+				<th colspan="2"><u>Nombre</u></th>
+				<th><u>Apellidos</u></th>
+				<th><u>DNI</u></th>
 
 			</tr>
-			<tr align="center" id="datosconductor">
+			<tr align="center" id="cabecera">
 				
 				<td colspan="2"><%=datosCond.getNombre()%></td>
 				<td><%=datosCond.getApellidos()%></td>
 				<td><%=datosCond.getDni()%></td>
 
 			</tr>	
-			<tr id="separador" style="height: 24px">
+			<tr id="" style="height: 24px">
 			<td colspan="4"></td>
 			</tr>			
-			<tr align="center" id="cabecera">
+			<tr align="center" id="separador">
 				
-				<td colspan="2"><u>Correo</u></td>
-				<td><u>Nick</u></td>
-				<td><u>Estrellas</u></td>
+				<th colspan="2"><u>Correo</u></th>
+				<th><u>Nick</u></th>
+				<th><u>Estrellas</u></th>
 
 			</tr>
 
-			<tr align="center" id="datosconductor">
+			<tr align="center" id="cabecera">
 				
 				<td colspan="2"><%=datosCond.getCorreo()%></td>
 				<td><%=datosCond.getNick()%></td>
 				<td><%=datosCond.getEstrella()%></td>
 
 			</tr>	
-			<tr id="separador" style="height: 24px">
+			<tr id="" style="height: 24px">
 			<td colspan="4"></td>
 			</tr>
-			<tr align="center" id="cabecera">
+			<tr align="center" id="separador">
 				
-				<td><u>Marca Vehiculo</u></td>
-				<td><u>Modelo Vehículo</u></td>
-				<td><u>Plazas</u></td>
-				<td><u>Color</u></td>
+				<th><u>Marca Vehiculo</u></th>
+				<th><u>Modelo Vehículo</u></th>
+				<th><u>Plazas</u></th>
+				<th><u>Color</u></th>
 
 			</tr>
 
-			<tr align="center" id="datosconductor">
+			<tr align="center" id="cabecera">
 				
 				<td><%=datosCond.getVehiculo().getMarca()%></td>
 				<td><%=datosCond.getVehiculo().getModelo()%></td>
 				<td><%=datosCond.getVehiculo().getPlazas()%></td>
 				<td><%=datosCond.getVehiculo().getColor()%></td>
 
-			</tr>						
+			</tr>	
+			<tr id="" style="height: 24px">					
 </table>
 
 </div>
