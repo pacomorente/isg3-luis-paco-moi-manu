@@ -56,7 +56,7 @@
 	
 		List<Viaje> viajesCond= accionCond.verViajesAsignados(sessionUser);
 		//OrdenaLista.ordena(viajesCond,"fecha");		
-		System.out.println(viajesCond);  
+		//System.out.println(viajesCond);  
 		if (viajesCond!=null && viajesCond.size()!=0){
 		
 	        for (Iterator iter = viajesCond.iterator(); iter.hasNext();) {
