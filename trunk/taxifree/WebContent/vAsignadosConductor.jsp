@@ -46,7 +46,7 @@
 				<th><u>PARADA 3</u></th>
 				<th><u>PLAZAS LIBRES</u></th>				
 				<th><u>ACTIVO</u></th>
-				<th><u>Opciones</u></th>
+				<th><u>OPCIONES</u></th>
 	
 
 		</tr>	

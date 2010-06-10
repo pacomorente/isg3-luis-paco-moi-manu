@@ -35,10 +35,10 @@
 			<br>
 		</td>
 	</tr>
-	<tr valign ="middle" align="center" id="cabecera">
-		<td><a href="FrontController?res=busquedaViajePasajero.jsp">BUSQUEDA DE VIAJE</a></td>
-		<td><a href="FrontController?res=vAsignadosPasajero.jsp">VIAJES ASIGNADOS</a></td>
-		<td><a href="FrontController?res=datosPasajero.jsp">DATOS PERSONALES</a></td>
+	<tr valign ="middle" align="center" id="separador">
+		<th><a href="FrontController?res=busquedaViajePasajero.jsp">BUSQUEDA DE VIAJE</a></th>
+		<th><a href="FrontController?res=vAsignadosPasajero.jsp">VIAJES ASIGNADOS</a></th>
+		<th><a href="FrontController?res=datosPasajero.jsp">DATOS PERSONALES</a></th>
 	</tr>
 	</table>
 </div>
