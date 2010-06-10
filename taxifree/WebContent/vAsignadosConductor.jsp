@@ -1,6 +1,7 @@
 <%@ page language="java" import="domain.*,java.util.*" %>
 <!DOCTYPE HTML PUBLIC "-//w3c//dtd html 4.0 transitional//en">
-<html>
+
+<%@page import="utils.OrdenaLista"%><html>
 <head>
 <title>Viajes Asignados al Conductor</title>
 <link rel="stylesheet" type="text/css" href="estilo.css" />
@@ -54,7 +55,8 @@
         //IAccionConductor accionCond = new AccionConductorImpl();
 	
 		List<Viaje> viajesCond= accionCond.verViajesAsignados(sessionUser);
-				
+		//OrdenaLista.ordena(viajesCond,"fecha");		
+		System.out.println(viajesCond);  
 		if (viajesCond!=null && viajesCond.size()!=0){
 		
 	        for (Iterator iter = viajesCond.iterator(); iter.hasNext();) {
@@ -81,7 +83,17 @@
 				<td><%=viaje.getPuntosInt02()%></td>
 				<td><%=viaje.getPuntosInt03()%></td>
 				<td><%=plazasLibres%></td>				
-				<td><%=activo%></td>
+				
+			<%	  
+				
+				if (activo.equals("SI")){
+				%>
+				 <td><%=activo%><img src="images/verde.jpeg" align="middle" style="height: 31px; width: 31px" border="0"></img></td>
+				 <%}else{ %>
+				 <td><%=activo%><img src="images/rojo.jpeg" align="middle" style="height: 31px; width: 23px" border="0"></img></td>
+				<%
+				 }
+				 %>
 			<td  rowspan="1" align="center">
 			<b><a class=enlaceboton href="FrontController?res=modificarViajeC.jsp?pid=<%=viaje.getViajeID()%>">MODIFICAR</a></b><br>
 			<br><b><a class=enlaceboton href="FrontController?res=eliminarViajeC.jsp?pid=<%=viaje.getViajeID()%>">ELIMINAR</a></b><br>
