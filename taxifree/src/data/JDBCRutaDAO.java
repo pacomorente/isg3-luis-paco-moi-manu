@@ -30,8 +30,6 @@ public class JDBCRutaDAO implements IRutaDAO {
 		
 		Pasajero p = pasajeroDAO.selectPasajeroEnRuta(rutaOID);
 		Viaje v = viajeDAO.selectViaje(conn, idViaje);
-		//Primero eliminamos al pasajero del viaje
-		pasajeroDAO.eliminaPasajero(v);
 		
 		//Eliminamos al pasajero de la ruta
 		pasajeroDAO.eliminaPasajeroEnRuta(rutaOID,p);
@@ -43,6 +41,8 @@ public class JDBCRutaDAO implements IRutaDAO {
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, rutaOID);
             stmt.executeUpdate();
+            
+            pasajeroDAO.eliminaPasajero(v,p);
         } catch (SQLException e) {
             System.err.println("Message: " + e.getMessage());
             System.err.println("SQLState: " + e.getSQLState());
@@ -54,6 +54,9 @@ public class JDBCRutaDAO implements IRutaDAO {
             } catch (SQLException e) {
             }
         }
+        
+      //Primero eliminamos al pasajero del viaje
+		pasajeroDAO.eliminaPasajero(v,p);
 
 	}
 

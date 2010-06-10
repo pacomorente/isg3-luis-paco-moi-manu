@@ -18,7 +18,7 @@ public interface IPasajeroDAO {
 	public void insert(Pasajero p, Ruta r, Viaje v);
 	public List<Pasajero> selectPasajerosbyViaje(String oidviaje);
 	public Viaje selectViajeDePasajero(String idViaje);
-	public void eliminaPasajero(Viaje v);
+	public void eliminaPasajero(Viaje v, Pasajero p);
 	public void eliminaPasajeroEnRuta(String rutaOID, Pasajero p);
 	public void actualizaViajeDePasajero(String vidAnt, String vidNuevo, String idRuta);
 }
