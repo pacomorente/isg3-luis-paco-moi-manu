@@ -25,26 +25,16 @@ public class JDBCRutaDAO implements IRutaDAO {
 		//A partir de la ruta tenemos que seleccionar el viaje asociado
 		String idViaje = r.getViajeID();
 		String rutaOID = selectRutaOID(r.getIdRuta());
-		
 		IViajeDAO viajeDAO = new JDBCViajeDAO();
 		IPasajeroDAO pasajeroDAO = new JDBCPasajeroDAO();
 		
 		Pasajero p = pasajeroDAO.selectPasajeroEnRuta(rutaOID);
 		Viaje v = viajeDAO.selectViaje(conn, idViaje);
-		
 		//Primero eliminamos al pasajero del viaje
 		pasajeroDAO.eliminaPasajero(v);
 		
 		//Eliminamos al pasajero de la ruta
 		pasajeroDAO.eliminaPasajeroEnRuta(rutaOID,p);
-		
-		//Eliminamos el pasajero asociado al viaje de la lista de pasajeros
-		List<Pasajero> pasajeros = v.getPasajeros();
-		if(pasajeros.contains(p)){
-			pasajeros.remove(p);
-		}
-		v.setPasajeros(pasajeros);
-		viajeDAO.updateViaje(conn, v);
 		
 		//Eliminamos la ruta
 		String sql = "DELETE FROM ruta WHERE (OIDRuta = ?) ";
@@ -257,8 +247,36 @@ public class JDBCRutaDAO implements IRutaDAO {
         return listaRutas;
 	}
 
-	public void updateRuta(Ruta r, String userOID) {
-		// TODO Auto-generated method stub
+	public void updateRuta(Ruta ra, Ruta rn){
+		PreparedStatement stmt = null;
+		String oidRuta = this.selectRutaOID(ra.getIdRuta());
+        String sql = "UPDATE ruta SET origen=?,fecha=STR_TO_DATE(?,'%d/%m/%Y'),idRuta=?,destino=?,viajeID=? WHERE OIDRuta=? ";
+        try {
+            stmt = conn.prepareStatement(sql);
 
+            stmt.setString(1, rn.getOrigen().toUpperCase());
+            stmt.setString(2, rn.getFecha());
+            stmt.setString(3, ra.getIdRuta());
+            stmt.setString(4, rn.getDestino().toUpperCase());
+            if(rn.getViajeID() == null){
+            	stmt.setString(5, ra.getViajeID());	
+            }else{
+            	stmt.setString(5, rn.getViajeID());
+            }
+            stmt.setString(6, oidRuta);
+            stmt.executeUpdate();
+           
+        } catch (SQLException e) {
+            System.out.println("Message: " + e.getMessage());
+            System.out.println("SQLState: " + e.getSQLState());
+            System.out.println("ErrorCode: " + e.getErrorCode());
+        } finally {
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException e) {
+            }
+        }
 	}
 }

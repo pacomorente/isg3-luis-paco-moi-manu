@@ -3,13 +3,31 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Modificar Ruta</title>
+<title>Actualizar Ruta</title>
 <link rel="stylesheet" type="text/css" href="estilo.css" />
 </head>
 <body>
 <%
 	//String nick="USER6";
 	String sessionUser= (String)session.getAttribute("session.user");
+	String vidNuevo = request.getParameter("vidNuevo");
+	Ruta rutaNueva = (Ruta)session.getAttribute("session.rutaNueva");
+	Ruta rutaAntigua = (Ruta)session.getAttribute("session.rutaAnt");
+	String vidAntiguo = rutaAntigua.getViajeID();
+	IAccionPasajero accionPas = new AccionPasajeroImpl();
+	boolean rutaAct = false;
+	if(vidNuevo.equals(vidAntiguo)){
+		//El numero de pasajeros no varia pq seguiria en el mismo viaje
+		rutaNueva.setViaje(null);
+		accionPas.modificaRuta(rutaAntigua, rutaNueva);
+		rutaAct = true;
+	}else{
+		//El pasajero ha seleccionado otro viaje diferente
+		accionPas.modificaViajePasajero(vidAntiguo, vidNuevo, rutaAntigua.getIdRuta());
+		rutaNueva.setViaje(vidNuevo);
+		accionPas.modificaRuta(rutaAntigua, rutaNueva);
+		rutaAct = true;
+	}
 %>
 <div id="top">
 <jsp:include  page="head.html"/>
@@ -36,29 +54,15 @@
 		</td>
 	</tr>
 	</table>
-	<%
-		String rutaID = request.getParameter("rid");
-		IAccionPasajero accionPas = new AccionPasajeroImpl();
-		Ruta r = accionPas.seleccionaRuta(rutaID);
-	%>
-	<form action="FrontController?res=aceptarCambioRuta.jsp?rid=<%=rutaID%>" method="post">
-	<table id="tablaResultados">
+	<table id="tablaUnirse">
 		<tr valign ="middle" align="center">
-			<th>ORIGEN</th><th>DESTINO</th><th>FECHA</th>
-		</tr>
-		<tr valign ="middle" align="center">
-			<td><input class="mayusculas" type="text" name="desde" value=<%=r.getOrigen()%>></td>
-			<td><input  class="mayusculas" type="text" name="hasta" value=<%=r.getDestino()%>></td>
-			<td><input  class="mayusculas" type="text" name="date" value=<%=r.getFecha()%>></td>
-		</tr>
-		<tr align="center" >
-			<td colspan="3">
-				<input name="submit" type="submit" value="Actualizar Ruta" />
-			</td>
-
+			<% if(rutaAct){ %>
+			<td>SE HA ACTUALIZADO CORRECTAMENTE LA RUTA</td>
+			<%}else{%>
+			<td>NO TIENE ESTRELLAS SUFICIENTES</td>
+			<%} %>
 		</tr>
 	</table>
-	</form>
 </div>
 </body>
 </html>

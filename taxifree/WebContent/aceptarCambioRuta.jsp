@@ -20,7 +20,7 @@
 		<tr style="height: 11px"></tr>
 		<tr align="center" id="separador">
 		<td colspan='6'><a class=enlaceboton href="FrontController?res=pasajero.jsp">Menú Pasajero</a></td>
-		<td colspan='6'><a class=enlaceboton href="FrontController?res=acciones.jsp"> Menú  Usuario</a></td>
+		<td colspan='6'><a class=enlaceboton href="FrontController?res=acciones.jsp">Menú Usuario</a></td>
 		</tr>
 		<tr style="height: 15px"></tr>
 	</table>
@@ -76,10 +76,10 @@ IAccionPasajero accionPas = new AccionPasajeroImpl();
 		ruta.setOrigen(desdeForm.toLowerCase());
 		ruta.setFecha(fechaForm);
 		ruta.setDestino(hastaForm.toLowerCase());
-		ruta.setIdRuta(rutaID);
-		ruta.setDesplazamiento(1);
-		System.out.println(ruta.getDestino());
+		Ruta rAnt = accionPas.seleccionaRuta(rutaID);
 		List<Viaje> viajes = (List<Viaje>)accionPas.buscarViaje(ruta);
+		session.setAttribute("session.rutaAnt",rAnt);
+		session.setAttribute("session.rutaNueva",ruta);
 %>
 		<table id="tablaResultados">
 			<tr valign ="middle" align="center">
@@ -104,7 +104,7 @@ IAccionPasajero accionPas = new AccionPasajeroImpl();
 				<td align="center"><%=fecha%> </td>
 				<td align="center"><%=numPas%> </td>
 				<td align="center">
-					<a href="FrontController?res=actualizarRuta.jsp?vid=<%=v.getViajeID()%>">
+					<a href="FrontController?res=actualizarRuta.jsp?vidNuevo=<%=v.getViajeID()%>">
 						<img alt="Unirse" src="images/confirmar.jpg"></img>
 					</a>
 				</td>
