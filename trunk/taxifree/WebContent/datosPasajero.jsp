@@ -36,41 +36,42 @@
         IAccionPasajero accionPas = new AccionPasajeroImpl();
         Pasajero datosPas= accionPas.datosPasajero(sessionUser);
 	%>
-			<tr id="separador" style="height: 24px">
+			<tr id="" style="height: 24px">
 			<td colspan="4"></td>
 			</tr>
-			<tr align="center" id="cabecera"">
+			<tr align="center" id="separador">
 				
-				<td colspan="2"><u>Nombre</u></td>
-				<td><u>Apellidos</u></td>
-				<td><u>DNI</u></td>
+				<th colspan="2"><u>Nombre</u></th>
+				<th><u>Apellidos</u></th>
+				<th><u>DNI</u></th>
 
 			</tr>
-			<tr align="center" id="datosconductor">
+			<tr align="center" id="cabecera">
 				
 				<td colspan="2"><%=datosPas.getNombre()%></td>
 				<td><%=datosPas.getApellidos()%></td>
 				<td><%=datosPas.getDni()%></td>
 
 			</tr>	
-			<tr id="separador" style="height: 24px">
+			<tr id="" style="height: 24px">
 			<td colspan="4"></td>
 			</tr>			
-			<tr align="center" id="cabecera">
+			<tr align="center" id="separador">
 				
-				<td colspan="2"><u>Correo</u></td>
-				<td><u>Nick</u></td>
-				<td><u>Estrellas</u></td>
+				<th colspan="2"><u>Correo</u></th>
+				<th><u>Nick</u></th>
+				<th><u>Estrellas</u></th>
 
 			</tr>
 
-			<tr align="center" id="datosPasajero">
+			<tr align="center" id="cabecera">
 				
 				<td colspan="2"><%=datosPas.getCorreo()%></td>
 				<td><%=datosPas.getNick()%></td>
 				<td><%=datosPas.getEstrella()%></td>
 
-			</tr>				
+			</tr>
+			<tr id="" style="height: 24px">				
 </table>			
 </body>
 </html>
