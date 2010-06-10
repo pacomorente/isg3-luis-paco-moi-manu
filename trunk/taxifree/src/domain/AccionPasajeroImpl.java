@@ -91,9 +91,14 @@ public class AccionPasajeroImpl implements IAccionPasajero{
 	}
 
 
-	public Ruta modificaRuta(Ruta r) {
-		// TODO Auto-generated method stub
-		return null;
+	public void modificaRuta(Ruta ra, Ruta rn) {
+		IRutaDAO rutaDAO = new JDBCRutaDAO();
+		rutaDAO.updateRuta(ra, rn);
+	}
+	
+	public void modificaViajePasajero(String vidAnt, String vidNuevo, String idRuta){
+		IPasajeroDAO pasDAO = new JDBCPasajeroDAO();
+		pasDAO.actualizaViajeDePasajero(vidAnt, vidNuevo, idRuta);
 	}
 
 	/**

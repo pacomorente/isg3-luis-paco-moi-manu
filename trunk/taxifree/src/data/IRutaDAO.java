@@ -14,7 +14,7 @@ public interface IRutaDAO {
 	public Ruta select(String rutaOID);
 	public void insert(Connection con, Ruta r);
 	public void deleteRuta(Ruta r);
-	public void updateRuta(Ruta r, String userOID);
+	public void updateRuta(Ruta ra, Ruta rn);
 	public List<Ruta> selectRutas(Connection conn, String oidPasajero);
 	public List<Ruta> selectRutaPasajero(String nick);
 	public Ruta selectRuta(String idRuta);

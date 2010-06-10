@@ -170,9 +170,17 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
             
             stmt.setString(1, rutaOID);
             result = stmt.executeQuery();
+            result.next();
             String oidPasajero = result.getString("OIDPasajero");
             Usuario u = udao.select(conn, oidPasajero);
-            pasajero = (Pasajero)u;
+            
+            pasajero.setNombre(u.getNombre());	
+            pasajero.setApellidos(u.getApellidos());
+            pasajero.setCorreo(u.getCorreo());	
+            pasajero.setDni(u.getDni());	
+            pasajero.setNick(u.getNick());	
+            pasajero.setApellidos(u.getPass());	
+            pasajero.setEstrella(u.getEstrella());
             
         }catch (SQLException e) {
             System.out.println("Message: " + e.getMessage());
@@ -190,6 +198,37 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
             }
         }
         return pasajero;
+	}
+	
+	public String selectPasajeroOIDEnRuta(String rutaOID){
+		ResultSet result = null;
+		String oidPasajero = "";
+		PreparedStatement stmt = null;
+		try {
+        	String sql = "SELECT * FROM pasajero_ruta WHERE (OIDRuta = ?) ";
+        	stmt = conn.prepareStatement(sql);
+            
+            stmt.setString(1, rutaOID);
+            result = stmt.executeQuery();
+            result.next();
+            oidPasajero = result.getString("OIDPasajero");
+            
+        }catch (SQLException e) {
+            System.out.println("Message: " + e.getMessage());
+            System.out.println("SQLState: " + e.getSQLState());
+            System.out.println("ErrorCode: " + e.getErrorCode());
+        } finally {
+            try {
+                    if (result != null) {
+                            result.close();
+                    }
+                    if (stmt != null) {
+                            stmt.close();
+                    }
+            } catch (SQLException e) {
+            }
+        }
+        return oidPasajero;
 	}
 	
 	public void insert(Pasajero p, Ruta r, Viaje v){
@@ -212,7 +251,7 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
             stmt.setString(2, rdao.selectRutaOID(r.getIdRuta()));
             stmt.executeUpdate();
             
-            udao.actualizarPuntosConductor(conn, udao.selectUsuarioOID(conn, p.getNick()), "BAJA", 1);
+            udao.actualizarPuntosConductor(conn, udao.selectUsuarioOID(conn, p.getNick()), "BAJA", p.getEstrella());
             
         } catch (SQLException e) {
             System.out.println("Message: " + e.getMessage());
@@ -257,7 +296,7 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
 	}
 	
 	public void eliminaPasajeroEnRuta(String rutaOID, Pasajero p){
-		String sql = "DELETE FROM pasajero_ruta WHERE (OIDRuta = ?) && (OIDPasajero = ?) ";
+		String sql = "DELETE FROM pasajero_ruta WHERE OIDRuta=? AND OIDPasajero=?";
 		String pasajeroOID = udao.selectUsuarioOID(conn, p.getNick());
         PreparedStatement stmt = null;
         try {
@@ -273,6 +312,38 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
             try {
                 if (stmt != null)
                     stmt.close();
+            } catch (SQLException e) {
+            }
+        }
+	}
+	
+	public void actualizaViajeDePasajero(String vidAnt, String vidNuevo, String idRuta){
+		IRutaDAO rutaDAO = new JDBCRutaDAO();
+		IViajeDAO viajeDAO = new JDBCViajeDAO();
+		String rutaOID = rutaDAO.selectRutaOID(idRuta);
+		String pasajeroOID = selectPasajeroOIDEnRuta(rutaOID);
+		String vAntOID = viajeDAO.selectViajeOID(conn, vidAnt);
+		String vNuevoOID = viajeDAO.selectViajeOID(conn, vidNuevo);
+		PreparedStatement stmt = null;
+		String sql = "UPDATE pasajero SET OIDViaje=? WHERE OIDViaje=? AND OIDPasajero=?";
+		
+		try {
+            stmt = conn.prepareStatement(sql);
+            
+            stmt.setString(1, vNuevoOID);
+            stmt.setString(2, vAntOID);
+            stmt.setString(3, pasajeroOID);
+            stmt.executeUpdate();
+           
+        } catch (SQLException e) {
+            System.out.println("Message: " + e.getMessage());
+            System.out.println("SQLState: " + e.getSQLState());
+            System.out.println("ErrorCode: " + e.getErrorCode());
+        } finally {
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
             } catch (SQLException e) {
             }
         }
