@@ -53,10 +53,15 @@ h1{
 #nickconductor td{
 
 	height: 20px;
-	color:yellow;
+	color:white;
 }
 
 #separador td{background-color: rgb(124, 123, 134);}
+#separador th{background-color: rgb(124, 123, 134);
+				color:yellow;
+				}
+			a{color:yellow;
+			}	
 #datosconductor td{
 		border-top-width: 1px;
     	border-top-style: solid;
@@ -95,7 +100,7 @@ label{
 	margin-left: 570px;
 	margin-top:30px;
 }
-	.enlaceboton {
+.enlaceboton {
 	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-WEIGHT: bold; FONT-SIZE: 8pt; PADDING-BOTTOM: 2px; COLOR: #666666; PADDING-TOP: 2px; FONT-FAMILY: verdana, arial, sans-serif; BACKGROUND-COLOR: #ffffcc; TEXT-DECORATION: none
 }
 .enlaceboton:link {
