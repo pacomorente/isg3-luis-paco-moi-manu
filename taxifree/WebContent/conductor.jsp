@@ -30,8 +30,8 @@
 		<td  colspan="3"><b>CONDUCTOR</b><br> <%=sessionUser%><br></td>
 	</tr>
 	<tr style="height: 15px"></tr>
-	<tr valign ="middle" align="center" id="cabecera">
-		<td><a href="FrontController?res=altaViajeConductor.jsp">ALTA DE VIAJE </a></td><td><a href="FrontController?res=vAsignadosConductor.jsp">VIAJES ASIGNADOS</a></td> <td><a href="FrontController?res=datosConductor.jsp">DATOS PERSONALES</a></td>
+	<tr valign ="middle" align="center" id="separador">
+		<th><a href="FrontController?res=altaViajeConductor.jsp">ALTA DE VIAJE </a></th><th><a href="FrontController?res=vAsignadosConductor.jsp">VIAJES ASIGNADOS</a></th> <th><a href="FrontController?res=datosConductor.jsp">DATOS PERSONALES</a></th>
 	</tr>
 <tr style="height: 15px"></tr>
 
