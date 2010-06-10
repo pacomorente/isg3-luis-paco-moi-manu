@@ -273,14 +273,16 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
 		return iv.selectViaje(conn, idViaje);
 	}
 	
-	public void eliminaPasajero(Viaje v){
-		String sql = "DELETE FROM pasajero WHERE (OIDViaje = ?) ";
+	public void eliminaPasajero(Viaje v, Pasajero p){
+		String sql = "DELETE FROM pasajero WHERE (OIDViaje = ?) AND (OIDPasajero = ?) ";
+		String pasajeroOID = udao.selectUsuarioOID(conn, p.getNick());
         PreparedStatement stmt = null;
 		IViajeDAO iv = new JDBCViajeDAO();
         String viajeOID = iv.selectViajeOID(conn, v.getViajeID());
         try {
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, viajeOID);
+            stmt.setString(2, pasajeroOID);
             stmt.executeUpdate();
         } catch (SQLException e) {
             System.err.println("Message: " + e.getMessage());
@@ -296,13 +298,14 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
 	}
 	
 	public void eliminaPasajeroEnRuta(String rutaOID, Pasajero p){
-		String sql = "DELETE FROM pasajero_ruta WHERE OIDRuta=? AND OIDPasajero=?";
 		String pasajeroOID = udao.selectUsuarioOID(conn, p.getNick());
+		String sql = "DELETE FROM pasajero_ruta WHERE (OIDRuta = ?) AND (OIDPasajero = ?)";
+		
         PreparedStatement stmt = null;
         try {
             stmt = conn.prepareStatement(sql);
-            stmt.setString(1, rutaOID);
             stmt.setString(2, pasajeroOID);
+            stmt.setString(1, rutaOID);
             stmt.executeUpdate();
         } catch (SQLException e) {
             System.err.println("Message: " + e.getMessage());

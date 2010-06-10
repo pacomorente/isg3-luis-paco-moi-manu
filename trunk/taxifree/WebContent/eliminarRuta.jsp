@@ -12,7 +12,6 @@
 	String sessionUser= (String)session.getAttribute("session.user");
 	//Como parametro del get tomo la ruta
 	String rutaID = request.getParameter("rid");
-	System.out.println(rutaID);
 	//A partir del ID sacamos el objeto ruta
 	IAccionPasajero accionPas = new AccionPasajeroImpl();
 	Ruta r = accionPas.seleccionaRuta(rutaID);
