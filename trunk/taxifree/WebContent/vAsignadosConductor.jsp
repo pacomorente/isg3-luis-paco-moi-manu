@@ -1,7 +1,8 @@
 <%@ page language="java" import="domain.*,java.util.*" %>
-<!DOCTYPE HTML PUBLIC "-//w3c//dtd html 4.0 transitional//en">
-
-<%@page import="utils.OrdenaLista"%><html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <title>Viajes Asignados al Conductor</title>
 <link rel="stylesheet" type="text/css" href="estilo.css" />
@@ -23,8 +24,8 @@
 <table align="center">
 <tr style="height: 11px"></tr>
 <tr align="center" id="separador">
-<td colspan='6'><a class=enlaceboton href="FrontController?res=conductor.jsp">Menú Conductor</a></td>
-<td colspan='6'><a class=enlaceboton href="FrontController?res=acciones.jsp"> Menú  Usuario</a></td>
+<td colspan='6'><a class=enlaceboton href="FrontController?res=conductor.jsp">MenÃº Conductor</a></td>
+<td colspan='6'><a class=enlaceboton href="FrontController?res=acciones.jsp"> MenÃº  Usuario</a></td>
 
 </tr>
 <tr style="height: 15px"></tr>
