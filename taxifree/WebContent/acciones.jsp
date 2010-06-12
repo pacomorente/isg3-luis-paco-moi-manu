@@ -22,7 +22,7 @@
 		<td  colspan="3"><br><br><u>ACCIONES DEL USUARIO<b></b></u><b><br></b><b><br></b><b>BIENVENIDO : </b><%=sessionUser%><br><br><b>¿ Qué desea hacer ?</b><br><br></td>
 	</tr>
 	<tr valign ="middle" align="center" id="separador">
-		<th>CONDUCTOR</th><th>PASAJERO</th> <th>LOCALIZAR MAPAS</th>
+		<th>CONDUCTOR</th><th/><th>PASAJERO</th>
 	</tr>
 
 
@@ -33,14 +33,13 @@
 					<img src='images/coche.jpeg' alt="Utilidades rol Conductor" border="0" style="height: 45px; width: 50px"> 
 					</a>
 				</td>
+				<td></td>
 				<td>
 					<a href="FrontController?res=pasajero.jsp">
 					<img src='images/pasajero.jpeg' border="0" style="height: 45px; width: 50px">
 					</a>
 					</td>
-				<td> 
-					<img src='images/localizar.jpeg' border="0" style="height: 45px; width: 50px"> 
-				</td>
+
 			</tr>
 
 </table>
