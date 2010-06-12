@@ -184,6 +184,11 @@ public class JDBCConductorDAO implements IConductorDAO {
         return cond;
 	}
 	
+	public Conductor selectConductorDeViaje(String viajeID){
+		String oidViaje = viadao.selectViajeOID(conn, viajeID);
+		return selectConductorbyViaje(oidViaje);
+	}
+	
 	public Viaje selectViaje(String idViaje){
 		return (Viaje) viadao.selectViaje(conn,idViaje);
 	}

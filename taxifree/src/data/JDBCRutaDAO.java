@@ -27,9 +27,13 @@ public class JDBCRutaDAO implements IRutaDAO {
 		String rutaOID = selectRutaOID(r.getIdRuta());
 		IViajeDAO viajeDAO = new JDBCViajeDAO();
 		IPasajeroDAO pasajeroDAO = new JDBCPasajeroDAO();
+		IUsuarioDAO udao = new JDBCUsuarioDAO();
 		
 		Pasajero p = pasajeroDAO.selectPasajeroEnRuta(rutaOID);
 		Viaje v = viajeDAO.selectViaje(conn, idViaje);
+		
+		//Incrementamos los puntos en una unidad
+		udao.actualizarPuntosConductor(conn, udao.selectUsuarioOID(conn, p.getNick()), "ALTA", p.getEstrella());
 		
 		//Eliminamos al pasajero de la ruta
 		pasajeroDAO.eliminaPasajeroEnRuta(rutaOID,p);
