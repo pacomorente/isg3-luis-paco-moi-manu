@@ -36,26 +36,6 @@
 		</td>
 	</tr>
 	</table>
-<%!
-private boolean validar(Map elements){
-	boolean valido = true;
-	if(elements != null)
-	{
-	Collection parameters = elements.values();
-	Iterator iter = parameters.iterator();
-	
-	while (iter.hasNext() && valido) {
-		String[] element = (String[]) iter.next();
-		for (int i = 0; i < element.length; i++) {
-			if(! (element[i].length() > 0)){
-				valido = false;
-			}
-		}
-	}
-	}
-	return valido;
-}
-%>
 <%
 String mensaje = new String();
 
@@ -77,7 +57,7 @@ IAccionPasajero accionPas = new AccionPasajeroImpl();
 		ruta.setFecha(fechaForm);
 		ruta.setDestino(hastaForm.toLowerCase());
 		Ruta rAnt = accionPas.seleccionaRuta(rutaID);
-		List<Viaje> viajes = (List<Viaje>)accionPas.buscarViaje(ruta);
+		List<Viaje> viajes = (List<Viaje>)accionPas.buscarViaje(ruta, sessionUser);
 		session.setAttribute("session.rutaAnt",rAnt);
 		session.setAttribute("session.rutaNueva",ruta);
 %>

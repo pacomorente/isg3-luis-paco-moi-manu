@@ -26,7 +26,7 @@
 	r.setDestino(hastaForm.toLowerCase());
 	r.setFecha(fechaForm);
 	session.setAttribute("session.ruta",r);
-	List<Viaje> viajes = (List<Viaje>)accionPas.buscarViaje(r);
+	List<Viaje> viajes = (List<Viaje>)accionPas.buscarViaje(r, sessionUser);
 	
 %>
 <div id="top">

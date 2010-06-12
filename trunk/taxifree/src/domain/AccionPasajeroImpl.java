@@ -4,8 +4,10 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
+import data.IConductorDAO;
 import data.IPasajeroDAO;
 import data.IRutaDAO;
+import data.JDBCConductorDAO;
 import data.JDBCPasajeroDAO;
 import data.JDBCRutaDAO;
 
@@ -36,24 +38,30 @@ public class AccionPasajeroImpl implements IAccionPasajero{
 	}
 
 
-	public Collection<Viaje> buscarViaje(Ruta r) {
-		//Lo almacenamos aqui porque antes de apuntarse
-		//a un viaje obligatoriamente lo tiene que buscar.
+	public Collection<Viaje> buscarViaje(Ruta r, String nick) {
+		IConductorDAO condDAO = new JDBCConductorDAO();
 		List<Viaje> res = new LinkedList<Viaje>();
 		for(Viaje vp:v){
+			//Parametros del viaje
 			String origen = vp.getOrigen().toLowerCase();
 			String destino = vp.getDestino().toLowerCase();
 			String fecha = vp.getFecha();
 			int numPas = vp.getPasajeros().size();
+			String idViaje = vp.getViajeID();
+			Conductor c = condDAO.selectConductorDeViaje(idViaje);
+			
+			//Paramentros de la ruta
 			String desde = r.getOrigen();
 			String hasta = r.getDestino();
 			String fechaRuta = r.getFecha();
-			if(destino.equals(hasta)){
-				if(origen.equals(desde)){
-					if(fechaRuta.equals(fecha) && numPas<4){
-						res.add(vp);
-					}
-				}else{
+			
+			if(!c.getNick().equals(nick)){
+				if(destino.equals(hasta)){
+					if(origen.equals(desde)){
+						if(fechaRuta.equals(fecha) && numPas<4){
+							res.add(vp);
+						}
+					}else{
 						for(String o: vp.getPuntosIntermedios()){
 							if(o.toLowerCase().equals(desde)){
 								if(fechaRuta.equals(fecha) && numPas<4){
@@ -63,6 +71,7 @@ public class AccionPasajeroImpl implements IAccionPasajero{
 						}
 					}
 				}
+			}
 		}
 		return res;
 	}

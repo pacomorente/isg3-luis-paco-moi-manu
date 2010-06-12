@@ -22,6 +22,7 @@ public interface IConductorDAO {
 	
 	public Vehiculo selectVehiculoConductor(String oidVehiculoConductor);
 	public Viaje selectViaje(String idViaje);
+	public Conductor selectConductorDeViaje(String viajeID);
 	
 	public Conductor selectConductorbyViaje(String oidviaje);
 	
