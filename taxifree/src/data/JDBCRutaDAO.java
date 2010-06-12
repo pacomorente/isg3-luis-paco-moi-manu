@@ -42,7 +42,6 @@ public class JDBCRutaDAO implements IRutaDAO {
             stmt.setString(1, rutaOID);
             stmt.executeUpdate();
             
-            pasajeroDAO.eliminaPasajero(v,p);
         } catch (SQLException e) {
             System.err.println("Message: " + e.getMessage());
             System.err.println("SQLState: " + e.getSQLState());

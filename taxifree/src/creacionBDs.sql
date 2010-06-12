@@ -78,7 +78,6 @@ CREATE TABLE `pasajero_ruta` (
   `OIDRuta` varchar(100) NOT NULL,
   PRIMARY KEY (`OIDPasajero`,`OIDRuta`),
   KEY `ruta` (`OIDRuta`),
-  CONSTRAINT `pasajero` FOREIGN KEY (`OIDPasajero`) REFERENCES `pasajero` (`OIDPasajero`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `ruta` FOREIGN KEY (`OIDRuta`) REFERENCES `ruta` (`OIDRuta`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
