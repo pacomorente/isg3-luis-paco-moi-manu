@@ -120,6 +120,7 @@ public class JDBCRutaDAO implements IRutaDAO {
             System.out.println("SQLState: " + e.getSQLState());
             System.out.println("ErrorCode: " + e.getErrorCode());
         } finally {
+        	ConnectionManager.getInstance().checkIn(conn);
             try {
                     if (result != null) {
                             result.close();
