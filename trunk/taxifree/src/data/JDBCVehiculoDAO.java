@@ -80,7 +80,8 @@ public class JDBCVehiculoDAO implements IVehiculoDAO{
                         System.out.println("Message: " + e.getMessage());      
                         System.out.println("SQLState: " + e.getSQLState());    
                         System.out.println("ErrorCode: " + e.getErrorCode());  
-                } finally {            
+                } finally {  
+                	ConnectionManager.getInstance().checkIn(conn);
                         try {                  
                                 if (result != null) {                  
                                         result.close();        

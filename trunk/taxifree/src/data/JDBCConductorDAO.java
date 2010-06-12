@@ -239,6 +239,7 @@ public class JDBCConductorDAO implements IConductorDAO {
 	                System.out.println("SQLState: " + e.getSQLState());
 	                System.out.println("ErrorCode: " + e.getErrorCode());
 	        } finally {
+	        	finalize();
 	                try {
 	                        if (result != null) {
 	                                result.close();
