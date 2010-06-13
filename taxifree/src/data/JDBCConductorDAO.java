@@ -40,8 +40,10 @@ public class JDBCConductorDAO implements IConductorDAO {
 		private String vehiculoRegistrado;
 
 	    public JDBCConductorDAO() {
-	    	//System.out.print("Abriendo conexión BD desde Conductor");
-	        conn = ConnectionManager.getInstance().checkOut();
+	    	
+			ConnectionManager cn = ConnectionManager.getInstance();
+			conn = cn.checkOut();
+	        //conn = ConnectionManager.getInstance().checkOut();
 	        udao = new JDBCUsuarioDAO();
 	        vdao = new JDBCVehiculoDAO();
 	        viadao = new JDBCViajeDAO();
@@ -91,6 +93,7 @@ public class JDBCConductorDAO implements IConductorDAO {
 	            System.out.println("SQLState: " + e.getSQLState());
 	            System.out.println("ErrorCode: " + e.getErrorCode());
 	        } finally {
+	        	
 	            try {
 	                if (result != null) {
 	                    result.close();
@@ -171,6 +174,7 @@ public class JDBCConductorDAO implements IConductorDAO {
             System.out.println("SQLState: " + e.getSQLState());
             System.out.println("ErrorCode: " + e.getErrorCode());
         } finally {
+        	
             try {
                 if (result != null) {
                     result.close();
@@ -197,7 +201,8 @@ public class JDBCConductorDAO implements IConductorDAO {
 		return viadao.existePasajerosViaje(conn, idViaje);
 	}
 	
-	public List<Conductor> sellectAllConductores() {
+/*	no se usa en la aplicación
+ * public List<Conductor> sellectAllConductores() {
 	        //Connection conn = ConnectionManager.getInstance().checkOut();
 	        PreparedStatement stmt = null;
 	        ResultSet result = null;
@@ -251,7 +256,7 @@ public class JDBCConductorDAO implements IConductorDAO {
 	                }
 	        }
 	        return  listaConductores;
-	}
+	}*/
 
 	public Conductor selectConductor(String nick) {
 		Conductor cond = new Conductor();
@@ -261,7 +266,7 @@ public class JDBCConductorDAO implements IConductorDAO {
 		//String oidVehiculoConductor = obtenerVehiculoOID(oidc);
 		String oidVehiculoConductor = obtenerVehiculoOID(nick);
 	    vehiculo=selectVehiculoConductor(oidVehiculoConductor);
-		cond.setVehiculo(vehiculo);
+	    cond.setVehiculo(vehiculo);
 		return cond;
 	}
 
@@ -303,6 +308,7 @@ public class JDBCConductorDAO implements IConductorDAO {
             System.out.println("SQLState: " + e.getSQLState());
             System.out.println("ErrorCode: " + e.getErrorCode());
         } finally {
+        	
             try {
                 if (result != null) {
                     result.close();
@@ -366,6 +372,7 @@ public class JDBCConductorDAO implements IConductorDAO {
                 System.out.println("SQLState: " + e.getSQLState());
                 System.out.println("ErrorCode: " + e.getErrorCode());
         } finally {
+	        
                 try {
                         if (stmt != null)
                                 stmt.close();
@@ -391,6 +398,7 @@ public class JDBCConductorDAO implements IConductorDAO {
             System.err.println("SQLState: " + e.getSQLState());
             System.err.println("ErrorCode: " + e.getErrorCode());
         } finally {
+
             try {
                 if (stmt != null)
                     stmt.close();

@@ -15,18 +15,7 @@ import domain.Viaje;
 public class JDBCViajeDAO implements IViajeDAO {
 
 	
-/*    private Connection conn;
-   
-    public JDBCViajeDAO() {
-        conn = ConnectionManager.getInstance().checkOut();
- 
-        
-    }
 
-    protected void finalize() {
-        ConnectionManager.getInstance().checkIn(conn);
-    }*/
-	
 	public void deleteViaje(Connection con,String ViajeOID) {
 		
 		String sql = "DELETE FROM viaje WHERE (OIDViaje = ?) ";
@@ -44,6 +33,7 @@ public class JDBCViajeDAO implements IViajeDAO {
             System.err.println("SQLState: " + e.getSQLState());
             System.err.println("ErrorCode: " + e.getErrorCode());
         } finally {
+        	
             try {
                 if (stmt != null)
                     stmt.close();
@@ -257,8 +247,8 @@ public class JDBCViajeDAO implements IViajeDAO {
 			e.printStackTrace();
 		}finally{
 			System.out.println("Cerrando conexion...en Viaje");
-			//ConnectionManager.getInstance().checkIn(con);
-			cn.finalize();
+			ConnectionManager.getInstance().checkIn(con);
+			
 		}
 		
 		return searchResults;

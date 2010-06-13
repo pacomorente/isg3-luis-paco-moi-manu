@@ -3,11 +3,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.LinkedList;
-import java.util.List;
 
 import utils.UIDGenerator;
-
 import domain.Conductor;
 import domain.Usuario;
 
@@ -61,7 +58,9 @@ public class JDBCUsuarioDAO implements IUsuarioDAO{
 	        return user;
 		}
 
-		public List<Usuario> selectAllUsuarios() {
+/* no se usa actualmente en la aplicación
+ * 
+ * 		public List<Usuario> selectAllUsuarios() {
 			Connection conn = ConnectionManager.getInstance().checkOut();
             PreparedStatement stmt = null;
             ResultSet result = null;
@@ -102,6 +101,7 @@ public class JDBCUsuarioDAO implements IUsuarioDAO{
             }
             return listaUsuarios;
 		}
+		*/
 		
 		public int verPuntosUsuario (Connection conn, String oidc){
 			PreparedStatement stmt = null;

@@ -10,7 +10,7 @@ import domain.Viaje;
  * @uml.dependency  supplier="data.ConnectionManager"
  */
 public interface IConductorDAO {
-	public List<Conductor> sellectAllConductores();
+
 	public Conductor selectConductor(String nick);
 	
 	public String selectOIDConductor(String nickConductor);
@@ -40,4 +40,7 @@ public interface IConductorDAO {
 	public void updateViaje(Viaje viaje);
 	public boolean existePasajerosViaje(String idViaje);
 	public boolean existeViaje(Viaje viaje);
+/*	
+	public List<Conductor> sellectAllConductores();
+	*/
 }
