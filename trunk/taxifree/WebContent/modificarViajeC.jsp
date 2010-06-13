@@ -42,8 +42,20 @@
 
         
         boolean viajeEliminado=false;
+        
+        // modificacion de ultima hora
+        Viaje viaje=accionCond.consultaViaje(pidViaje);
+        int numPasajeros;
+        if (viaje!=null && viaje.getPasajeros()!=null)
+        	numPasajeros =viaje.getPasajeros().size();
+        else 
+        	numPasajeros=0;
+        
+        if ( numPasajeros>0){
+        
+        /*
 		boolean noExistePasajeros= accionCond.existePasajerosViaje(pidViaje);
-		if (!noExistePasajeros){
+		if (!noExistePasajeros){*/
 		
 String mensaje="<script language='javascript'>alert('El viaje seleccionado está asignado a un pasajero. No puede ser modificado.');</script>";
 //String mensaje="El viaje seleccionado está asignado a un pasajero. No puede ser modificado.";
@@ -60,7 +72,7 @@ out.println(mensaje);
  
 		
 		}else{
-		Viaje viaje= accionCond.consultaViaje(pidViaje);
+		//Viaje viaje= accionCond.consultaViaje(pidViaje);
 		
 		String activo="SI";	
         if (viaje.getAnulado()==true)
