@@ -1,7 +1,6 @@
 package data;
 
 import java.sql.Connection;
-import java.util.List;
 
 import domain.Vehiculo;
 
@@ -11,12 +10,14 @@ import domain.Vehiculo;
 public interface IVehiculoDAO {
     public void delete(Connection conn, String VehiculoOID);
     public void insert(Connection conn, Vehiculo veh);
-    public List<Vehiculo> selectAllVehiculos();
+
     public Vehiculo select(Connection conn, String VehiculoOID);
     public Vehiculo selectVehiculoConductor(Connection conn,
 			String oidVehiculoConductor);
 	
 /*	public Vehiculo selectVehiculobyViaje(Connection conn,
-			String oidViaje);*/
+			String oidViaje);
+	public List<Vehiculo> selectAllVehiculos();		
+			*/
 
 }

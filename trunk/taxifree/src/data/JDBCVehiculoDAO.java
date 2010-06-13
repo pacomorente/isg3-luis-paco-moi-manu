@@ -3,11 +3,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.LinkedList;
-import java.util.List;
 
 import utils.UIDGenerator;
-
 import domain.Vehiculo;
 
 public class JDBCVehiculoDAO implements IVehiculoDAO{
@@ -57,7 +54,7 @@ public class JDBCVehiculoDAO implements IVehiculoDAO{
                 }
         }
 
-        public List<Vehiculo> selectAllVehiculos(){
+ /*       public List<Vehiculo> selectAllVehiculos(){
                
                 Connection conn = ConnectionManager.getInstance().checkOut();
                 PreparedStatement stmt = null;          
@@ -94,7 +91,7 @@ public class JDBCVehiculoDAO implements IVehiculoDAO{
                 }      
                 return listaVehiculos;
         }
-        
+        */
 
 		public Vehiculo select(Connection conn, String VehiculoOID) {
 			return selectVehiculoConductor(conn, VehiculoOID);
