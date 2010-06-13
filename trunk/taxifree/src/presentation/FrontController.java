@@ -16,12 +16,12 @@ public class FrontController extends HttpServlet {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	String userC = "USER6";
+/*	String userC = "USER6";
 
 	String passwdC = "USER6";
 	
 	String userP="";
-	String passwdP="";
+	String passwdP="";*/
 
 	public void init() throws ServletException {
 	}
@@ -94,8 +94,10 @@ public class FrontController extends HttpServlet {
 
 	public boolean valido(String userForm, String passwdForm) {
 		boolean res = false;
-		res = ((userForm.equals(this.userC) && passwdForm.equals(this.passwdC))
-				|| (userForm.equals(this.userP) && passwdForm.equals(this.passwdP)));
+		res = ((userForm.equals("USER6") && passwdForm.equals("USER6"))
+				|| (userForm.equals("USER3") && passwdForm.equals("USER3")));
+/*		res = ((userForm.equals(this.userC) && passwdForm.equals(this.passwdC))
+				|| (userForm.equals(this.userP) && passwdForm.equals(this.passwdP)));*/
 		return res;
 
 	}
