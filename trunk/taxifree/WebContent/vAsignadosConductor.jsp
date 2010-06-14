@@ -87,17 +87,17 @@
 				<td><%=viaje.getPuntosInt02()%></td>
 				<td><%=viaje.getPuntosInt03()%></td>
 				<td><%=plazasLibres%></td>				
-				
+				<td>
 			<%	  
 				
 				if (activo.equals("SI")){
 				%>
-				 <td><%=activo%><img src="images/verde.jpeg" align="middle" style="height: 31px; width: 31px" border="0"></img></td>
+				 <%=activo%><img src="images/verde.jpeg" align="middle" style="height: 31px; width: 31px" border="0"></img>
 				 <%}else{ %>
-				 <td><%=activo%><img src="images/rojo.jpeg" align="middle" style="height: 31px; width: 23px" border="0"></img></td>
+				 <%=activo%><img src="images/rojo.jpeg" align="middle" style="height: 31px; width: 23px" border="0"></img>
 				<%
 				 }
-				 %>
+				 %></td>
 			<td  rowspan="1" align="center">
 			<b><a class=enlaceboton href="FrontController?res=modificarViajeC.jsp?pid=<%=viaje.getViajeID()%>">MODIFICAR</a></b><br>
 			<br><b><a class=enlaceboton href="FrontController?res=eliminarViajeC.jsp?pid=<%=viaje.getViajeID()%>">ELIMINAR</a></b><br>
