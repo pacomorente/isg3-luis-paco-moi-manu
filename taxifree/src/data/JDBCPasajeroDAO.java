@@ -35,10 +35,13 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
 	 */
 	private IRutaDAO rdao;
 	
+	private IViajeDAO vdao;
+	
 	public JDBCPasajeroDAO(){
 		conn = ConnectionManager.getInstance().checkOut();
 		udao = new JDBCUsuarioDAO();
 		rdao = new JDBCRutaDAO();
+		vdao = new JDBCViajeDAO();
 	}
 	
 	public Pasajero selectPasajero(String nick) {
@@ -47,7 +50,6 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
 	}
 
 	public List<Pasajero> selectAllPasajeros() {
-		IViajeDAO vdao = new JDBCViajeDAO();
 		PreparedStatement stmt = null;
 		List<Pasajero> listaPasajeros = new LinkedList<Pasajero>();
 		List<Viaje> listaViajes = new LinkedList<Viaje>();
@@ -101,7 +103,6 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
 	}
 
 	public Pasajero selectPasajeroPorOID(String pasajeroOID) {
-		IViajeDAO vdao = new JDBCViajeDAO();
 		Pasajero p = new Pasajero();
 		List<Viaje> listaViajes = new LinkedList<Viaje>();
 		List<Ruta> listaRutas = new LinkedList<Ruta>();
@@ -232,7 +233,6 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
 	}
 	
 	public void insert(Pasajero p, Ruta r, Viaje v){
-		IViajeDAO vdao = new JDBCViajeDAO();
 		String sql2 = "INSERT INTO pasajero_ruta(OIDPasajero,OIDRuta)values(?,?)";
 		String sql1 = "INSERT INTO pasajero(OIDPasajero,OIDViaje)values(?,?)";
         PreparedStatement stmt = null;
@@ -269,16 +269,14 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
 	}
 	
 	public Viaje selectViajeDePasajero(String idViaje){
-		IViajeDAO iv = new JDBCViajeDAO();
-		return iv.selectViaje(conn, idViaje);
+		return vdao.selectViaje(conn, idViaje);
 	}
 	
 	public void eliminaPasajero(Viaje v, Pasajero p){
 		String sql = "DELETE FROM pasajero WHERE (OIDViaje = ?) AND (OIDPasajero = ?) ";
 		String pasajeroOID = udao.selectUsuarioOID(conn, p.getNick());
         PreparedStatement stmt = null;
-		IViajeDAO iv = new JDBCViajeDAO();
-        String viajeOID = iv.selectViajeOID(conn, v.getViajeID());
+        String viajeOID = vdao.selectViajeOID(conn, v.getViajeID());
         try {
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, viajeOID);
@@ -321,12 +319,10 @@ public class JDBCPasajeroDAO implements IPasajeroDAO {
 	}
 	
 	public void actualizaViajeDePasajero(String vidAnt, String vidNuevo, String idRuta){
-		IRutaDAO rutaDAO = new JDBCRutaDAO();
-		IViajeDAO viajeDAO = new JDBCViajeDAO();
-		String rutaOID = rutaDAO.selectRutaOID(idRuta);
+		String rutaOID = rdao.selectRutaOID(idRuta);
 		String pasajeroOID = selectPasajeroOIDEnRuta(rutaOID);
-		String vAntOID = viajeDAO.selectViajeOID(conn, vidAnt);
-		String vNuevoOID = viajeDAO.selectViajeOID(conn, vidNuevo);
+		String vAntOID = vdao.selectViajeOID(conn, vidAnt);
+		String vNuevoOID = vdao.selectViajeOID(conn, vidNuevo);
 		PreparedStatement stmt = null;
 		String sql = "UPDATE pasajero SET OIDViaje=? WHERE OIDViaje=? AND OIDPasajero=?";
 		

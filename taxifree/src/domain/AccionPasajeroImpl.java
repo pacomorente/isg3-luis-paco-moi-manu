@@ -46,7 +46,8 @@ public class AccionPasajeroImpl implements IAccionPasajero{
 			String origen = vp.getOrigen().toLowerCase();
 			String destino = vp.getDestino().toLowerCase();
 			String fecha = vp.getFecha();
-			int numPas = vp.getPasajeros().size();
+			List<Pasajero> pasajeros = vp.getPasajeros();
+			int numPas = pasajeros.size();
 			String idViaje = vp.getViajeID();
 			boolean anulado = vp.getAnulado();
 			Conductor c = condDAO.selectConductorDeViaje(idViaje);
@@ -56,7 +57,16 @@ public class AccionPasajeroImpl implements IAccionPasajero{
 			String hasta = r.getDestino();
 			String fechaRuta = r.getFecha();
 			
-			if(!c.getNick().equals(nick) && !anulado){
+			//Comprobamos que el usuario no este ya en el viaje
+			boolean incluido = false;
+			for(Pasajero p: pasajeros){
+				if(p.getNick().equals(nick)){
+					incluido = true;
+				}
+			}
+			
+			
+			if(!c.getNick().equals(nick) && !anulado && !incluido){
 				if(destino.equals(hasta)){
 					if(origen.equals(desde)){
 						if(fechaRuta.equals(fecha) && numPas<4){
