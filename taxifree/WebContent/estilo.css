@@ -137,3 +137,8 @@ label{
 	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #666666 2px solid; BORDER-LEFT: #666666 2px solid; BORDER-BOTTOM: #cccccc 1px solid
 }
 input.mayusculas{text-transform:uppercase;}
+
+#mapa{
+	margin-left: 265px;
+	margin-top: 30px;
+}
