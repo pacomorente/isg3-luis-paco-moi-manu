@@ -12,38 +12,18 @@
 
 	%>
 <div id="top">
-<jsp:include  page="head.html"/>
+	<jsp:include  page="head.html"/>
+	<jsp:include  page="cabeceraConductor.jsp"/>
 </div>
-
-<div id="content">
-<table align="center">
-<tr style="height: 11px"></tr>
-<tr align="center" id="separador">
-<td colspan='6'><a class=enlaceboton href="FrontController?res=conductor.jsp">Menú Conductor</a></td>
-<td colspan='6'><a class=enlaceboton href="FrontController?res=acciones.jsp"> Menú  Usuario</a></td>
-
-</tr>
-<tr style="height: 15px"></tr>
-</table>
-<table summary ="Acciones del Usuario" cellSpacing="1" cellPadding="3" width="770" align="center" border="0" style="width: 475px">
-	<tr valign ="middle" align="center" id="nickconductor">
-		<td  colspan="3"><b>CONDUCTOR</b><br> <%=sessionUser%><br></td>
-	</tr>
-	<tr style="height: 15px"></tr>
+<div id="conductor">
+	<table id="tablaBotones">
 	<tr valign ="middle" align="center" id="separador">
-		<th><a href="FrontController?res=altaViajeConductor.jsp">ALTA DE VIAJE </a></th><th><a href="FrontController?res=vAsignadosConductor.jsp">VIAJES ASIGNADOS</a></th> <th><a href="FrontController?res=datosConductor.jsp">DATOS PERSONALES</a></th>
+		<th><a href="FrontController?res=altaViajeConductor.jsp">- ALTA DE VIAJE -</a></th>
+		<th><a href="FrontController?res=vAsignadosConductor.jsp">- GESTIÓN DE VIAJES -</a></th> 
+		<th><a href="FrontController?res=datosConductor.jsp">- DATOS PERSONALES -</a></th>
+
 	</tr>
-<tr style="height: 15px"></tr>
-
-			<tr align="center" id="conductor">
-				
-				<td></td>
-				<td> </td>
-				<td>  </td>
-			</tr>
-
-</table>
-
+	</table>
 </div>
 </body>
 </html>

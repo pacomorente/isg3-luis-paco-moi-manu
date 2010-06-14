@@ -21,5 +21,6 @@ public interface IAccionConductor {
 	public void updateViajeConductor(Viaje idViaje);
 	public boolean existePasajerosViaje(String idViaje);
 	public boolean existeViaje(Viaje viaje);
+	public boolean existeViajeAlta(Viaje v, String nick);
 	
 }

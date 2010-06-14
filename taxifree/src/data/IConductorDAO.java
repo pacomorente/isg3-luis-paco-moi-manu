@@ -40,6 +40,8 @@ public interface IConductorDAO {
 	public void updateViaje(Viaje viaje);
 	public boolean existePasajerosViaje(String idViaje);
 	public boolean existeViaje(Viaje viaje);
+	
+	public boolean existeViajeAlta(Viaje v, String nick);
 /*	
 	public List<Conductor> sellectAllConductores();
 	*/

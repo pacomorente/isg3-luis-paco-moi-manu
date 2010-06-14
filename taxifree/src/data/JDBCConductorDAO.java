@@ -65,6 +65,29 @@ public class JDBCConductorDAO implements IConductorDAO {
 		viadao.updateViaje(conn, viaje);
 	}
 
+	public boolean existeViajeAlta(Viaje v, String nick){
+		boolean existeAlta=false;
+		String oidc=selectOIDConductor(nick);
+		List<Viaje> listaViajes=new ArrayList<Viaje>();
+		listaViajes=obtenerViajesOIDConductor(oidc);
+		
+		for (Viaje auxV: listaViajes) {
+			if (existeAlta==false){
+				if (auxV.getDestino().equals(v.getDestino()) &&
+						auxV.getOrigen().equals(v.getOrigen()) &&
+						auxV.getPuntosInt01().equals(v.getPuntosInt01()) &&
+						auxV.getPuntosInt02().equals(v.getPuntosInt02()) &&
+						auxV.getPuntosInt03().equals(v.getPuntosInt03()) &&
+						auxV.getFecha().equals(v.getFecha()) )
+					
+				existeAlta=true;
+			    
+			}
+		}
+
+		return existeAlta;
+		
+	}
 	public List<Viaje> obtenerViajesOIDConductor(String oidc){
 		 	PreparedStatement stmt = null;
 	        ResultSet result = null;
