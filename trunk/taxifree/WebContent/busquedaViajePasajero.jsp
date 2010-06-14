@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,43 +6,20 @@
 <link rel="stylesheet" type="text/css" href="estilo.css" />
 </head>
 <body>
-<%
-	//String nick="USER6";
-	String sessionUser= (String)session.getAttribute("session.user");
-
-%>
 <div id="top">
 	<jsp:include  page="head.html"/>
+	<jsp:include  page="cabeceraPasajero.jsp"/>
 </div>
-<div id="content">
-	<table align="center">
-		<tr style="height: 11px"></tr>
-		<tr align="center" id="separador">
-		<td colspan='6'><a class=enlaceboton href="FrontController?res=pasajero.jsp">Menú Pasajero</a></td>
-		<td colspan='6'><a class=enlaceboton href="FrontController?res=acciones.jsp">Menú Usuario</a></td>
-		</tr>
-	</table>
-	<table id="tablaViajero">
-	<tr valign ="middle" align="center">
-		<td  colspan="3">
-			<b>PASAJERO</b>
-			<br> 
-				<%=sessionUser%>
-			<br>
-			<br>
-			<br>
-		</td>
-	</tr>
-	</table>
+<div id="busquedaViaje">
 	<form action="FrontController?res=buscaViaje.jsp" id="formularioPasajero" method="post">
 		<label for="from" id="lfrom">Desde:</label>
-		<input class="mayusculas" type="text" size="25" id="from" name="origen" />
+		<input class="mayusculas" type="text" size="25" id="from" name="origen" value="SALAMANCA"/>
 		<br></br><br></br>
 		<label for="to" id="lto">Hasta:</label>
-		<input class="mayusculas" type="text" size="25" id="to" name="destino" />
+		<input class="mayusculas" type="text" size="25" id="to" name="destino" value="SANTANDER"/>
 		<br></br><br></br>
 		<label for="date" id="lfecha">Fecha:</label>
-		<input type="text" size="25" id="date" name="date" value="dd/mm/aaaa" />
+		<input type="text" size="25" id="date" name="date" value="30/06/2010" />
 		<br></br><br></br>
 		<p id="botonEnviar">
 			<input name="submit" type="submit" value="Buscar" />

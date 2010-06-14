@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface IAccionPasajero {
 	public Pasajero datosPasajero(String nick);
-	public Collection<Viaje> buscarViaje(Ruta r, String nick);
+	public Collection<Viaje> buscarViaje(Ruta r, String nick, boolean modifica);
 	public void apuntarseAViaje(Pasajero pas,Ruta ruta, Viaje v);
 	public Collection<Ruta> consultaRuta();
 	public void modificaRuta(Ruta ra, Ruta rn);

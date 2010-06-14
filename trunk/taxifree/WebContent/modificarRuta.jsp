@@ -7,40 +7,16 @@
 <link rel="stylesheet" type="text/css" href="estilo.css" />
 </head>
 <body>
-<%
-	//String nick="USER6";
-	String sessionUser= (String)session.getAttribute("session.user");
-%>
 <div id="top">
-<jsp:include  page="head.html"/>
+	<jsp:include  page="head.html"/>
+	<jsp:include  page="cabeceraPasajero.jsp"/>
 </div>
-
-<div id="content">
-	<table align="center">
-		<tr style="height: 11px"></tr>
-		<tr align="center" id="separador">
-		<td colspan='6'><a class=enlaceboton href="FrontController?res=pasajero.jsp">Menú Pasajero</a></td>
-		<td colspan='6'><a class=enlaceboton href="FrontController?res=acciones.jsp">Menú Usuario</a></td>
-		</tr>
-		<tr style="height: 15px"></tr>
-	</table>
-	<table id="tablaViajero">
-	<tr valign ="middle" align="center">
-		<td  colspan="3">
-			<b>PASAJERO</b>
-			<br> 
-				<%=sessionUser%>
-			<br>
-			<br>
-			<br>
-		</td>
-	</tr>
-	</table>
-	<%
-		String rutaID = request.getParameter("rid");
-		IAccionPasajero accionPas = new AccionPasajeroImpl();
-		Ruta r = accionPas.seleccionaRuta(rutaID);
-	%>
+<%
+	String rutaID = request.getParameter("rid");
+	IAccionPasajero accionPas = new AccionPasajeroImpl();
+	Ruta r = accionPas.seleccionaRuta(rutaID);
+%>
+<div id="modificarRuta">
 	<form action="FrontController?res=aceptarCambioRuta.jsp?rid=<%=rutaID%>" method="post">
 	<table id="tablaResultados">
 		<tr valign ="middle" align="center">
@@ -55,7 +31,6 @@
 			<td colspan="3">
 				<input name="submit" type="submit" value="Actualizar Ruta" />
 			</td>
-
 		</tr>
 	</table>
 	</form>
