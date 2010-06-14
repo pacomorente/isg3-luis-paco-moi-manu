@@ -48,6 +48,7 @@ public class AccionPasajeroImpl implements IAccionPasajero{
 			String fecha = vp.getFecha();
 			int numPas = vp.getPasajeros().size();
 			String idViaje = vp.getViajeID();
+			boolean anulado = vp.getAnulado();
 			Conductor c = condDAO.selectConductorDeViaje(idViaje);
 			
 			//Paramentros de la ruta
@@ -55,7 +56,7 @@ public class AccionPasajeroImpl implements IAccionPasajero{
 			String hasta = r.getDestino();
 			String fechaRuta = r.getFecha();
 			
-			if(!c.getNick().equals(nick)){
+			if(!c.getNick().equals(nick) && !anulado){
 				if(destino.equals(hasta)){
 					if(origen.equals(desde)){
 						if(fechaRuta.equals(fecha) && numPas<4){

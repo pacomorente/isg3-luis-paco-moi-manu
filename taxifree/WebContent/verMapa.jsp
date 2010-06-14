@@ -5,13 +5,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Mapa asociado a la ruta</title>
+<title>Mapa de la ruta</title>
 <%
 	//String nick="USER6";
 	String sessionUser= (String)session.getAttribute("session.user");
 	String origen = request.getParameter("origen");
 	String destino = request.getParameter("destino");
-	System.out.println(destino);
 %>
 <link rel="stylesheet" type="text/css" href="estilo.css" />
 <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAcLh6AS0I-FssUKcFU9GPZRTIc-IpND3enRGJyyNbCDc9zQv35RTnJJ6dLi5WkJ8XfZvrhYm9ltpJsA"
@@ -34,7 +33,7 @@ GEvent.addListener(gdir, "load", onGDirectionsLoad);
 GEvent.addListener(gdir, "error", handleErrors);
 dire = "from:  to: Madrid";
 
-setDirections(this.prueba.value, "Santander", "es");
+setDirections(<%=origen%>, "Santander", "es");
 
 }
 }
