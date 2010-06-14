@@ -68,11 +68,20 @@ IAccionConductor accionCond = new AccionConductorImpl();
 			viaje.setPuntosInt03(punto03Form);
 			viaje.setViajeID(viajeID);
 			viaje.setAnulado(false);
-			// ID vIAJE ?? VER CÓMO AÑADIR
 			
+			if (!accionCond.existeViajeAlta(viaje,sessionUser)){
+				accionCond.insertarViajeConductor(sessionUser,viaje);
+				
+				mensaje = new String("SU VIAJE SE HA DADO DE ALTA CORRECTAMENTE.");
+			}else{
+				mensaje = new String("YA HA DADO DE ALTA EL VIAJE CON LOS MISMOS DATOS.");
+			}
+			
+			/*
 			accionCond.insertarViajeConductor(sessionUser,viaje);
 			
 			mensaje = new String("SU VIAJE SE HA DADO DE ALTA CORRECTAMENTE.");
+		*/
 		}
 		else
 		{
@@ -82,6 +91,7 @@ IAccionConductor accionCond = new AccionConductorImpl();
 
 		String mensajefinal="<script language='javascript'>alert('" + mensaje + "');</script>";
 		out.println(mensajefinal);
+
 
 %>
 <p>
