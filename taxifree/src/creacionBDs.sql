@@ -267,3 +267,36 @@ values('00006','VIAJE002','VEH00012AUDI');
 
 
 COMMIT;
+
+-- TABLA RUTA
+
+INSERT INTO ruta(OIDRuta, origen, fecha, idRuta, destino, viajeID)
+values('RUTA001','SEVILLA',STR_TO_DATE('12/05/2010','%d/%m/%Y'),'01','BURGOS','03');
+
+INSERT INTO ruta(OIDRuta, origen, fecha, idRuta, destino, viajeID)
+values('RUTA002','MADRID',STR_TO_DATE('01/06/2010','%d/%m/%Y'),'02','ZARAGOZA','01');
+
+INSERT INTO ruta(OIDRuta, origen, fecha, idRuta, destino, viajeID)
+values('RUTA003','VALENCIA',STR_TO_DATE('15/05/2010','%d/%m/%Y'),'03','BARCELONA','02');
+
+-- TABLA PASAJERO_RUTA
+
+INSERT INTO pasajero_ruta(OIDPasajero,OIDRuta)
+values('00006','RUTA001');
+
+INSERT INTO pasajero_ruta(OIDPasajero,OIDRuta)
+values('00003','RUTA002');
+
+INSERT INTO pasajero_ruta(OIDPasajero,OIDRuta)
+values('00003','RUTA003');
+
+-- TABLA PASAJERO
+
+INSERT INTO pasajero(OIDPasajero,OIDViaje)
+values('00006','VIAJE003');
+
+INSERT INTO pasajero(OIDPasajero,OIDViaje)
+values('00003','VIAJE001');
+
+INSERT INTO pasajero(OIDPasajero,OIDViaje)
+values('00003','VIAJE002');
