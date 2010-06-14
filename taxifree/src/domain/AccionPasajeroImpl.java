@@ -38,9 +38,14 @@ public class AccionPasajeroImpl implements IAccionPasajero{
 	}
 
 
-	public Collection<Viaje> buscarViaje(Ruta r, String nick) {
+	public Collection<Viaje> buscarViaje(Ruta r, String nick, boolean modifica) {
 		IConductorDAO condDAO = new JDBCConductorDAO();
 		List<Viaje> res = new LinkedList<Viaje>();
+		
+		//Paramentros de la ruta
+		String desde = r.getOrigen();
+		String hasta = r.getDestino();
+		String fechaRuta = r.getFecha();
 		for(Viaje vp:v){
 			//Parametros del viaje
 			String origen = vp.getOrigen().toLowerCase();
@@ -52,11 +57,6 @@ public class AccionPasajeroImpl implements IAccionPasajero{
 			boolean anulado = vp.getAnulado();
 			Conductor c = condDAO.selectConductorDeViaje(idViaje);
 			
-			//Paramentros de la ruta
-			String desde = r.getOrigen();
-			String hasta = r.getDestino();
-			String fechaRuta = r.getFecha();
-			
 			//Comprobamos que el usuario no este ya en el viaje
 			boolean incluido = false;
 			for(Pasajero p: pasajeros){
@@ -65,6 +65,9 @@ public class AccionPasajeroImpl implements IAccionPasajero{
 				}
 			}
 			
+			if(modifica){
+				incluido = false;
+			}
 			
 			if(!c.getNick().equals(nick) && !anulado && !incluido){
 				if(destino.equals(hasta)){

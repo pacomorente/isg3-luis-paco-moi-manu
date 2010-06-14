@@ -1,8 +1,5 @@
 <%@ page language="java" import="domain.*,java.util.*" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
 <%@page import="java.text.DateFormat"%><html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -26,35 +23,16 @@
 	r.setDestino(hastaForm.toLowerCase());
 	r.setFecha(fechaForm);
 	session.setAttribute("session.ruta",r);
-	List<Viaje> viajes = (List<Viaje>)accionPas.buscarViaje(r, sessionUser);
-	
+	List<Viaje> viajes = (List<Viaje>)accionPas.buscarViaje(r, sessionUser, false);
 %>
 <div id="top">
 	<jsp:include  page="head.html"/>
+	<jsp:include  page="cabeceraPasajero.jsp"/>
 </div>
-<div id="content">
-	<table align="center">
-		<tr style="height: 11px"></tr>
-		<tr align="center" id="separador">
-		<td colspan='6'><a class=enlaceboton href="FrontController?res=pasajero.jsp">Menú Pasajero</a></td>
-		<td colspan='6'><a class=enlaceboton href="FrontController?res=acciones.jsp">Menú Usuario</a></td>
-		</tr>
-	</table>
-	<table id="tablaViajero">
-	<tr valign ="middle" align="center">
-		<td  colspan="3">
-			<b>PASAJERO</b>
-			<br> 
-				<%=sessionUser%>
-			<br>
-			<br>
-			<br>
-		</td>
-	</tr>
-	</table>
+<div id="buscaViajeRes">
 	<table id="tablaResultados">
 		<tr valign ="middle" align="center">
-		<th>Nº</th><th>ORIGEN</th><th>DESTINO</th><th>FECHA</th><th>PASAJEROS</th><th>UNIRSE A VIAJE</th>
+		<th>N�</th><th>ORIGEN</th><th>DESTINO</th><th>FECHA</th><th>PASAJEROS</th><th>UNIRSE A VIAJE</th>
 		</tr>
 		<%
 		if(viajes.isEmpty()){

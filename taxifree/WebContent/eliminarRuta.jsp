@@ -19,28 +19,10 @@
 %>
 <div id="top">
 	<jsp:include  page="head.html"/>
+	<jsp:include  page="cabeceraPasajero.jsp"/>
 </div>
-<div id="content">
-	<table align="center">
-		<tr style="height: 11px"></tr>
-		<tr align="center" id="separador">
-		<td colspan='6'><a class=enlaceboton href="FrontController?res=pasajero.jsp">Menú Pasajero</a></td>
-		<td colspan='6'><a class=enlaceboton href="FrontController?res=acciones.jsp">Menú Usuario</a></td>
-		</tr>
-	</table>
-	<table id="tablaViajero">
-	<tr valign ="middle" align="center">
-		<td  colspan="3">
-			<b>PASAJERO</b>
-			<br> 
-				<%=sessionUser%>
-			<br>
-			<br>
-			<br>
-		</td>
-	</tr>
-	</table>
-	<table id="tablaUnirse">
+<div id="eliminarRuta">
+	<table id="tablaEliminar">
 		<tr valign ="middle" align="center">
 			<td>SE HA ELIMINADO CORRECTAMENTE DEL VIAJE</td>
 		</tr>

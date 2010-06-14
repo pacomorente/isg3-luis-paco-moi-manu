@@ -22,27 +22,50 @@ h1{
 }
 #tablaViajero{
 	width: 550px;
-	height: 100px;
-	float: middle;
+	height: 20px;
 	margin-left: 350px;
-	margin-top: 50px;
-	
+	margin-top: 10px;
+	color: white;
 }
+
+#tablaBotones{
+	margin-left: 350px;
+	margin-top: 30px;
+	background-color: #825794;
+}	
+
 #tablaResultados{
 	width: 800px;
 	float: middle;
 	margin-left: 230px;
+	margin-top: 30px;
 	background-color: rgb(238, 238, 238);
 }
 
 #tablaResultados th{
 	background-color: rgb(124, 123, 134);
+	margin-top: 30px;
 }
 
 #tablaUnirse{
 	color:blue;
 	font-size:30px;
 	margin-left: 320px;	
+	margin-top: 30px;
+}
+
+#tablaActualizar{
+	color:blue;
+	font-size:30px;
+	margin-left: 250px;	
+	margin-top: 30px;
+}
+
+#tablaEliminar{
+	color:blue;
+	font-size:30px;
+	margin-left: 270px;	
+	margin-top: 30px;	
 }
 
 #cabecera td{
@@ -72,6 +95,7 @@ h1{
 	height: 500px;
 	float: middle;
 	margin-left: 350px;
+	margin-top: 30px;
 }
 #lfrom{
 	margin-right:100px;	

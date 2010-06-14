@@ -16,32 +16,11 @@
 	IAccionPasajero accion = new AccionPasajeroImpl();
 	List<Ruta> rutasPasajero = accion.seleccionaRutasDelPasajero(sessionUser);
 %>
-
-
-
 <div id="top">
 	<jsp:include  page="head.html"/>
+	<jsp:include  page="cabeceraPasajero.jsp"/>
 </div>
-<div id="content">
-	<table align="center">
-		<tr style="height: 11px"></tr>
-		<tr align="center" id="separador">
-		<td colspan='6'><a class=enlaceboton href="FrontController?res=pasajero.jsp">Menú Pasajero</a></td>
-		<td colspan='6'><a class=enlaceboton href="FrontController?res=acciones.jsp">Menú Usuario</a></td>
-		</tr>
-	</table>
-	<table id="tablaViajero">
-	<tr valign ="middle" align="center">
-		<td  colspan="3">
-			<b>PASAJERO</b>
-			<br> 
-				<%=sessionUser%>
-			<br>
-			<br>
-			<br>
-		</td>
-	</tr>
-	</table>
+<div id="vAsignadosPas">
 	<table id="tablaResultados">
 		<tr valign ="middle" align="center">
 		<th>ORIGEN</th><th>DESTINO</th><th>FECHA</th><th>VER MAPA</th><th>MODIFICAR</th><th>ELIMINAR</th>
@@ -81,7 +60,6 @@
 		}
 		
 		%>
-			
 		</tr>
 	</table>
 </div>
