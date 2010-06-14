@@ -9,6 +9,7 @@
 	String sessionUser= (String)session.getAttribute("session.user");
 	String origen = request.getParameter("origen");
 	String destino = request.getParameter("destino");
+	String rol = request.getParameter("rol");
 %>
 <link rel="stylesheet" type="text/css" href="estilo.css" />
 <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAcLh6AS0I-FssUKcFU9GPZRTIc-IpND3enRGJyyNbCDc9zQv35RTnJJ6dLi5WkJ8XfZvrhYm9ltpJsA"
@@ -58,11 +59,15 @@ function onGDirectionsLoad(){
 <body onload="initialize()" onunload="GUnload()">
 <div id="top">
 	<jsp:include  page="head.html"/>
+	<% if (rol.equals("conductor")) {%>
+		<jsp:include  page="cabeceraConductor.jsp"/>
+	<% }else{ %>
 	<jsp:include  page="cabeceraPasajero.jsp"/>
+	<%}%>
 </div>
-<div id="mapa">
-	<table>
-		<tr>
+<div id="mapa" align="center">
+	<table align="center">
+		<tr align="center" >
 			<td>
 				<div id="mapa_ruta" align="center" style="width: 710px; height: 300px; border: 4px solid #FF6600;"></div>
 			</td>

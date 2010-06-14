@@ -41,7 +41,7 @@
 			<td align="center"><%=destinoPasajero%> </td>
 			<td align="center"><%=f%> </td>
 			<td align="center">
-				<a href="FrontController?res=verMapa.jsp?origen=<%=origenPasajero%>&destino=<%=destinoPasajero%>">
+				<a href="FrontController?res=verMapa.jsp?origen=<%=origenPasajero%>&destino=<%=destinoPasajero%>&rol=pasajero">
 					<img alt="Unirse" src="images/logoMaps.gif"></img>
 				</a>
 			</td>

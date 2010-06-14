@@ -4,8 +4,7 @@
 <html>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+
 <head>
 <title>Viajes Asignados al Conductor</title>
 <link rel="stylesheet" type="text/css" href="estilo.css" />
@@ -52,6 +51,7 @@
 				<th><u>PLAZAS LIBRES</u></th>				
 				<th><u>ACTIVO</u></th>
 				<th><u>OPCIONES</u></th>
+				<th><u>VER MAPA</u></th>
 	
 
 		</tr>	
@@ -103,7 +103,11 @@
 			<br><b><a class=enlaceboton href="FrontController?res=eliminarViajeC.jsp?pid=<%=viaje.getViajeID()%>">ELIMINAR</a></b><br>
 			<br><b><a class=enlaceboton href="FrontController?res=cambiarEstadoViajeC.jsp?pid=<%=viaje.getViajeID()%>">ACTIVAR/ANULAR</a></b>
 			</td>
-
+			<td align="center">
+				<a href="FrontController?res=verMapa.jsp?origen=<%=viaje.getOrigen()%>&destino=<%=viaje.getDestino()%>&rol=conductor">
+					<img alt="Unirse" src="images/logoMaps.gif" border="0" style="height: 35px; width: 31px"></img>
+				</a>
+			</td>
 			</tr>
 			<tr id="" style="height: 5px">
 	
