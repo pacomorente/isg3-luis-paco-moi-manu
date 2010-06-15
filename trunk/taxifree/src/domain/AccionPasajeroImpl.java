@@ -1,8 +1,9 @@
 package domain;
 
 import java.util.Collection;
-import java.util.LinkedList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import data.IConductorDAO;
 import data.IPasajeroDAO;
@@ -40,7 +41,7 @@ public class AccionPasajeroImpl implements IAccionPasajero{
 
 	public Collection<Viaje> buscarViaje(Ruta r, String nick, boolean modifica) {
 		IConductorDAO condDAO = new JDBCConductorDAO();
-		List<Viaje> res = new LinkedList<Viaje>();
+		Set<Viaje> res = new HashSet<Viaje>();
 		
 		//Paramentros de la ruta
 		String desde = r.getOrigen();

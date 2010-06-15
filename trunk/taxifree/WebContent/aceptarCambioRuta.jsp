@@ -26,7 +26,7 @@
 	ruta.setFecha(fechaForm);
 	ruta.setDestino(hastaForm.toLowerCase());
 	Ruta rAnt = accionPas.seleccionaRuta(rutaID);
-	List<Viaje> viajes = (List<Viaje>)accionPas.buscarViaje(ruta, sessionUser,true);
+	Set<Viaje> viajes = (Set<Viaje>)accionPas.buscarViaje(ruta, sessionUser,true);
 	session.setAttribute("session.rutaAnt",rAnt);
 	session.setAttribute("session.rutaNueva",ruta);
 %>
