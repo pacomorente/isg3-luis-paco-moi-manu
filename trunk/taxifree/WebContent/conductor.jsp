@@ -16,7 +16,7 @@
 	<jsp:include  page="cabeceraConductor.jsp"/>
 </div>
 <div id="conductor">
-	<table id="tablaBotones">
+	<table align="center">
 	<tr valign ="middle" align="center" id="separador">
 		<th><a href="FrontController?res=altaViajeConductor.jsp">- ALTA DE VIAJE -</a></th>
 		<th><a href="FrontController?res=vAsignadosConductor.jsp">- GESTIÓN DE VIAJES -</a></th> 
