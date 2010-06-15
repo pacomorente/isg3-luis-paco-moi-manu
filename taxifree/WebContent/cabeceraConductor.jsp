@@ -7,7 +7,7 @@
 <title>Cabecera</title>
 <link rel="stylesheet" type="text/css" href="estilo.css" />
 </head>
-<body>
+<body >
 <%
 
 	String sessionUser= (String)session.getAttribute("session.user");
@@ -21,9 +21,9 @@
 		</tr>
 		<tr style="height: 15px"></tr>
 	</table>
-	<table id="tablaViajero">
+	<table id="nickconductor" align="center">
 	<tr valign ="middle" align="center">
-		<td  colspan="3">
+		<td  colspan="3" >
 			<b>CONDUCTOR: </b><%=sessionUser%>
 			<br>
 		</td>

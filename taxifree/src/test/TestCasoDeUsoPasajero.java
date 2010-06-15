@@ -21,7 +21,8 @@ public class TestCasoDeUsoPasajero {
 		}
 		
 		Ruta r = new Ruta(null, "SEVILLA", "GRANADA", null,null);
-		List<Viaje> listaViajes = (List<Viaje>)accPasajero.buscarViaje(r);
+		String nick="USER3";
+		List<Viaje> listaViajes = (List<Viaje>)accPasajero.buscarViaje(r, nick, true);
 		System.out.println("\n=== Lista de viajes Sevilla-Granada ===\n");
 		for(Viaje v : listaViajes){
 			System.out.println(v.getOrigen()+"--->"+v.getDestino()+" -- "+v.getConductor());
