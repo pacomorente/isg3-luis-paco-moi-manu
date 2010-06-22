@@ -7,10 +7,34 @@
 <link rel="stylesheet" type="text/css" href="estilo.css" />
 </head>
 <body>
+<%!
+//función de validación simple que permite mirar si se han rellenado todos los campos
+private boolean validar(Map elements)
+{
+	boolean valido = true;
+	if(elements != null)
+	{
+	Collection parameters = elements.values();
+	Iterator iter = parameters.iterator();
+	
+	while (iter.hasNext() && valido) {
+		String[] element = (String[]) iter.next();
+		for (int i = 0; i < element.length; i++) {
+			if(! (element[i].length() > 0)){
+				valido = false;
+			}
+		}
+	}
+	}
+	return valido;
+}
+%>
 <%
+	String mensaje = new String();
+	//saco un mapa con los parametros del formulario
+	Map datosForm = request.getParameterMap();
 	//String nick="USER6";
 	String sessionUser= (String)session.getAttribute("session.user");
-	String mensaje = new String();
 
 	// me va a permitir introductir una ruta
 	IAccionPasajero accionPas = new AccionPasajeroImpl();
@@ -22,13 +46,20 @@
 	String fechaForm = request.getParameter("date");
 			
 	Ruta ruta = new Ruta();
+	Set<Viaje> viajes = null;
+	boolean falta = false;
+	if(validar(datosForm)){
 	ruta.setOrigen(desdeForm.toLowerCase());
-	ruta.setFecha(fechaForm);
 	ruta.setDestino(hastaForm.toLowerCase());
+	ruta.setFecha(fechaForm);
 	Ruta rAnt = accionPas.seleccionaRuta(rutaID);
-	Set<Viaje> viajes = (Set<Viaje>)accionPas.buscarViaje(ruta, sessionUser,true);
 	session.setAttribute("session.rutaAnt",rAnt);
-	session.setAttribute("session.rutaNueva",ruta);
+	session.setAttribute("session.ruta",ruta);
+	viajes = (Set<Viaje>)accionPas.buscarViaje(ruta, sessionUser, true);
+	}else{
+		falta = true;
+		mensaje = new String("FALTAN CAMPOS POR RELLENAR");
+	}
 %>
 <div id="top">
 	<jsp:include  page="head.html"/>
@@ -40,8 +71,9 @@
 		<tr valign ="middle" align="center">
 			<th>Nº</th><th>ORIGEN</th><th>DESTINO</th><th>FECHA</th><th>PASAJEROS</th><th>UNIRSE A VIAJE</th>
 		</tr>
-<%
-	if(viajes.isEmpty()){
+		<%if(falta){%>
+			<tr><td colspan = 6 align= "center"><%=mensaje%></td></tr>
+		<%}else if(viajes.isEmpty()){
 %>	
 		<tr><td colspan = 6 align= "center">NO HAY RESULTADOS PARA SU BUSQUEDA</td></tr>
 <%	
