@@ -42,17 +42,17 @@
 			<td align="center"><%=f%> </td>
 			<td align="center">
 				<a href="FrontController?res=verMapa.jsp?origen=<%=origenPasajero%>&destino=<%=destinoPasajero%>&rol=pasajero">
-					<img alt="Unirse" src="images/logoMaps.gif"></img>
+					<img alt="Unirse" border="0" src="images/logoMaps.gif"></img>
 				</a>
 			</td>
 			<td align="center">
 				<a href="FrontController?res=modificarRuta.jsp?rid=<%=r.getIdRuta()%>">
-					<img alt="Unirse" src="images/update.jpg"></img>
+					<img alt="Unirse" border="0" src="images/update.jpg"></img>
 				</a>
 			</td>
 			<td align="center">
 				<a href="FrontController?res=eliminarRuta.jsp?rid=<%=r.getIdRuta()%>">
-					<img alt="Unirse" src="images/delete.jpg"></img>
+					<img alt="Unirse" border="0" src="images/delete.jpg"></img>
 				</a>
 			</td>
 		<%

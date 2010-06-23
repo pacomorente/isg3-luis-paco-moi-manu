@@ -98,7 +98,7 @@ private boolean validar(Map elements)
 			<td align="center"><%=numPas%> </td>
 			<td align="center">
 				<a href="FrontController?res=unirse.jsp?vid=<%=v.getViajeID()%>">
-					<img alt="Unirse" src="images/confirmar.jpg"></img>
+					<img alt="Unirse" border="0" src="images/confirmar.jpg"></img>
 				</a>
 			</td>
 		<%
